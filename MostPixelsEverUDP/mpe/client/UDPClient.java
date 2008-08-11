@@ -21,7 +21,7 @@ import processing.core.PApplet;
 
 public class UDPClient extends Thread {
 	
-	public static int repeatTime = 250;
+	public static int repeatTime = 20;
 	
     FileParser fp;
 
