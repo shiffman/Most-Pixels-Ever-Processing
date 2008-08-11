@@ -32,16 +32,12 @@ public class BouncingBalls extends PApplet {
 			float y = Integer.parseInt(xy[1]);
 			balls.add(new Ball(this,x,y));
 		}
-		started = true;
 		
-		long now = millis();
 		redraw();
-		System.out.println("Frame took: " + (millis() - now));
 		// Alert the server that you've finished drawing a frame
 		client.done();
 	}
 
-	boolean started = false;
 
 	public void setup() {
 		// Make a new Client with an INI file.  
@@ -77,15 +73,6 @@ public class BouncingBalls extends PApplet {
 			ball.calc();
 			ball.draw();
 		}
-		
-		try {
-			Thread.sleep(2000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-
-		// System.out.println(frameRat	e);
 	}
 
 	public void mousePressed() {
@@ -94,7 +81,6 @@ public class BouncingBalls extends PApplet {
 		int x = mouseX + client.getXoffset();
 		int y = mouseY + client.getYoffset();
 		client.broadcast(x + "," + y);
-		// UDPClient.DEBUG = true;
 	}
 
 
