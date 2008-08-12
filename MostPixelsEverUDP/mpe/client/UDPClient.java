@@ -339,7 +339,7 @@ public class UDPClient extends Thread {
             }
 
      
-            System.out.println("From server: " + fc + " me: " + frameCount);
+            // System.out.println("From server: " + fc + " me: " + frameCount);
             if (fc == frameCount && !rendering) {
             	rendering = true;
             	bdt.sendingDone = false;
