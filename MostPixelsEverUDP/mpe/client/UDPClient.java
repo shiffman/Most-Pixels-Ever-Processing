@@ -55,6 +55,7 @@ public class UDPClient extends Thread {
     boolean running = false;
     boolean useProcessing = false;
     int frameCount = 0;
+    boolean rendering = false;
     // Ok, adding something so that a client can get a dataMessage as part of a frameEvent
     String[] dataMessage;
     
@@ -272,7 +273,7 @@ public class UDPClient extends Thread {
      */
     public void done() {
     	//System.out.println("Sending Done = true");
-    	
+    	rendering = false;
     	bdt.interrupt();
     	bdt.sendingDone = true;
     	
@@ -339,7 +340,8 @@ public class UDPClient extends Thread {
 
      
             //System.out.println(fc);
-            if (fc == frameCount) {
+            if (fc == frameCount && !rendering) {
+            	rendering = true;
                 // if (DEBUG) System.out.println("Matching " + fc);
                 if (useProcessing && frameEventMethod != null){
                     try {
@@ -354,9 +356,6 @@ public class UDPClient extends Thread {
                 } else {
                     parent.frameEvent(this);
                 }
-                
-                frameCount++;
-                
                 //bdt.sendingDone = false;
                 
             } else {
