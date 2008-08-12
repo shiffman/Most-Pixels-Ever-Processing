@@ -339,9 +339,11 @@ public class UDPClient extends Thread {
             }
 
      
-            //System.out.println(fc);
+            System.out.println("From server: " + fc + " me: " + frameCount);
             if (fc == frameCount && !rendering) {
             	rendering = true;
+            	bdt.sendingDone = false;
+            	frameCount++;
                 // if (DEBUG) System.out.println("Matching " + fc);
                 if (useProcessing && frameEventMethod != null){
                     try {
@@ -356,7 +358,7 @@ public class UDPClient extends Thread {
                 } else {
                     parent.frameEvent(this);
                 }
-                //bdt.sendingDone = false;
+                
                 
             } else {
                 if (DEBUG)print("Extra message, mycount: " + frameCount + " received from server: " + fc);
