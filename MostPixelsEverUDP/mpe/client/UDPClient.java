@@ -343,6 +343,7 @@ public class UDPClient extends Thread {
             if (fc == frameCount && !rendering) {
             	rendering = true;
             	bdt.sendingDone = false;
+            	
             	frameCount++;
                 // if (DEBUG) System.out.println("Matching " + fc);
                 if (useProcessing && frameEventMethod != null){

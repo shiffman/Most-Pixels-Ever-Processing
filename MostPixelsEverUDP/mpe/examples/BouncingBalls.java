@@ -14,7 +14,8 @@ import processing.core.PApplet;
 
 public class BouncingBalls extends PApplet {
 
-	final int ID = 0;
+	final int ID = 1;
+
 	ArrayList balls;
 	// A client object
 	UDPClient client;
@@ -32,7 +33,7 @@ public class BouncingBalls extends PApplet {
 			float y = Integer.parseInt(xy[1]);
 			balls.add(new Ball(this,x,y));
 		}
-		
+		start = true;
 		redraw();
 		// Alert the server that you've finished drawing a frame
 		client.done();
@@ -59,28 +60,36 @@ public class BouncingBalls extends PApplet {
 		// CRUCIAL, MUST STOP THE AUTOMATIC LOOPING OF PROCESSING!
 		noLoop();
 	}
+	
+	boolean start = false;
 
 	public void draw() {
-		frame.setLocation(400+ID*client.getLWidth(),300);
+		if (start) {
+			frame.setLocation(100+ID*client.getLWidth(),300);
 
-		// Before we do anything, the client must place itself within the larger display
-		// (This is done with translate, so use push/pop if you want to overlay any info on all screens)
-		client.placeScreen();
-		// Do whatever it is you would normally do
-		background(100);
-		for (int i = 0; i < balls.size(); i++) {
-			Ball ball = (Ball) balls.get(i);
-			ball.calc();
-			ball.draw();
+			// Before we do anything, the client must place itself within the larger display
+			// (This is done with translate, so use push/pop if you want to overlay any info on all screens)
+			client.placeScreen();
+			// Do whatever it is you would normally do
+			background(100);
+			for (int i = 0; i < balls.size(); i++) {
+				Ball ball = (Ball) balls.get(i);
+				ball.calc();
+				ball.draw();
+			}
+			System.out.println(ID + "   P5: " + frameCount + "    MPE: " + client.getFrameCount());
 		}
 	}
 
 	public void mousePressed() {
 		// How to broadcast a message
 		// Do not include a ":" in your message
-		int x = mouseX + client.getXoffset();
-		int y = mouseY + client.getYoffset();
-		client.broadcast(x + "," + y);
+		// int x = mouseX + client.getXoffset();
+		// int y = mouseY + client.getYoffset();
+		// client.broadcast(x + "," + y);
+
+		System.out.println(ID + "   P5: " + frameCount + "    MPE: " + client.getFrameCount());
+
 	}
 
 
