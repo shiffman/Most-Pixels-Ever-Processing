@@ -35,7 +35,7 @@ public class CheckClientsThread extends Thread {
 			for (int i = 0; i < parent.connections.length; i++) {
 				Connection c = parent.connections[i];
 				if (c != null && c.isDead()) {
-					c.killMe();
+					// c.killMe();
 				}
 			}
 		}

@@ -14,7 +14,7 @@ import processing.core.PApplet;
 
 public class BouncingBalls extends PApplet {
 
-	final int ID = 1;
+	final int ID = 0;
 
 	ArrayList balls;
 	// A client object
@@ -35,8 +35,6 @@ public class BouncingBalls extends PApplet {
 		}
 		start = true;
 		redraw();
-		// Alert the server that you've finished drawing a frame
-		client.done();
 	}
 
 
@@ -78,7 +76,14 @@ public class BouncingBalls extends PApplet {
 				ball.draw();
 			}
 			System.out.println(ID + "   P5: " + frameCount + "    MPE: " + client.getFrameCount());
-		}
+			
+			if (client.getFrameCount() > 5) {
+				System.exit(0);
+			}
+			
+			// Alert the server that you've finished drawing a frame
+			client.done();
+		} 
 	}
 
 	public void mousePressed() {
