@@ -14,7 +14,7 @@ import processing.core.PApplet;
 
 public class BouncingBalls extends PApplet {
 
-	final int ID = 0;
+	final int ID = 1;
 
 	ArrayList balls;
 	// A client object
@@ -93,7 +93,7 @@ public class BouncingBalls extends PApplet {
 		// int y = mouseY + client.getYoffset();
 		// client.broadcast(x + "," + y);
 
-		System.out.println(ID + "   P5: " + frameCount + "    MPE: " + client.getFrameCount());
+		// System.out.println(ID + "   P5: " + frameCount + "    MPE: " + client.getFrameCount());
 
 	}
 

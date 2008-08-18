@@ -22,7 +22,7 @@ import mpe.config.FileParser;
 
 public class UDPServer {
 
-	public static int repeatTime = 25000000;
+	public static int repeatTime = 250;
 	public static int disconnectTime = repeatTime*2;
 
 	SendAllThread sat;
