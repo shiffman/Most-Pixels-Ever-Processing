@@ -34,6 +34,8 @@ public class Ball {
     }
 	
 	public void draw(){
+		parent.stroke(0);
+		parent.fill(0,100);
 		parent.ellipse(x,y,r,r);
 	}
 }
