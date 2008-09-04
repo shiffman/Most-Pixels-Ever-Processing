@@ -13,10 +13,6 @@ import java.io.IOException;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.InetAddress;
-import java.net.ServerSocket;
-import java.net.Socket;
-import java.net.SocketAddress;
-import java.util.ArrayList;
 
 import mpe.config.FileParser;
 
@@ -57,6 +53,9 @@ public class UDPServer {
 			if (v> -1) mpePrefs.setFramerate(v);
 			v =fp.getIntValue("screens");
 			if (v> -1) mpePrefs.setScreens(v);
+			
+			v = fp.getIntValue("port");
+			if (v> -1) port = v;
 
 			// we used to have the server control the dimensions, but no longer
 			// int[] masterDim = fp.getIntValues("masterDimensions");
@@ -236,7 +235,7 @@ public class UDPServer {
             }// if -listenPort*/
 		} // i loop
 		if (help){
-			System.out.println(" * The \"Most Pixels Ever\" Wallserver.\n"+
+			System.out.println(" * The \"Most Pixels Ever\" server.\n"+
 					" * This server can accept two values from the command line:\n"+
 					" * -port<port number> Defines the port.  Defaults to 9002\n"+
 					" * -ini<Init file path.>  File path to mpe.ini.  Defaults to directory of server.\n"+
