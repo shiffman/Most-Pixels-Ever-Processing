@@ -30,6 +30,8 @@ public class VideoTest extends PApplet {
 	int x;          // Location where we will see image
 	int y;    
 
+	boolean started = false;
+
 	static public void main(String args[]) {
 		PApplet.main(new String[] {"mpe.examples.VideoTest"});
 	}
@@ -37,6 +39,7 @@ public class VideoTest extends PApplet {
 	//  Called by library whenever a new frame should be rendered
 	public void frameEvent(UDPClient c){
 		// This is insane, but I am just testing by passing an array of ints as a comma separate String
+		// The library will be updated / improved at some point
 		if (c.messageAvailable()) {
 			String[] ints = c.getDataMessage()[0].split(",");
 			int[] pix = new int[ints.length];
@@ -47,8 +50,6 @@ public class VideoTest extends PApplet {
 			img.updatePixels();
 		}
 		redraw();
-		// Alert the server that you've finished drawing a frame
-		client.done();
 	}
 
 	public void setup() {
@@ -82,20 +83,24 @@ public class VideoTest extends PApplet {
 	public void draw() {
 		smooth();
 		background(255);
-		// Before we do anything, the client must place itself within the larger display
-		// (This is done with translate, so use push/pop if you want to overlay any info on all screens)
-		client.placeScreen();
+		if (started) {
+			// Before we do anything, the client must place itself within the larger display
+			// (This is done with translate, so use push/pop if you want to overlay any info on all screens)
+			client.placeScreen();
 
-		// Display the video
-		image(img,x,y,img.width*4,img.height*4);
-		x = (x+4) % client.getMWidth();
+			// Display the video
+			image(img,x,y,img.width*4,img.height*4);
+			x = (x+4) % client.getMWidth();
 
-		// Every 30 frames, let's send a new video image
-		// We can't necessarily do this every frame, it's too much
-		// if (frameCount % 30 == 0 &&
-		if (client.getClientID() == 0) 
-			sendImage();
-
+			// Every 30 frames, let's send a new video image
+			// We can't necessarily do this every frame, it's too much
+			// if (frameCount % 30 == 0 &&
+			if (client.getClientID() == 0) 
+				sendImage();
+		}
+		
+		// Alert the server that you've finished drawing a frame
+		client.done();
 	}
 
 //	A function to broadcast the video's pixel array
