@@ -41,7 +41,7 @@ public class BouncingBalls extends PApplet {
 	public void setup() {
 		// Make a new Client with an INI file.  
 		// sketchPath() is used so that the INI file is local to the sketch
-		client = new UDPClient(sketchPath("local/mpeSc"+ID+".ini"),this);
+		client = new UDPClient(sketchPath("ini_balls/mpeSc"+ID+".ini"),this);
 		// The size is determined by the client's local width and height
 		size(client.getLWidth(), client.getLHeight());
 		randomSeed(1);

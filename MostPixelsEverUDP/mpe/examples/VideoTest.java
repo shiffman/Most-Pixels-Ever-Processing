@@ -16,7 +16,7 @@ import processing.video.Capture;
 
 public class VideoTest extends PApplet {
 
-	final int ID = 0;
+	final int ID = 1;
 
 	//  All clients have a Capture object, but only one client will broadcast data
 	Capture video;
@@ -41,6 +41,8 @@ public class VideoTest extends PApplet {
 		// This is insane, but I am just testing by passing an array of ints as a comma separate String
 		// The library will be updated / improved at some point
 		if (c.messageAvailable()) {
+
+		
 			String[] ints = c.getDataMessage()[0].split(",");
 			int[] pix = new int[ints.length];
 			for (int i = 0; i < pix.length; i++) {
@@ -48,14 +50,16 @@ public class VideoTest extends PApplet {
 			}
 			img.pixels = pix;
 			img.updatePixels();
+			
 		}
+		started = true;
 		redraw();
 	}
 
 	public void setup() {
 		// Make a new Client with an INI file.  
 		// sketchPath() is used so that the INI file is local to the sketch
-		client = new UDPClient(sketchPath("local/mpeSc"+ID+".ini"),this);
+		client = new UDPClient(sketchPath("ini_video/mpeSc"+ID+".ini"),this);
 		// The size is determined by the client's local width and height
 		size(client.getLWidth(), client.getLHeight());
 
@@ -83,6 +87,7 @@ public class VideoTest extends PApplet {
 	public void draw() {
 		smooth();
 		background(255);
+
 		if (started) {
 			// Before we do anything, the client must place itself within the larger display
 			// (This is done with translate, so use push/pop if you want to overlay any info on all screens)
@@ -95,12 +100,14 @@ public class VideoTest extends PApplet {
 			// Every 30 frames, let's send a new video image
 			// We can't necessarily do this every frame, it's too much
 			// if (frameCount % 30 == 0 &&
-			if (client.getClientID() == 0) 
+			if (client.getClientID() == 0) {
 				sendImage();
+			}
+			
+			// Alert the server that you've finished drawing a frame
+			client.done();
 		}
 		
-		// Alert the server that you've finished drawing a frame
-		client.done();
 	}
 
 //	A function to broadcast the video's pixel array
