@@ -1,7 +1,6 @@
 /**
  * Simple Bouncing Ball Demo
- * <http://mostpixelsever.com>
- * @author Shiffman and Kairalla
+ * <http://code.google.com/p/mostpixelsever/>
  */
 
 package mpe.examples;
@@ -14,7 +13,7 @@ import processing.core.PApplet;
 
 public class BouncingBalls extends PApplet {
 
-	final int ID = 2;
+	final int ID = 0;
 
 	ArrayList balls;
 	// A client object

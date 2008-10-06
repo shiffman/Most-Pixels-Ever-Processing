@@ -272,18 +272,10 @@ public class UDPClient extends Thread {
 	 *
 	 */
 	public void done() {
-		//System.out.println("Sending Done = true");
 		bdt.sendingDone = true;
+		// bdt.setFrameCount(frameCount);
 		bdt.interrupt();
 		rendering = false;
-
-		/*if (broadcastingData) {
-            sayDoneAgain = true;
-        } else {
-            String msg = "D," + id + "," + frameCount;
-            send(msg);
-            done = true;
-        }*/
 	}
 
 	/**
@@ -310,14 +302,14 @@ public class UDPClient extends Thread {
 			mWidth = Integer.parseInt(mdim[0]);
 			mHeight = Integer.parseInt(mdim[1]);
 		}
+		
 		//A "G" startbyte will trigger a frameEvent.
-		//If it's a B, we also have to get a byteArray
-		//An I for int array
 		char c = serverInput.charAt(0);
-		if (c == 'G' || c == 'B' || c == 'I') {
+		if (c == 'G') {
 			if (!allConnected) {
 				if (DEBUG) print("all connected!");
 				allConnected = true;
+				bdt.sendingStart = false;
 			}
 			// Split into frame message and data message
 			String[] info = serverInput.split(":");
@@ -337,11 +329,10 @@ public class UDPClient extends Thread {
 				messageAvailable = false;
 			}
 
-
 			// System.out.println("From server: " + fc + " me: " + frameCount);
 			if (fc == frameCount && !rendering) {
-				bdt.sendingDone = false;
 				rendering = true;
+				bdt.sendingDone = false;
 				frameCount++;
 				// if (DEBUG) System.out.println("Matching " + fc);
 				if (useProcessing && frameEventMethod != null){
@@ -360,7 +351,7 @@ public class UDPClient extends Thread {
 
 
 			} else {
-				if (DEBUG)print("Extra message, mycount: " + frameCount + " received from server: " + fc);
+				if (DEBUG) print("Extra message, mycount: " + frameCount + " received from server: " + fc);
 			}
 		}
 	}
@@ -370,9 +361,7 @@ public class UDPClient extends Thread {
 	 */
 	public void run() {
 		if (DEBUG) print("I'm running!");
-		//let server that this client is ready to start.
-		send("S" + id);
-		//done();
+		
 		try {
 			while (running) {
 
@@ -411,12 +400,9 @@ public class UDPClient extends Thread {
 	public void start() {
 		try {
 			socket = new DatagramSocket(clientPort);
-
 			// Start the broadcasting thread
 			bdt = new BroadcastDoneThread(this);
 			bdt.start();
-
-
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

@@ -16,7 +16,7 @@ import processing.video.Capture;
 
 public class VideoTest extends PApplet {
 
-	final int ID = 1;
+	final int ID = 0;
 
 	//  All clients have a Capture object, but only one client will broadcast data
 	Capture video;

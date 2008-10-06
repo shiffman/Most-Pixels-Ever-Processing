@@ -42,25 +42,31 @@ public class UDPServer {
 	DatagramSocket frontDoor;
 
 
-	public UDPServer(int port_, int listenPort_, String initFileString) {
+	public UDPServer(int port_, int listenPort_, String initFileString, int screens, int frameRate) {
 		fp = new FileParser(initFileString);
 		port = port_;
 		//listenPort =listenPort_;
 		//parse ini file if it exists
 		if (fp.fileExists()) {
-			int v =0;
-			v =fp.getIntValue("framerate");
-			if (v> -1) mpePrefs.setFramerate(v);
-			v =fp.getIntValue("screens");
-			if (v> -1) mpePrefs.setScreens(v);
 			
+			int v =0;
+			v = fp.getIntValue("framerate");
+			if (v > -1 && frameRate == -1) {
+				mpePrefs.setFramerate(v);
+			} else {
+				mpePrefs.setFramerate(frameRate);
+			}
+			v =fp.getIntValue("screens");
+			if (v> -1 && screens == -1) {
+				mpePrefs.setScreens(v);
+			} else {
+				mpePrefs.setScreens(screens);
+			}
 			v = fp.getIntValue("port");
 			if (v> -1) port = v;
-
 			// we used to have the server control the dimensions, but no longer
 			// int[] masterDim = fp.getIntValues("masterDimensions");
 			// if (masterDim[0] > -1) mpePrefs.setMasterDimensions(masterDim[0], masterDim[1]);
-
 			out("framerate = "+mpePrefs.FRAMERATE+",  screens = "+mpePrefs.SCREENS);//, master dimensions = "+ mpePrefs.M_WIDTH+", "+mpePrefs.M_HEIGHT);
 			v = fp.getIntValue("debug");
 			if (v == 1) mpePrefs.DEBUG =true;
@@ -204,8 +210,29 @@ public class UDPServer {
 		// port or ini then help is displayed.
 		if (args.length > 0) help = true;
 		//see if info is given on command line.
+		
+		int screens = -1;
+		int framerate =  -1;
 		for (int i = 0; i < args.length; i++){
-			if (args[i].contains("-port")){
+			if (args[i].contains("-screens")) {
+				args[i] = args[i].substring(8);
+				help = false;
+				try{
+					screens = Integer.parseInt(args[i]);
+				} catch (Exception e) {
+					out("I can't parse the total screens "+args[i]+"\n"+e);
+					System.exit(1);
+				}
+			} else if (args[i].contains("-framerate")){
+				help = false;
+				args[i] = args[i].substring(10);
+				try{
+					framerate = Integer.parseInt(args[i]);
+				} catch (Exception e) {
+					out("I can't parse the frame rate "+args[i]+"\n"+e);
+					System.exit(1);
+				}//catch
+			} else if (args[i].contains("-port")){
 				help = false;
 				args[i] = args[i].substring(5);
 				try{
@@ -218,32 +245,22 @@ public class UDPServer {
 			if (args[i].contains("-ini")){
 				help = false;
 				initFile = args[i].substring(4);
-			} // if -ini
-			/*if (args[i].contains("-listen")){
-                help = false;
-                listener = true;
-            } // if -listen
-            if (args[i].contains("-listenPort")){
-                help = false;
-                args[i] = args[i].substring(11);
-                try{
-                    listenPortInt = Integer.parseInt(args[i]);
-                } catch (Exception e) {
-                    out("I can't parse the listening port number "+args[i]+"\n"+e);
-                    System.exit(1);
-                }//catch
-            }// if -listenPort*/
+			} 
 		} // i loop
+		
 		if (help){
 			System.out.println(" * The \"Most Pixels Ever\" server.\n"+
 					" * This server can accept two values from the command line:\n"+
+					" * -screens<number of screens> Total # of expected clients.  Defaults to 2\n"+
+					" * -framerate<framerate> Desired frame rate.  Defaults to 30\n"+
 					" * -port<port number> Defines the port.  Defaults to 9002\n"+
 					" * -ini<Init file path.>  File path to mpe.ini.  Defaults to directory of server.\n"+
 					" * -listen  Turns on an optional port listener so that other apps can send data to the screens.\n"+
 					"It listens to port 9003 by default.\n"+
 			" * -listenPort<port number>  Defines listening port.  Defaults to 9003.\n");
 		}
-		UDPServer ws = new UDPServer(portInt,listenPortInt,  initFile);
+		UDPServer ws = new UDPServer(portInt,listenPortInt,initFile, screens, framerate);
+		
 		ws.run();
 	}
 	private static void out(String s){
@@ -292,14 +309,18 @@ public class UDPServer {
 			int start = 1;
 			int end = msg.indexOf("M");
 			int clientID = Integer.parseInt(msg.substring(start));
-			System.out.println("Connecting Client " + clientID);
 
-			// Make  and start connection object
-			Connection conn = new Connection(clientID,from,port,this);
-			conn.setReady(true);
-			// Add to list of connections
-			connections[clientID] = conn; 
-
+			// Make  and start connection object, only if not before
+			if (connections[clientID] == null) {
+				System.out.println("Connecting Client " + clientID);
+				Connection conn = new Connection(clientID,from,port,this);
+				conn.setReady(true);
+				// Add to list of connections
+				connections[clientID] = conn; 
+			} else {
+				connections[clientID].active();
+			}
+			
 			boolean all = true;
 			for (int i = 0; i < connections.length; i++){  //if any are false then wait
 				if (connections[i] == null) {
