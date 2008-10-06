@@ -15,16 +15,26 @@ public class BroadcastDoneThread extends Thread {
 
 	boolean running = false;
 	boolean sendingDone = false;
+	boolean sendingStart = true;
+	
+	// We have our own frameCount and we choose when to update it!
+	int frameCount = 0;
 
 	public BroadcastDoneThread(UDPClient p) {
 		parent = p;
 	}
 
+	public void sendStart() {
+		String msg = "S" + parent.id;
+		send(msg);
+	}
+	
 	public void sendDone() {
 		String msg = "D," + parent.id + "," + parent.frameCount;
 		send(msg);
 	}
 	
+	// No need for a heartbeat, just frameCount updating
 	public void sendHeartBeat() {
 		String msg = "H," + parent.id + "," + parent.frameCount;
 		send(msg);
@@ -40,12 +50,22 @@ public class BroadcastDoneThread extends Thread {
 		while (running) {
 			//System.out.println("Broadcast done thread running");
 			
-			if (sendingDone) {
+			// It's sometimes sending:
+			// H,0,1284
+			// when it never sent D,0,1284, so it went through frameCount++ but missed sending D,0,1284, not a packet lost, just a missed
+			// step, we could account for that here and make sure it can't do that.
+			// Is this the problem that happens with openGL??  Ok, i think this is fixable!!!
+			
+			// Also, sometimes it sends S0, but that packet is lost, has to repeat it over and over
+			
+			if (sendingStart) {
+				sendStart();
+			} else if (sendingDone) {
 				sendDone();
 			} else {
+				//sendDone();
 				sendHeartBeat();
 			}
-
 			
 			// Ok so that we are not overloading the system
 			try {
@@ -75,5 +95,9 @@ public class BroadcastDoneThread extends Thread {
 		System.out.println("Quitting.");
 		running = false; // Setting running to false ends the loop in run()
 		interrupt(); // In case the thread is waiting. . .
+	}
+
+	public void setFrameCount(int fc) {
+		frameCount = fc;
 	}
 }
