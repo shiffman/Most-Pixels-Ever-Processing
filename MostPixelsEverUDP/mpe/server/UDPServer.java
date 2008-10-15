@@ -48,7 +48,7 @@ public class UDPServer {
 		//listenPort =listenPort_;
 		//parse ini file if it exists
 		if (fp.fileExists()) {
-			
+
 			int v =0;
 			v = fp.getIntValue("framerate");
 			if (v > -1 && frameRate == -1) {
@@ -177,7 +177,7 @@ public class UDPServer {
 		}
 	}
 
-	boolean allDisconected(){
+	boolean allDisconnected(){
 		int connected = 0;
 		for (int i = 0; i < connections.length; i++) {
 			if (connections[i] != null) connected++;
@@ -191,6 +191,7 @@ public class UDPServer {
 		frameCount = 0;
 		newMessage = false;
 		message = "";
+		allConnected = false;
 		print ("resetting frame count.");
 		sat.stopSending();
 		// We just always check anyway (they will be null and skipped)	
@@ -210,7 +211,7 @@ public class UDPServer {
 		// port or ini then help is displayed.
 		if (args.length > 0) help = true;
 		//see if info is given on command line.
-		
+
 		int screens = -1;
 		int framerate =  -1;
 		for (int i = 0; i < args.length; i++){
@@ -247,7 +248,7 @@ public class UDPServer {
 				initFile = args[i].substring(4);
 			} 
 		} // i loop
-		
+
 		if (help){
 			System.out.println(" * The \"Most Pixels Ever\" server.\n"+
 					" * This server can accept two values from the command line:\n"+
@@ -260,7 +261,7 @@ public class UDPServer {
 			" * -listenPort<port number>  Defines listening port.  Defaults to 9003.\n");
 		}
 		UDPServer ws = new UDPServer(portInt,listenPortInt,initFile, screens, framerate);
-		
+
 		ws.run();
 	}
 	private static void out(String s){
@@ -320,7 +321,7 @@ public class UDPServer {
 			} else {
 				connections[clientID].active();
 			}
-			
+
 			boolean all = true;
 			for (int i = 0; i < connections.length; i++){  //if any are false then wait
 				if (connections[i] == null) {
@@ -366,10 +367,12 @@ public class UDPServer {
 			break;
 			//is it receiving a "daTa"?
 		case 'T':   
-			if (mpePrefs.DEBUG) print ("adding message to next frameEvent: " + msg);
-			newMessage = true;
-			message += msg.substring(1,msg.length())+":";
-			//parent.sendAll(msg);
+			if (allConnected) {
+				if (mpePrefs.DEBUG) print ("adding message to next frameEvent: " + msg);
+				newMessage = true;
+				message += msg.substring(1,msg.length())+":";
+				//parent.sendAll(msg);
+			}
 			break;
 		}
 
