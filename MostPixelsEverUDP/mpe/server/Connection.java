@@ -59,7 +59,7 @@ public class Connection {
         System.out.println("Removing Connection " + clientID);
         parent.drop(clientID);
         running = false;
-        if (parent.allDisconected()) parent.resetFrameCount();
+        if (parent.allDisconnected()) parent.resetFrameCount();
     }
 
     // Trying out no synchronize
