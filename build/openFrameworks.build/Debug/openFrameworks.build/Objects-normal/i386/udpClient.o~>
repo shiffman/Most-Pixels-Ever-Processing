@@ -1,4 +1,0 @@
-/Users/cinema/Documents/ITP/Spring2008/openFrameworks/of_preRelease_v0.05_xcode/apps/MostPixelsEver/mpeClient01/src/udpClient.cpp: In constructor 'udpClient::udpClient()':
-/Users/cinema/Documents/ITP/Spring2008/openFrameworks/of_preRelease_v0.05_xcode/apps/MostPixelsEver/mpeClient01/src/udpClient.cpp:44: error: 'bDrawNewFrame' was not declared in this scope
-/Users/cinema/Documents/ITP/Spring2008/openFrameworks/of_preRelease_v0.05_xcode/apps/MostPixelsEver/mpeClient01/src/udpClient.cpp: In member function 'void udpClient::update()':
-/Users/cinema/Documents/ITP/Spring2008/openFrameworks/of_preRelease_v0.05_xcode/apps/MostPixelsEver/mpeClient01/src/udpClient.cpp:207: error: 'bDrawNewFrame' was not declared in this scope
