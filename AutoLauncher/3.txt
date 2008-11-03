@@ -1,0 +1,3 @@
+hosts=192.168.2.100,192.168.2.101,192.168.2.102;
+apps=/kkt227/MyProcessingSketch2.app,/ds1937/ds1937.app,/ytl216/rain.app,/vb563/WorldIAC_n.app,/yyc254/visual1.app,/jl2722/FinalBull5.app,/rpp227/xcayp3.app,/hkm218/star.app,/ap1494/graffitiSn.app,/syp252/flowerworks.app,/ysc258/boysfromnowhere.app,/kkt227/MyProcessingSketch2.app,/ds1937/ds1937.app,/ytl216/rain.app,/vb563/WorldIAC_n.app,/yyc254/visual1.app,/jl2722/FinalBull5.app,/dal348/Advent.app;
+delay=30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30,30;

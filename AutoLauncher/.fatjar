@@ -1,0 +1,14 @@
+#Fat Jar Configuration File
+#Sat Dec 15 14:30:20 EST 2007
+onejar.license.required=true
+manifest.classpath=
+manifest.removesigners=true
+onejar.checkbox=false
+jarname=controller.jar
+manifest.mergeall=true
+manifest.mainclass=xploitr.UberControllerLoop
+manifest.file=<createnew>
+jarname.isextern=false
+onejar.expand=
+excludes=
+includes=
