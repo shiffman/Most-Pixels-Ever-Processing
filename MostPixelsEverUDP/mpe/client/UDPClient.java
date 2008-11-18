@@ -17,7 +17,7 @@ import java.net.UnknownHostException;
 
 import mpe.config.FileParser;
 
-import processing.core.PApplet;
+import processing.core.*;
 
 public class UDPClient extends Thread {
 
@@ -70,6 +70,10 @@ public class UDPClient extends Thread {
 	boolean sayDoneAgain = false;  // Do we need to say we're done after a lot of data has been sent
 	int[] ints;                // ints that have come in
 	byte[] bytes;              // bytes that have come in
+	
+	// 3D variables
+    float fieldOfView = 30.0f; // initial field of view
+    float cameraZ;
 
 	// public fields, do we need them to be public?
 	/**
@@ -85,46 +89,56 @@ public class UDPClient extends Thread {
 
 
 	/**
-	 * Client is constructed with an init file location, and the parent PApplet.
-	 * The parent PApplet must have a method called "frameEvent(Client c)".
+	 * UDPClient is constructed with an init file location, and the parent 
+	 * PApplet. The parent PApplet must have a method called 
+	 * "frameEvent(UDPClient c)".
 	 *
 	 * The frameEvent handles syncing up the frame rate on the
 	 * multiple screens.  A typical implementation may look like this:
 	 *
-	 * 	public void frameEvent(Client c){
-	 *  if (!started) started = true;
-	 *    redraw();
-	 *  }
+	 * public void frameEvent(UDPClient c) {
+	 *   if (!started) started = true;
+	 *   redraw();
+	 * }
 	 *
+	 * @param fileString the path to the INI file 
+     * @param p the parent PApplet
 	 */
-	public UDPClient(String fileString, Object p) {
+	public UDPClient(String fileString, PApplet p) {
 		useProcessing = true;
-		p5parent = (PApplet) p;
+		p5parent = p;
+		cameraZ = (p5parent.height/2.0f) / PApplet.tan(PConstants.PI * fieldOfView/360.0f);
+		
 		loadIniFile(fileString);
-		Client(host, serverPort, id);
+		connect(host, serverPort, id);
 	}
 
 	/**
-	 * Client is constructed with an init file location, and the parent MpeDataListener.
-	 * The parent must have a method called "frameEvent(Client c)".
-	 *
-	 * The frameEvent handles syncing on the
-	 * multiple screens.  A typical implementation may look like this:
-	 *
-	 *  public void frameEvent(Client c){
-	 *    if (!started) started = true;
-	 *    // Do your computation and paint to the screen here
-	 *  }
-	 *
-	 */
+     * UDPClient is constructed with an init file location, and the parent 
+     * MpeDataListener. The parent must have a method called 
+     * "frameEvent(UDPClient c)".
+     *
+     * The frameEvent handles syncing up the frame rate on the
+     * multiple screens.  A typical implementation may look like this:
+     *
+     * public void frameEvent(UDPClient c) {
+     *   if (!started) started = true;
+     *   redraw();
+     * }
+     * 
+     * @param fileString the path to the INI file 
+     * @param p the parent MpeDataListener
+     */
 	public UDPClient(String fileString, MpeDataListener p) {
 		parent = p;
 		loadIniFile(fileString);
-		Client(host, serverPort, id);
+		connect(host, serverPort, id);
 	}
 
 	/**
-	 * Loads the Settings from the Client INI file
+	 * Loads the settings from the UDPClient INI file.
+	 * 
+	 * @param fileString the path to the INI file 
 	 */
 	private void loadIniFile(String fileString){
 		fp = new FileParser(fileString);
@@ -147,7 +161,15 @@ public class UDPClient extends Thread {
 			if (num == 1) DEBUG = true;
 		}
 	}
-	private void Client(String host_, int port_, int _id) {
+	
+	/**
+     * Connects to the UDPServer.
+     * 
+     * @param host_ the UDPServer hostname
+     * @param port_ the UDPServer port
+     * @param _id this UDPClient's ID
+     */
+	private void connect(String host_, int port_, int _id) {
 		host = host_;
 		try {
 			address = InetAddress.getByName(host);
@@ -159,7 +181,7 @@ public class UDPClient extends Thread {
 		clientPort = serverPort + 1 + id;
 
 		//use reflect if using processing applet, use interface for normal Java
-		if (useProcessing){
+		if (useProcessing) {
 			try {
 				// Looking for a method called "frameEvent", with one argument of Client type
 				frameEventMethod = p5parent.getClass().getMethod("frameEvent",
@@ -211,7 +233,7 @@ public class UDPClient extends Thread {
 	}
 
 	/**
-	 * returns local width.
+	 * Returns the local width.
 	 * @return local width in pixels
 	 */
 	public int getLWidth() {
@@ -219,7 +241,7 @@ public class UDPClient extends Thread {
 	}
 
 	/**
-	 * returns local height.
+	 * Returns the local height.
 	 * @return local height in pixels
 	 */
 	public int getLHeight() {
@@ -227,30 +249,30 @@ public class UDPClient extends Thread {
 	}
 
 	/**
-	 * returns master width.
-	 * @return master width in pixels
-	 */
-	public int getMWidth() {
-		return mWidth;
-	}
-
-	/**
-	 * returns x offset of frame.
-	 * @return x offset of frame.
+	 * Returns the x-offset of the frame.
+	 * @return x-offset of frame in pixels
 	 */
 	public int getXoffset() {
 		return xOffset;
 	}
 	/**
-	 * returns y offset of frame.
-	 * @return y offset of frame.
+	 * Returns the y-offset of the frame.
+	 * @return y-offset of frame in pixels
 	 */
 	public int getYoffset() {
 		return yOffset;
 	}
 
 	/**
-	 * returns master height.
+     * Returns the master width.
+     * @return master width in pixels
+     */
+    public int getMWidth() {
+        return mWidth;
+    }
+
+    /**
+	 * Returns the master height.
 	 * @return master height in pixels
 	 */
 	public int getMHeight() {
@@ -258,18 +280,62 @@ public class UDPClient extends Thread {
 	}
 
 	/**
-	 * Places the viewing area for this screen. This must be called at the beginning
-	 * of the render loop.  If you are using Processing, you would typicall place it at
-	 * the beginning of your draw() function.
-	 *
+	 * Places the viewing area for this screen. This must be called at the 
+	 * beginning of the render loop.  If you are using Processing, you would 
+	 * typically place it at the beginning of your draw() function.
 	 */
 	public void placeScreen() {
-		p5parent.translate(xOffset * -1, yOffset * -1);
+	    if (p5parent.g instanceof PGraphics3D) {
+	        placeScreen3D();
+	    } else {
+	        placeScreen2D();
+	    }
 	}
+	
+	/**
+	 * Places the viewing area for this screen when rendering in 2D.
+	 */
+	public void placeScreen2D() {
+	    p5parent.translate(xOffset * -1, yOffset * -1);
+    }
+	
+	/**
+     * Places the viewing area for this screen when rendering in 3D.
+     */
+	public void placeScreen3D() {
+	    p5parent.camera(mWidth/2.0f, mHeight/2.0f, cameraZ,
+                        mWidth/2.0f, mHeight/2.0f, 0, 
+                        0, 1, 0);
+
+
+	    // The frustum defines the 3D clipping plane for each Client window!
+	    float mod = 1f/10f;
+	    float left   = (xOffset - mWidth/2)*mod;
+	    float right  = (xOffset + lWidth - mWidth/2)*mod;
+	    float top    = (yOffset - mHeight/2)*mod;
+	    float bottom = (yOffset + lHeight-mHeight/2)*mod;
+	    float near   = cameraZ*mod;
+	    float far    = 10000;
+	    p5parent.frustum(left,right,top,bottom,near,far);
+    }
+	
+	/**
+     * Restores the viewing area for this screen when rendering in 3D.
+     */
+    public void restoreCamera() {
+        p5parent.camera(p5parent.width/2.0f, p5parent.height/2.0f, cameraZ,
+                        p5parent.width/2.0f, p5parent.height/2.0f, 0, 
+                        0, 1, 0);
+        
+        float mod = 1/10.0f;
+        p5parent.frustum(-(p5parent.width/2)*mod, (p5parent.width/2)*mod,
+                         -(p5parent.height/2)*mod, (p5parent.height/2)*mod,
+                         cameraZ*mod, 10000);
+    }
 
 	/**
-	 * Sends a "Done" command to the server. This must be called at the end of your draw loop.
-	 *
+	 * Sends a "Done" command to the server. This must be called at the end of 
+	 * your draw loop.
 	 */
 	public void done() {
 		bdt.sendingDone = true;
@@ -279,8 +345,9 @@ public class UDPClient extends Thread {
 	}
 
 	/**
-	 * Returns this screen's ID
-	 * @return screen's ID #
+	 * Returns this screen's ID.
+	 * 
+	 * @return screen's ID
 	 */
 	public int getClientID() {
 		return id;
@@ -394,8 +461,8 @@ public class UDPClient extends Thread {
 	}
 
 	/**
-	 * This method must be called when the client applet starts up.
-	 * It will tell the server it is ready.
+	 * This method must be called when the client PApplet starts up. It will 
+	 * tell the server it is ready.
 	 */
 	public void start() {
 		try {
@@ -424,9 +491,10 @@ public class UDPClient extends Thread {
 	}
 
 	/**
-	 * broadcasts a string to all screens
+	 * Broadcasts a string to all screens.
 	 * Do not use a colon (':') in your message!!!
-	 * @param msg
+	 * 
+	 * @param msg the message to broadcast
 	 */
 	public void broadcast(String msg) {
 		msg = "T"+ msg;
@@ -516,7 +584,7 @@ public class UDPClient extends Thread {
 
 
 	/**
-	 * Stops the client thread.  You don't really need to do this ever.
+	 * Stops the client thread. You don't really need to do this ever.
 	 */  
 	public void quit() {
 		System.out.println("Quitting.");
@@ -617,6 +685,28 @@ public class UDPClient extends Thread {
 	 */  
 	public int getFrameCount() {
 		return frameCount;
+	}
+	
+	/**
+	 * Sets the field of view of the camera when rendering in 3D.
+	 * Note that this has no effect when rendering in 2D.
+	 * 
+	 * @param val the value of the field of view
+	 */
+	public void setFieldOfView(float val) {
+	    fieldOfView = val;
+	    cameraZ = (p5parent.height/2.0f) / PApplet.tan(PConstants.PI * fieldOfView/360.0f);
+        
+	    if (!(p5parent.g instanceof PGraphics3D)) {
+	        PApplet.println("MPE Warning: Rendering in 2D! fieldOfView has no effect!");
+	    }
+	}
+	
+	/**
+     * @return the value of the field of view
+     */
+	public float getFieldOfView() {
+	    return fieldOfView;
 	}
 
 }
