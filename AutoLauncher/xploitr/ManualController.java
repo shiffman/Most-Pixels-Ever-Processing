@@ -40,9 +40,18 @@ public class ManualController {
 				for (int i = 0; i < connections.length; i++) {
 					connections[i].broadcast("kill");
 				}
+			} else if (line.trim().equals("b")) {
+				System.out.println("Launch background");
+				for (int i = 0; i < connections.length; i++) {
+					connections[i].broadcast("background");
+				}
+			} else if (line.trim().equals("kb")) {
+				System.out.println("Killing background");
+				for (int i = 0; i < connections.length; i++) {
+					connections[i].broadcast("kbackground");
+				}
 			} else {
 				try {
-
 					// If we only want to launch on one client
 					String[] tokens = line.trim().split(",");
 					if (tokens.length > 1) {
@@ -76,17 +85,24 @@ public class ManualController {
 			System.out.println(i + ",#" + " for " + connectionHosts[i]);
 		}
 		
-		System.out.println("Type k to kill.");
+		System.out.println("Type b to launch background.");
+		System.out.println("Type kb to kill background.");
+		System.out.println("Type k to kill app.");
 	}
 
 	public static void init(String file) {
 		FileParser fp = new FileParser(file);
 		if (fp.fileExists()) {
 			String hosts = fp.getStringValue("hosts");
+			
 			connectionHosts = hosts.split(",");
 			for (int i = 0; i < connectionHosts.length; i++) {
 				System.out.println("Client IP: " + connectionHosts[i]);
 			}
+			
+			connectionPort = fp.getIntValue("port");
+			System.out.println("Port: " + connectionPort);
+			
 			String appls = fp.getStringValue("apps");
 			apps = appls.split(",");
 			for (int i = 0; i < apps.length; i++) { 
