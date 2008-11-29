@@ -15,6 +15,8 @@ public class ClientLauncher {
 
 	static String path = "/Users/daniel/Desktop/bigscreens/";
 	static int listenPort = 9005;
+	
+	static String background = "background.app";
 
 	static String lastExecuted = "";
 	static int textDelay = 5000;
@@ -54,7 +56,12 @@ public class ClientLauncher {
 			//out.println(outputLine);
 			while ((inputLine = in.readLine()) != null) {
 				System.out.println("Controller says: "  + inputLine);
-				if (inputLine.indexOf("kill") > -1) {
+				
+				if (inputLine.indexOf("kbackground") > -1) {
+					killBackground();
+				} else if (inputLine.indexOf("background") > -1) {
+					runBackground();
+				} else if (inputLine.indexOf("kill") > -1) {
 					killProgram();
 				} else {
 					if (inputLine.charAt(0) == '*') {
@@ -93,6 +100,42 @@ public class ClientLauncher {
 			}
 		} catch (Exception ex) {
 			ex.printStackTrace();
+		}
+	}
+	
+	public static void runBackground() {
+		System.out.println("Launching " + background);
+		try {
+			Runtime rt = Runtime.getRuntime();
+			rt.exec("open " + path + background);
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		}
+	}
+	
+	public static void killBackground() {
+		System.out.println("Killing background");
+		try {
+			Process p = Runtime.getRuntime().exec("ps -Aww");
+			BufferedReader in = new BufferedReader(new InputStreamReader(p.getInputStream()));
+			String str = null;
+			while ((str = in.readLine()) != null)  {
+				if (str.indexOf(background) > 0) {
+					System.out.println(str);
+					break;
+				}
+			}
+			//String id = str.substring(0,str.indexOf("  "));
+			//Pattern pat = Pattern.compile("\\s+(\\d++)\\s??");
+			Pattern pat = Pattern.compile("(\\d++)\\s??");
+			Matcher m = pat.matcher(str);
+			m.find();
+			String id = m.group(1);//str.substring(0,str.indexOf("  "));
+			System.out.println(id.trim());
+			Runtime rt = Runtime.getRuntime();
+			rt.exec("kill " + id);
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
 
@@ -176,6 +219,8 @@ public class ClientLauncher {
 		if (fp.fileExists()) {
 			path = fp.getStringValue("path");
 			System.out.println("Path is: " + path);
+			background = fp.getStringValue("background");
+			System.out.println("Background app is: " + background);
 			listenPort = fp.getIntValue("port");
 			System.out.println("Port is: " + listenPort);
 			textDelay = fp.getIntValue("text")*1000;
