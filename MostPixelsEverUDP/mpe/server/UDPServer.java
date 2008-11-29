@@ -19,7 +19,7 @@ import mpe.config.FileParser;
 public class UDPServer {
 
 	public static int repeatTime = 250;
-	public static int disconnectTime = repeatTime*2;
+	public static int disconnectTime = repeatTime*1000;
 
 	SendAllThread sat;
 	CheckClientsThread cct;
@@ -42,35 +42,16 @@ public class UDPServer {
 	DatagramSocket frontDoor;
 
 
-	public UDPServer(int port_, int listenPort_, String initFileString, int screens, int frameRate) {
-		fp = new FileParser(initFileString);
+	public UDPServer(int port_, int listenPort_, int screens, int frameRate, boolean debug_) {
 		port = port_;
 		//listenPort =listenPort_;
 		//parse ini file if it exists
-		if (fp.fileExists()) {
+		mpePrefs.setFramerate(frameRate);
+		mpePrefs.setScreens(screens);
+		port = port_;
+		out("framerate = "+mpePrefs.FRAMERATE+",  screens = "+mpePrefs.SCREENS);//, master dimensions = "+ mpePrefs.M_WIDTH+", "+mpePrefs.M_HEIGHT);
+		mpePrefs.DEBUG =debug_;
 
-			int v =0;
-			v = fp.getIntValue("framerate");
-			if (v > -1 && frameRate == -1) {
-				mpePrefs.setFramerate(v);
-			} else {
-				mpePrefs.setFramerate(frameRate);
-			}
-			v =fp.getIntValue("screens");
-			if (v> -1 && screens == -1) {
-				mpePrefs.setScreens(v);
-			} else {
-				mpePrefs.setScreens(screens);
-			}
-			v = fp.getIntValue("port");
-			if (v> -1) port = v;
-			// we used to have the server control the dimensions, but no longer
-			// int[] masterDim = fp.getIntValues("masterDimensions");
-			// if (masterDim[0] > -1) mpePrefs.setMasterDimensions(masterDim[0], masterDim[1]);
-			out("framerate = "+mpePrefs.FRAMERATE+",  screens = "+mpePrefs.SCREENS);//, master dimensions = "+ mpePrefs.M_WIDTH+", "+mpePrefs.M_HEIGHT);
-			v = fp.getIntValue("debug");
-			if (v == 1) mpePrefs.DEBUG =true;
-		}
 		//connected = new boolean[mpePrefs.SCREENS]; // default to all false
 		//ready = new boolean[mpePrefs.SCREENS]; // default to all false
 		connections = new Connection[mpePrefs.SCREENS];
@@ -205,15 +186,16 @@ public class UDPServer {
 	public static void main(String[] args){
 		int portInt = 9002;
 		int listenPortInt = 9003;
-		String initFile = "mpeServer.ini";
-		boolean help = false;
-		// if anything is sent into the command line other than
-		// port or ini then help is displayed.
-		if (args.length > 0) help = true;
-		//see if info is given on command line.
 
+		// DS: Revising to no longer take an INI file, just do everything via command line arguments
+		boolean help = true;
 		int screens = -1;
 		int framerate =  -1;
+		boolean debug = false;
+		
+		// how often is how often server repeats messages, little hack for now
+		//int howoften = 1000;
+
 		for (int i = 0; i < args.length; i++){
 			if (args[i].contains("-screens")) {
 				args[i] = args[i].substring(8);
@@ -242,26 +224,41 @@ public class UDPServer {
 					out("I can't parse the port number "+args[i]+"\n"+e);
 					System.exit(1);
 				}//catch
-			}// if -port
-			if (args[i].contains("-ini")){
+			}else if (args[i].contains("-debug")){
 				help = false;
-				initFile = args[i].substring(4);
-			} 
-		} // i loop
+				args[i] = args[i].substring(6);
+				try{
+					debug = Boolean.parseBoolean(args[i]);
+				} catch (Exception e) {
+					out("I can't parse the port number "+args[i]+"\n"+e);
+					System.exit(1);
+				}//catch
+			}else if (args[i].contains("-n")){
+				help = false;
+				args[i] = args[i].substring(2);
+				try{
+					repeatTime = Integer.parseInt(args[i]);
+					System.out.println("Repeat time: " + repeatTime + " milliseconds");
+				} catch (Exception e) {
+					//out("I can't parse the port number "+args[i]+"\n"+e);
+					System.exit(1);
+				}//catch
+			}
+		}
 
 		if (help){
 			System.out.println(" * The \"Most Pixels Ever\" server.\n"+
-					" * This server can accept two values from the command line:\n"+
+					" * This server can accept values from the command line:\n"+
 					" * -screens<number of screens> Total # of expected clients.  Defaults to 2\n"+
 					" * -framerate<framerate> Desired frame rate.  Defaults to 30\n"+
 					" * -port<port number> Defines the port.  Defaults to 9002\n"+
-					" * -ini<Init file path.>  File path to mpe.ini.  Defaults to directory of server.\n"+
-					" * -listen  Turns on an optional port listener so that other apps can send data to the screens.\n"+
-					"It listens to port 9003 by default.\n"+
-			" * -listenPort<port number>  Defines listening port.  Defaults to 9003.\n");
+					" * -debug<true or false> Turns on or off debug messages\n"+
+			" * Please note the use of an INI file with the server is now deprecated");
+			//" * -listen  Turns on an optional port listener so that other apps can send data to the screens.\n"+
+			// "It listens to port 9003 by default.\n"+
+			//" * -listenPort<port number>  Defines listening port.  Defaults to 9003.\n");
 		}
-		UDPServer ws = new UDPServer(portInt,listenPortInt,initFile, screens, framerate);
-
+		UDPServer ws = new UDPServer(portInt,listenPortInt, screens, framerate,debug);
 		ws.run();
 	}
 	private static void out(String s){
