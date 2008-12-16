@@ -1,3 +1,0 @@
-hosts=localhost;
-port=8000;
-apps=/dts204/master.app;

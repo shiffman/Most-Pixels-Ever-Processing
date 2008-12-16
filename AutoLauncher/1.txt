@@ -1,3 +1,0 @@
-hosts=192.168.2.100,192.168.2.101,192.168.2.102;
-apps=/dts204/TimeFrameVXP.app,/msa308/train4.app,/jsl398/mind_final1.app,/jdr360/MosaicTile.app,/rpp227/xcayp3.app,/hkm218/star.app,/ap1494/graffitiSn.app,/ysc258/boysfromnowhere.app,/vb563/WorldIAC_n.app,/dal348/Advent.app;
-delay=30,30,30,30,30,30,30,30,30,30;  
