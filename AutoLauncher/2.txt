@@ -1,3 +1,0 @@
-hosts=192.168.2.100,192.168.2.101,192.168.2.102;
-apps=/msa308/train4.app,/jsl398/mind_final1.app,/jdr360/MosaicTile.app;
-delay=30,30,30;
