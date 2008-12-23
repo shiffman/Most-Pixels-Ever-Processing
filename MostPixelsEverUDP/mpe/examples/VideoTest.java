@@ -70,7 +70,7 @@ public class VideoTest extends PApplet {
 		img = createImage(w,h,RGB);
 
 		// Only Client ID 0 will capture from the camera!
-		if (client.getClientID() == 0) video = new Capture(this,w,h,15);
+		if (client.getID() == 0) video = new Capture(this,w,h,15);
 
 		// IMPORTANT, MUST START THE CLIENT!
 		client.start();
@@ -100,7 +100,7 @@ public class VideoTest extends PApplet {
 			// Every 30 frames, let's send a new video image
 			// We can't necessarily do this every frame, it's too much
 			// if (frameCount % 30 == 0 &&
-			if (client.getClientID() == 0) {
+			if (client.getID() == 0) {
 				sendImage();
 			}
 			
