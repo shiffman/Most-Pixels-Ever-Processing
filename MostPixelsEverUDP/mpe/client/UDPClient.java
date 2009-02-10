@@ -3,6 +3,7 @@
  * The Client class registers itself with a server
  * and receives messages related to frame rendering and data input
  * <http://mostpixelsever.com>
+ * 
  * @author Shiffman and Kairalla
  */
 
@@ -22,7 +23,7 @@ import processing.core.*;
 public class UDPClient extends Thread {
     /** If DEBUG is true, the client will print lots of messages about what it is doing.
      * Set with debug=1; in your INI file. */
-    public static boolean DEBUG = true;
+    public static boolean DEBUG = false;
     
 	public static int repeatTime = 50; 
 
@@ -63,6 +64,7 @@ public class UDPClient extends Thread {
 	boolean useProcessing = false;
 	int frameCount = 0;
 	boolean rendering = false;
+	boolean autoMode = false;
 	
 	/** True if all the other clients are connected. */
     // FIXME Maybe this doesn't need to be public.
@@ -111,14 +113,19 @@ public class UDPClient extends Thread {
      * @param _p the parent PApplet
      */
 	public UDPClient(String _fileString, PApplet _p) {
-		useProcessing = true;
-		p5parent = _p;
-		cameraZ = (p5parent.height/2.0f) / PApplet.tan(PConstants.PI * fieldOfView/360.0f);
-		
-		loadIniFile(_fileString);
-		connect(hostName, serverPort, id);
-		
-		// look for a method called "frameEvent" in the parent PApplet, with one
+		this(_fileString, _p, true);
+	}
+	
+	public UDPClient(String _fileString, PApplet _p, boolean _autoMode) {
+        useProcessing = true;
+        p5parent = _p;
+        autoMode = _autoMode;
+        cameraZ = (p5parent.height/2.0f) / PApplet.tan(PConstants.PI * fieldOfView/360.0f);
+        
+        loadIniFile(_fileString);
+        connect(hostName, serverPort, id);
+        
+        // look for a method called "frameEvent" in the parent PApplet, with one
         // argument of type SyncClient
         try {
             frameEventMethod = p5parent.getClass().getMethod("frameEvent",
@@ -126,6 +133,32 @@ public class UDPClient extends Thread {
         } catch (Exception e) {
             System.out.println("You are missing the frameEvent() method. " + e);
         }
+        
+        if (autoMode) {
+            p5parent.noLoop();
+            p5parent.registerDraw(this);
+        }
+    }
+	
+	/**
+     * Called automatically by PApplet.draw() when using auto mode.
+     */
+	public void draw() {
+	    if (running && rendering) {
+	        placeScreen();
+	        if (frameEventMethod != null) {
+	            try {
+	                // call the method with this object as the argument!
+	                frameEventMethod.invoke(p5parent, new Object[] { this });
+
+	            } catch (Exception e) {
+	                err("Could not invoke the \"frameEvent()\" method for some reason.");
+	                e.printStackTrace();
+	                frameEventMethod = null;
+	            }
+	        }
+	        done();
+	    }
 	}
 
 	/**
@@ -325,6 +358,9 @@ public class UDPClient extends Thread {
     /** @return the total number of frames rendered */  
     public int getFrameCount() { return frameCount; }
     
+    /** @return whether or not the client is rendering */  
+    public boolean isRendering() { return rendering; }
+    
     /**
      * Sets the field of view of the camera when rendering in 3D.
      * Note that this has no effect when rendering in 2D.
@@ -480,6 +516,8 @@ public class UDPClient extends Thread {
             e.printStackTrace();
         }
     }
+    
+    int fc;
 
     /**
      * Reads and parses a message from the server.
@@ -509,7 +547,7 @@ public class UDPClient extends Thread {
             // split into frame message and data message
             String[] info = _serverInput.split(":");
             String[] frameMessage = info[0].split(",");
-            int fc = Integer.parseInt(frameMessage[1]);
+            fc = Integer.parseInt(frameMessage[1]);
 
             if (info.length > 1) {
                 // there is a message here with the frameEvent
@@ -528,17 +566,23 @@ public class UDPClient extends Thread {
                 rendering = true;
                 bdt.sendingDone = false;
                 frameCount++;
-            
-                if (useProcessing && frameEventMethod != null){
-                    try {
-                        // call the method with this object as the argument!
-                        frameEventMethod.invoke(p5parent, new Object[] { this });
-                    
-                    } catch (Exception e) {
-                        err("Could not invoke the \"frameEvent()\" method for some reason.");
-                        e.printStackTrace();
-                        frameEventMethod = null;
+                
+                if (useProcessing) {
+                    if (autoMode) {
+                        p5parent.loop();
+                        
+                    } else {
+                        try {
+                            // call the method with this object as the argument!
+                            frameEventMethod.invoke(p5parent, new Object[] { this });
+                        
+                        } catch (Exception e) {
+                            err("Could not invoke the \"frameEvent()\" method for some reason.");
+                            e.printStackTrace();
+                            frameEventMethod = null;
+                        } 
                     }
+                    
                 } else {
                     parent.frameEvent(this);
                 }
