@@ -1,6 +1,10 @@
 /**
- * Simple Bouncing Ball Demo
+ * Quotes Demo
+ * The QuoteDisplay is an synchronized client displays the quotes received from
+ * the server.
  * <http://code.google.com/p/mostpixelsever/>
+ * 
+ * @author Elie Zananiri
  */
 
 package mpe.examples.quotes;
@@ -10,16 +14,15 @@ import processing.core.*;
 
 public class QuoteDisplay extends PApplet {
     //--------------------------------------
-    static final int ID = 0;
-    
     static final String CARTMAN_URL = "http://www.smacie.com/randomizer/southpark/cartman.html";
     static final String HOMER_URL = "http://www.smacie.com/randomizer/simpsons/homer.html";
     
     static final int MARGIN = 10;
 
+    final int ID = 0;
+    
     //--------------------------------------
     UDPClient client;
-	boolean start = false;
 	
 	PFont font;
 	int lineHeight;
@@ -37,6 +40,7 @@ public class QuoteDisplay extends PApplet {
 		smooth();
 	    noStroke();
 		fill(255, 128, 0);
+		background(255);
 		
 		// init the text functions
 		String[] fonts = PFont.list();
@@ -47,27 +51,33 @@ public class QuoteDisplay extends PApplet {
 		
 		// start the client
 		client.start();
-		noLoop();
 	}
 	
 	//--------------------------------------
-    public void draw() {
-		//frame.setLocation(100 + ID*client.getLWidth(), 300);
-		
-		if (start) {
-			client.placeScreen();
-			
-			    background(255);
-			    text(format(quote), client.getMWidth()/2, (client.getMHeight() - lineHeight*numLines)/2);
-			
-			client.done();
-		} 
+	// Keep the motor running... draw() needs to be added in auto mode, even if
+    // it is empty to keep things rolling.
+    public void draw() {}
 
-        noLoop();
-	}
+    //--------------------------------------
+    // Triggered by the client whenever a new frame should be rendered.
+    // All synchronized drawing should be done here when in auto mode.
+    public void frameEvent(UDPClient c) {
+        // read any incoming messages
+        if (c.messageAvailable()) {
+            String[] msg = c.getDataMessage();
+            println(msg);
+            quote = msg[0];
+        }
+        
+        // clear the screen  
+        background(255);
+        
+        // draw the current quote
+        text(format(quote), client.getMWidth()/2, (client.getMHeight() - lineHeight*numLines)/2);
+    }
     
-  //--------------------------------------
-    // adds newlines before displaying the text to make sure it fits in the window
+    //--------------------------------------
+    // Adds newlines before displaying the text to make sure it fits in the window
     public String format(String txt) {
         numLines = 1;
         
@@ -94,46 +104,6 @@ public class QuoteDisplay extends PApplet {
         return formatTxt;
     }
 
-
-    //--------------------------------------
-    public void frameEvent(UDPClient c) {
-        if (c.messageAvailable()) {
-            String[] msg = c.getDataMessage();
-            println(msg);
-            quote = msg[0];
-        }
-        start = true;
-        loop();
-    }
-    
-    //--------------------------------------
-      public String getQuote(String button) {
-          String quote;
-
-          if (button == "Cartman")
-              quote = join(loadStrings(CARTMAN_URL), "");
-          else
-              quote = join(loadStrings(HOMER_URL), "");
-          
-          quote = split(quote, "<font face=\"Comic Sans MS\">")[3];
-          quote = split(quote, "</font>")[0];
-          
-          //println(quote);
-          
-          return quote;
-      }
-    
-    //--------------------------------------
-    public void keyPressed() {
-        if (key == 'c') {
-            client.broadcast(getQuote("Cartman"));
-        } 
-        
-        else if (key == 'h') {
-            client.broadcast(getQuote("Homer"));
-        }
-    }
-    
     //--------------------------------------
     static public void main(String args[]) {
         PApplet.main(new String[] { "mpe.examples.quotes.QuoteDisplay" });

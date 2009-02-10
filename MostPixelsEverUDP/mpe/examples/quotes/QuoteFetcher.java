@@ -1,6 +1,10 @@
 /**
- * Simple Bouncing Ball Demo
+ * Quotes Demo
+ * The QuoteFetcher is an asynchronous client which fetches the quotes from a 
+ * server and broadcasts them for the QuoteDisplays to display.
  * <http://code.google.com/p/mostpixelsever/>
+ * 
+ * @author Elie Zananiri
  */
 
 package mpe.examples.quotes;
