@@ -19,62 +19,74 @@ import java.net.Socket;
 import mpe.config.FileParser;
 
 import processing.core.PApplet;
+import processing.core.PConstants;
+import processing.core.PGraphics3D;
 
 public class Client extends Thread {
+    /** If DEBUG is true, the client will print lots of messages about what it is doing.
+     * Set with debug=1; in your INI file. */
+    public static boolean DEBUG = false;
+    
+    // TCP stuff
     FileParser fp;
+    String hostName;
+    int serverPort = 9002;
+    Socket socket;
     InputStream is;
     DataInputStream dis;
     DataOutputStream dos;
     OutputStream os;
-    Socket socket;
-    String host;
-    int port = 9002;
+    
     PApplet p5parent;
     MpeDataListener parent;
-    int id = 0; /*this is used for communication to let the server know which client is speaking
-	 and how to order the screens*/
-    int numScreens; //the total number of screens
     Method frameEventMethod;
-    int mWidth = -1; //master width
-    int mHeight = -1; //master height
-    int lWidth = 640; //local width
-    int lHeight = 480; //local height
+    
+    /** The id is used for communication with the server, to let it know which 
+     *  client is speaking and how to order the screens. */
+    int id = 0;
+    /** The total number of screens. */
+    int numScreens;
+    
+    /** The master width. */
+    protected int mWidth = -1;
+    /** The master height. */
+    protected int mHeight = -1;
+    
+    /** The local width. */
+    protected int lWidth = 640;
+    /** The local height. */
+    protected int lHeight = 480;
+    
     int xOffset = 0;
     int yOffset = 0;
-    boolean done = false; //flipped to true when we're done rendering.
-    //public boolean moveOn = false; //tells parent to loop back
-    int fps = -1;
+    
     boolean running = false;
     boolean useProcessing = false;
     int frameCount = 0;
-    // Ok, adding something so that a client can get a dataMessage as part of a frameEvent
-    String[] dataMessage;
+    boolean rendering = false;
+    boolean autoMode = false;
     
     // Are we broadcasting?
     boolean broadcastingData = false;
     // Do we need to wait to broadcast b/c we have alreaddy done so this frame?
     boolean waitToSend = false;
-
-    boolean messageAvailable;  // Is a message available?
-    boolean intsAvailable;     // Is an int array available?
-    boolean bytesAvailable;    // is a byte array avaialble?
-    boolean sayDoneAgain = false;  // Do we need to say we're done after a lot of data has been sent
-    int[] ints;                // ints that have come in
-    byte[] bytes;              // bytes that have come in
+    protected boolean sayDoneAgain = false;  // Do we need to say we're done after a lot of data has been sent
     
-    // public fields, do we need them to be public?
-    /**
-     * If DEBUG is true, the client will print lots of messages about what it is doing.
-     * Set with debug=1; in your INI file.
-     */
-    public static boolean DEBUG = false;
-
-    /**
-     * True if all the other clients are connected.  Maybe this doesn't need to be public.
-     */
+    /** True if all the other clients are connected. */
+    // FIXME Maybe this doesn't need to be public.
     public boolean allConnected = false;
 
-
+    protected boolean messageAvailable;      // Is a message available?
+    protected boolean intsAvailable;         // Is an int array available?
+    protected boolean bytesAvailable;        // Is a byte array avaialble?
+    protected String[] dataMessage;          // data that has come in
+    protected int[] ints;                    // ints that have come in
+    protected byte[] bytes;                  // bytes that have come in
+    
+    // 3D variables
+    protected float fieldOfView = 30.0f;
+    protected float cameraZ;
+    
     /**
      * Client is constructed with an init file location, and the parent PApplet.
      * The parent PApplet must have a method called "frameEvent(Client c)".
@@ -82,104 +94,199 @@ public class Client extends Thread {
      * The frameEvent handles syncing up the frame rate on the
      * multiple screens.  A typical implementation may look like this:
      *
-     * 	public void frameEvent(Client c){
+     *  public void frameEvent(Client c){
      *  if (!started) started = true;
      *    redraw();
      *  }
      *
      */
-    public Client(String fileString, Object p) {
+    public Client(String _fileString, PApplet _p) {
+        this(_fileString, _p, true);
+    }
+    
+    public Client(String _fileString, PApplet _p, boolean _autoMode) {
         useProcessing = true;
-        p5parent = (PApplet) p;
-        loadIniFile(fileString);
-        Client(host, port, id);
+        p5parent = _p;
+        autoMode = _autoMode;
+        cameraZ = (p5parent.height/2.0f) / PApplet.tan(PConstants.PI * fieldOfView/360.0f);
+        
+        loadIniFile(_fileString);
+        connect(hostName, serverPort, id);
+        
+        // look for a method called "frameEvent" in the parent PApplet, with one
+        // argument of type Client
+        try {
+            frameEventMethod = p5parent.getClass().getMethod("frameEvent",
+                    new Class[] { Client.class });
+        } catch (Exception e) {
+            System.out.println("You are missing the frameEvent() method. " + e);
+        }
+        
+        if (autoMode) {
+            p5parent.registerDraw(this);
+        }
     }
     
     /**
-     * Client is constructed with an init file location, and the parent MpeDataListener.
-     * The parent must have a method called "frameEvent(Client c)".
-     *
-     * The frameEvent handles syncing on the
+     * Called automatically by PApplet.draw() when using auto mode.
+     */
+    public void draw() {
+        if (running && rendering) {
+            placeScreen();
+            if (frameEventMethod != null) {
+                try {
+                    // call the method with this object as the argument!
+                    frameEventMethod.invoke(p5parent, new Object[] { this });
+
+                } catch (Exception e) {
+                    err("Could not invoke the \"frameEvent()\" method for some reason.");
+                    e.printStackTrace();
+                    frameEventMethod = null;
+                }
+            }
+            done();
+        }
+    }
+    
+    /**
+     * Builds a Client using an INI file and a parent MpeDataListener.
+     * 
+     * The parent MpeDataListener must have a method called 
+     * "frameEvent(UDPClient c)", which handles syncing up the frame rate on the
      * multiple screens.  A typical implementation may look like this:
      *
-     *  public void frameEvent(Client c){
-     *    if (!started) started = true;
-     *    // Do your computation and paint to the screen here
-     *  }
+     * public void frameEvent(Client c){
+     *   if (!started) started = true;
+     *   // Do your computation and paint to the screen here
+     * }
      *
+     * @param _fileString the path to the INI file 
+     * @param _p the parent MpeDataListener
      */
-    public Client(String fileString, MpeDataListener p) {
-        parent = p;
-        loadIniFile(fileString);
-        Client(host, port, id);
+    public Client(String _fileString, MpeDataListener _p) {
+        parent = _p;
+        loadIniFile(_fileString);
+        connect(hostName, serverPort, id);
     }
 
     /**
-     * Loads the Settings from the Client INI file
+     * Loads the settings from the Client INI file.
+     * 
+     * @param _fileString the path to the INI file 
      */
-    private void loadIniFile(String fileString){
+    private void loadIniFile(String fileString) {
         fp = new FileParser(fileString);
-        //parse ini file if it exists
+        
         if (fp.fileExists()) {
+            // parse INI file
+            setServer(fp.getStringValue("server"));
             setPort(fp.getIntValue("port"));
             setID(fp.getIntValue("id"));
-            setServer(fp.getStringValue("server"));
+            
             int[] localDim = fp.getIntValues("localScreenSize");
             setLocalDimensions(localDim[0], localDim[1]);
+            
             int[] offsets = fp.getIntValues("localLocation");
             setOffsets(offsets[0], offsets[1]); 
-            // This somehow got lost w/ the separate client and server INI files
+            
+            // XXXBUG This somehow got lost w/ the separate client and server INI files
             int[] masterDims = fp.getIntValues("masterDimensions");
             this.setMasterDimensions(masterDims[0], masterDims[1]);
-            out("Settings: server = " + host + ":" + port + ",  id = " + id
+            
+            out("Settings: server = " + hostName + ":" + serverPort + ",  id = " + id
                     + ", local dimensions = " + lWidth + ", " + lHeight
                     + ", location = " + xOffset + ", " + yOffset);
-            int num = fp.getIntValue("debug");
-            if (num == 1) DEBUG = true;
+            
+            if (fp.getIntValue("debug") == 1) DEBUG = true;
         }
     }
-    private void Client(String host_, int port_, int _id) {
-        host = host_;
-        port = port_;
-        id = _id;
-        //use reflect if using processing applet, use interface for normal Java
-        if (useProcessing){
-            try {
-                // Looking for a method called "frameEvent", with one argument of Client type
-                frameEventMethod = p5parent.getClass().getMethod("frameEvent",
-                        new Class[] { Client.class });
-            } catch (Exception e) {
-                System.out.println("You are missing the frameEvent() method." + e);
-            }
-        } else {
-            // In case we need to do something in the case of not Processing
-        }
+    
+    /**
+     * Connects to the server.
+     * 
+     * @param _hostName the server host name
+     * @param _serverPort the server port
+     * @param _id the client id
+     */
+    private void connect(String _hostName, int _serverPort, int _id) {
+        // set the server address and port
+        setServer(_hostName);
+        setPort(_serverPort);
+        setID(_id);
     }
+    
+    /**
+     * Sets the server address.
+     * 
+     * @param _hostName the server host name
+     */
+    protected void setServer(String _hostName) {
+        if (_hostName != null)
+            hostName = _hostName;
+    }
+        
+    /**
+     * Sets the server port.
+     * 
+     * @param _serverPort the server port
+     */
+    protected void setPort(int _serverPort) {
+        if (_serverPort > -1)
+            serverPort = _serverPort;
+    }
+    
+    /** @return the server port */
+    public int getPort() { return serverPort; }
+    
+    /**
+     * Sets the client ID.
+     * 
+     * @param _id the client id
+     */
+    protected void setID(int _id) {
+        if (_id > -1)
+            id = _id;
+    }
+    
+    /** @return the client ID */
+    public int getID() { return id; }
 
     /**
-     * Sets the master dimensions for the Video Wall. This is used to calculate
-     * what is rendered.
+     * Sets the dimensions for the local display.
      * 
-     * @param _mWidth
-     *            The master width
-     * @param _mHeight
-     *            The master height
+     * @param _lWidth The local width
+     * @param _lHeight The local height
      */
-    public void setMasterDimensions(int _mWidth, int _mHeight) {
-        mWidth = _mWidth;
-        mHeight = _mHeight;
+    protected void setLocalDimensions(int _lWidth, int _lHeight) {
+        if (_lWidth > -1 && _lHeight > -1) {
+            lWidth = _lWidth;
+            lHeight = _lHeight;
+        }
     }
-
+    
+    /**
+     * Sets the offsets for the local display.
+     * 
+     * @param _xOffset Offsets the display along x axis
+     * @param _yOffset Offsets the display along y axis
+     */
+    protected void setOffsets(int _xOffset, int _yOffset) {
+        if (_xOffset > -1 && _yOffset > -1) {
+            xOffset = _xOffset;
+            yOffset = _yOffset;
+        }
+    }
+    
     /**
      * Sets the dimensions for the local display.
      * The offsets are used to determine what part of the Master Dimensions to render.
      * For example, if you have two screens, each 100x100, and the master dimensions are 200x100
      * then you would set
-     * 	client 0: setLocalDimensions(0,0,100,100)
-     * 	client 1: setLocalDimensions(100,0,100,100)
+     *  client 0: setLocalDimensions(0, 0, 100, 100);
+     *  client 1: setLocalDimensions(100, 0, 100, 100);
      * for a 10 pixel overlap you would do:
-     * 	client 0: setLocalDimensions(0,0,110,100)
-     * 	client 1: setLocalDimensions(90,0,110,100);
+     *  client 0: setLocalDimensions(0, 0, 110, 100);
+     *  client 1: setLocalDimensions(90, 0, 110, 100);
      * 
      * @param _xOffset Offsets the display along x axis
      * @param _yOffset Offsets the display along y axis
@@ -187,145 +294,259 @@ public class Client extends Thread {
      * @param _lHeight The local height
      */
     public void setLocalDimensions(int _xOffset, int _yOffset, int _lWidth, int _lHeight) {
-        xOffset = _xOffset;
-        yOffset = _yOffset;
-        lWidth = _lWidth;
-        lHeight = _lHeight;
-    }
-
-    /**
-     * returns local width.
-     * @return local width in pixels
-     */
-    public int getLWidth() {
-        return lWidth;
-    }
-
-    /**
-     * returns local height.
-     * @return local height in pixels
-     */
-    public int getLHeight() {
-        return lHeight;
-    }
-
-    /**
-     * returns master width.
-     * @return master width in pixels
-     */
-    public int getMWidth() {
-        return mWidth;
-    }
-
-    /**
-     * returns x offset of frame.
-     * @return x offset of frame.
-     */
-    public int getXoffset() {
-        return xOffset;
-    }
-    /**
-     * returns y offset of frame.
-     * @return y offset of frame.
-     */
-    public int getYoffset() {
-        return yOffset;
-    }
-
-    /**
-     * returns master height.
-     * @return master height in pixels
-     */
-    public int getMHeight() {
-        return mHeight;
+        setOffsets(_xOffset, _yOffset);
+        setLocalDimensions(_lWidth, _lHeight);
     }
     
     /**
-     * Places the viewing area for this screen. This must be called at the beginning
-     * of the render loop.  If you are using Processing, you would typicall place it at
-     * the beginning of your draw() function.
-     *
+     * Sets the master dimensions for the Video Wall. This is used to calculate
+     * what is rendered.
+     * 
+     * @param _mWidth The master width
+     * @param _mHeight he master height
+     */
+    public void setMasterDimensions(int _mWidth, int _mHeight) {
+        if (_mWidth > -1 && _mHeight > -1) {
+            mWidth = _mWidth;
+            mHeight = _mHeight;
+        }
+    }
+    
+    /** @return the local width in pixels */
+    public int getLWidth() { return lWidth; }
+
+    /** @return the local height in pixels */
+    public int getLHeight() { return lHeight; }
+
+    /** @return the x-offset of frame in pixels */
+    public int getXoffset() { return xOffset; }
+    
+    /** @return the y-offset of frame in pixels */
+    public int getYoffset() { return yOffset; }
+
+    /** @return the master width in pixels */
+    public int getMWidth() { return mWidth; }
+
+    /** @return the master height in pixels */
+    public int getMHeight() { return mHeight; }
+    
+    /** @return the total number of frames rendered */  
+    public int getFrameCount() { return frameCount; }
+    
+    /** @return whether or not the client is rendering */  
+    public boolean isRendering() { return rendering; }
+    
+    /**
+     * Sets the field of view of the camera when rendering in 3D.
+     * Note that this has no effect when rendering in 2D.
+     * 
+     * @param val the value of the field of view
+     */
+    public void setFieldOfView(float val) {
+        fieldOfView = val;
+        
+        if (p5parent != null) {
+            cameraZ = (p5parent.height/2.0f) / PApplet.tan(PConstants.PI * fieldOfView/360.0f);
+
+            if (!(p5parent.g instanceof PGraphics3D)) {
+                out("MPE Warning: Rendering in 2D! fieldOfView has no effect!");
+            }
+        } else {
+            out("MPE Warning: Not using Processing! fieldOfView has no effect!");
+        }
+    }
+    
+    /** @return the value of the field of view */
+    public float getFieldOfView() { return fieldOfView; }
+    
+    /**
+     * Places the viewing area for this screen. This must be called at the 
+     * beginning of the render loop.  If you are using Processing, you would 
+     * typically place it at the beginning of your draw() function.
      */
     public void placeScreen() {
+        if (p5parent.g instanceof PGraphics3D) {
+            placeScreen3D();
+        } else {
+            placeScreen2D();
+        }
+    }
+    
+    /**
+     * Places the viewing area for this screen when rendering in 2D.
+     */
+    public void placeScreen2D() {
         p5parent.translate(xOffset * -1, yOffset * -1);
     }
     
     /**
-     * Sends a "Done" command to the server. This must be called at the end of your draw loop.
-     *
+     * Places the viewing area for this screen when rendering in 3D.
      */
-    public void done() {
-        if (broadcastingData) {
-            sayDoneAgain = true;
-        } else {
-            String msg = "D," + id + "," + frameCount;
-            send(msg);
-            done = true;
-        }
+    public void placeScreen3D() {
+        p5parent.camera(mWidth/2.0f, mHeight/2.0f, cameraZ,
+                        mWidth/2.0f, mHeight/2.0f, 0, 
+                        0, 1, 0);
+
+
+        // The frustum defines the 3D clipping plane for each Client window!
+        float mod = 1f/10f;
+        float left   = (xOffset - mWidth/2)*mod;
+        float right  = (xOffset + lWidth - mWidth/2)*mod;
+        float top    = (yOffset - mHeight/2)*mod;
+        float bottom = (yOffset + lHeight-mHeight/2)*mod;
+        float near   = cameraZ*mod;
+        float far    = 10000;
+        p5parent.frustum(left,right,top,bottom,near,far);
+    }
+    
+    /**
+     * Restores the viewing area for this screen when rendering in 3D.
+     */
+    public void restoreCamera() {
+        p5parent.camera(p5parent.width/2.0f, p5parent.height/2.0f, cameraZ,
+                        p5parent.width/2.0f, p5parent.height/2.0f, 0, 
+                        0, 1, 0);
+        
+        float mod = 1/10.0f;
+        p5parent.frustum(-(p5parent.width/2)*mod, (p5parent.width/2)*mod,
+                         -(p5parent.height/2)*mod, (p5parent.height/2)*mod,
+                         cameraZ*mod, 10000);
     }
 
     /**
-     * Returns this screen's ID
-     * @return screen's ID #
+     * Outputs a message to the console.
+     * 
+     * @param _str the message to output.
      */
-    public int getClientID() {
-        return id;
+    private void out(String _str) {
+        print(_str);
+    }
+    
+    /**
+     * Outputs a message to the console.
+     * 
+     * @param _str the message to output.
+     */
+    private void print(String _str) {
+        System.out.println("Client: " + _str);
+    }
+    
+    /**
+     * Outputs an error message to the console.
+     * 
+     * @param _str the message to output.
+     */
+    private void err(String _str) {
+        System.err.println("Client: " + _str);
     }
 
-    private void out(String string) {
-        System.out.println("Client: " + string);
+    /**
+     * This method must be called when the client PApplet starts up. It will 
+     * tell the server it is ready.
+     */
+    public void start() {
+        try {
+            socket = new Socket(hostName, serverPort);
+            is = socket.getInputStream();
+            dis = new DataInputStream(is);
+            os = socket.getOutputStream();
+            dos = new DataOutputStream(os);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        running = true;
+        super.start();
     }
+    
+    /**
+     * This method should only be called internally by Thread.start().
+     */
+    public void run() {
+        if (DEBUG) out("Running!");
+        
+        // let the server know that this client is ready to start.
+        send("S" + id);
+        
+        try {
+            while (running) {
+             // read packet
+                String msg = dis.readUTF();
+                if (msg == null) {
+                    //running = false;
+                    break;
+                } else {
+                    read(msg);
+                }
 
-    // UNSYNCHRONIZE!
-    private void read(String serverInput) {
-        if (DEBUG) System.out.println("Receiving: " + serverInput);
-        /*
-         * This is a hack for now.  this will block only once but it will allow
-         * everything to start at once.
-         */
-        if (serverInput.startsWith("M") && mWidth == -1) {
-            serverInput = serverInput.substring(1);
-            String[] mdim = serverInput.split(",");
+                // FIXME Do we need this sleep or are we just slowing ourselves 
+                // down for no reason??
+                try {
+                    Thread.sleep(5);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+            is.close();
+            
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    
+    /**
+     * Reads and parses a message from the server.
+     * 
+     * @param _serverInput the server message
+     */
+    // TODO UNSYNCHRONIZE!
+    private void read(String _serverInput) {
+        if (DEBUG) out("Receiving: " + _serverInput);
+        
+        // FIXME This is a hack for now. It will block only once but will allow
+        // everything to start at once.
+        if (_serverInput.startsWith("M") && mWidth == -1) {
+            _serverInput = _serverInput.substring(1);
+            String[] mdim = _serverInput.split(",");
             mWidth = Integer.parseInt(mdim[0]);
             mHeight = Integer.parseInt(mdim[1]);
         }
-        //A "G" startbyte will trigger a frameEvent.
-        //If it's a B, we also have to get a byteArray
-        //An I for int array
-        char c = serverInput.charAt(0);
+        
+        // a "G" startbyte will trigger a frameEvent.
+        // if it's a B, we also have to get a byteArray
+        // if it's an I, we also have to get an intArray
+        char c = _serverInput.charAt(0);
         if (c == 'G' || c == 'B' || c == 'I') {
             if (!allConnected) {
-                if (DEBUG) print("all connected!");
+                if (DEBUG) out("all connected!");
                 allConnected = true;
             }
-            // Split into frame message and data message
-            String[] info = serverInput.split(":");
+            // split into frame message and data message
+            String[] info = _serverInput.split(":");
             String[] frameMessage = info[0].split(",");
             int fc = Integer.parseInt(frameMessage[1]);
 
-            // There is a message here with the frameEvent
             if (info.length > 1) {
+                // there is a message here with the frameEvent 
                 String[] dataInfo = new String[info.length-1];
                 for (int k = 1; k < info.length; k++){
-                    dataInfo[k-1]=info[k];
+                    dataInfo[k-1] = info[k];
                 }
-                dataMessage = null;//clear
+                dataMessage = null;  // clear
                 dataMessage = dataInfo;
                 messageAvailable = true;
             } else {
                 messageAvailable = false;
             }
 
-            // Assume no arrays available
+            // assume no arrays are available
             intsAvailable = false;
             bytesAvailable = false;
-            // We also need a byte array
             if (c == 'B') {
                 int len;
                 try {
                     len = dis.readInt();
                     bytes = new byte[len];
-                    if (DEBUG) System.out.println("Receiving bytes: " + len);
+                    if (DEBUG) out("Receiving bytes: " + len);
                     dis.read(bytes,0,len);
                     bytesAvailable = true;
                     waitToSend = false;
@@ -336,7 +557,7 @@ public class Client extends Thread {
                 int len;
                 try {
                     len = dis.readInt();
-                    if (DEBUG) System.out.println("Receiving ints: " + len);
+                    if (DEBUG) out("Receiving ints: " + len);
                     ints = new int[len];
                     for (int i = 0; i < ints.length; i++) {
                         ints[i] = dis.readInt();
@@ -348,85 +569,46 @@ public class Client extends Thread {
                 }
             }
 
-            //System.out.println(fc);
-            if (fc == frameCount) {
-                if (DEBUG) System.out.println("Matching " + fc);
+            if (fc == frameCount && !rendering) {
+                //if (DEBUG) out("Matching " + fc);
+                rendering = true;
                 frameCount++;
-                if (useProcessing && frameEventMethod != null){
-                    try {
-                        // Call the method with this object as the argument!
-                        frameEventMethod.invoke(p5parent, new Object[] { this });
-                    } catch (Exception e) {
-                        // Error handling
-                        System.err.println("I couldn't invoke frame method for some reason.");
-                        e.printStackTrace();
-                        frameEventMethod = null;
+                
+                if (useProcessing) {
+                    if (!autoMode) {
+                        try {
+                            // call the method with this object as the argument!
+                            frameEventMethod.invoke(p5parent, new Object[] { this });
+                        
+                        } catch (Exception e) {
+                            err("Could not invoke the \"frameEvent()\" method for some reason.");
+                            e.printStackTrace();
+                            frameEventMethod = null;
+                        } 
                     }
+                    
                 } else {
                     parent.frameEvent(this);
                 }
+                
             } else {
-                if (DEBUG)print("different frame count");
+                if (DEBUG) print("Extra message, frameCount: " + frameCount 
+                        + " received from server: " + fc);
             }
-        }
-    }
-    
-    /**
-     * This method should only be called internally by Thread.start().
-     */
-    public void run() {
-        if (DEBUG) print("I'm running!");
-        //let server that this client is ready to start.
-        send("S" + id);
-        //done();
-        try {
-            while (running) {
-                String msg = dis.readUTF();
-                if (msg == null) {
-                    //running = false;
-                    break;
-                } else {
-                    read(msg);
-                }
-
-                // Do we need this sleep or are we just slowing
-                // ourselves down for no reason??
-                try {
-                    Thread.sleep(5);
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-
-            }
-            is.close();
-        } catch (IOException e) {
-            e.printStackTrace();
         }
     }
 
     /**
-     * This method must be called when the client applet starts up.
-     * It will tell the server it is ready.
+     * Send a message to the server using UDP.
+     * 
+     * @param _msg the message to send
      */
-    public void start() {
+    // TODO UNSYNCHRONIZE!
+    private void send(String _msg) {
+        if (DEBUG) out("Sending: " + _msg);
+        
         try {
-            socket = new Socket(host, port);
-            is = socket.getInputStream();
-            dis = new DataInputStream(is);
-            os = socket.getOutputStream();
-            dos = new DataOutputStream(os);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        running = true;
-        super.start();
-    }
-
-    // UNSYNCHRONIZE!
-    private void send(String msg) {
-        if (DEBUG) System.out.println("Sending: " + msg);
-        try {
-            dos.writeUTF(msg);
+            dos.writeUTF(_msg);
             dos.flush();
         } catch (IOException e) {
             e.printStackTrace();
@@ -434,13 +616,15 @@ public class Client extends Thread {
     }
 
     /**
-     * broadcasts a string to all screens
-     * Do not use a colon (':') in your message!!!
-     * @param msg
+     * Format a broadcast message and send it.
+     * Do not use a colon ':' in your message!!!
+     * 
+     * @param _msg the message to broadcast
      */
-    public void broadcast(String msg) {
-        msg = "T"+ msg;
-        send(msg);
+    public void broadcast(String _msg) {
+        // prepend the message with a "T"
+        _msg = "T"+ _msg;
+        send(_msg);
     }
 
     /**
@@ -450,7 +634,7 @@ public class Client extends Thread {
      * @param data the array to broadcast
      */
     public void broadcastByteArray(byte[] data) {
-    	broadcastByteArray(data,data.length);
+        broadcastByteArray(data,data.length);
     }
     
     /**
@@ -489,7 +673,6 @@ public class Client extends Thread {
 
     }
 
-
     /**
      * broadcasts an array of ints to all screens
      * Large arrays can cause performance problems
@@ -525,64 +708,24 @@ public class Client extends Thread {
         }
     }
 
-
     /**
-     * Stops the client thread.  You don't really need to do this ever.
-     */  
-    public void quit() {
-        System.out.println("Quitting.");
-        running = false; // Setting running to false ends the loop in run()
-        interrupt(); // In case the thread is waiting. . .
-    }
-
-    private void print(String string) {
-        System.out.println("MPE CLIENT: " + string);
-    }
-
-
-    private void setServer(String _server) {
-        if (_server != null)
-            host = _server;
-    }
-
-    private void setLocalDimensions(int w, int h) {
-        if (w > -1 && h > -1) {
-            lWidth = w;
-            lHeight = h;
-        }
-    }
-
-    private void setOffsets(int w, int h) {
-        if (w > -1 && h > -1) {
-            xOffset = w;
-            yOffset = h;
-        }
-    }
-
-    private void setID(int _ID) {
-        if (_ID > -1)
-            id = _ID;
-    }
-
-    private void setPort(int _port) {
-        if (_port > -1)
-            port = _port;
-    }
-
-    
-
-    /**
-     * Returns true of false based on whether a String message is available
-     * This should be used inside frameEvent() since messages are tied to specific frames
-     * @return true if new String message 
+     * Returns true of false based on whether a String message is available from
+     *  the server.
+     * This should be used inside "frameEvent()" since messages are tied to 
+     * specific frames.
+     * 
+     * @return true if a new String message is available
      */
     public boolean messageAvailable() {
         return messageAvailable;
     }
 
     /**
-     * This should be used inside frameEvent() since messages are tied to specific frames
-     * Only should be called after checking that {@link #messageAvailable()}  returns true
+     * Returns an array of messages from the server.
+     * This should be used inside "frameEvent()" since messages are tied to 
+     * specific frames. It also should only be called after checking that 
+     * {@link #messageAvailable()} returns true.
+     * 
      * @return an array of messages from the server
      */
     public String[] getDataMessage() {
@@ -590,44 +733,74 @@ public class Client extends Thread {
     }
 
     /**
-     * This should be used inside frameEvent() since data from server is tied to a specific frame
-     * @return true is an array of integers is available from server
+     * Returns true of false based on whether integer data is available from the
+     *  server.
+     * This should be used inside "frameEvent()" since messages are tied to 
+     * specific frames.
+     *
+     * @return true if an array of integers is available
      */    
     public boolean intsAvailable() {
         return intsAvailable;
     }
+    
+    /**
+     * Returns an array of integers from the server.
+     * This should be used inside "frameEvent()" since messages are tied to 
+     * specific frames. It also should only be called after checking that 
+     * {@link #intsAvailable()} returns true.
+     * 
+     * @return an array of ints from the server
+     */  
+    public int[] getInts() {
+        return ints;
+    }
 
     /**
-     * This should be used inside frameEvent() since data from server is tied to a specific frame
-     * @return true is an array of bytes is available from server
+     * Returns true of false based on whether byte data is available from the
+     *  server.
+     * This should be used inside "frameEvent()" since messages are tied to 
+     * specific frames.
+     *
+     * @return true if an array of bytes is available
      */    
     public boolean bytesAvailable() {
         return bytesAvailable;
     }
 
     /**
-     * This should be used inside frameEvent() since data from server is tied to a specific frame
-     * Only should be called after checking that {@link #bytesAvailable()} returns true
-     * @return the array of bytes from the server
-     */    
+     * Returns an array of bytes from the server.
+     * This should be used inside "frameEvent()" since messages are tied to 
+     * specific frames. It also should only be called after checking that 
+     * {@link #bytesAvailable()} returns true.
+     * 
+     * @return an array of bytes from the server
+     */   
     public byte[] getBytes() {
         return bytes;
+    }   
+    
+    /**
+     * Sends a "Done" command to the server. This must be called at the end of 
+     * the draw loop.
+     */
+    public void done() {
+        if (broadcastingData) {
+            sayDoneAgain = true;
+        } else {
+            String msg = "D," + id + "," + frameCount;
+            send(msg);
+            rendering = false;
+        }
     }
 
     /**
-     * This should be used inside frameEvent() since data from server is tied to a specific frame
-     * Only should be called after checking that {@link #intsAvailable()}  returns true
-     * @return the array of ints from the server
-     */    
-    public int[] getInts() {
-        return ints;
-    }
-
-    /**
-     * @return the total number of frames rendered
+     * Stops the client thread.  You don't really need to do this ever.
      */  
-    public int getFrameCount() {
-        return frameCount;
+    public void quit() {
+        out("Quitting.");
+        running = false;  // Setting running to false ends the loop in run()
+        interrupt();      // In case the thread is waiting. . .
     }
 
 }

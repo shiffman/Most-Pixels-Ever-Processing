@@ -1,42 +1,41 @@
 /**
- * Simple Bouncing Ball Demo
- * <http://mostpixelsever.com>
- * @author Shiffman and Kairalla
+ * Simple Bouncing Ball Demo using automatic mode.
+ * <http://code.google.com/p/mostpixelsever/>
  */
 
 package mpe.examples;
 
 import java.util.ArrayList;
 import mpe.client.*;
+import mpe.examples.BouncingBalls.Ball;
 import processing.core.*;
 
-public class BouncingBalls extends PApplet {
+public class AutoBalls extends PApplet {
     //--------------------------------------
     final int ID = 1;
 
     ArrayList balls;
     Client client;
-    
+
     //--------------------------------------
     static public void main(String args[]) {
-        PApplet.main(new String[] { "mpe.examples.BouncingBalls" });
+        PApplet.main(new String[] { "mpe.examples.AutoBalls" });
     }
-    
+
     //--------------------------------------
     public void setup() {
-        // Make a new Client with an INI file.  
+        // make a new Client using an INI file
         // sketchPath() is used so that the INI file is local to the sketch
-        client = new Client(sketchPath("mpeSc"+ID+".ini"), this, false);
+        client = new Client(sketchPath("mpeSc"+ID+".ini"), this);
         
-        // The size is determined by the client's local width and height
+        // the size is determined by the client's local width and height
         size(client.getLWidth(), client.getLHeight());
         
         // the random seed must be identical for all clients
         randomSeed(1);
         
         smooth();
-        background(100);
-        noStroke();
+        background(255);
         
         // add a "randomly" placed ball
         balls = new ArrayList();
@@ -48,30 +47,24 @@ public class BouncingBalls extends PApplet {
     }
     
     //--------------------------------------
-    public void draw() {
-        if (client.isRendering()) {
-            // before we do anything, the client must place itself within the 
-            //  larger display (this is done with translate, so use push/pop if 
-            //  you want to overlay any info on all screens)
-            client.placeScreen();
-            // clear the screen
-            background(100);
+    // Keep the motor running... draw() needs to be added in auto mode, even if
+    // it is empty to keep things rolling.
+    public void draw() {}
 
-            // move and draw all the balls
-            for (int i = 0; i < balls.size(); i++) {
-                Ball ball = (Ball) balls.get(i);
-                ball.calc();
-                ball.draw();
-            }
-
-            // alert the server that you've finished drawing a frame
-            client.done();
-        }
-    }
-    
     //--------------------------------------
     // Triggered by the client whenever a new frame should be rendered.
+    // All synchronized drawing should be done here when in auto mode.
     public void frameEvent(Client c) {
+        // clear the screen     
+        background(255);
+        
+        // move and draw all the balls
+        for (int i = 0; i < balls.size(); i++) {
+            Ball ball = (Ball)balls.get(i);
+            ball.calc();
+            ball.draw();
+        }
+        
         // read any incoming messages
         if (c.messageAvailable()) {
             String[] msg = c.getDataMessage();
@@ -81,7 +74,7 @@ public class BouncingBalls extends PApplet {
             balls.add(new Ball(x, y));
         }
     }
-    
+
     //--------------------------------------
     // Adds a Ball to the stage at the position of the mouse click.
     public void mousePressed() {
