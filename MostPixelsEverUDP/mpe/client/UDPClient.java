@@ -72,7 +72,7 @@ public class UDPClient extends Thread {
     
     protected boolean messageAvailable;  // Is a message available?
     protected boolean intsAvailable;     // Is an int array available?
-    protected boolean bytesAvailable;    // is a byte array available?
+    protected boolean bytesAvailable;    // Is a byte array available?
     protected String[] dataMessage;      // data that has come in
     protected int[] ints;                // ints that have come in
     protected byte[] bytes;              // bytes that have come in
@@ -126,7 +126,7 @@ public class UDPClient extends Thread {
         connect(hostName, serverPort, id);
         
         // look for a method called "frameEvent" in the parent PApplet, with one
-        // argument of type SyncClient
+        // argument of type UDPClient
         try {
             frameEventMethod = p5parent.getClass().getMethod("frameEvent",
                     new Class[] { UDPClient.class });
@@ -187,7 +187,7 @@ public class UDPClient extends Thread {
 	 * 
 	 * @param _fileString the path to the INI file 
 	 */
-	private void loadIniFile(String _fileString){
+	private void loadIniFile(String _fileString) {
 		fp = new FileParser(_fileString);
 		
 		if (fp.fileExists()) {
@@ -517,15 +517,13 @@ public class UDPClient extends Thread {
         }
     }
     
-    int fc;
-
     /**
      * Reads and parses a message from the server.
      * 
      * @param _serverInput the server message
      */
     private synchronized void read(String _serverInput) {
-        if (DEBUG) System.out.println("Receiving: " + _serverInput);
+        if (DEBUG) out("Receiving: " + _serverInput);
        
         // FIXME This is a hack for now. It will block only once but will allow
         // everything to start at once.
@@ -540,22 +538,22 @@ public class UDPClient extends Thread {
         char c = _serverInput.charAt(0);
         if (c == 'G') {
             if (!allConnected) {
-                if (DEBUG) print("all connected!");
+                if (DEBUG) out("all connected!");
                 allConnected = true;
                 bdt.sendingStart = false;
             }
             // split into frame message and data message
             String[] info = _serverInput.split(":");
             String[] frameMessage = info[0].split(",");
-            fc = Integer.parseInt(frameMessage[1]);
+            int fc = Integer.parseInt(frameMessage[1]);
 
             if (info.length > 1) {
                 // there is a message here with the frameEvent
                 String[] dataInfo = new String[info.length-1];
                 for (int k = 1; k < info.length; k++){
-                    dataInfo[k-1]=info[k];
+                    dataInfo[k-1] = info[k];
                 }
-                dataMessage = null;//clear
+                dataMessage = null;  // clear
                 dataMessage = dataInfo;
                 messageAvailable = true;
             } else {
@@ -668,7 +666,6 @@ public class UDPClient extends Thread {
             if (DEBUG) System.out.println("Gotta wait dude, haven't received the ints back yet.");
         }
     }*/
-
 
     /**
      * Broadcasts an array of ints to all screens. Large arrays can cause 
