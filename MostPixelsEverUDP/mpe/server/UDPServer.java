@@ -30,7 +30,6 @@ public class UDPServer {
 	//public boolean[] connected; // When the clients connect, they switch their slot to true
 	//public boolean[] ready; // When the clients are ready for next frame, they switch their slot to true
 	public boolean allConnected = false;  // When true, we are off and running
-	FileParser fp;
 	int frameCount = 0;
 	private long before;
 
@@ -41,7 +40,6 @@ public class UDPServer {
 	// For UDP
 	DatagramSocket frontDoor;
 
-
 	public UDPServer(int port_, int listenPort_, int screens, int frameRate, boolean debug_) {
 		port = port_;
 		//listenPort =listenPort_;
@@ -50,7 +48,7 @@ public class UDPServer {
 		mpePrefs.setScreens(screens);
 		port = port_;
 		out("framerate = "+mpePrefs.FRAMERATE+",  screens = "+mpePrefs.SCREENS);//, master dimensions = "+ mpePrefs.M_WIDTH+", "+mpePrefs.M_HEIGHT);
-		mpePrefs.DEBUG =debug_;
+		mpePrefs.DEBUG = debug_;
 
 		//connected = new boolean[mpePrefs.SCREENS]; // default to all false
 		//ready = new boolean[mpePrefs.SCREENS]; // default to all false
@@ -224,7 +222,7 @@ public class UDPServer {
 					out("I can't parse the port number "+args[i]+"\n"+e);
 					System.exit(1);
 				}//catch
-			}else if (args[i].contains("-debug")){
+			} else if (args[i].contains("-debug")){
 				help = false;
 				args[i] = args[i].substring(6);
 				try{
@@ -233,7 +231,7 @@ public class UDPServer {
 					out("I can't parse the port number "+args[i]+"\n"+e);
 					System.exit(1);
 				}//catch
-			}else if (args[i].contains("-n")){
+			} else if (args[i].contains("-n")){
 				help = false;
 				args[i] = args[i].substring(2);
 				try{

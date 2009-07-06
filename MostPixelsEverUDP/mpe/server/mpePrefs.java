@@ -9,7 +9,7 @@ package mpe.server;
 public class mpePrefs {
 
 	public static int SCREENS = 2;
-	public static int FRAMERATE = 25;
+	public static int FRAMERATE = 30;
 	
     // we used to have the server control the dimensions, but no longer
 	// public static int M_WIDTH = 640;
