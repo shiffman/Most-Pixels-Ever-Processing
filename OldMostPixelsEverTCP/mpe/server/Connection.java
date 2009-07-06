@@ -10,10 +10,8 @@ import java.io.DataOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.io.PrintWriter;
 import java.net.Socket;
 import java.util.concurrent.CyclicBarrier;
-
 
 public class Connection extends Thread {
     Socket socket;
@@ -66,7 +64,6 @@ public class Connection extends Thread {
             //(DS: also, probably just use delimiter and split?)
             //this is in serious need of error checking.
             int start = 1;
-            int end = msg.indexOf("M");
             clientID = Integer.parseInt(msg.substring(start));
             System.out.println("Connecting Client " + clientID);
             parent.connected[clientID] = true;
@@ -78,7 +75,6 @@ public class Connection extends Thread {
                 }
             }
             parent.allConnected = all;
-            send("M"+mpePrefs.M_WIDTH+","+mpePrefs.M_HEIGHT);
             if (parent.allConnected) parent.triggerFrame();
             break;
             //is it receiving a "done"?
