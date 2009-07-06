@@ -9,30 +9,22 @@
 
 package mpe.server;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.net.InetAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.nio.ByteBuffer;
-import java.nio.channels.FileChannel;
 import java.util.ArrayList;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 import mpe.config.FileParser;
 
 public class WallServer {
 
-    private ArrayList connections = new ArrayList();
+    private ArrayList<Connection> connections = new ArrayList<Connection>();
     private int port;
     private boolean running = false;
-    public boolean[] connected; // When the clients connect, they switch their slot to true
-    public boolean[] ready; // When the clients are ready for next frame, they switch their slot to true
+    public boolean[] connected;  // When the clients connect, they switch their slot to true
+    public boolean[] ready;      // When the clients are ready for next frame, they switch their slot to true
     public boolean allConnected = false;  // When true, we are off and running
-    FileParser fp;
     int frameCount = 0;
     private long before;
     
@@ -50,40 +42,24 @@ public class WallServer {
     
     public boolean dataload = false;
 
-    //back door connection stuff
+    // Back door connection stuff
     ListenerConnection backDoorConnection = null;
     private static boolean listener = false;
     private int listenPort;
     private boolean backDoorConnected = false;
     BackDoor backdoor;
-    public WallServer(int port_, int listenPort_, String initFileString) {
-        fp = new FileParser(initFileString);
-        port = port_;
-        listenPort =listenPort_;
-        //parse ini file if it exists
-        if (fp.fileExists()) {
-            int v =0;
-            v =fp.getIntValue("framerate");
-            if (v> -1) mpePrefs.setFramerate(v);
-            v =fp.getIntValue("screens");
-            if (v> -1) mpePrefs.setScreens(v);
-            int[] masterDim = fp.getIntValues("masterDimensions");
-            if (masterDim[0] > -1) mpePrefs.setMasterDimensions(masterDim[0], masterDim[1]);
-            v =fp.getIntValue("listener");
-            if (v==1) listener = true;
-            v =fp.getIntValue("listenerPort");
-            if (v > -1 && listener) {
-            	listenPort = v;
-            }
-            out("framerate = "+mpePrefs.FRAMERATE+",  screens = "+mpePrefs.SCREENS+", master dimensions = "+
-                    mpePrefs.M_WIDTH+", "+mpePrefs.M_HEIGHT);
-            v = fp.getIntValue("debug");
-            if (v == 1) mpePrefs.DEBUG =true;
-        }
-        connected = new boolean[mpePrefs.SCREENS]; // default to all false
-        ready = new boolean[mpePrefs.SCREENS]; // default to all false
+    
+    public WallServer(int _screens, int _framerate, int _port, int _listenPort) {
+        mpePrefs.setScreens(_screens);
+        mpePrefs.setFramerate(_framerate);
+        port = _port;
+        listenPort = _listenPort;
+        out("framerate = " + mpePrefs.FRAMERATE + ",  screens = " + mpePrefs.SCREENS);
+        
+        connected = new boolean[mpePrefs.SCREENS];  // default to all false
+        ready = new boolean[mpePrefs.SCREENS];      // default to all false
     }
-
+    
     public void run() {
         running = true;
         if (listener) startListener();
@@ -107,7 +83,6 @@ public class WallServer {
         } catch (IOException e) {
             System.out.println("Zoinks!" + e);
         }
-
     }
     
     // Synchronize?!!!
@@ -125,7 +100,6 @@ public class WallServer {
                 e.printStackTrace();
             }
         }*/
-
 
         int desired = (int) ((1.0f / (float) mpePrefs.FRAMERATE) * 1000.0f);
         long now = System.currentTimeMillis();
@@ -163,7 +137,7 @@ public class WallServer {
         //substring removes the ":" at the end.
         if (newMessage) send += ":" + message.substring(0, message.length()-1);
         newMessage = false;
-        message="";
+        message = "";
         
         if (newBytes) {
           send = "B" + send;
@@ -189,7 +163,7 @@ public class WallServer {
     public synchronized void sendAll(String msg){
         //System.out.println("Sending " + msg + " to clients: " + connections.size());
         for (int i = 0; i < connections.size(); i++){
-            Connection conn = (Connection) connections.get(i);
+            Connection conn = connections.get(i);
             conn.send(msg);
         }
     }
@@ -197,7 +171,7 @@ public class WallServer {
     public synchronized void sendAllBytes(){
         //System.out.println("Sending " + msg + " to clients: " + connections.size());
         for (int i = 0; i < connections.size(); i++){
-            Connection conn = (Connection) connections.get(i);
+            Connection conn = connections.get(i);
             conn.sendBytes(bytes);
         }
     }
@@ -205,7 +179,7 @@ public class WallServer {
     public synchronized void sendAllInts(){
         //System.out.println("Sending " + msg + " to clients: " + connections.size());
         for (int i = 0; i < connections.size(); i++){
-            Connection conn = (Connection) connections.get(i);
+            Connection conn = connections.get(i);
             conn.sendInts(ints);
         }
     }
@@ -222,63 +196,114 @@ public class WallServer {
     void resetFrameCount(){
         frameCount = 0;
         newMessage = false;
-        String message = "";
+        message = "";
         print ("resetting frame count.");
     }
     public void killServer() {
         running = false;
     }
     
-    public static void main(String[] args){
-        int portInt = 9002;
-        int listenPortInt = 9003;
-        String initFile = "mpeServer.ini";
+    public static void main(String[] args) {
+        // set default values
+        int screens = 2;
+        int framerate = 30;
+        int port = 9002;
+        int listenPort = 9003;
+        
         boolean help = false;
-        // if anything is sent into the command line other than
-        // port or ini then help is displayed.
-        if (args.length > 0) help = true;
-        //see if info is given on command line.
-        for (int i = 0; i < args.length; i++){
-            if (args[i].contains("-port")){
-                help = false;
-                args[i] = args[i].substring(5);
+        
+        // see if info is given on the command line
+        for (int i = 0; i < args.length; i++) {
+            if (args[i].contains("-ini")) {
+                String iniFile = args[i].substring(4);
+                FileParser fp = new FileParser(iniFile);
+                if (fp.fileExists()) {
+                    int v = 0;
+                    v = fp.getIntValue("port");
+                    if (v > -1) port = v;
+                    v = fp.getIntValue("framerate");
+                    if (v > -1) framerate = v;
+                    v = fp.getIntValue("screens");
+                    if (v > -1) screens = v;
+                    v = fp.getIntValue("listener");
+                    if (v == 1) listener = true;
+                    v = fp.getIntValue("listenerPort");
+                    if (v > -1 && listener) {
+                        listenPort = v;
+                    }
+                    v = fp.getIntValue("debug");
+                    if (v == 1) mpePrefs.DEBUG = true;
+                } else {
+                    out("ERROR: I can't open the " + iniFile + " INI file!");
+                    help = true;
+                }
+            }
+            else if (args[i].contains("-screens")) {
+                args[i] = args[i].substring(8);
                 try{
-                    portInt = Integer.parseInt(args[i]);
+                    screens = Integer.parseInt(args[i]);
                 } catch (Exception e) {
-                    out("I can't parse the port number "+args[i]+"\n"+e);
-                    System.exit(1);
-                }//catch
-            }// if -port
-            if (args[i].contains("-ini")){
-                help = false;
-                initFile = args[i].substring(4);
-            } // if -ini
-            if (args[i].contains("-listen")){
-                help = false;
+                    out("ERROR: I can't parse the # of screens " + args[i] + "\n" + e);
+                    help = true;
+                }
+            } 
+            else if (args[i].contains("-framerate")) {
+                args[i] = args[i].substring(10);
+                try{
+                    framerate = Integer.parseInt(args[i]);
+                } catch (Exception e) {
+                    out("ERROR: I can't parse the frame rate " + args[i] + "\n" + e);
+                    help = true;
+                }
+            } 
+            else if (args[i].contains("-port")) {
+                args[i] = args[i].substring(5);
+                try {
+                    port = Integer.parseInt(args[i]);
+                } catch (Exception e) {
+                    out("ERROR: I can't parse the port number " + args[i] + "\n" + e);
+                    help = true;
+                }
+            }
+            else if (args[i].contains("-listen")){
                 listener = true;
-            } // if -listen
-            if (args[i].contains("-listenPort")){
-                help = false;
+            }
+            else if (args[i].contains("-listenPort")) {
                 args[i] = args[i].substring(11);
                 try{
-                    listenPortInt = Integer.parseInt(args[i]);
+                    listenPort = Integer.parseInt(args[i]);
                 } catch (Exception e) {
-                    out("I can't parse the listening port number "+args[i]+"\n"+e);
-                    System.exit(1);
-                }//catch
-            }// if -listenPort
-        } // i loop
-        if (help){
-            System.out.println(" * The \"Most Pixels Ever\" Wallserver.\n"+
-                    " * This server can accept two values from the command line:\n"+
-                    " * -port<port number> Defines the port.  Defaults to 9002\n"+
-                    " * -ini<Init file path.>  File path to mpe.ini.  Defaults to directory of server.\n"+
-                    " * -listen  Turns on an optional port listener so that other apps can send data to the screens.\n"+
-                    "It listens to port 9003 by default.\n"+
-            " * -listenPort<port number>  Defines listening port.  Defaults to 9003.\n");
+                    out("ERROR: I can't parse the listening port number " + args[i] + "\n" + e);
+                    help = true;
+                }
+            }
+            else if (args[i].contains("-debug")) {
+                mpePrefs.DEBUG = true;
+            }
+            else {
+                help = true;
+            }
         }
-        WallServer ws = new WallServer(portInt,listenPortInt,  initFile);
-        ws.run();
+        
+        if (help) {
+            // if anything unrecognized is sent to the command line, help is
+            // displayed and the server quits
+            System.out.println(" * The \"Most Pixels Ever\" Wallserver.\n" +
+                    " * This server can accept the following parameters from the command line:\n" +
+                    " * -screens<number of screens> Total # of expected clients.  Defaults to 2\n" +
+                    " * -framerate<framerate> Desired frame rate.  Defaults to 30\n" +
+                    " * -port<port number> Defines the port.  Defaults to 9002\n" +
+                    " * -listen  Turns on an optional port listener so that other apps can send data to the screens.\n" +
+                    " * -listenPort<port number>  Defines listening port.  Defaults to 9003.\n" +
+                    " * -debug Turns debugging messages on.\n" +
+                    " * -ini<INI file path.>  Path to initialization file.  Defaults to \"mpeServer.ini\".\n" +
+                    "    Please note the use of an INI file with the server is now deprecated.");
+            System.exit(1);
+        }
+        else {
+            WallServer ws = new WallServer(screens, framerate, port, listenPort);
+            ws.run();
+        }
     }
     private static void out(String s){
         System.out.println("WallServer: "+ s);
