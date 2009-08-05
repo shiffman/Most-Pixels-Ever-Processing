@@ -9,7 +9,7 @@ package mpe.examples;
 
 import mpe.client.*;
 import processing.core.*;
-import processing.opengl.*;
+//import processing.opengl.*;
 
 public class ThreeDTest extends PApplet {
     //--------------------------------------
@@ -30,7 +30,7 @@ public class ThreeDTest extends PApplet {
         client = new UDPClient(sketchPath("ini_threeD/mpe"+ID+".ini"), this);
         
         // the size is determined by the client's local width and height
-        size(client.getLWidth(), client.getLHeight(), OPENGL);
+        size(client.getLWidth(), client.getLHeight(), P3D);
         background(0);
         
         // IMPORTANT, YOU MUST START THE CLIENT!
