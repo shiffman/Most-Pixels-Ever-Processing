@@ -49,7 +49,7 @@ public class Connection extends Thread {
     }
 
     void read(String msg) {
-        if (mpePrefs.DEBUG) System.out.println("Raw receive: " + this + ": " + msg);
+        //if (mpePrefs.DEBUG) System.out.println("Raw receive: " + this + ": " + msg);
 
 
         // A little bit of a hack, it seems there are blank messages sometimes??
