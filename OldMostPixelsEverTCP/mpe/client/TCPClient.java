@@ -568,6 +568,8 @@ public class TCPClient extends Thread {
                     e.printStackTrace();
                 }
             }
+            
+            System.out.println(fc + " " + frameCount + " " + rendering);
 
             if (fc == frameCount && !rendering) {
                 //if (DEBUG) out("Matching " + fc);
@@ -788,9 +790,9 @@ public class TCPClient extends Thread {
         if (broadcastingData) {
             sayDoneAgain = true;
         } else {
+            rendering = false;
             String msg = "D," + id + "," + frameCount;
             send(msg);
-            rendering = false;
         }
     }
 
