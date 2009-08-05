@@ -15,7 +15,7 @@ public class BouncingBalls extends PApplet {
     final int ID = 1;
 
     ArrayList balls;
-    Client client;
+    TCPClient client;
     
     //--------------------------------------
     static public void main(String args[]) {
@@ -26,7 +26,7 @@ public class BouncingBalls extends PApplet {
     public void setup() {
         // Make a new Client with an INI file.  
         // sketchPath() is used so that the INI file is local to the sketch
-        client = new Client(sketchPath("mpeSc"+ID+".ini"), this, false);
+        client = new TCPClient(sketchPath("mpeSc"+ID+".ini"), this, false);
         
         // The size is determined by the client's local width and height
         size(client.getLWidth(), client.getLHeight());
@@ -71,7 +71,7 @@ public class BouncingBalls extends PApplet {
     
     //--------------------------------------
     // Triggered by the client whenever a new frame should be rendered.
-    public void frameEvent(Client c) {
+    public void frameEvent(TCPClient c) {
         // read any incoming messages
         if (c.messageAvailable()) {
             String[] msg = c.getDataMessage();

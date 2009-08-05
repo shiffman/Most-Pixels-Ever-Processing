@@ -9,7 +9,7 @@
 
 package mpe.examples;
 
-import mpe.client.Client;
+import mpe.client.TCPClient;
 import processing.core.PApplet;
 import processing.core.PImage;
 import processing.video.Capture;
@@ -26,7 +26,7 @@ public class VideoTest extends PApplet {
     int h = 24;
 
     PImage img;     // The image to be displayed
-    Client client;  // The client object
+    TCPClient client;  // The client object
     int x;          // Location where we will see image
     int y;    
     
@@ -35,7 +35,7 @@ public class VideoTest extends PApplet {
     }
 
     //  Called by library whenever a new frame should be rendered
-    public void frameEvent(Client c){
+    public void frameEvent(TCPClient c){
         // If there is an integer array go and get it!
         if (c.intsAvailable()) {
             int[] pix = c.getInts();
@@ -48,7 +48,7 @@ public class VideoTest extends PApplet {
     public void setup() {
         // Make a new Client with an INI file.  
         // sketchPath() is used so that the INI file is local to the sketch
-        client = new Client(sketchPath("mpeSc"+ID+".ini"),this);
+        client = new TCPClient(sketchPath("mpeSc"+ID+".ini"),this);
         // The size is determined by the client's local width and height
         size(client.getLWidth(), client.getLHeight());
 

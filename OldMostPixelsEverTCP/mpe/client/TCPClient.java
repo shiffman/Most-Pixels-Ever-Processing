@@ -22,7 +22,7 @@ import processing.core.PApplet;
 import processing.core.PConstants;
 import processing.core.PGraphics3D;
 
-public class Client extends Thread {
+public class TCPClient extends Thread {
     /** If DEBUG is true, the client will print lots of messages about what it is doing.
      * Set with debug=1; in your INI file. */
     public static boolean DEBUG = false;
@@ -100,11 +100,11 @@ public class Client extends Thread {
      *  }
      *
      */
-    public Client(String _fileString, PApplet _p) {
+    public TCPClient(String _fileString, PApplet _p) {
         this(_fileString, _p, true);
     }
     
-    public Client(String _fileString, PApplet _p, boolean _autoMode) {
+    public TCPClient(String _fileString, PApplet _p, boolean _autoMode) {
         useProcessing = true;
         p5parent = _p;
         autoMode = _autoMode;
@@ -117,7 +117,7 @@ public class Client extends Thread {
         // argument of type Client
         try {
             frameEventMethod = p5parent.getClass().getMethod("frameEvent",
-                    new Class[] { Client.class });
+                    new Class[] { TCPClient.class });
         } catch (Exception e) {
             System.out.println("You are missing the frameEvent() method. " + e);
         }
@@ -163,7 +163,7 @@ public class Client extends Thread {
      * @param _fileString the path to the INI file 
      * @param _p the parent MpeDataListener
      */
-    public Client(String _fileString, MpeDataListener _p) {
+    public TCPClient(String _fileString, MpeDataListener _p) {
         parent = _p;
         loadIniFile(_fileString);
         connect(hostName, serverPort, id);

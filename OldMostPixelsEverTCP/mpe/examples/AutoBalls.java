@@ -15,7 +15,7 @@ public class AutoBalls extends PApplet {
     final int ID = 1;
 
     ArrayList balls;
-    Client client;
+    TCPClient client;
 
     //--------------------------------------
     static public void main(String args[]) {
@@ -26,7 +26,7 @@ public class AutoBalls extends PApplet {
     public void setup() {
         // make a new Client using an INI file
         // sketchPath() is used so that the INI file is local to the sketch
-        client = new Client(sketchPath("mpeSc"+ID+".ini"), this);
+        client = new TCPClient(sketchPath("mpeSc"+ID+".ini"), this);
         
         // the size is determined by the client's local width and height
         size(client.getLWidth(), client.getLHeight());
@@ -54,7 +54,7 @@ public class AutoBalls extends PApplet {
     //--------------------------------------
     // Triggered by the client whenever a new frame should be rendered.
     // All synchronized drawing should be done here when in auto mode.
-    public void frameEvent(Client c) {
+    public void frameEvent(TCPClient c) {
         // clear the screen     
         background(255);
         
