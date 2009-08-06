@@ -569,8 +569,6 @@ public class TCPClient extends Thread {
                 }
             }
             
-            System.out.println(fc + " " + frameCount + " " + rendering);
-
             if (fc == frameCount && !rendering) {
                 //if (DEBUG) out("Matching " + fc);
                 rendering = true;
