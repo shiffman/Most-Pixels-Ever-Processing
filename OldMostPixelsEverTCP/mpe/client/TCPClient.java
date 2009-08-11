@@ -125,6 +125,7 @@ public class TCPClient extends Thread {
         if (autoMode) {
             p5parent.registerDraw(this);
         }
+        
     }
     
     /**
@@ -502,15 +503,6 @@ public class TCPClient extends Thread {
     private void read(String _serverInput) {
         if (DEBUG) out("Receiving: " + _serverInput);
         
-        // FIXME This is a hack for now. It will block only once but will allow
-        // everything to start at once.
-        if (_serverInput.startsWith("M") && mWidth == -1) {
-            _serverInput = _serverInput.substring(1);
-            String[] mdim = _serverInput.split(",");
-            mWidth = Integer.parseInt(mdim[0]);
-            mHeight = Integer.parseInt(mdim[1]);
-        }
-        
         // a "G" startbyte will trigger a frameEvent.
         // if it's a B, we also have to get a byteArray
         // if it's an I, we also have to get an intArray
@@ -568,6 +560,8 @@ public class TCPClient extends Thread {
                     e.printStackTrace();
                 }
             }
+            
+            System.out.println(fc + " " + frameCount + " " + rendering);
             
             if (fc == frameCount && !rendering) {
                 //if (DEBUG) out("Matching " + fc);
@@ -788,6 +782,7 @@ public class TCPClient extends Thread {
         if (broadcastingData) {
             sayDoneAgain = true;
         } else {
+           
             rendering = false;
             String msg = "D," + id + "," + frameCount;
             send(msg);
