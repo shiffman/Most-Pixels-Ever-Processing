@@ -133,7 +133,8 @@ void tcpClient::update(){
 							break;
 						}
 					}
-					printf("splitty: %i\n",splitty);
+					
+					//printf("splitty: %i\n",splitty);
 					
 					dataMessage = serverInput.substr(splitty+1);
 					
