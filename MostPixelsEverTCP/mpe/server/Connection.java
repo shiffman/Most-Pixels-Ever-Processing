@@ -5,10 +5,12 @@
 
 package mpe.server;
 
+import java.io.BufferedReader;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.net.Socket;
 import java.util.concurrent.CyclicBarrier;
@@ -16,10 +18,10 @@ import java.util.concurrent.CyclicBarrier;
 public class Connection extends Thread {
     Socket socket;
 
-    //BufferedReader brin;
     InputStream in;
     OutputStream os;
-    DataInputStream dis;
+    //DataInputStream dis;
+    BufferedReader brin;
     DataOutputStream dos;
 
     CyclicBarrier barrier;
@@ -40,7 +42,8 @@ public class Connection extends Thread {
         // Trade the standard byte input stream for a fancier one that allows for more than just bytes (dano)
         try {
             in = socket.getInputStream();
-            dis = new DataInputStream(in);
+            //dis = new DataInputStream(in);
+            brin = new BufferedReader(new InputStreamReader(in));
             os = socket.getOutputStream();
             dos = new DataOutputStream(os);
         } catch (IOException e) {
@@ -98,7 +101,7 @@ public class Connection extends Thread {
             parent.message += msg.substring(1,msg.length())+":";
             //parent.sendAll(msg);
             break;
-        case 'B':
+        /*case 'B':
             // Reading in byte arrays
             parent.dataload = true;
             try {
@@ -130,7 +133,7 @@ public class Connection extends Thread {
                 e.printStackTrace();
             }
             parent.dataload = false;
-            break;       
+            break;*/       
         }
     }
 
@@ -138,7 +141,7 @@ public class Connection extends Thread {
         while (running) {
             //String msg = null;
             try {
-                String input = dis.readUTF();
+                String input = brin.readLine();
                 if (input != null) {
                     read(input);
                 } else {
@@ -178,7 +181,8 @@ public class Connection extends Thread {
     public void send(String msg) {
         if (mpePrefs.DEBUG) System.out.println("Sending: " + this + ": " + msg);
         try {
-            dos.writeUTF(msg);
+        	msg+="\n";
+            dos.write(msg.getBytes());
             dos.flush();
         } catch (IOException e) {
             e.printStackTrace();

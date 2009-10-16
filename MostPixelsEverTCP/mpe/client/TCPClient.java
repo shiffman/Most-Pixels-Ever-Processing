@@ -8,10 +8,12 @@
 
 package mpe.client;
 
+import java.io.BufferedReader;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.lang.reflect.Method;
 import java.net.Socket;
@@ -33,7 +35,8 @@ public class TCPClient extends Thread {
     int serverPort = 9002;
     Socket socket;
     InputStream is;
-    DataInputStream dis;
+    //DataInputStream dis;
+    BufferedReader brin;
     DataOutputStream dos;
     OutputStream os;
     
@@ -449,7 +452,8 @@ public class TCPClient extends Thread {
         try {
             socket = new Socket(hostName, serverPort);
             is = socket.getInputStream();
-            dis = new DataInputStream(is);
+            //dis = new DataInputStream(is);
+            brin = new BufferedReader(new InputStreamReader(is));
             os = socket.getOutputStream();
             dos = new DataOutputStream(os);
         } catch (IOException e) {
@@ -471,7 +475,7 @@ public class TCPClient extends Thread {
         try {
             while (running) {
              // read packet
-                String msg = dis.readUTF();
+                String msg = brin.readLine();//dis.readUTF();
                 if (msg == null) {
                     //running = false;
                     break;
@@ -533,7 +537,7 @@ public class TCPClient extends Thread {
             // assume no arrays are available
             intsAvailable = false;
             bytesAvailable = false;
-            if (c == 'B') {
+            /*if (c == 'B') {
                 int len;
                 try {
                     len = dis.readInt();
@@ -559,7 +563,7 @@ public class TCPClient extends Thread {
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
-            }
+            }*/
             
             //System.out.println(fc + " " + frameCount + " " + rendering);
             
@@ -601,9 +605,9 @@ public class TCPClient extends Thread {
     // TODO UNSYNCHRONIZE!
     private void send(String _msg) {
         if (DEBUG) out("Sending: " + _msg);
-        
+        _msg += "\n";
         try {
-            dos.writeUTF(_msg);
+            dos.write(_msg.getBytes());
             dos.flush();
         } catch (IOException e) {
             e.printStackTrace();
