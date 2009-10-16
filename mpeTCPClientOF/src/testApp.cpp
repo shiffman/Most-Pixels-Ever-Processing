@@ -38,6 +38,12 @@ void testApp::setup(){
 void testApp::update(){	
 	client.update();
 	if(client.bDrawNewFrame) {
+		
+		if (client.messageAvailable()) {
+			string msg = client.getDataMessage();
+			printf("Received: %s",msg.c_str());
+		}
+		
 		// update ball positions
 		for(int i=0; i<activeBallCount; i++){
 			bouncingBalls[i].move();
@@ -103,9 +109,9 @@ void testApp::mouseDragged(int x, int y, int button){
 
 //--------------------------------------------------------------
 void testApp::mousePressed(int x, int y, int button){
-	//printf("SENDING\n");
-	//tcpClient.sendRaw("S0\n");
-
+	char msg[10];
+	sprintf(msg, "%d,%d", x,y);
+	client.broadcast(msg);
 }
 
 //--------------------------------------------------------------
