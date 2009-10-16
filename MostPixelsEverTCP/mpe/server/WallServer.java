@@ -54,7 +54,7 @@ public class WallServer {
         mpePrefs.setFramerate(_framerate);
         port = _port;
         listenPort = _listenPort;
-        out("framerate = " + mpePrefs.FRAMERATE + ",  screens = " + mpePrefs.SCREENS);
+        out("framerate = " + mpePrefs.FRAMERATE + ",  screens = " + mpePrefs.SCREENS + ", debug = " + mpePrefs.DEBUG);
         
         connected = new boolean[mpePrefs.SCREENS];  // default to all false
         ready = new boolean[mpePrefs.SCREENS];      // default to all false
