@@ -40,8 +40,36 @@ void testApp::update(){
 	if(client.bDrawNewFrame) {
 		
 		if (client.messageAvailable()) {
+			
+			
 			string msg = client.getDataMessage();
 			printf("Received: %s",msg.c_str());
+			
+			
+			// if we haven't created the number of balls allocated
+			if(activeBallCount < maxBalls){
+				
+				
+				// find the location of the comma in the string
+				int commaPos = msg.find_first_of(",", 0);
+				
+				
+				// find the x and y position in the string
+				int ballXPos = atoi(msg.substr(0, commaPos).c_str());
+				int ballYPos = atoi(msg.substr(commaPos+1).c_str());
+				printf("creating new ball at %i %i\n", ballXPos, ballYPos);
+				
+				// start a new ball where the mouse was pressed, moving in a random direction
+				bouncingBalls[activeBallCount].setParent(*this);
+				bouncingBalls[activeBallCount].x = ballXPos;
+				bouncingBalls[activeBallCount].y = ballYPos;
+				bouncingBalls[activeBallCount].xdir = ofRandom(-5,5);
+				bouncingBalls[activeBallCount].ydir = ofRandom(-5,5);
+				
+				
+				// increment the ball count
+				activeBallCount++;
+			}
 		}
 		
 		// update ball positions
@@ -110,7 +138,7 @@ void testApp::mouseDragged(int x, int y, int button){
 //--------------------------------------------------------------
 void testApp::mousePressed(int x, int y, int button){
 	char msg[10];
-	sprintf(msg, "%d,%d", x,y);
+	sprintf(msg, "%d,%d", x+client.getXoffset(),y+client.getYoffset());
 	client.broadcast(msg);
 }
 
