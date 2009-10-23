@@ -24,7 +24,7 @@ public class Connection extends Thread {
     BufferedReader brin;
     DataOutputStream dos;
 
-    CyclicBarrier barrier;
+    //CyclicBarrier barrier;
 
     int clientID = -1;
     String uniqueName;
@@ -35,7 +35,7 @@ public class Connection extends Thread {
     WallServer parent;
 
     Connection(Socket socket_, WallServer p) {
-        barrier = new CyclicBarrier(2);
+        //barrier = new CyclicBarrier(2);
         socket = socket_;
         parent = p;
         uniqueName = "Conn" + socket.getRemoteSocketAddress();
