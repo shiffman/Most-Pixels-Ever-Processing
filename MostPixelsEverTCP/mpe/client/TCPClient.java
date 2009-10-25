@@ -9,7 +9,7 @@
 package mpe.client;
 
 import java.io.BufferedReader;
-import java.io.DataInputStream;
+//import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -69,11 +69,13 @@ public class TCPClient extends Thread {
     boolean rendering = false;
     boolean autoMode = false;
     
+    boolean enable3D = false;
+    
     // Are we broadcasting?
-    boolean broadcastingData = false;
+    // boolean broadcastingData = false;
     // Do we need to wait to broadcast b/c we have alreaddy done so this frame?
-    boolean waitToSend = false;
-    protected boolean sayDoneAgain = false;  // Do we need to say we're done after a lot of data has been sent
+    // boolean waitToSend = false;
+    // protected boolean sayDoneAgain = false;  // Do we need to say we're done after a lot of data has been sent
     
     /** True if all the other clients are connected. */
     // FIXME Maybe this doesn't need to be public.
@@ -110,6 +112,10 @@ public class TCPClient extends Thread {
     public TCPClient(String _fileString, PApplet _p, boolean _autoMode) {
         useProcessing = true;
         p5parent = _p;
+        
+        // Autodetecting if we should use 3D or not
+        enable3D = p5parent.g instanceof PGraphics3D;
+        
         autoMode = _autoMode;
         cameraZ = (p5parent.height/2.0f) / PApplet.tan(PConstants.PI * fieldOfView/360.0f);
         
@@ -369,12 +375,20 @@ public class TCPClient extends Thread {
      * typically place it at the beginning of your draw() function.
      */
     public void placeScreen() {
-        if (p5parent.g instanceof PGraphics3D) {
+        if (enable3D) {
             placeScreen3D();
         } else {
             placeScreen2D();
         }
     }
+    
+    /**
+     * If you want to enable or disable 3D manually in automode
+     */
+    public void enable3D(boolean b) {
+    	enable3D = b;
+    }
+    
     
     /**
      * Places the viewing area for this screen when rendering in 2D.
@@ -632,9 +646,9 @@ public class TCPClient extends Thread {
      * depending on network speed
      * @param data the array to broadcast
      */
-    public void broadcastByteArray(byte[] data) {
+    /*public void broadcastByteArray(byte[] data) {
         broadcastByteArray(data,data.length);
-    }
+    }*/
     
     /**
      * broadcasts a byte array to all screens
@@ -643,7 +657,7 @@ public class TCPClient extends Thread {
      * @param data
      * @param len how many elements of the array should be broadcasted, should not be larger than the array size 
      */  
-    public void broadcastByteArray(byte[] data, int len) {
+    /*public void broadcastByteArray(byte[] data, int len) {
         // We won't send an int array more than
         // once during any given "frame"
         if (!waitToSend) {
@@ -670,14 +684,14 @@ public class TCPClient extends Thread {
             if (DEBUG) System.out.println("Gotta wait dude, haven't received the ints back yet.");
         }
 
-    }
+    }*/
 
     /**
      * broadcasts an array of ints to all screens
      * Large arrays can cause performance problems
      * @param data the array to broadcast
      */      
-    public synchronized void broadcastIntArray(int[] data) {
+    /*public synchronized void broadcastIntArray(int[] data) {
         // We won't send an int array more than
         // once during any given "frame"
         if (!waitToSend) {
@@ -705,7 +719,7 @@ public class TCPClient extends Thread {
         } else {
             if (DEBUG) System.out.println("Gotta wait dude, haven't received the ints back yet.");
         }
-    }
+    }*/
 
     /**
      * Returns true of false based on whether a String message is available from
@@ -784,14 +798,14 @@ public class TCPClient extends Thread {
      * the draw loop.
      */
     public void done() {
-        if (broadcastingData) {
-            sayDoneAgain = true;
-        } else {
+        //if (broadcastingData) {
+        //    sayDoneAgain = true;
+        //} else {
            
             rendering = false;
             String msg = "D," + id + "," + frameCount;
             send(msg);
-        }
+        //}
     }
 
     /**

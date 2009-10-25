@@ -34,8 +34,10 @@ public class BackdoorServerTest {
 			System.exit(0);
 
 		} catch (UnknownHostException e1) {
+			e1.printStackTrace();
 	        System.exit(1);
 		} catch (IOException e1) {
+			e1.printStackTrace();
 	        System.exit(1);
 		}
 	}
