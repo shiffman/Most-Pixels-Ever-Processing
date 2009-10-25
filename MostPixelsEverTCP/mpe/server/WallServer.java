@@ -265,7 +265,7 @@ public class WallServer {
                     help = true;
                 }
             }
-            else if (args[i].contains("-listen")){
+            else if (args[i].contains("-listener")){
                 listener = true;
             }
             else if (args[i].contains("-listenPort")) {
