@@ -14,7 +14,6 @@ import processing.core.*;
 
 public class QuoteFetcher extends PApplet {
     //--------------------------------------
-    static final int ID = 2;
 
     static final int B_MARGIN = 50;
     static final int B_SIZE = 100;
