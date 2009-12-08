@@ -430,6 +430,26 @@ public class TCPClient extends Thread {
                          -(p5parent.height/2)*mod, (p5parent.height/2)*mod,
                          cameraZ*mod, 10000);
     }
+    
+    /**
+     * Checks whether the given point is on screen.
+     */
+    public boolean isOnScreen(float x, float y) {
+        return (x > xOffset && 
+                x < (xOffset + lWidth) && 
+                y > yOffset &&
+                y < (yOffset + lHeight));
+    }
+    
+    /**
+     * Checks whether the given rectangle is on screen.
+     */
+    public boolean isOnScreen(float x, float y, float w, float h) {
+        return (isOnScreen(x, y) || 
+                isOnScreen(x + w, y) ||
+                isOnScreen(x + w, y + h) ||
+                isOnScreen(x, y + h));
+    }
 
     /**
      * Outputs a message to the console.
