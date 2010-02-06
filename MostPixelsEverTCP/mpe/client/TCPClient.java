@@ -65,9 +65,12 @@ public class TCPClient extends Thread {
     
     boolean running = false;
     boolean useProcessing = false;
-    int frameCount = 0;
     boolean rendering = false;
     boolean autoMode = false;
+    
+    int   frameCount = 0;
+    float fps = 0.f;
+    long  lastMs = 0;
     
     boolean enable3D = false;
     
@@ -343,6 +346,9 @@ public class TCPClient extends Thread {
     /** @return the total number of frames rendered */  
     public int getFrameCount() { return frameCount; }
     
+    /** @return the client framerate */  
+    public float getFPS() { return fps; }
+    
     /** @return whether or not the client is rendering */  
     public boolean isRendering() { return rendering; }
     
@@ -388,7 +394,6 @@ public class TCPClient extends Thread {
     public void enable3D(boolean b) {
     	enable3D = b;
     }
-    
     
     /**
      * Places the viewing area for this screen when rendering in 2D.
@@ -606,6 +611,11 @@ public class TCPClient extends Thread {
                 //if (DEBUG) out("Matching " + fc);
                 rendering = true;
                 frameCount++;
+                
+                // calculate new framerate
+                float ms = System.currentTimeMillis() - lastMs;
+                fps = 1000.f / ms;
+                lastMs = System.currentTimeMillis();
                 
                 if (useProcessing) {
                     if (!autoMode) {
