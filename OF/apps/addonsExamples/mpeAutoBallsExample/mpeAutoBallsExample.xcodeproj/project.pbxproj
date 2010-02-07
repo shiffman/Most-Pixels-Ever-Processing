@@ -7,11 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		27346C69111DD5EE00391795 /* mpeClientTCP.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 27346C66111DD5EE00391795 /* mpeClientTCP.cpp */; };
 		27346C74111DD60900391795 /* tinyxml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 27346C6D111DD60900391795 /* tinyxml.cpp */; };
 		27346C75111DD60900391795 /* tinyxmlerror.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 27346C6F111DD60900391795 /* tinyxmlerror.cpp */; };
 		27346C76111DD60900391795 /* tinyxmlparser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 27346C70111DD60900391795 /* tinyxmlparser.cpp */; };
 		27346C77111DD60900391795 /* ofxXmlSettings.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 27346C72111DD60900391795 /* ofxXmlSettings.cpp */; };
+		27346E73111F0C0800391795 /* mpeClientTCP.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 27346E70111F0C0800391795 /* mpeClientTCP.cpp */; };
 		E44667350F5B3E04005D0BF0 /* ofxTCPClient.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E44666330F5B3E03005D0BF0 /* ofxTCPClient.cpp */; };
 		E44667360F5B3E04005D0BF0 /* ofxTCPManager.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E44666350F5B3E03005D0BF0 /* ofxTCPManager.cpp */; };
 		E44667370F5B3E04005D0BF0 /* ofxTCPServer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E44666370F5B3E03005D0BF0 /* ofxTCPServer.cpp */; };
@@ -88,8 +88,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		27346C66111DD5EE00391795 /* mpeClientTCP.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = mpeClientTCP.cpp; sourceTree = "<group>"; };
-		27346C67111DD5EE00391795 /* mpeClientTCP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mpeClientTCP.h; sourceTree = "<group>"; };
 		27346C6D111DD60900391795 /* tinyxml.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = tinyxml.cpp; path = ../../../addons/ofxXmlSettings/libs/tinyxml.cpp; sourceTree = SOURCE_ROOT; };
 		27346C6E111DD60900391795 /* tinyxml.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = tinyxml.h; path = ../../../addons/ofxXmlSettings/libs/tinyxml.h; sourceTree = SOURCE_ROOT; };
 		27346C6F111DD60900391795 /* tinyxmlerror.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = tinyxmlerror.cpp; path = ../../../addons/ofxXmlSettings/libs/tinyxmlerror.cpp; sourceTree = SOURCE_ROOT; };
@@ -97,6 +95,9 @@
 		27346C72111DD60900391795 /* ofxXmlSettings.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ofxXmlSettings.cpp; path = ../../../addons/ofxXmlSettings/src/ofxXmlSettings.cpp; sourceTree = SOURCE_ROOT; };
 		27346C73111DD60900391795 /* ofxXmlSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ofxXmlSettings.h; path = ../../../addons/ofxXmlSettings/src/ofxXmlSettings.h; sourceTree = SOURCE_ROOT; };
 		27346DDA111E343C00391795 /* Ball.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Ball.h; path = src/Ball.h; sourceTree = SOURCE_ROOT; };
+		27346E70111F0C0800391795 /* mpeClientTCP.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = mpeClientTCP.cpp; path = ../../../addons/ofxMostPixelsEver/src/mpeClientTCP.cpp; sourceTree = SOURCE_ROOT; };
+		27346E71111F0C0800391795 /* mpeClientTCP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = mpeClientTCP.h; path = ../../../addons/ofxMostPixelsEver/src/mpeClientTCP.h; sourceTree = SOURCE_ROOT; };
+		27346E72111F0C0800391795 /* ofxMostPixelsEver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ofxMostPixelsEver.h; path = ../../../addons/ofxMostPixelsEver/src/ofxMostPixelsEver.h; sourceTree = SOURCE_ROOT; };
 		E44666320F5B3E03005D0BF0 /* ofxNetwork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ofxNetwork.h; path = ../../../addons/ofxNetwork/src/ofxNetwork.h; sourceTree = SOURCE_ROOT; };
 		E44666330F5B3E03005D0BF0 /* ofxTCPClient.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ofxTCPClient.cpp; path = ../../../addons/ofxNetwork/src/ofxTCPClient.cpp; sourceTree = SOURCE_ROOT; };
 		E44666340F5B3E03005D0BF0 /* ofxTCPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ofxTCPClient.h; path = ../../../addons/ofxNetwork/src/ofxTCPClient.h; sourceTree = SOURCE_ROOT; };
@@ -130,7 +131,7 @@
 		E45BE9790E8CC7DD009D7055 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = /System/Library/Frameworks/OpenGL.framework; sourceTree = "<absolute>"; };
 		E45BE97A0E8CC7DD009D7055 /* QuickTime.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuickTime.framework; path = /System/Library/Frameworks/QuickTime.framework; sourceTree = "<absolute>"; };
 		E49DA80F10CD410A0006B5A8 /* freeimage.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = freeimage.a; path = ../../../libs/FreeImage/lib/osx/freeimage.a; sourceTree = SOURCE_ROOT; };
-		E4B69B5B0A3A1756003C02F2 /* mpeClientExampleDebug.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mpeClientExampleDebug.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4B69B5B0A3A1756003C02F2 /* mpeAutoBallsExampleDebug.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mpeAutoBallsExampleDebug.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4B69E1D0A3A1BDC003C02F2 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = src/main.cpp; sourceTree = SOURCE_ROOT; };
 		E4B69E1E0A3A1BDC003C02F2 /* testApp.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = testApp.cpp; path = src/testApp.cpp; sourceTree = SOURCE_ROOT; };
 		E4B69E1F0A3A1BDC003C02F2 /* testApp.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = testApp.h; path = src/testApp.h; sourceTree = SOURCE_ROOT; };
@@ -216,9 +217,30 @@
 			path = ../../../addons/ofxXmlSettings/src;
 			sourceTree = SOURCE_ROOT;
 		};
+		27346E6E111F0C0800391795 /* ofxMostPixelsEver */ = {
+			isa = PBXGroup;
+			children = (
+				27346E6F111F0C0800391795 /* src */,
+			);
+			name = ofxMostPixelsEver;
+			path = ../../../addons/ofxMostPixelsEver;
+			sourceTree = SOURCE_ROOT;
+		};
+		27346E6F111F0C0800391795 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				27346E70111F0C0800391795 /* mpeClientTCP.cpp */,
+				27346E71111F0C0800391795 /* mpeClientTCP.h */,
+				27346E72111F0C0800391795 /* ofxMostPixelsEver.h */,
+			);
+			name = src;
+			path = ../../../addons/ofxMostPixelsEver/src;
+			sourceTree = SOURCE_ROOT;
+		};
 		E44665C70F5B3E03005D0BF0 /* addons */ = {
 			isa = PBXGroup;
 			children = (
+				27346E6E111F0C0800391795 /* ofxMostPixelsEver */,
 				E44666040F5B3E03005D0BF0 /* ofxNetwork */,
 				E44666C00F5B3E04005D0BF0 /* ofxThread */,
 				27346C6A111DD60900391795 /* ofxXmlSettings */,
@@ -461,7 +483,7 @@
 		E4B69B4A0A3A1720003C02F2 = {
 			isa = PBXGroup;
 			children = (
-				E4B69B5B0A3A1756003C02F2 /* mpeClientExampleDebug.app */,
+				E4B69B5B0A3A1756003C02F2 /* mpeAutoBallsExampleDebug.app */,
 				E4B6FCAD0C3E899E008CF71C /* openFrameworks-Info.plist */,
 				E4B69E1C0A3A1BDC003C02F2 /* src */,
 				E4C2422310CC54B6004149E2 /* openFrameworks */,
@@ -476,8 +498,6 @@
 				E4B69E1D0A3A1BDC003C02F2 /* main.cpp */,
 				E4B69E1E0A3A1BDC003C02F2 /* testApp.cpp */,
 				E4B69E1F0A3A1BDC003C02F2 /* testApp.h */,
-				27346C66111DD5EE00391795 /* mpeClientTCP.cpp */,
-				27346C67111DD5EE00391795 /* mpeClientTCP.h */,
 				27346DDA111E343C00391795 /* Ball.h */,
 			);
 			path = src;
@@ -577,7 +597,7 @@
 			);
 			name = mpeAutoBallsExample;
 			productName = myOFApp;
-			productReference = E4B69B5B0A3A1756003C02F2 /* mpeClientExampleDebug.app */;
+			productReference = E4B69B5B0A3A1756003C02F2 /* mpeAutoBallsExampleDebug.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -642,11 +662,11 @@
 				E44667370F5B3E04005D0BF0 /* ofxTCPServer.cpp in Sources */,
 				E44667380F5B3E04005D0BF0 /* ofxUDPManager.cpp in Sources */,
 				E44667700F5B3E04005D0BF0 /* ofxThread.cpp in Sources */,
-				27346C69111DD5EE00391795 /* mpeClientTCP.cpp in Sources */,
 				27346C74111DD60900391795 /* tinyxml.cpp in Sources */,
 				27346C75111DD60900391795 /* tinyxmlerror.cpp in Sources */,
 				27346C76111DD60900391795 /* tinyxmlparser.cpp in Sources */,
 				27346C77111DD60900391795 /* ofxXmlSettings.cpp in Sources */,
+				27346E73111F0C0800391795 /* mpeClientTCP.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
