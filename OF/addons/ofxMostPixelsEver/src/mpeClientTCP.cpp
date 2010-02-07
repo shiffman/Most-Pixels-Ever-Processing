@@ -299,6 +299,10 @@ void mpeClientTCP::read(string _serverInput) {
             float ms = ofGetElapsedTimeMillis() - lastMs;
             fps = 1000.f / ms;
             lastMs = ofGetElapsedTimeMillis();
+            
+            if (!autoMode) {
+                parent->frameEvent();
+            }
         }
     }
 }
