@@ -72,8 +72,6 @@ public class TCPClient extends Thread {
     float fps = 0.f;
     long  lastMs = 0;
     
-    boolean enable3D = false;
-    
     // Are we broadcasting?
     // boolean broadcastingData = false;
     // Do we need to wait to broadcast b/c we have alreaddy done so this frame?
@@ -92,6 +90,7 @@ public class TCPClient extends Thread {
     protected byte[] bytes;                  // bytes that have come in
     
     // 3D variables
+    protected boolean enable3D = false;
     protected float fieldOfView = 30.0f;
     protected float cameraZ;
     
