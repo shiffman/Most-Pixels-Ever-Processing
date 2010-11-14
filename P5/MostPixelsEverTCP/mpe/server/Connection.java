@@ -30,9 +30,9 @@ public class Connection extends Thread {
     String msg = "";
 
     boolean running = true;
-    WallServer parent;
+    MPEServer parent;
 
-    Connection(Socket socket_, WallServer p) {
+    Connection(Socket socket_, MPEServer p) {
         //barrier = new CyclicBarrier(2);
         socket = socket_;
         parent = p;
@@ -60,7 +60,7 @@ public class Connection extends Thread {
         switch(startsWith){
         // For Starting Up
         case 'S':
-            if (mpePrefs.DEBUG) System.out.println(msg);
+            if (MPEPrefs.DEBUG) System.out.println(msg);
             //do this with regex eventually, but for now..
             //(DS: also, probably just use delimiter and split?)
             //this is in serious need of error checking.
@@ -85,7 +85,7 @@ public class Connection extends Thread {
                 String[] info = msg.split(",");
                 clientID = Integer.parseInt(info[1]);
                 int fc = Integer.parseInt(info[2]);
-                if (mpePrefs.DEBUG) System.out.println("Receive: " + clientID + ": " + fc + "  match: " + parent.frameCount);
+                if (MPEPrefs.DEBUG) System.out.println("Receive: " + clientID + ": " + fc + "  match: " + parent.frameCount);
                 if (fc == parent.frameCount) {
                     parent.setReady(clientID);
                     //if (parent.isReady()) parent.triggerFrame();
@@ -94,7 +94,7 @@ public class Connection extends Thread {
             break;
             //is it receiving a "daTa"?
         case 'T':   
-            if (mpePrefs.DEBUG) print ("adding message to next frameEvent: " + msg);
+            if (MPEPrefs.DEBUG) print ("adding message to next frameEvent: " + msg);
             parent.newMessage = true;
             parent.message += msg.substring(1,msg.length())+":";
             //parent.sendAll(msg);
@@ -177,7 +177,7 @@ public class Connection extends Thread {
 
     // Trying out no synchronize
     public void send(String msg) {
-        if (mpePrefs.DEBUG) System.out.println("Sending: " + this + ": " + msg);
+        if (MPEPrefs.DEBUG) System.out.println("Sending: " + this + ": " + msg);
         try {
         	msg+="\n";
             dos.write(msg.getBytes());
@@ -189,7 +189,7 @@ public class Connection extends Thread {
 
     // Trying out no synchronize
     public void sendBytes(byte[] b) {
-        if (mpePrefs.DEBUG) System.out.println("Sending " + b.length + " bytes");
+        if (MPEPrefs.DEBUG) System.out.println("Sending " + b.length + " bytes");
         try {
             dos.writeInt(b.length);
             dos.write(b,0,b.length);
@@ -201,7 +201,7 @@ public class Connection extends Thread {
 
     // Trying out no synchronize
     public void sendInts(int[] ints) {
-        if (mpePrefs.DEBUG) System.out.println("Sending " + ints.length + " ints");
+        if (MPEPrefs.DEBUG) System.out.println("Sending " + ints.length + " ints");
         try {
             dos.writeInt(ints.length);
             for (int i = 0; i < ints.length; i++) {

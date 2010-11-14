@@ -6,7 +6,7 @@
 
 package mpe.server;
 
-public class mpePrefs {
+public class MPEPrefs {
 
 	public static int SCREENS = 2;
 	public static int FRAMERATE = 30;
