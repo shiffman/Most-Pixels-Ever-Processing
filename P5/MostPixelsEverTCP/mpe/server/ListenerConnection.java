@@ -11,7 +11,7 @@ import java.net.Socket;
 
 public class ListenerConnection extends Connection {
 	String inputString = "";
-    ListenerConnection(Socket socket_, WallServer p) {
+    ListenerConnection(Socket socket_, MPEServer p) {
     	super(socket_, p);
         uniqueName = "Listener Conn" + socket.getRemoteSocketAddress();
     }
@@ -28,7 +28,7 @@ public class ListenerConnection extends Connection {
 				} else {
 					msg = read((char)readIn);
 					if (msg != null){
-						if (mpePrefs.DEBUG) print ("received from backdoor: " + msg);
+						if (MPEPrefs.DEBUG) print ("received from backdoor: " + msg);
 						//only attach to message if everyone's connected.
 						if (parent.allConnected){
 			            parent.newMessage = true;

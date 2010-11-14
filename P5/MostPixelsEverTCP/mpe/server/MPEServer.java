@@ -15,7 +15,7 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.ArrayList;
 
-public class WallServer {
+public class MPEServer {
 
     private ArrayList<Connection> connections = new ArrayList<Connection>();
     private int port;
@@ -47,15 +47,15 @@ public class WallServer {
     private boolean backDoorConnected = false;
     BackDoor backdoor;
     
-    public WallServer(int _screens, int _framerate, int _port, int _listenPort) {
-        mpePrefs.setScreens(_screens);
-        mpePrefs.setFramerate(_framerate);
+    public MPEServer(int _screens, int _framerate, int _port, int _listenPort) {
+        MPEPrefs.setScreens(_screens);
+        MPEPrefs.setFramerate(_framerate);
         port = _port;
         listenPort = _listenPort;
-        out("framerate = " + mpePrefs.FRAMERATE + ",  screens = " + mpePrefs.SCREENS + ", debug = " + mpePrefs.DEBUG);
+        out("framerate = " + MPEPrefs.FRAMERATE + ",  screens = " + MPEPrefs.SCREENS + ", debug = " + MPEPrefs.DEBUG);
         
-        connected = new boolean[mpePrefs.SCREENS];  // default to all false
-        ready = new boolean[mpePrefs.SCREENS];      // default to all false
+        connected = new boolean[MPEPrefs.SCREENS];  // default to all false
+        ready = new boolean[MPEPrefs.SCREENS];      // default to all false
     }
     
     public void run() {
@@ -99,7 +99,7 @@ public class WallServer {
             }
         }*/
 
-        int desired = (int) ((1.0f / (float) mpePrefs.FRAMERATE) * 1000.0f);
+        int desired = (int) ((1.0f / (float) MPEPrefs.FRAMERATE) * 1000.0f);
         long now = System.currentTimeMillis();
         int diff = (int) (now - before);
         if (diff < desired) {
@@ -252,7 +252,7 @@ public class WallServer {
                 }
             }
             else if (args[i].contains("-debug")) {
-                mpePrefs.DEBUG = true;
+                MPEPrefs.DEBUG = true;
             }
             else {
                 help = true;
@@ -275,7 +275,7 @@ public class WallServer {
             System.exit(1);
         }
         else {
-            WallServer ws = new WallServer(screens, framerate, port, listenPort);
+            MPEServer ws = new MPEServer(screens, framerate, port, listenPort);
             ws.run();
         }
     }
@@ -314,8 +314,8 @@ public class WallServer {
     }
     
     class BackDoor implements Runnable{
-    	WallServer parent;
-    	BackDoor(WallServer _parent){
+    	MPEServer parent;
+    	BackDoor(MPEServer _parent){
     		parent = _parent;
     	}
     	
