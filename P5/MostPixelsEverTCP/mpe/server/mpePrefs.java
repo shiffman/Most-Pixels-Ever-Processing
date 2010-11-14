@@ -11,7 +11,7 @@ public class mpePrefs {
 	public static int SCREENS = 2;
 	public static int FRAMERATE = 30;
     
-    public static boolean DEBUG = true;
+    public static boolean DEBUG = false;
 
 	public static void setFramerate(int fr){
 		if (fr > -1) FRAMERATE = fr;
