@@ -15,8 +15,6 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.ArrayList;
 
-import mpe.config.FileParser;
-
 public class WallServer {
 
     private ArrayList<Connection> connections = new ArrayList<Connection>();
@@ -214,31 +212,7 @@ public class WallServer {
         
         // see if info is given on the command line
         for (int i = 0; i < args.length; i++) {
-            if (args[i].contains("-ini")) {
-                String iniFile = args[i].substring(4);
-                FileParser fp = new FileParser(iniFile);
-                if (fp.fileExists()) {
-                    int v = 0;
-                    v = fp.getIntValue("port");
-                    if (v > -1) port = v;
-                    v = fp.getIntValue("framerate");
-                    if (v > -1) framerate = v;
-                    v = fp.getIntValue("screens");
-                    if (v > -1) screens = v;
-                    v = fp.getIntValue("listener");
-                    if (v == 1) listener = true;
-                    v = fp.getIntValue("listenerPort");
-                    if (v > -1 && listener) {
-                        listenPort = v;
-                    }
-                    v = fp.getIntValue("debug");
-                    if (v == 1) mpePrefs.DEBUG = true;
-                } else {
-                    out("ERROR: I can't open the " + iniFile + " INI file!");
-                    help = true;
-                }
-            }
-            else if (args[i].contains("-screens")) {
+        	if (args[i].contains("-screens")) {
                 args[i] = args[i].substring(8);
                 try{
                     screens = Integer.parseInt(args[i]);
@@ -293,7 +267,7 @@ public class WallServer {
                     " * -screens<number of screens> Total # of expected clients.  Defaults to 2\n" +
                     " * -framerate<framerate> Desired frame rate.  Defaults to 30\n" +
                     " * -port<port number> Defines the port.  Defaults to 9002\n" +
-                    " * -listen  Turns on an optional port listener so that other apps can send data to the screens.\n" +
+                    " * -listener Turns on an optional port listener so that other apps can send data to the screens.\n" +
                     " * -listenPort<port number>  Defines listening port.  Defaults to 9003.\n" +
                     " * -debug Turns debugging messages on.\n" +
                     " * -ini<INI file path.>  Path to initialization file.  Defaults to \"mpeServer.ini\".\n" +
