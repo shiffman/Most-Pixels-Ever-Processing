@@ -1,0 +1,14 @@
+<settings>
+	<port>12345</port>
+	<movie>fingers.mov</movie>
+	<dimensions>
+		<width>320</width>
+		<height>240</height>
+        <movieWidth>320</movieWidth>
+        <movieHeight>240</movieHeight>
+        <movieX>0</movieX>
+        <movieY>0</movieY>
+	</dimensions>
+	<go_fullscreen>false</go_fullscreen>
+    <loop>false</loop>
+</settings>

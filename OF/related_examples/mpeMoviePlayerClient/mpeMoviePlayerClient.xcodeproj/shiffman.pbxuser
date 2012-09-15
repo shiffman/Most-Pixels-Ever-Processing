@@ -1,0 +1,170 @@
+// !$*UTF8*$!
+{
+	70197EF914360AC00055F8B9 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E4B69E1E0A3A1BDC003C02F2 /* testApp.cpp */;
+		name = "testApp.cpp: 35";
+		rLen = 0;
+		rLoc = 620;
+		rType = 0;
+		vrLen = 996;
+		vrLoc = 238;
+	};
+	70197F1314360B750055F8B9 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E4B69E1E0A3A1BDC003C02F2 /* testApp.cpp */;
+		name = "testApp.cpp: 35";
+		rLen = 0;
+		rLoc = 620;
+		rType = 0;
+		vrLen = 959;
+		vrLoc = 238;
+	};
+	70DD6FC0142CD333006B7925 /* moviePlayerExample */ = {
+		isa = PBXExecutable;
+		activeArgIndices = (
+		);
+		argumentStrings = (
+		);
+		autoAttachOnCrash = 1;
+		breakpointsEnabled = 0;
+		configStateDict = {
+		};
+		customDataFormattersEnabled = 1;
+		dataTipCustomDataFormattersEnabled = 1;
+		dataTipShowTypeColumn = 1;
+		dataTipSortType = 0;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		dylibVariantSuffix = "";
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		libgmallocEnabled = 0;
+		name = moviePlayerExample;
+		savedGlobals = {
+		};
+		showTypeColumn = 0;
+		sourceDirectories = (
+		);
+		variableFormatDictionary = {
+		};
+	};
+	70DD6FE6142CD335006B7925 /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+			repositoryNamesForRoots = {
+				"" = "";
+			};
+		};
+	};
+	70DD6FE7142CD335006B7925 /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+	70DD7072142CD4CC006B7925 /* ofxXmlSettings.cpp */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {625, 9230}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 1270}";
+		};
+	};
+	70DD7073142CD4CC006B7925 /* ofxXmlSettings.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {943, 2301}}";
+			sepNavSelRange = "{177, 0}";
+			sepNavVisRange = "{0, 1823}";
+		};
+	};
+	70DD70F7142CD8D1006B7925 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E4B69E1F0A3A1BDC003C02F2 /* testApp.h */;
+		name = "testApp.h: 45";
+		rLen = 0;
+		rLoc = 772;
+		rType = 0;
+		vrLen = 793;
+		vrLoc = 0;
+	};
+	70DD714D1430BE12006B7925 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = E4B69E1E0A3A1BDC003C02F2 /* testApp.cpp */;
+		name = "testApp.cpp: 35";
+		rLen = 0;
+		rLoc = 620;
+		rType = 0;
+		vrLen = 978;
+		vrLoc = 238;
+	};
+	E4B69B4C0A3A1720003C02F2 /* Project object */ = {
+		activeBuildConfigurationName = Release;
+		activeExecutable = 70DD6FC0142CD333006B7925 /* moviePlayerExample */;
+		activeTarget = E4B69B5A0A3A1756003C02F2 /* moviePlayerExample */;
+		addToTargets = (
+			E4B69B5A0A3A1756003C02F2 /* moviePlayerExample */,
+		);
+		codeSenseManager = 70DD6FE7142CD335006B7925 /* Code sense */;
+		executables = (
+			70DD6FC0142CD333006B7925 /* moviePlayerExample */,
+		);
+		perUserDictionary = {
+			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					377,
+					20,
+					48,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXPerProjectTemplateStateSaveDate = 339086187;
+			PBXWorkspaceStateSaveDate = 339086187;
+		};
+		perUserProjectItems = {
+			70197EF914360AC00055F8B9 = 70197EF914360AC00055F8B9 /* PBXTextBookmark */;
+			70197F1314360B750055F8B9 /* PBXTextBookmark */ = 70197F1314360B750055F8B9 /* PBXTextBookmark */;
+			70DD70F7142CD8D1006B7925 = 70DD70F7142CD8D1006B7925 /* PBXTextBookmark */;
+			70DD714D1430BE12006B7925 = 70DD714D1430BE12006B7925 /* PBXTextBookmark */;
+		};
+		sourceControlManager = 70DD6FE6142CD335006B7925 /* Source Control */;
+		userBuildSettings = {
+		};
+	};
+	E4B69B5A0A3A1756003C02F2 /* moviePlayerExample */ = {
+		activeExec = 0;
+		executables = (
+			70DD6FC0142CD333006B7925 /* moviePlayerExample */,
+		);
+	};
+	E4B69E1E0A3A1BDC003C02F2 /* testApp.cpp */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {555, 2171}}";
+			sepNavSelRange = "{620, 0}";
+			sepNavVisRange = "{238, 959}";
+		};
+	};
+	E4B69E1F0A3A1BDC003C02F2 /* testApp.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {555, 695}}";
+			sepNavSelRange = "{772, 0}";
+			sepNavVisRange = "{0, 793}";
+		};
+	};
+}

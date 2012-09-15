@@ -1,0 +1,22 @@
+<settings>
+	<client1>
+		<address>192.168.130.240</address>
+		<port>12345</port>
+	</client1>
+	<client2>
+		<address>192.168.130.242</address>
+		<port>12345</port>
+	</client2>
+	<movie>fingers.mov</movie>
+	<howoften>100</howoften>
+	<dimensions>
+		<width>3840</width>
+		<height>1080</height>
+        <movieWidth>3840</movieWidth>
+        <movieHeight>1080</movieHeight>
+        <movieX>0</movieX>
+        <movieY>0</movieY>
+	</dimensions>
+	<go_fullscreen>true</go_fullscreen>
+    <loop>true</loop>
+</settings>
