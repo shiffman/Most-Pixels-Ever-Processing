@@ -1,1602 +1,0 @@
-TmoviePlayerExample
-v7
-r0
-t338482221.996218
-cCheck dependencies
-cProcessInfoPlistFile /Users/shiffman/Documents/of_preRelease_v007_osx/apps/examples/mpeMoviePlayerMaster/bin//moviePlayerExampleDebug.app/Contents/Info.plist openFrameworks-Info.plist
-cProcessPCH++ /var/folders/gb/gbjBwOxUFySkNJABuufvgU+++TU/-Caches-/com.apple.Xcode.504/SharedPrecompiledHeaders/Carbon-eervujktbtkdtggwsjiiuiordnby/Carbon.h.gch /System/Library/Frameworks/Carbon.framework/Headers/Carbon.h normal i386 c++ com.apple.compilers.gcc.4_2
-cCompileC build/mpeMoviePlayerMaster.build/Debug/moviePlayerExample.build/Objects-normal/i386/main.o /Users/shiffman/Documents/of_preRelease_v007_osx/apps/examples/mpeMoviePlayerMaster/src/main.cpp normal i386 c++ com.apple.compilers.gcc.4_2
-cCompileC build/mpeMoviePlayerMaster.build/Debug/moviePlayerExample.build/Objects-normal/i386/testApp.o /Users/shiffman/Documents/of_preRelease_v007_osx/apps/examples/mpeMoviePlayerMaster/src/testApp.cpp normal i386 c++ com.apple.compilers.gcc.4_2
-cLd /Users/shiffman/Documents/of_preRelease_v007_osx/apps/examples/mpeMoviePlayerMaster/bin//moviePlayerExampleDebug.app/Contents/MacOS/moviePlayerExampleDebug normal i386
-cPhaseScriptExecution "Run Script" /Users/shiffman/Documents/of_preRelease_v007_osx/apps/examples/mpeMoviePlayerMaster/build/mpeMoviePlayerMaster.build/Debug/moviePlayerExample.build/Script-E4B6FFFD0C3F9AB9008CF71C.sh
-cPBXCp bin/moviePlayerExampleDebug.app/Contents/Frameworks/GLUT.framework ../../../libs/glut/lib/osx/GLUT.framework
-cTouch /Users/shiffman/Documents/of_preRelease_v007_osx/apps/examples/mpeMoviePlayerMaster/bin//moviePlayerExampleDebug.app
-
-N/Developer/usr/include/gcc/darwin/4.2/stdint.h
-c000000004C4DDC43000000000000190C
-t1280171075
-s6412
-
-N/Developer/usr/lib/gcc/i686-apple-darwin10/4.2.1/include/limits.h
-c000000004C4DD3910000000000000C7E
-t1280168849
-s3198
-i"syslimits.h"
-
-N/Developer/usr/lib/gcc/i686-apple-darwin10/4.2.1/include/stddef.h
-c000000004C4DD3910000000000003197
-t1280168849
-s12695
-i<machine/ansi.h>
-i<sys/_types.h>
-
-N/Developer/usr/lib/gcc/i686-apple-darwin10/4.2.1/include/syslimits.h
-c000000004C4DCFAC0000000000000155
-t1280167852
-s341
-
-N/System/Library/Frameworks/AGL.framework/AGL
-c000000004DEEB9110000000000043820
-t1307490577
-s276512
-
-N/System/Library/Frameworks/AppKit.framework/AppKit
-c000000004DB8539B0000000002B5C7A0
-t1303925659
-s45467552
-
-N/System/Library/Frameworks/ApplicationServices.framework/ApplicationServices
-c000000004A12050E0000000000022140
-t1242694926
-s139584
-
-N/System/Library/Frameworks/ApplicationServices.framework/Headers/ApplicationServices.h
-c000000004C46DAC00000000000000477
-t1279711936
-s1143
-
-N/System/Library/Frameworks/AudioToolbox.framework/AudioToolbox
-c000000004DD5EC60000000000051BA20
-t1305865312
-s5356064
-
-N/System/Library/Frameworks/Carbon.framework/Carbon
-c000000004DF9CD1C000000000000A5F0
-t1308216604
-s42480
-
-N/System/Library/Frameworks/Carbon.framework/Headers/Carbon.h
-c000000004C44E75100000000000005FF
-t1279584081
-s1535
-
-N/System/Library/Frameworks/Cocoa.framework/Cocoa
-c000000004A1F2D63000000000000A5E0
-t1243557219
-s42464
-
-N/System/Library/Frameworks/CoreAudio.framework/CoreAudio
-c000000004DEEB6D200000000002181A0
-t1307490002
-s2195872
-
-N/System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
-c000000004DBF2B880000000000781330
-t1304374152
-s7869232
-
-N/System/Library/Frameworks/CoreServices.framework/CoreServices
-c000000004C23F49F0000000000021710
-t1277424799
-s136976
-
-N/System/Library/Frameworks/CoreServices.framework/Headers/CoreServices.h
-c000000004C46BBD80000000000000401
-t1279704024
-s1025
-
-N/System/Library/Frameworks/IOKit.framework/IOKit
-c000000004DE8236E000000000017B260
-t1307059054
-s1552992
-
-N/System/Library/Frameworks/OpenAL.framework/Headers/al.h
-c000000004C46C4D900000000000064F9
-t1279706329
-s25849
-
-N/System/Library/Frameworks/OpenAL.framework/Headers/alc.h
-c000000004C46C4D90000000000001F41
-t1279706329
-s8001
-
-N/System/Library/Frameworks/OpenGL.framework/Headers/gl.h
-c000000004BE91B5D0000000000025B59
-t1273568093
-s154457
-
-N/System/Library/Frameworks/OpenGL.framework/Headers/glu.h
-c000000004BE91B5D0000000000003F84
-t1273568093
-s16260
-
-N/System/Library/Frameworks/OpenGL.framework/OpenGL
-c000000004DEEB8140000000000043360
-t1307490324
-s275296
-
-N/System/Library/Frameworks/QuickTime.framework/Headers/QuickTime.h
-c000000004B4818320000000000000659
-t1263015986
-s1625
-
-N/System/Library/Frameworks/QuickTime.framework/QuickTime
-c000000004DE5A33C0000000000785970
-t1306895164
-s7887216
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/apps/examples/mpeMoviePlayerMaster/../../../libs/glut/lib/osx/GLUT.framework
-c000000004E612E6600000000000000CC
-t1314991718
-s204
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/apps/examples/mpeMoviePlayerMaster/../../../libs/glut/lib/osx/GLUT.framework/GLUT
-c000000004D3258300000000000092A98
-t1295145008
-s600728
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/apps/examples/mpeMoviePlayerMaster/bin//moviePlayerExampleDebug.app
-t1316789421
-s102
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/apps/examples/mpeMoviePlayerMaster/bin//moviePlayerExampleDebug.app/Contents/Info.plist
-t1316789188
-s627
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/apps/examples/mpeMoviePlayerMaster/bin//moviePlayerExampleDebug.app/Contents/MacOS/moviePlayerExampleDebug
-t1316789421
-s3703936
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/apps/examples/mpeMoviePlayerMaster/bin//moviePlayerExampleDebug.app/Contents/PkgInfo
-t1316789188
-s8
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/apps/examples/mpeMoviePlayerMaster/bin/moviePlayerExampleDebug.app/Contents/Frameworks/GLUT.framework
-t1316789197
-s204
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/apps/examples/mpeMoviePlayerMaster/build/mpeMoviePlayerMaster.build/Debug/moviePlayerExample.build/Objects-normal/i386/main.o
-t1316789421
-s501500
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/apps/examples/mpeMoviePlayerMaster/build/mpeMoviePlayerMaster.build/Debug/moviePlayerExample.build/Objects-normal/i386/moviePlayerExampleDebug.LinkFileList
-c000000004E7C9CA80000000000000161
-t1316789416
-s353
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/apps/examples/mpeMoviePlayerMaster/build/mpeMoviePlayerMaster.build/Debug/moviePlayerExample.build/Objects-normal/i386/testApp.o
-t1316789421
-s552872
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/apps/examples/mpeMoviePlayerMaster/build/mpeMoviePlayerMaster.build/Debug/moviePlayerExample.build/Script-E4B6FFFD0C3F9AB9008CF71C.sh
-c000000004E7C9CA80000000000000114
-t1316789416
-s276
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/apps/examples/mpeMoviePlayerMaster/src/main.cpp
-c000000004CD955FC000000000000019D
-t1289311740
-s413
-i"ofMain.h"
-i"testApp.h"
-i"ofAppGlutWindow.h"
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/apps/examples/mpeMoviePlayerMaster/src/testApp.cpp
-c000000004D5580180000000000000E32
-t1297448984
-s3634
-i"testApp.h"
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/apps/examples/mpeMoviePlayerMaster/src/testApp.h
-c000000004D41A0F00000000000000223
-t1296146672
-s547
-i"ofMain.h"
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/libs/cairo/include/cairo/cairo-deprecated.h
-c000000004D55801800000000000021FA
-t1297448984
-s8698
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/libs/cairo/include/cairo/cairo-features.h
-c000000004D558018000000000000031D
-t1297448984
-s797
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/libs/cairo/include/cairo/cairo-pdf.h
-c000000004D5580180000000000000C24
-t1297448984
-s3108
-i"cairo.h"
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/libs/cairo/include/cairo/cairo-svg.h
-c000000004D5580180000000000000ADD
-t1297448984
-s2781
-i"cairo.h"
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/libs/cairo/include/cairo/cairo-version.h
-c000000004D5580180000000000000094
-t1297448984
-s148
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/libs/cairo/include/cairo/cairo.h
-c000000004D5580180000000000016BCE
-t1297448984
-s93134
-i"cairo-version.h"
-i"cairo-features.h"
-i"cairo-deprecated.h"
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/libs/fmodex/include/fmod.h
-c000000004D3258300000000000028E68
-t1295145008
-s167528
-i"fmod_codec.h"
-i"fmod_dsp.h"
-i"fmod_memoryinfo.h"
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/libs/fmodex/include/fmod_codec.h
-c000000004B1F8992000000000000334A
-t1260358034
-s13130
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/libs/fmodex/include/fmod_dsp.h
-c000000004B1F8992000000000000892F
-t1260358034
-s35119
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/libs/fmodex/include/fmod_errors.h
-c000000004B1F89920000000000003408
-t1260358034
-s13320
-i"fmod.h"
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/libs/fmodex/include/fmod_memoryinfo.h
-c000000004B1F89920000000000003C95
-t1260358034
-s15509
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/libs/glew/include/GL/glew.h
-c000000004D455E0A00000000000C1916
-t1296391690
-s792854
-i<stddef.h>
-i<inttypes.h>
-i<stdint.h>
-i<inttypes.h>
-i<OpenGL/glu.h>
-i<GL/glu.h>
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworks/3d/of3dUtils.h
-c000000004DBAFE04000000000000002B
-t1304100356
-s43
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworks/3d/ofCamera.h
-c000000004DF297A40000000000000858
-t1307744164
-s2136
-i"ofRectangle.h"
-i"ofAppRunner.h"
-i"ofNode.h"
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworks/3d/ofEasyCam.h
-c000000004D846164000000000000053C
-t1300521316
-s1340
-i"ofCamera.h"
-i"ofEvents.h"
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworks/3d/ofMesh.h
-c000000004E15DFD600000000000010DD
-t1310056406
-s4317
-i"ofVec3f.h"
-i"ofVec2f.h"
-i"ofColor.h"
-i"ofUtils.h"
-i"ofConstants.h"
-i"ofGLUtils.h"
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworks/3d/ofNode.h
-c000000004D597A7C000000000000143C
-t1297709692
-s5180
-i"ofVectorMath.h"
-i"of3dUtils.h"
-i"ofGraphics.h"
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworks/app/ofAppBaseWindow.h
-c000000004E0F2BC00000000000000590
-t1309617088
-s1424
-i"ofPoint.h"
-i"ofTypes.h"
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworks/app/ofAppGlutWindow.h
-c000000004E0F2BC000000000000006A5
-t1309617088
-s1701
-i"ofConstants.h"
-i"ofAppBaseWindow.h"
-i"ofEvents.h"
-i"ofTypes.h"
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworks/app/ofAppRunner.h
-c000000004DD7B3E8000000000000075D
-t1305981928
-s1885
-i"ofConstants.h"
-i"ofPoint.h"
-i"ofRectangle.h"
-i"ofTypes.h"
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworks/app/ofBaseApp.h
-c000000004DD7B3E80000000000000377
-t1305981928
-s887
-i"ofPoint.h"
-i"ofEvents.h"
-i"ofBaseTypes.h"
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworks/communication/ofArduino.h
-c000000004D8461640000000000004200
-t1300521316
-s16896
-i<list>
-i<vector>
-i<string>
-i<iostream>
-i"ofEvents.h"
-i"ofSerial.h"
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworks/communication/ofSerial.h
-c000000004DB2F58A0000000000000DA9
-t1303573898
-s3497
-i"ofConstants.h"
-i"ofTypes.h"
-i<termios.h>
-i<winbase.h>
-i<tchar.h>
-i<iostream>
-i<string.h>
-i<setupapi.h>
-i<regstr.h>
-i<winioctl.h>
-i<initguid.h>
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworks/events/ofEventUtils.h
-c000000004DDA87260000000000000DAD
-t1306167078
-s3501
-i"ofConstants.h"
-i"Poco/FIFOEvent.h"
-i"Poco/Delegate.h"
-i<stdio.h>
-i<stdlib.h>
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworks/events/ofEvents.h
-c000000004DB071120000000000001B97
-t1303408914
-s7063
-i"ofConstants.h"
-i"ofPoint.h"
-i"ofEventUtils.h"
-i"ofxEventUtils.h"
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworks/gl/ofFbo.h
-c000000004E283BD60000000000000E23
-t1311259606
-s3619
-i"ofTexture.h"
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworks/gl/ofGLRenderer.h
-c000000004E19BFA00000000000001109
-t1310310304
-s4361
-i"ofBaseTypes.h"
-i"ofPolyline.h"
-i<stack>
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworks/gl/ofGLUtils.h
-c000000004E0E00180000000000000B79
-t1309540376
-s2937
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworks/gl/ofLight.h
-c000000004E0F6A46000000000000084C
-t1309633094
-s2124
-i"ofNode.h"
-i"ofColor.h"
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworks/gl/ofMaterial.h
-c000000004E0F6A460000000000000555
-t1309633094
-s1365
-i"ofColor.h"
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworks/gl/ofShader.h
-c000000004E0E5BE00000000000000F82
-t1309563872
-s3970
-i"ofConstants.h"
-i"ofBaseTypes.h"
-i"ofTexture.h"
-i<map>
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworks/gl/ofTexture.h
-c000000004E264F1400000000000010D0
-t1311133460
-s4304
-i"ofPoint.h"
-i"ofRectangle.h"
-i"ofBaseTypes.h"
-i"ofConstants.h"
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworks/gl/ofVbo.h
-c000000004E0F6A460000000000000A19
-t1309633094
-s2585
-i"ofConstants.h"
-i"ofVec3f.h"
-i"ofColor.h"
-i"ofUtils.h"
-i"ofMesh.h"
-i"ofGLUtils.h"
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworks/gl/ofVboMesh.h
-c000000004DF297A40000000000000114
-t1307744164
-s276
-i"ofMesh.h"
-i"ofVbo.h"
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworks/graphics/ofCairoRenderer.h
-c000000004E25C43000000000000012BF
-t1311097904
-s4799
-i"cairo-features.h"
-i"cairo-pdf.h"
-i"cairo-svg.h"
-i"cairo.h"
-i<deque>
-i<stack>
-i"ofMatrix4x4.h"
-i"ofBaseTypes.h"
-i"ofPath.h"
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworks/graphics/ofGraphics.h
-c000000004E1340520000000000001D95
-t1309884498
-s7573
-i"ofConstants.h"
-i"ofColor.h"
-i"ofPoint.h"
-i"ofMatrix4x4.h"
-i"ofRectangle.h"
-i"ofTypes.h"
-i"ofBaseTypes.h"
-i"ofGLRenderer.h"
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworks/graphics/ofImage.h
-c000000004E15DFD80000000000002014
-t1310056408
-s8212
-i"ofFileUtils.h"
-i"ofTexture.h"
-i"ofPixels.h"
-i"ofBaseTypes.h"
-i"ofConstants.h"
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworks/graphics/ofPath.h
-c000000004E19BFA0000000000000115A
-t1310310304
-s4442
-i"ofConstants.h"
-i"ofPoint.h"
-i"ofColor.h"
-i"ofPolyline.h"
-i"ofBaseTypes.h"
-i"ofMesh.h"
-i"ofTessellator.h"
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworks/graphics/ofPixels.h
-c000000004E1622C400000000000012C3
-t1310073540
-s4803
-i"ofConstants.h"
-i"ofUtils.h"
-i"ofColor.h"
-i"ofMath.h"
-i<limits>
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworks/graphics/ofPolyline.h
-c000000004E19BFA00000000000000E9D
-t1310310304
-s3741
-i"ofPoint.h"
-i"ofConstants.h"
-i<deque>
-i"ofRectangle.h"
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworks/graphics/ofRendererCollection.h
-c000000004E19BFA000000000000027C6
-t1310310304
-s10182
-i"ofBaseTypes.h"
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworks/graphics/ofTessellator.h
-c000000004DDA876A0000000000000459
-t1306167146
-s1113
-i"ofConstants.h"
-i"ofMesh.h"
-i"ofTypes.h"
-i"ofPolyline.h"
-i"tesselator.h"
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworks/graphics/ofTrueTypeFont.h
-c000000004E2319EC00000000000009F5
-t1310923244
-s2549
-i<vector>
-i"ofPoint.h"
-i"ofRectangle.h"
-i"ofConstants.h"
-i"ofPath.h"
-i"ofTexture.h"
-i"ofMesh.h"
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworks/math/ofMath.h
-c000000004E19BFA00000000000000B3D
-t1310310304
-s2877
-i"ofPoint.h"
-i"ofConstants.h"
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworks/math/ofMatrix3x3.h
-c000000004D5575B80000000000000A4C
-t1297446328
-s2636
-i"ofConstants.h"
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworks/math/ofMatrix4x4.h
-c000000004D8461640000000000006D64
-t1300521316
-s28004
-i"ofVec3f.h"
-i"ofVec4f.h"
-i"ofQuaternion.h"
-i"ofConstants.h"
-i<cmath>
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworks/math/ofQuaternion.h
-c000000004D84616400000000000033BD
-t1300521316
-s13245
-i"ofConstants.h"
-i"ofVec3f.h"
-i"ofVec4f.h"
-i<cmath>
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworks/math/ofVec2f.h
-c000000004D922FBC000000000000407D
-t1301426108
-s16509
-i"ofConstants.h"
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworks/math/ofVec3f.h
-c000000004D84616400000000000061A8
-t1300521316
-s25000
-i"ofVec2f.h"
-i"ofVec4f.h"
-i"ofConstants.h"
-i<cmath>
-i<iostream>
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworks/math/ofVec4f.h
-c000000004D5575B80000000000002EC3
-t1297446328
-s11971
-i"ofConstants.h"
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworks/math/ofVectorMath.h
-c000000004D2F23840000000000000099
-t1294934916
-s153
-i"ofVec2f.h"
-i"ofVec3f.h"
-i"ofVec4f.h"
-i"ofMatrix3x3.h"
-i"ofMatrix4x4.h"
-i"ofQuaternion.h"
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworks/ofMain.h
-c000000004E283BD60000000000000643
-t1311259606
-s1603
-i"ofConstants.h"
-i"ofFileUtils.h"
-i"ofLog.h"
-i"ofSystemUtils.h"
-i"ofThread.h"
-i"ofURLFileLoader.h"
-i"ofUtils.h"
-i"ofBaseTypes.h"
-i"ofTypes.h"
-i"ofColor.h"
-i"ofPoint.h"
-i"ofRectangle.h"
-i"ofMath.h"
-i"ofVectorMath.h"
-i"ofSerial.h"
-i"ofArduino.h"
-i"ofFbo.h"
-i"ofGLRenderer.h"
-i"ofGLUtils.h"
-i"ofLight.h"
-i"ofMaterial.h"
-i"ofShader.h"
-i"ofTexture.h"
-i"ofVbo.h"
-i"ofVboMesh.h"
-i"ofCairoRenderer.h"
-i"ofGraphics.h"
-i"ofImage.h"
-i"ofPath.h"
-i"ofPixels.h"
-i"ofPolyline.h"
-i"ofRendererCollection.h"
-i"ofTessellator.h"
-i"ofTrueTypeFont.h"
-i"ofBaseApp.h"
-i"ofAppRunner.h"
-i"ofSoundStream.h"
-i"ofSoundPlayer.h"
-i"ofVideoGrabber.h"
-i"ofVideoPlayer.h"
-i"ofEvents.h"
-i"of3dUtils.h"
-i"ofCamera.h"
-i"ofEasyCam.h"
-i"ofMesh.h"
-i"ofNode.h"
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworks/sound/ofBaseSoundPlayer.h
-c000000004D5575B80000000000000366
-t1297446328
-s870
-i"ofConstants.h"
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworks/sound/ofBaseSoundStream.h
-c000000004D8605E200000000000002D4
-t1300628962
-s724
-i"ofConstants.h"
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworks/sound/ofFmodSoundPlayer.h
-c000000004E283BD600000000000006B8
-t1311259606
-s1720
-i"ofConstants.h"
-i"ofBaseSoundPlayer.h"
-i"fmod.h"
-i"fmod_errors.h"
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworks/sound/ofOpenALSoundPlayer.h
-c000000004E283BD60000000000000E5E
-t1311259606
-s3678
-i"ofConstants.h"
-i"ofBaseSoundPlayer.h"
-i"ofEvents.h"
-i"ofThread.h"
-i<OpenAL/al.h>
-i<OpenAL/alc.h>
-i<AL/al.h>
-i<AL/alc.h>
-i"kiss_fft.h"
-i"kiss_fftr.h"
-i<sndfile.h>
-i<mpg123.h>
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworks/sound/ofPASoundStream.h
-c000000004E25C430000000000000052D
-t1311097904
-s1325
-i"ofConstants.h"
-i"ofBaseSoundStream.h"
-i"ofTypes.h"
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworks/sound/ofRtAudioSoundStream.h
-c000000004E283BD600000000000004A6
-t1311259606
-s1190
-i"ofConstants.h"
-i"ofBaseSoundStream.h"
-i"ofTypes.h"
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworks/sound/ofSoundPlayer.h
-c000000004E283BD60000000000000637
-t1311259606
-s1591
-i"ofConstants.h"
-i"ofTypes.h"
-i"ofBaseTypes.h"
-i"ofBaseSoundPlayer.h"
-i"ofQuicktimeSoundPlayer.h"
-i"ofFmodSoundPlayer.h"
-i"ofOpenALSoundPlayer.h"
-i"ofxOpenALSoundPlayer.h"
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworks/sound/ofSoundStream.h
-c000000004E2851A4000000000000067D
-t1311265188
-s1661
-i"ofConstants.h"
-i"ofBaseTypes.h"
-i"ofBaseApp.h"
-i"ofTypes.h"
-i"ofBaseSoundStream.h"
-i"ofRtAudioSoundStream.h"
-i"ofPASoundStream.h"
-i"ofxAndroidSoundStream.h"
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworks/types/ofBaseTypes.h
-c000000004E19BFA00000000000002EFE
-t1310310304
-s12030
-i"ofPoint.h"
-i"ofRectangle.h"
-i"ofConstants.h"
-i"ofColor.h"
-i"ofMesh.h"
-i"ofPixels.h"
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworks/types/ofColor.h
-c000000004E0F6A4600000000000013FD
-t1309633094
-s5117
-i<limits>
-i"ofMath.h"
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworks/types/ofPoint.h
-c000000004D846164000000000000003D
-t1300521316
-s61
-i"ofVec3f.h"
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworks/types/ofRectangle.h
-c000000004DB06E6E0000000000000454
-t1303408238
-s1108
-i"ofPoint.h"
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworks/types/ofTypes.h
-c000000004E0F6A7A0000000000000D27
-t1309633146
-s3367
-i"ofConstants.h"
-i"ofColor.h"
-i<memory>
-i<tr1/memory>
-i"Poco/Mutex.h"
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworks/utils/ofConstants.h
-c000000004E2851A400000000000034DF
-t1311265188
-s13535
-i<TargetConditionals.h>
-i<windows.h>
-i"GL\glew.h"
-i"GL\wglew.h"
-i"glu.h"
-i<unistd.h>
-i"GL/glew.h"
-i<OpenGL/gl.h>
-i<ApplicationServices/ApplicationServices.h>
-i<unistd.h>
-i<GL/glew.h>
-i<GL/gl.h>
-i<GL/glx.h>
-i<OpenGLES/ES1/gl.h>
-i<OpenGLES/ES1/glext.h>
-i<unistd.h>
-i<GLES/gl.h>
-i<GLES/glext.h>
-i"glu.h"
-i"tesselator.h"
-i<cstdlib>
-i<cstdio>
-i<cstdarg>
-i<cmath>
-i<ctime>
-i<cstdlib>
-i<string>
-i<iostream>
-i<vector>
-i<cstring>
-i<sstream>
-i<iomanip>
-i<fstream>
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworks/utils/ofFileUtils.h
-c000000004E25C4300000000000001D56
-t1311097904
-s7510
-i"ofConstants.h"
-i"Poco/File.h"
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworks/utils/ofLog.h
-c000000004E19BFA000000000000014B0
-t1310310304
-s5296
-i"ofConstants.h"
-i"ofFileUtils.h"
-i"ofTypes.h"
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworks/utils/ofSystemUtils.h
-c000000004DD7B3E200000000000001AC
-t1305981922
-s428
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworks/utils/ofThread.h
-c000000004D325832000000000000050C
-t1295145010
-s1292
-i"ofConstants.h"
-i"ofTypes.h"
-i<process.h>
-i<pthread.h>
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworks/utils/ofURLFileLoader.h
-c000000004E283BD600000000000008C4
-t1311259606
-s2244
-i<deque>
-i<queue>
-i"ofThread.h"
-i"ofEvents.h"
-i"ofFileUtils.h"
-i"Poco/Condition.h"
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworks/utils/ofUtils.h
-c000000004E283BD60000000000001245
-t1311259606
-s4677
-i"ofConstants.h"
-i<bitset>
-i"ofLog.h"
-i<shellapi.h>
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworks/video/ofDirectShowGrabber.h
-c000000004D55801A0000000000000475
-t1297448986
-s1141
-i"ofConstants.h"
-i"ofTexture.h"
-i"ofBaseTypes.h"
-i"ofPixels.h"
-i"videoInput.h"
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworks/video/ofGstUtils.h
-c000000004DB06E6E0000000000000FA6
-t1303408238
-s4006
-i"ofConstants.h"
-i<gst/gst.h>
-i<gst/app/gstappsink.h>
-i"ofConstants.h"
-i"ofBaseTypes.h"
-i"ofPixels.h"
-i"ofTypes.h"
-i"ofEvents.h"
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworks/video/ofGstVideoGrabber.h
-c000000004D55801A0000000000000542
-t1297448986
-s1346
-i"ofGstUtils.h"
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworks/video/ofGstVideoPlayer.h
-c000000004DF297A4000000000000059F
-t1307744164
-s1439
-i"ofGstUtils.h"
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworks/video/ofQtUtils.h
-c000000004D55801A00000000000006B5
-t1297448986
-s1717
-i"ofConstants.h"
-i<QuickTime/QuickTime.h>
-i<CoreServices/CoreServices.h>
-i<ApplicationServices/ApplicationServices.h>
-i<QTML.h>
-i<FixMath.h>
-i<QuickTimeComponents.h>
-i<TextUtils.h>
-i<MediaHandlers.h>
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworks/video/ofQuickTimeGrabber.h
-c000000004D5829EC0000000000000648
-t1297623532
-s1608
-i"ofConstants.h"
-i"ofQtUtils.h"
-i"ofTexture.h"
-i"ofBaseTypes.h"
-i"ofPixels.h"
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworks/video/ofQuickTimePlayer.h
-c000000004D55801A00000000000008B8
-t1297448986
-s2232
-i"ofConstants.h"
-i"ofBaseTypes.h"
-i"ofPixels.h"
-i"ofQtUtils.h"
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworks/video/ofVideoGrabber.h
-c000000004E19BF3C00000000000009ED
-t1310310204
-s2541
-i"ofConstants.h"
-i"ofTexture.h"
-i"ofBaseTypes.h"
-i"ofPixels.h"
-i"ofTypes.h"
-i"ofiPhoneVideoGrabber.h"
-i"ofQuickTimeGrabber.h"
-i"ofDirectShowGrabber.h"
-i"ofGstVideoGrabber.h"
-i"ofxAndroidVideoGrabber.h"
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworks/video/ofVideoPlayer.h
-c000000004E19BF3C0000000000000ABD
-t1310310204
-s2749
-i"ofConstants.h"
-i"ofTexture.h"
-i"ofBaseTypes.h"
-i"ofTypes.h"
-i"ofGstVideoPlayer.h"
-i"ofQuickTimePlayer.h"
-i"ofiPhoneVideoPlayer.h"
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworks/video/ofiPhoneVideoGrabber.h
-c000000004E19BF3C000000000000032C
-t1310310204
-s812
-i"ofVideoGrabber.h"
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworks/video/ofiPhoneVideoPlayer.h
-c000000004E19BF3C0000000000000612
-t1310310204
-s1554
-i"ofPixels.h"
-i"ofBaseTypes.h"
-i"ofTexture.h"
-i"ofVideoPlayer.h"
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a
-c000000004E612E9A0000000001BC7738
-t1314991770
-s29128504
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/libs/poco/include/Poco/AbstractDelegate.h
-c000000004D2C9F7A0000000000000B59
-t1294770042
-s2905
-i"Poco/Foundation.h"
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/libs/poco/include/Poco/AbstractEvent.h
-c000000004D2C9F7A0000000000002D7C
-t1294770042
-s11644
-i"Poco/Foundation.h"
-i"Poco/SingletonHolder.h"
-i"Poco/SharedPtr.h"
-i"Poco/ActiveResult.h"
-i"Poco/ActiveMethod.h"
-i"Poco/Mutex.h"
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/libs/poco/include/Poco/ActiveMethod.h
-c000000004D2C9F7A0000000000001C64
-t1294770042
-s7268
-i"Poco/Foundation.h"
-i"Poco/ActiveResult.h"
-i"Poco/ActiveRunnable.h"
-i"Poco/ActiveStarter.h"
-i"Poco/AutoPtr.h"
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/libs/poco/include/Poco/ActiveResult.h
-c000000004D2C9F7A0000000000002E66
-t1294770042
-s11878
-i"Poco/Foundation.h"
-i"Poco/Mutex.h"
-i"Poco/Event.h"
-i"Poco/RefCountedObject.h"
-i"Poco/Exception.h"
-i<algorithm>
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/libs/poco/include/Poco/ActiveRunnable.h
-c000000004D2C9F7A0000000000001785
-t1294770042
-s6021
-i"Poco/Foundation.h"
-i"Poco/ActiveResult.h"
-i"Poco/Runnable.h"
-i"Poco/RefCountedObject.h"
-i"Poco/AutoPtr.h"
-i"Poco/Exception.h"
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/libs/poco/include/Poco/ActiveStarter.h
-c000000004D2C9F7A0000000000000927
-t1294770042
-s2343
-i"Poco/Foundation.h"
-i"Poco/ThreadPool.h"
-i"Poco/ActiveRunnable.h"
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/libs/poco/include/Poco/AtomicCounter.h
-c000000004D8461640000000000001D13
-t1300521316
-s7443
-i"Poco/Foundation.h"
-i"Poco/UnWindows.h"
-i<libkern/OSAtomic.h>
-i"Poco/Mutex.h"
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/libs/poco/include/Poco/AutoPtr.h
-c000000004D2C9F7A0000000000001E0C
-t1294770042
-s7692
-i"Poco/Foundation.h"
-i"Poco/Exception.h"
-i<algorithm>
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/libs/poco/include/Poco/Bugcheck.h
-c000000004D2C9F7A00000000000014A9
-t1294770042
-s5289
-i"Poco/Foundation.h"
-i<string>
-i<iostream>
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/libs/poco/include/Poco/CompareFunctions.h
-c000000004D2C9F7A00000000000007EC
-t1294770042
-s2028
-i"Poco/Foundation.h"
-i<functional>
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/libs/poco/include/Poco/Condition.h
-c000000004D2C9F7A0000000000001236
-t1294770042
-s4662
-i"Poco/Foundation.h"
-i"Poco/Mutex.h"
-i"Poco/ScopedUnlock.h"
-i"Poco/Event.h"
-i"Poco/Exception.h"
-i<deque>
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/libs/poco/include/Poco/Config.h
-c000000004D2C9F7A0000000000000E22
-t1294770042
-s3618
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/libs/poco/include/Poco/Delegate.h
-c000000004D2C9F7A0000000000001828
-t1294770042
-s6184
-i"Poco/Foundation.h"
-i"Poco/AbstractDelegate.h"
-i"Poco/FunctionDelegate.h"
-i"Poco/Expire.h"
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/libs/poco/include/Poco/Event.h
-c000000004D2C9F7A0000000000000E21
-t1294770042
-s3617
-i"Poco/Foundation.h"
-i"Poco/Exception.h"
-i"Poco/Event_WIN32.h"
-i"Poco/Event_POSIX.h"
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/libs/poco/include/Poco/Event_POSIX.h
-c000000004D2C9F7A0000000000000A91
-t1294770042
-s2705
-i"Poco/Foundation.h"
-i"Poco/Exception.h"
-i<pthread.h>
-i<errno.h>
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/libs/poco/include/Poco/Event_WIN32.h
-c000000004D5575B8000000000000093F
-t1297446328
-s2367
-i"Poco/Foundation.h"
-i"Poco/Exception.h"
-i"Poco/UnWindows.h"
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/libs/poco/include/Poco/Exception.h
-c000000004D5575B8000000000000283D
-t1297446328
-s10301
-i"Poco/Foundation.h"
-i<stdexcept>
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/libs/poco/include/Poco/Expire.h
-c000000004D2C9F7A0000000000000D0D
-t1294770042
-s3341
-i"Poco/Foundation.h"
-i"Poco/AbstractDelegate.h"
-i"Poco/Timestamp.h"
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/libs/poco/include/Poco/FIFOEvent.h
-c000000004D2C9F7A0000000000000B15
-t1294770042
-s2837
-i"Poco/AbstractEvent.h"
-i"Poco/FIFOStrategy.h"
-i"Poco/AbstractDelegate.h"
-i"Poco/CompareFunctions.h"
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/libs/poco/include/Poco/FIFOStrategy.h
-c000000004D2C9F7A0000000000001116
-t1294770042
-s4374
-i"Poco/NotificationStrategy.h"
-i<map>
-i<list>
-i<memory>
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/libs/poco/include/Poco/File.h
-c000000004D455E0A0000000000001F91
-t1296391690
-s8081
-i"Poco/Foundation.h"
-i"Poco/Timestamp.h"
-i<vector>
-i"File_WINCE.h"
-i"Poco/File_WIN32U.h"
-i"Poco/File_WIN32.h"
-i"Poco/File_UNIX.h"
-i"Poco/File_VMS.h"
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/libs/poco/include/Poco/File_UNIX.h
-c000000004D2C9F7A0000000000000BC1
-t1294770042
-s3009
-i"Poco/Foundation.h"
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/libs/poco/include/Poco/File_VMS.h
-c000000004D2C9F7A0000000000000BBC
-t1294770042
-s3004
-i"Poco/Foundation.h"
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/libs/poco/include/Poco/File_WIN32.h
-c000000004D2C9F7A0000000000000C0C
-t1294770042
-s3084
-i"Poco/Foundation.h"
-i"Poco/Timestamp.h"
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/libs/poco/include/Poco/File_WIN32U.h
-c000000004D2C9F7A0000000000000C2B
-t1294770042
-s3115
-i"Poco/Foundation.h"
-i"Poco/Timestamp.h"
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/libs/poco/include/Poco/File_WINCE.h
-c000000004D2C9F7A0000000000000C2C
-t1294770042
-s3116
-i"Poco/Foundation.h"
-i"Poco/Timestamp.h"
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/libs/poco/include/Poco/Foundation.h
-c000000004D5575B800000000000010BE
-t1297446328
-s4286
-i"Poco/Config.h"
-i"Poco/Platform.h"
-i"Poco/Platform_WIN32.h"
-i"Poco/Platform_VMS.h"
-i"Poco/Platform_POSIX.h"
-i"Poco/Bugcheck.h"
-i"Poco/Types.h"
-i<string>
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/libs/poco/include/Poco/FunctionDelegate.h
-c000000004D2C9F7A00000000000013C8
-t1294770042
-s5064
-i"Poco/Foundation.h"
-i"Poco/AbstractDelegate.h"
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/libs/poco/include/Poco/Mutex.h
-c000000004D2C9F7C0000000000001D9F
-t1294770044
-s7583
-i"Poco/Foundation.h"
-i"Poco/Exception.h"
-i"Poco/ScopedLock.h"
-i"Poco/Mutex_WINCE.h"
-i"Poco/Mutex_WIN32.h"
-i"Poco/Mutex_POSIX.h"
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/libs/poco/include/Poco/Mutex_POSIX.h
-c000000004D5575B80000000000000AC3
-t1297446328
-s2755
-i"Poco/Foundation.h"
-i"Poco/Exception.h"
-i<pthread.h>
-i<errno.h>
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/libs/poco/include/Poco/Mutex_WIN32.h
-c000000004D5575B80000000000000A04
-t1297446328
-s2564
-i"Poco/Foundation.h"
-i"Poco/Exception.h"
-i"Poco/UnWindows.h"
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/libs/poco/include/Poco/Mutex_WINCE.h
-c000000004D2C9F7C0000000000000870
-t1294770044
-s2160
-i"Poco/Foundation.h"
-i"Poco/Exception.h"
-i"Poco/UnWindows.h"
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/libs/poco/include/Poco/NotificationStrategy.h
-c000000004D2C9F7C0000000000000B48
-t1294770044
-s2888
-i"Poco/Foundation.h"
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/libs/poco/include/Poco/Platform.h
-c000000004D5575B80000000000001AF7
-t1297446328
-s6903
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/libs/poco/include/Poco/Platform_POSIX.h
-c000000004D2C9F7C0000000000000843
-t1294770044
-s2115
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/libs/poco/include/Poco/Platform_VMS.h
-c000000004D5575B80000000000000BAA
-t1297446328
-s2986
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/libs/poco/include/Poco/Platform_WIN32.h
-c000000004D5575B80000000000000DCF
-t1297446328
-s3535
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/libs/poco/include/Poco/RefCountedObject.h
-c000000004D2C9F7C0000000000000BB1
-t1294770044
-s2993
-i"Poco/Foundation.h"
-i"Poco/AtomicCounter.h"
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/libs/poco/include/Poco/Runnable.h
-c000000004D2C9F7C0000000000000861
-t1294770044
-s2145
-i"Poco/Foundation.h"
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/libs/poco/include/Poco/ScopedLock.h
-c000000004D455E0A0000000000000B7F
-t1296391690
-s2943
-i"Poco/Foundation.h"
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/libs/poco/include/Poco/ScopedUnlock.h
-c000000004D2C9F7C000000000000092B
-t1294770044
-s2347
-i"Poco/Foundation.h"
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/libs/poco/include/Poco/SharedPtr.h
-c000000004D5575B80000000000002278
-t1297446328
-s8824
-i"Poco/Foundation.h"
-i"Poco/Exception.h"
-i"Poco/AtomicCounter.h"
-i<algorithm>
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/libs/poco/include/Poco/SignalHandler.h
-c000000004D2C9F7C00000000000011EB
-t1294770044
-s4587
-i"Poco/Foundation.h"
-i<vector>
-i<setjmp.h>
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/libs/poco/include/Poco/SingletonHolder.h
-c000000004D2C9F7C0000000000000A67
-t1294770044
-s2663
-i"Poco/Foundation.h"
-i"Poco/Mutex.h"
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/libs/poco/include/Poco/Thread.h
-c000000004D2C9F7C0000000000001E10
-t1294770044
-s7696
-i"Poco/Foundation.h"
-i"Poco/Mutex.h"
-i"Poco/Thread_WINCE.h"
-i"Poco/Thread_WIN32.h"
-i"Poco/Thread_POSIX.h"
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/libs/poco/include/Poco/ThreadPool.h
-c000000004D2C9F7C0000000000001C8A
-t1294770044
-s7306
-i"Poco/Foundation.h"
-i"Poco/Thread.h"
-i"Poco/Mutex.h"
-i<vector>
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/libs/poco/include/Poco/Thread_POSIX.h
-c000000004D2C9F7C00000000000013B7
-t1294770044
-s5047
-i"Poco/Foundation.h"
-i"Poco/Runnable.h"
-i"Poco/SignalHandler.h"
-i"Poco/Event.h"
-i"Poco/RefCountedObject.h"
-i"Poco/AutoPtr.h"
-i<pthread.h>
-i<limits.h>
-i<sys/select.h>
-i<errno.h>
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/libs/poco/include/Poco/Thread_WIN32.h
-c000000004D5575B80000000000001301
-t1297446328
-s4865
-i"Poco/Foundation.h"
-i"Poco/Runnable.h"
-i"Poco/UnWindows.h"
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/libs/poco/include/Poco/Thread_WINCE.h
-c000000004D2C9F7C0000000000001276
-t1294770044
-s4726
-i"Poco/Foundation.h"
-i"Poco/Runnable.h"
-i"Poco/UnWindows.h"
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/libs/poco/include/Poco/Timestamp.h
-c000000004D2C9F7C0000000000001A41
-t1294770044
-s6721
-i"Poco/Foundation.h"
-i<ctime>
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/libs/poco/include/Poco/Types.h
-c000000004D5575B80000000000001926
-t1297446328
-s6438
-i"Poco/Foundation.h"
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/libs/poco/include/Poco/UnWindows.h
-c000000004D2C9F7C0000000000000FC3
-t1294770044
-s4035
-i<windows.h>
-
-N/Users/shiffman/Documents/of_preRelease_v007_osx/libs/tess2/include/tesselator.h
-c000000004E0E166A0000000000001C63
-t1309546090
-s7267
-i<TargetConditionals.h>
-
-N/usr/include/TargetConditionals.h
-c000000004A8D4DF700000000000031E9
-t1250774519
-s12777
-
-N/usr/include/errno.h
-c000000004AC59C8100000000000003EB
-t1254464641
-s1003
-
-N/usr/include/inttypes.h
-c000000004AC59C8100000000000027D1
-t1254464641
-s10193
-
-N/usr/include/libkern/OSAtomic.h
-c000000004AC59C810000000000002519
-t1254464641
-s9497
-
-N/usr/include/pthread.h
-c000000004AC59C8100000000000038F0
-t1254464641
-s14576
-
-N/usr/include/setjmp.h
-c000000004AC59C810000000000000438
-t1254464641
-s1080
-
-N/usr/include/stdio.h
-c000000004AC59C820000000000004174
-t1254464642
-s16756
-
-N/usr/include/stdlib.h
-c000000004AC59C820000000000002DF5
-t1254464642
-s11765
-
-N/usr/include/string.h
-c000000004AC59C820000000000001731
-t1254464642
-s5937
-
-N/usr/include/sys/_types.h
-c000000004C4DE4B50000000000001845
-t1280173237
-s6213
-
-N/usr/include/sys/select.h
-c000000004C4DE4B300000000000016A2
-t1280173235
-s5794
-
-N/usr/include/termios.h
-c000000004AC59C8100000000000004D4
-t1254464641
-s1236
-
-N/usr/include/unistd.h
-c000000004AC59C82000000000000563E
-t1254464642
-s22078
-
-N/var/folders/gb/gbjBwOxUFySkNJABuufvgU+++TU/-Caches-/com.apple.Xcode.504/SharedPrecompiledHeaders/Carbon-eervujktbtkdtggwsjiiuiordnby/Carbon.h.gch
-t1316789419
-s53761840
-
-NopenFrameworks-Info.plist
-c000000004E26C9280000000000000277
-t1311164712
-s631
-
-CCheck dependencies
-r0
-lSLF07#2@18"Check dependencies338482216#338482216#0(0"0(0#1#0"8613829632#0"0#
-
-CCompileC build/mpeMoviePlayerMaster.build/Debug/moviePlayerExample.build/Objects-normal/i386/main.o /Users/shiffman/Documents/of_preRelease_v007_osx/apps/examples/mpeMoviePlayerMaster/src/main.cpp normal i386 c++ com.apple.compilers.gcc.4_2
-s338482219.516301
-e338482221.217278
-r1
-xCompileC
-xbuild/mpeMoviePlayerMaster.build/Debug/moviePlayerExample.build/Objects-normal/i386/main.o
-x/Users/shiffman/Documents/of_preRelease_v007_osx/apps/examples/mpeMoviePlayerMaster/src/main.cpp
-xnormal
-xi386
-xc++
-xcom.apple.compilers.gcc.4_2
-oi686-apple-darwin10-gcc-4.2.1: -lpthread: linker input file unused because linking not done
-lSLF07#2@104"Compile /Users/shiffman/Documents/of_preRelease_v007_osx/apps/examples/mpeMoviePlayerMaster/src/main.cpp338482219#338482221#0(92"i686-apple-darwin10-gcc-4.2.1: -lpthread: linker input file unused because linking not done0(0#0#96"/Users/shiffman/Documents/of_preRelease_v007_osx/apps/examples/mpeMoviePlayerMaster/src/main.cpp8609650944#2368"    cd /Users/shiffman/Documents/of_preRelease_v007_osx/apps/examples/mpeMoviePlayerMaster    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch i386 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -Os -mfix-and-continue -ftree-vectorize -msse3 -mssse3 -Wno-deprecated-declarations -Wno-invalid-offsetof -gdwarf-2 -I/Users/shiffman/Documents/of_preRelease_v007_osx/apps/examples/mpeMoviePlayerMaster/build/mpeMoviePlayerMaster.build/Debug/moviePlayerExample.build/moviePlayerExampleDebug.hmap -F/Users/shiffman/Documents/of_preRelease_v007_osx/apps/examples/mpeMoviePlayerMaster/bin -F/Users/shiffman/Documents/of_preRelease_v007_osx/apps/examples/mpeMoviePlayerMaster/../../../libs/glut/lib/osx -I/Users/shiffman/Documents/of_preRelease_v007_osx/apps/examples/mpeMoviePlayerMaster/bin/include -I../../../libs/openFrameworks -I../../../libs/openFrameworks/3d -I../../../libs/openFrameworks/app -I../../../libs/openFrameworks/communication -I../../../libs/openFrameworks/events -I../../../libs/openFrameworks/gl -I../../../libs/openFrameworks/graphics -I../../../libs/openFrameworks/math -I../../../libs/openFrameworks/sound -I../../../libs/openFrameworks/types -I../../../libs/openFrameworks/utils -I../../../libs/openFrameworks/video -I../../../libs/poco/include -I../../../libs/freetype/include -I../../../libs/freetype/include/freetype2 -I../../../libs/fmodex/include -I../../../libs/glew/include -I../../../libs/FreeImage/include -I../../../libs/tess2/include -I../../../libs/cairo/include/cairo -I../../../libs/rtaudio/include -I/Users/shiffman/Documents/of_preRelease_v007_osx/apps/examples/mpeMoviePlayerMaster/build/mpeMoviePlayerMaster.build/Debug/moviePlayerExample.build/DerivedSources/i386 -I/Users/shiffman/Documents/of_preRelease_v007_osx/apps/examples/mpeMoviePlayerMaster/build/mpeMoviePlayerMaster.build/Debug/moviePlayerExample.build/DerivedSources -D__MACOSX_CORE__ -lpthread -include /var/folders/gb/gbjBwOxUFySkNJABuufvgU+++TU/-Caches-/com.apple.Xcode.504/SharedPrecompiledHeaders/Carbon-eervujktbtkdtggwsjiiuiordnby/Carbon.h -c /Users/shiffman/Documents/of_preRelease_v007_osx/apps/examples/mpeMoviePlayerMaster/src/main.cpp -o /Users/shiffman/Documents/of_preRelease_v007_osx/apps/examples/mpeMoviePlayerMaster/build/mpeMoviePlayerMaster.build/Debug/moviePlayerExample.build/Objects-normal/i386/main.o0#
-
-CCompileC build/mpeMoviePlayerMaster.build/Debug/moviePlayerExample.build/Objects-normal/i386/testApp.o /Users/shiffman/Documents/of_preRelease_v007_osx/apps/examples/mpeMoviePlayerMaster/src/testApp.cpp normal i386 c++ com.apple.compilers.gcc.4_2
-s338482219.517295
-e338482221.444059
-r1
-xCompileC
-xbuild/mpeMoviePlayerMaster.build/Debug/moviePlayerExample.build/Objects-normal/i386/testApp.o
-x/Users/shiffman/Documents/of_preRelease_v007_osx/apps/examples/mpeMoviePlayerMaster/src/testApp.cpp
-xnormal
-xi386
-xc++
-xcom.apple.compilers.gcc.4_2
-oi686-apple-darwin10-gcc-4.2.1: -lpthread: linker input file unused because linking not done
-lSLF07#2@107"Compile /Users/shiffman/Documents/of_preRelease_v007_osx/apps/examples/mpeMoviePlayerMaster/src/testApp.cpp338482219#338482221#0(92"i686-apple-darwin10-gcc-4.2.1: -lpthread: linker input file unused because linking not done0(0#0#99"/Users/shiffman/Documents/of_preRelease_v007_osx/apps/examples/mpeMoviePlayerMaster/src/testApp.cpp8608965472#2374"    cd /Users/shiffman/Documents/of_preRelease_v007_osx/apps/examples/mpeMoviePlayerMaster    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++ -arch i386 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -Os -mfix-and-continue -ftree-vectorize -msse3 -mssse3 -Wno-deprecated-declarations -Wno-invalid-offsetof -gdwarf-2 -I/Users/shiffman/Documents/of_preRelease_v007_osx/apps/examples/mpeMoviePlayerMaster/build/mpeMoviePlayerMaster.build/Debug/moviePlayerExample.build/moviePlayerExampleDebug.hmap -F/Users/shiffman/Documents/of_preRelease_v007_osx/apps/examples/mpeMoviePlayerMaster/bin -F/Users/shiffman/Documents/of_preRelease_v007_osx/apps/examples/mpeMoviePlayerMaster/../../../libs/glut/lib/osx -I/Users/shiffman/Documents/of_preRelease_v007_osx/apps/examples/mpeMoviePlayerMaster/bin/include -I../../../libs/openFrameworks -I../../../libs/openFrameworks/3d -I../../../libs/openFrameworks/app -I../../../libs/openFrameworks/communication -I../../../libs/openFrameworks/events -I../../../libs/openFrameworks/gl -I../../../libs/openFrameworks/graphics -I../../../libs/openFrameworks/math -I../../../libs/openFrameworks/sound -I../../../libs/openFrameworks/types -I../../../libs/openFrameworks/utils -I../../../libs/openFrameworks/video -I../../../libs/poco/include -I../../../libs/freetype/include -I../../../libs/freetype/include/freetype2 -I../../../libs/fmodex/include -I../../../libs/glew/include -I../../../libs/FreeImage/include -I../../../libs/tess2/include -I../../../libs/cairo/include/cairo -I../../../libs/rtaudio/include -I/Users/shiffman/Documents/of_preRelease_v007_osx/apps/examples/mpeMoviePlayerMaster/build/mpeMoviePlayerMaster.build/Debug/moviePlayerExample.build/DerivedSources/i386 -I/Users/shiffman/Documents/of_preRelease_v007_osx/apps/examples/mpeMoviePlayerMaster/build/mpeMoviePlayerMaster.build/Debug/moviePlayerExample.build/DerivedSources -D__MACOSX_CORE__ -lpthread -include /var/folders/gb/gbjBwOxUFySkNJABuufvgU+++TU/-Caches-/com.apple.Xcode.504/SharedPrecompiledHeaders/Carbon-eervujktbtkdtggwsjiiuiordnby/Carbon.h -c /Users/shiffman/Documents/of_preRelease_v007_osx/apps/examples/mpeMoviePlayerMaster/src/testApp.cpp -o /Users/shiffman/Documents/of_preRelease_v007_osx/apps/examples/mpeMoviePlayerMaster/build/mpeMoviePlayerMaster.build/Debug/moviePlayerExample.build/Objects-normal/i386/testApp.o0#
-
-CLd /Users/shiffman/Documents/of_preRelease_v007_osx/apps/examples/mpeMoviePlayerMaster/bin//moviePlayerExampleDebug.app/Contents/MacOS/moviePlayerExampleDebug normal i386
-s338482221.444159
-e338482221.924855
-r1
-xLd
-x/Users/shiffman/Documents/of_preRelease_v007_osx/apps/examples/mpeMoviePlayerMaster/bin//moviePlayerExampleDebug.app/Contents/MacOS/moviePlayerExampleDebug
-xnormal
-xi386
-old: warning: __gnu_cxx::new_allocator<std::_Rb_tree_node<std::pair<unsigned int const, int> > >::allocate(unsigned long, void const*)has different visibility (hidden) in /Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a(Exif.o-i386) and (default) in /Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a(ofTexture.o)
-old: warning: std::_Rb_tree<unsigned int, std::pair<unsigned int const, int>, std::_Select1st<std::pair<unsigned int const, int> >, std::less<unsigned int>, std::allocator<std::pair<unsigned int const, int> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned int const, int> >*)has different visibility (hidden) in /Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a(Exif.o-i386) and (default) in /Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a(ofTexture.o)
-old: warning: std::_Rb_tree<unsigned int, std::pair<unsigned int const, int>, std::_Select1st<std::pair<unsigned int const, int> >, std::less<unsigned int>, std::allocator<std::pair<unsigned int const, int> > >::_M_create_node(std::pair<unsigned int const, int> const&)has different visibility (hidden) in /Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a(Exif.o-i386) and (default) in /Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a(ofTexture.o)
-old: warning: std::_Rb_tree<unsigned int, std::pair<unsigned int const, int>, std::_Select1st<std::pair<unsigned int const, int> >, std::less<unsigned int>, std::allocator<std::pair<unsigned int const, int> > >::_M_insert(std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, std::pair<unsigned int const, int> const&)has different visibility (hidden) in /Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a(Exif.o-i386) and (default) in /Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a(ofTexture.o)
-old: warning: std::map<unsigned int, int, std::less<unsigned int>, std::allocator<std::pair<unsigned int const, int> > >::operator[](unsigned int const&)has different visibility (hidden) in /Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a(Exif.o-i386) and (default) in /Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a(ofTexture.o)
-old: warning: __gnu_cxx::new_allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> > >::allocate(unsigned long, void const*)has different visibility (hidden) in /Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a(IPTC.o-i386) and (default) in /Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a(ofAppGlutWindow.o)
-old: warning: std::_Vector_base<std::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::~_Vector_base()has different visibility (hidden) in /Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a(IPTC.o-i386) and (default) in /Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a(ofAppGlutWindow.o)
-old: warning: std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::~vector()has different visibility (hidden) in /Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a(IPTC.o-i386) and (default) in /Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a(ofAppGlutWindow.o)
-old: warning: std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::_M_insert_aux(__gnu_cxx::__normal_iterator<std::basic_string<char, std::char_traits<char>, std::allocator<char> >*, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)has different visibility (hidden) in /Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a(IPTC.o-i386) and (default) in /Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a(ofAppGlutWindow.o)
-old: warning: std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::push_back(std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)has different visibility (hidden) in /Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a(IPTC.o-i386) and (default) in /Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a(ofAppGlutWindow.o)
-old: warning: std::basic_string<char, std::char_traits<char>, std::allocator<char> > std::operator+<char, std::char_traits<char>, std::allocator<char> >(std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, char const*)has different visibility (hidden) in /Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a(PluginEXR.o-i386) and (default) in /Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a(ofUtils.o)
-old: warning: std::basic_string<char, std::char_traits<char>, std::allocator<char> > std::operator+<char, std::char_traits<char>, std::allocator<char> >(char const*, std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)has different visibility (hidden) in /Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a(PluginEXR.o-i386) and (default) in /Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a(ofUtils.o)
-old: warning: __gnu_cxx::new_allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> > >::allocate(unsigned long, void const*)has different visibility (hidden) in /Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a(ImfHeader.o-i386) and (default) in /Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a(ofAppGlutWindow.o)
-old: warning: std::_Vector_base<std::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::~_Vector_base()has different visibility (hidden) in /Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a(ImfHeader.o-i386) and (default) in /Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a(ofAppGlutWindow.o)
-old: warning: std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::~vector()has different visibility (hidden) in /Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a(ImfHeader.o-i386) and (default) in /Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a(ofAppGlutWindow.o)
-old: warning: __gnu_cxx::new_allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> > >::allocate(unsigned long, void const*)has different visibility (hidden) in /Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a(ImfStringVectorAttribute.o-i386) and (default) in /Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a(ofAppGlutWindow.o)
-old: warning: std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::_M_insert_aux(__gnu_cxx::__normal_iterator<std::basic_string<char, std::char_traits<char>, std::allocator<char> >*, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)has different visibility (hidden) in /Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a(ImfStringVectorAttribute.o-i386) and (default) in /Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a(ofAppGlutWindow.o)
-old: warning: std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::push_back(std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)has different visibility (hidden) in /Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a(ImfStringVectorAttribute.o-i386) and (default) in /Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a(ofAppGlutWindow.o)
-old: warning: std::basic_string<char, std::char_traits<char>, std::allocator<char> > std::operator+<char, std::char_traits<char>, std::allocator<char> >(std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, char const*)has different visibility (hidden) in /Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a(ImfRgbaFile.o-i386) and (default) in /Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a(ofUtils.o)
-old: warning: __gnu_cxx::new_allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> > >::allocate(unsigned long, void const*)has different visibility (hidden) in /Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a(ImfStandardAttributes.o-i386) and (default) in /Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a(ofAppGlutWindow.o)
-old: warning: std::_Vector_base<std::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::~_Vector_base()has different visibility (hidden) in /Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a(ImfStandardAttributes.o-i386) and (default) in /Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a(ofAppGlutWindow.o)
-old: warning: std::_Vector_base<std::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::_Vector_base(unsigned long, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> > > const&)has different visibility (hidden) in /Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a(ImfStandardAttributes.o-i386) and (default) in /Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a(ofAppGlutWindow.o)
-old: warning: std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::~vector()has different visibility (hidden) in /Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a(ImfStandardAttributes.o-i386) and (default) in /Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a(ofAppGlutWindow.o)
-old: warning: std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::vector(std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const&)has different visibility (hidden) in /Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a(ImfStandardAttributes.o-i386) and (default) in /Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a(ofAppGlutWindow.o)
-lSLF07#2@160"Link /Users/shiffman/Documents/of_preRelease_v007_osx/apps/examples/mpeMoviePlayerMaster/bin//moviePlayerExampleDebug.app/Contents/MacOS/moviePlayerExampleDebug338482221#338482221#0(13370"ld: warning: __gnu_cxx::new_allocator<std::_Rb_tree_node<std::pair<unsigned int const, int> > >::allocate(unsigned long, void const*)has different visibility (hidden) in /Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a(Exif.o-i386) and (default) in /Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a(ofTexture.o)ld: warning: std::_Rb_tree<unsigned int, std::pair<unsigned int const, int>, std::_Select1st<std::pair<unsigned int const, int> >, std::less<unsigned int>, std::allocator<std::pair<unsigned int const, int> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned int const, int> >*)has different visibility (hidden) in /Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a(Exif.o-i386) and (default) in /Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a(ofTexture.o)ld: warning: std::_Rb_tree<unsigned int, std::pair<unsigned int const, int>, std::_Select1st<std::pair<unsigned int const, int> >, std::less<unsigned int>, std::allocator<std::pair<unsigned int const, int> > >::_M_create_node(std::pair<unsigned int const, int> const&)has different visibility (hidden) in /Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a(Exif.o-i386) and (default) in /Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a(ofTexture.o)ld: warning: std::_Rb_tree<unsigned int, std::pair<unsigned int const, int>, std::_Select1st<std::pair<unsigned int const, int> >, std::less<unsigned int>, std::allocator<std::pair<unsigned int const, int> > >::_M_insert(std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, std::pair<unsigned int const, int> const&)has different visibility (hidden) in /Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a(Exif.o-i386) and (default) in /Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a(ofTexture.o)ld: warning: std::map<unsigned int, int, std::less<unsigned int>, std::allocator<std::pair<unsigned int const, int> > >::operator[](unsigned int const&)has different visibility (hidden) in /Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a(Exif.o-i386) and (default) in /Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a(ofTexture.o)ld: warning: __gnu_cxx::new_allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> > >::allocate(unsigned long, void const*)has different visibility (hidden) in /Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a(IPTC.o-i386) and (default) in /Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a(ofAppGlutWindow.o)ld: warning: std::_Vector_base<std::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::~_Vector_base()has different visibility (hidden) in /Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a(IPTC.o-i386) and (default) in /Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a(ofAppGlutWindow.o)ld: warning: std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::~vector()has different visibility (hidden) in /Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a(IPTC.o-i386) and (default) in /Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a(ofAppGlutWindow.o)ld: warning: std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::_M_insert_aux(__gnu_cxx::__normal_iterator<std::basic_string<char, std::char_traits<char>, std::allocator<char> >*, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)has different visibility (hidden) in /Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a(IPTC.o-i386) and (default) in /Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a(ofAppGlutWindow.o)ld: warning: std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::push_back(std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)has different visibility (hidden) in /Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a(IPTC.o-i386) and (default) in /Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a(ofAppGlutWindow.o)ld: warning: std::basic_string<char, std::char_traits<char>, std::allocator<char> > std::operator+<char, std::char_traits<char>, std::allocator<char> >(std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, char const*)has different visibility (hidden) in /Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a(PluginEXR.o-i386) and (default) in /Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a(ofUtils.o)ld: warning: std::basic_string<char, std::char_traits<char>, std::allocator<char> > std::operator+<char, std::char_traits<char>, std::allocator<char> >(char const*, std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)has different visibility (hidden) in /Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a(PluginEXR.o-i386) and (default) in /Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a(ofUtils.o)ld: warning: __gnu_cxx::new_allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> > >::allocate(unsigned long, void const*)has different visibility (hidden) in /Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a(ImfHeader.o-i386) and (default) in /Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a(ofAppGlutWindow.o)ld: warning: std::_Vector_base<std::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::~_Vector_base()has different visibility (hidden) in /Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a(ImfHeader.o-i386) and (default) in /Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a(ofAppGlutWindow.o)ld: warning: std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::~vector()has different visibility (hidden) in /Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a(ImfHeader.o-i386) and (default) in /Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a(ofAppGlutWindow.o)ld: warning: __gnu_cxx::new_allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> > >::allocate(unsigned long, void const*)has different visibility (hidden) in /Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a(ImfStringVectorAttribute.o-i386) and (default) in /Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a(ofAppGlutWindow.o)ld: warning: std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::_M_insert_aux(__gnu_cxx::__normal_iterator<std::basic_string<char, std::char_traits<char>, std::allocator<char> >*, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)has different visibility (hidden) in /Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a(ImfStringVectorAttribute.o-i386) and (default) in /Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a(ofAppGlutWindow.o)ld: warning: std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::push_back(std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)has different visibility (hidden) in /Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a(ImfStringVectorAttribute.o-i386) and (default) in /Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a(ofAppGlutWindow.o)ld: warning: std::basic_string<char, std::char_traits<char>, std::allocator<char> > std::operator+<char, std::char_traits<char>, std::allocator<char> >(std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, char const*)has different visibility (hidden) in /Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a(ImfRgbaFile.o-i386) and (default) in /Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a(ofUtils.o)ld: warning: __gnu_cxx::new_allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> > >::allocate(unsigned long, void const*)has different visibility (hidden) in /Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a(ImfStandardAttributes.o-i386) and (default) in /Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a(ofAppGlutWindow.o)ld: warning: std::_Vector_base<std::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::~_Vector_base()has different visibility (hidden) in /Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a(ImfStandardAttributes.o-i386) and (default) in /Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a(ofAppGlutWindow.o)ld: warning: std::_Vector_base<std::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::_Vector_base(unsigned long, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> > > const&)has different visibility (hidden) in /Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a(ImfStandardAttributes.o-i386) and (default) in /Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a(ofAppGlutWindow.o)ld: warning: std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::~vector()has different visibility (hidden) in /Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a(ImfStandardAttributes.o-i386) and (default) in /Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a(ofAppGlutWindow.o)ld: warning: std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::vector(std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const&)has different visibility (hidden) in /Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a(ImfStandardAttributes.o-i386) and (default) in /Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a(ofAppGlutWindow.o)24(22@413"__gnu_cxx::new_allocator<std::_Rb_tree_node<std::pair<unsigned int const, int> > >::allocate(unsigned long, void const*)has different visibility (hidden) in /Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a(Exif.o-i386) and (default) in /Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a(ofTexture.o)338482221#0#427#0(6@0"338482221#0#0#0#0#0"0(22@557"Std::_Rb_tree<unsigned int, std::pair<unsigned int const, int>, std::_Select1st<std::pair<unsigned int const, int> >, std::less<unsigned int>, std::allocator<std::pair<unsigned int const, int> > >::_M_erase(std::_Rb_tree_node<std::pair<unsigned int const, int> >*)has different visibility (hidden) in /Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a(Exif.o-i386) and (default) in /Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a(ofTexture.o)338482221#427#571#0(6@0"338482221#0#0#0#0#0"0(22@548"Std::_Rb_tree<unsigned int, std::pair<unsigned int const, int>, std::_Select1st<std::pair<unsigned int const, int> >, std::less<unsigned int>, std::allocator<std::pair<unsigned int const, int> > >::_M_create_node(std::pair<unsigned int const, int> const&)has different visibility (hidden) in /Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a(Exif.o-i386) and (default) in /Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a(ofTexture.o)338482221#998#562#0(6@0"338482221#0#0#0#0#0"0(22@595"Std::_Rb_tree<unsigned int, std::pair<unsigned int const, int>, std::_Select1st<std::pair<unsigned int const, int> >, std::less<unsigned int>, std::allocator<std::pair<unsigned int const, int> > >::_M_insert(std::_Rb_tree_node_base*, std::_Rb_tree_node_base*, std::pair<unsigned int const, int> const&)has different visibility (hidden) in /Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a(Exif.o-i386) and (default) in /Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a(ofTexture.o)338482221#1560#609#0(6@0"338482221#0#0#0#0#0"0(22@432"Std::map<unsigned int, int, std::less<unsigned int>, std::allocator<std::pair<unsigned int const, int> > >::operator[](unsigned int const&)has different visibility (hidden) in /Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a(Exif.o-i386) and (default) in /Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a(ofTexture.o)338482221#2169#446#0(6@0"338482221#0#0#0#0#0"0(22@434"__gnu_cxx::new_allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> > >::allocate(unsigned long, void const*)has different visibility (hidden) in /Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a(IPTC.o-i386) and (default) in /Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a(ofAppGlutWindow.o)338482221#2615#448#0(6@0"338482221#0#0#0#0#0"0(22@495"Std::_Vector_base<std::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::~_Vector_base()has different visibility (hidden) in /Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a(IPTC.o-i386) and (default) in /Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a(ofAppGlutWindow.o)338482221#3063#509#0(6@0"338482221#0#0#0#0#0"0(22@483"Std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::~vector()has different visibility (hidden) in /Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a(IPTC.o-i386) and (default) in /Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a(ofAppGlutWindow.o)338482221#3572#497#0(6@0"338482221#0#0#0#0#0"0(22@845"Std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::_M_insert_aux(__gnu_cxx::__normal_iterator<std::basic_string<char, std::char_traits<char>, std::allocator<char> >*, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)has different visibility (hidden) in /Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a(IPTC.o-i386) and (default) in /Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a(ofAppGlutWindow.o)338482221#4069#859#0(6@0"338482221#0#0#0#0#0"0(22@562"Std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::push_back(std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)has different visibility (hidden) in /Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a(IPTC.o-i386) and (default) in /Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a(ofAppGlutWindow.o)338482221#4928#576#0(6@0"338482221#0#0#0#0#0"0(22@526"Std::basic_string<char, std::char_traits<char>, std::allocator<char> > std::operator+<char, std::char_traits<char>, std::allocator<char> >(std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, char const*)has different visibility (hidden) in /Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a(PluginEXR.o-i386) and (default) in /Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a(ofUtils.o)338482221#5504#540#0(6@0"338482221#0#0#0#0#0"0(22@526"Std::basic_string<char, std::char_traits<char>, std::allocator<char> > std::operator+<char, std::char_traits<char>, std::allocator<char> >(char const*, std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)has different visibility (hidden) in /Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a(PluginEXR.o-i386) and (default) in /Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a(ofUtils.o)338482221#6044#540#0(6@0"338482221#0#0#0#0#0"0(22@439"__gnu_cxx::new_allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> > >::allocate(unsigned long, void const*)has different visibility (hidden) in /Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a(ImfHeader.o-i386) and (default) in /Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a(ofAppGlutWindow.o)338482221#6584#453#0(6@0"338482221#0#0#0#0#0"0(22@500"Std::_Vector_base<std::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::~_Vector_base()has different visibility (hidden) in /Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a(ImfHeader.o-i386) and (default) in /Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a(ofAppGlutWindow.o)338482221#7037#514#0(6@0"338482221#0#0#0#0#0"0(22@488"Std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::~vector()has different visibility (hidden) in /Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a(ImfHeader.o-i386) and (default) in /Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a(ofAppGlutWindow.o)338482221#7551#502#0(6@0"338482221#0#0#0#0#0"0(22@454"__gnu_cxx::new_allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> > >::allocate(unsigned long, void const*)has different visibility (hidden) in /Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a(ImfStringVectorAttribute.o-i386) and (default) in /Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a(ofAppGlutWindow.o)338482221#8053#468#0(6@0"338482221#0#0#0#0#0"0(22@865"Std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::_M_insert_aux(__gnu_cxx::__normal_iterator<std::basic_string<char, std::char_traits<char>, std::allocator<char> >*, std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> > > > >, std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)has different visibility (hidden) in /Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a(ImfStringVectorAttribute.o-i386) and (default) in /Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a(ofAppGlutWindow.o)338482221#8521#879#0(6@0"338482221#0#0#0#0#0"0(22@582"Std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::push_back(std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&)has different visibility (hidden) in /Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a(ImfStringVectorAttribute.o-i386) and (default) in /Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a(ofAppGlutWindow.o)338482221#9400#596#0(6@0"338482221#0#0#0#0#0"0(22@528"Std::basic_string<char, std::char_traits<char>, std::allocator<char> > std::operator+<char, std::char_traits<char>, std::allocator<char> >(std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, char const*)has different visibility (hidden) in /Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a(ImfRgbaFile.o-i386) and (default) in /Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a(ofUtils.o)338482221#9996#542#0(6@0"338482221#0#0#0#0#0"0(22@451"__gnu_cxx::new_allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> > >::allocate(unsigned long, void const*)has different visibility (hidden) in /Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a(ImfStandardAttributes.o-i386) and (default) in /Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a(ofAppGlutWindow.o)338482221#10538#465#0(6@0"338482221#0#0#0#0#0"0(22@512"Std::_Vector_base<std::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::~_Vector_base()has different visibility (hidden) in /Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a(ImfStandardAttributes.o-i386) and (default) in /Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a(ofAppGlutWindow.o)338482221#11003#526#0(6@0"338482221#0#0#0#0#0"0(22@620"Std::_Vector_base<std::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::_Vector_base(unsigned long, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> > > const&)has different visibility (hidden) in /Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a(ImfStandardAttributes.o-i386) and (default) in /Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a(ofAppGlutWindow.o)338482221#11529#634#0(6@0"338482221#0#0#0#0#0"0(22@500"Std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::~vector()has different visibility (hidden) in /Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a(ImfStandardAttributes.o-i386) and (default) in /Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a(ofAppGlutWindow.o)338482221#12163#514#0(6@0"338482221#0#0#0#0#0"0(22@679"Std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> > > >::vector(std::vector<std::basic_string<char, std::char_traits<char>, std::allocator<char> >, std::allocator<std::basic_string<char, std::char_traits<char>, std::allocator<char> > > > const&)has different visibility (hidden) in /Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a(ImfStandardAttributes.o-i386) and (default) in /Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a(ofAppGlutWindow.o)338482221#12677#693#0(6@0"338482221#0#0#0#0#0"0(0#0#0"8602718656#1626"    cd /Users/shiffman/Documents/of_preRelease_v007_osx/apps/examples/mpeMoviePlayerMaster    /Developer/usr/bin/g++-4.2 -arch i386 -L/Users/shiffman/Documents/of_preRelease_v007_osx/apps/examples/mpeMoviePlayerMaster/bin -F/Users/shiffman/Documents/of_preRelease_v007_osx/apps/examples/mpeMoviePlayerMaster/bin -F/Users/shiffman/Documents/of_preRelease_v007_osx/apps/examples/mpeMoviePlayerMaster/../../../libs/glut/lib/osx -filelist /Users/shiffman/Documents/of_preRelease_v007_osx/apps/examples/mpeMoviePlayerMaster/build/mpeMoviePlayerMaster.build/Debug/moviePlayerExample.build/Objects-normal/i386/moviePlayerExampleDebug.LinkFileList -dead_strip ../../../libs/poco/lib/osx/PocoFoundation.a ../../../libs/poco/lib/osx/PocoNet.a ../../../libs/poco/lib/osx/PocoXML.a ../../../libs/poco/lib/osx/PocoUtil.a ../../../libs/tess2/lib/osx/tess2.a ../../../libs/glew/lib/osx/glew.a ../../../libs/cairo/lib/osx/cairo-script-interpreter.a ../../../libs/cairo/lib/osx/cairo.a ../../../libs/cairo/lib/osx/pixman-1.a ../../../libs/fmodex/lib/osx/libfmodex.dylib ../../../libs/rtAudio/lib/osx/rtAudio.a -framework GLUT /Users/shiffman/Documents/of_preRelease_v007_osx/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a -framework AGL -framework ApplicationServices -framework AudioToolbox -framework Carbon -framework CoreAudio -framework CoreFoundation -framework CoreServices -framework OpenGL -framework QuickTime -framework AppKit -framework Cocoa -framework IOKit -o /Users/shiffman/Documents/of_preRelease_v007_osx/apps/examples/mpeMoviePlayerMaster/bin//moviePlayerExampleDebug.app/Contents/MacOS/moviePlayerExampleDebug0#
-
-CPBXCp bin/moviePlayerExampleDebug.app/Contents/Frameworks/GLUT.framework ../../../libs/glut/lib/osx/GLUT.framework
-r0
-
-CPhaseScriptExecution "Run Script" /Users/shiffman/Documents/of_preRelease_v007_osx/apps/examples/mpeMoviePlayerMaster/build/mpeMoviePlayerMaster.build/Debug/moviePlayerExample.build/Script-E4B6FFFD0C3F9AB9008CF71C.sh
-s338482221.924956
-e338482221.993321
-r1
-xPhaseScriptExecution
-xRun Script
-x/Users/shiffman/Documents/of_preRelease_v007_osx/apps/examples/mpeMoviePlayerMaster/build/mpeMoviePlayerMaster.build/Debug/moviePlayerExample.build/Script-E4B6FFFD0C3F9AB9008CF71C.sh
-lSLF07#2@36"Run custom shell script 'Run Script'338482221#338482221#0(0"0(0#0#0"8604309760#22915"    cd /Users/shiffman/Documents/of_preRelease_v007_osx/apps/examples/mpeMoviePlayerMaster    setenv ACTION build    setenv ALTERNATE_GROUP staff    setenv ALTERNATE_MODE u+w,go-w,a+rX    setenv ALTERNATE_OWNER shiffman    setenv ALWAYS_SEARCH_USER_PATHS YES    setenv APPLE_INTERNAL_DEVELOPER_DIR /AppleInternal/Developer    setenv APPLE_INTERNAL_DIR /AppleInternal    setenv APPLE_INTERNAL_DOCUMENTATION_DIR /AppleInternal/Documentation    setenv APPLE_INTERNAL_LIBRARY_DIR /AppleInternal/Library    setenv APPLE_INTERNAL_TOOLS /AppleInternal/Developer/Tools    setenv APPLY_RULES_IN_COPY_FILES NO    setenv ARCHS i386    setenv ARCHS_STANDARD_32_64_BIT "x86_64 i386 ppc"    setenv ARCHS_STANDARD_32_BIT "i386 ppc"    setenv ARCHS_STANDARD_64_BIT x86_64    setenv BUILD_COMPONENTS "headers build"    setenv BUILD_DIR /Users/shiffman/Documents/of_preRelease_v007_osx/apps/examples/mpeMoviePlayerMaster/build    setenv BUILD_ROOT /Users/shiffman/Documents/of_preRelease_v007_osx/apps/examples/mpeMoviePlayerMaster/build    setenv BUILD_STYLE Debug    setenv BUILD_VARIANTS normal    setenv BUILT_PRODUCTS_DIR /Users/shiffman/Documents/of_preRelease_v007_osx/apps/examples/mpeMoviePlayerMaster/bin/    setenv CACHE_ROOT /var/folders/gb/gbjBwOxUFySkNJABuufvgU+++TU/-Caches-/com.apple.Xcode.504    setenv CCHROOT /var/folders/gb/gbjBwOxUFySkNJABuufvgU+++TU/-Caches-/com.apple.Xcode.504    setenv CHMOD /bin/chmod    setenv CHOWN /usr/sbin/chown    setenv CLASS_FILE_DIR /Users/shiffman/Documents/of_preRelease_v007_osx/apps/examples/mpeMoviePlayerMaster/build/mpeMoviePlayerMaster.build/Debug/moviePlayerExample.build/JavaClasses    setenv CLEAN_PRECOMPS YES    setenv CLONE_HEADERS NO    setenv CODESIGNING_FOLDER_PATH /Users/shiffman/Documents/of_preRelease_v007_osx/apps/examples/mpeMoviePlayerMaster/bin//moviePlayerExampleDebug.app    setenv CODE_SIGNING_ALLOWED YES    setenv COMMAND_MODE legacy    setenv COMPOSITE_SDK_DIRS /var/folders/gb/gbjBwOxUFySkNJABuufvgU+++TU/-Caches-/com.apple.Xcode.504/CompositeSDKs    setenv CONFIGURATION Debug    setenv CONFIGURATION_BUILD_DIR /Users/shiffman/Documents/of_preRelease_v007_osx/apps/examples/mpeMoviePlayerMaster/bin/    setenv CONFIGURATION_TEMP_DIR /Users/shiffman/Documents/of_preRelease_v007_osx/apps/examples/mpeMoviePlayerMaster/build/mpeMoviePlayerMaster.build/Debug    setenv CONTENTS_FOLDER_PATH moviePlayerExampleDebug.app/Contents    setenv COPYING_PRESERVES_HFS_DATA NO    setenv COPY_PHASE_STRIP NO    setenv COPY_RESOURCES_FROM_STATIC_FRAMEWORKS YES    setenv CP /bin/cp    setenv CURRENT_ARCH i386    setenv CURRENT_VARIANT normal    setenv DEAD_CODE_STRIPPING YES    setenv DEBUGGING_SYMBOLS YES    setenv DEBUG_INFORMATION_FORMAT dwarf    setenv DEPLOYMENT_LOCATION NO    setenv DEPLOYMENT_POSTPROCESSING NO    setenv DERIVED_FILES_DIR /Users/shiffman/Documents/of_preRelease_v007_osx/apps/examples/mpeMoviePlayerMaster/build/mpeMoviePlayerMaster.build/Debug/moviePlayerExample.build/DerivedSources    setenv DERIVED_FILE_DIR /Users/shiffman/Documents/of_preRelease_v007_osx/apps/examples/mpeMoviePlayerMaster/build/mpeMoviePlayerMaster.build/Debug/moviePlayerExample.build/DerivedSources    setenv DERIVED_SOURCES_DIR /Users/shiffman/Documents/of_preRelease_v007_osx/apps/examples/mpeMoviePlayerMaster/build/mpeMoviePlayerMaster.build/Debug/moviePlayerExample.build/DerivedSources    setenv DEVELOPER_APPLICATIONS_DIR /Developer/Applications    setenv DEVELOPER_BIN_DIR /Developer/usr/bin    setenv DEVELOPER_DIR /Developer    setenv DEVELOPER_FRAMEWORKS_DIR /Developer/Library/Frameworks    setenv DEVELOPER_FRAMEWORKS_DIR_QUOTED "\"/Developer/Library/Frameworks\""    setenv DEVELOPER_LIBRARY_DIR /Developer/Library    setenv DEVELOPER_SDK_DIR /Developer/SDKs    setenv DEVELOPER_TOOLS_DIR /Developer/Tools    setenv DEVELOPER_USR_DIR /Developer/usr    setenv DEVELOPMENT_LANGUAGE English    setenv DOCUMENTATION_FOLDER_PATH moviePlayerExampleDebug.app/Contents/Resources/English.lproj/Documentation    setenv DO_HEADER_SCANNING_IN_JAM NO    setenv DSTROOT /tmp/mpeMoviePlayerMaster.dst    setenv DWARF_DSYM_FILE_NAME moviePlayerExampleDebug.app.dSYM    setenv DWARF_DSYM_FOLDER_PATH /Users/shiffman/Documents/of_preRelease_v007_osx/apps/examples/mpeMoviePlayerMaster/bin/    setenv ENABLE_HEADER_DEPENDENCIES YES    setenv ENABLE_OPENMP_SUPPORT NO    setenv EXCLUDED_INSTALLSRC_SUBDIRECTORY_PATTERNS ".svn CVS"    setenv EXCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES "*.nib *.lproj *.framework *.gch (*) CVS .svn *.xcodeproj *.xcode *.pbproj *.pbxproj"    setenv EXECUTABLES_FOLDER_PATH moviePlayerExampleDebug.app/Contents/Executables    setenv EXECUTABLE_FOLDER_PATH moviePlayerExampleDebug.app/Contents/MacOS    setenv EXECUTABLE_NAME moviePlayerExampleDebug    setenv EXECUTABLE_PATH moviePlayerExampleDebug.app/Contents/MacOS/moviePlayerExampleDebug    setenv FILE_LIST /Users/shiffman/Documents/of_preRelease_v007_osx/apps/examples/mpeMoviePlayerMaster/build/mpeMoviePlayerMaster.build/Debug/moviePlayerExample.build/Objects/LinkFileList    setenv FIXED_FILES_DIR /Users/shiffman/Documents/of_preRelease_v007_osx/apps/examples/mpeMoviePlayerMaster/build/mpeMoviePlayerMaster.build/Debug/moviePlayerExample.build/FixedFiles    setenv FRAMEWORKS_FOLDER_PATH moviePlayerExampleDebug.app/Contents/Frameworks    setenv FRAMEWORK_FLAG_PREFIX -framework    setenv FRAMEWORK_SEARCH_PATHS "\"/Users/shiffman/Documents/of_preRelease_v007_osx/apps/examples/mpeMoviePlayerMaster/bin/\"  \"/Users/shiffman/Documents/of_preRelease_v007_osx/apps/examples/mpeMoviePlayerMaster/../../../libs/glut/lib/osx\""    setenv FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 "\"/Users/shiffman/Documents/of_preRelease_v007_osx/apps/examples/mpeMoviePlayerMaster/../../../libs/glut/lib/osx\""    setenv FRAMEWORK_VERSION A    setenv FULL_PRODUCT_NAME moviePlayerExampleDebug.app    setenv GCC3_VERSION 3.3    setenv GCC_AUTO_VECTORIZATION YES    setenv GCC_DYNAMIC_NO_PIC NO    setenv GCC_ENABLE_FIX_AND_CONTINUE YES    setenv GCC_ENABLE_SSE3_EXTENSIONS YES    setenv GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS YES    setenv GCC_GENERATE_DEBUGGING_SYMBOLS YES    setenv GCC_INLINES_ARE_PRIVATE_EXTERN NO    setenv GCC_MODEL_TUNING G4    setenv GCC_PFE_FILE_C_DIALECTS "c objective-c c++ objective-c++"    setenv GCC_PRECOMPILE_PREFIX_HEADER YES    setenv GCC_PREFIX_HEADER /System/Library/Frameworks/Carbon.framework/Headers/Carbon.h    setenv GCC_SYMBOLS_PRIVATE_EXTERN NO    setenv GCC_TREAT_WARNINGS_AS_ERRORS NO    setenv GCC_VERSION 4.2    setenv GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS NO    setenv GCC_WARN_ABOUT_INVALID_OFFSETOF_MACRO NO    setenv GCC_WARN_ALLOW_INCOMPLETE_PROTOCOL NO    setenv GCC_WARN_UNINITIALIZED_AUTOS NO    setenv GCC_WARN_UNUSED_VALUE NO    setenv GCC_WARN_UNUSED_VARIABLE NO    setenv GENERATE_MASTER_OBJECT_FILE NO    setenv GENERATE_PKGINFO_FILE YES    setenv GENERATE_PROFILING_CODE NO    setenv GID 20    setenv GROUP staff    setenv HEADERMAP_INCLUDES_FLAT_ENTRIES_FOR_TARGET_BEING_BUILT YES    setenv HEADERMAP_INCLUDES_FRAMEWORK_ENTRIES_FOR_ALL_PRODUCT_TYPES YES    setenv HEADERMAP_INCLUDES_NONPUBLIC_NONPRIVATE_HEADERS YES    setenv HEADERMAP_INCLUDES_PROJECT_HEADERS YES    setenv HEADER_CAIRO "\"../../../libs/cairo/include/cairo\""    setenv HEADER_FMODEX "\"../../../libs/fmodex/include\""    setenv HEADER_FREEIMAGE "\"../../../libs/FreeImage/include\""    setenv HEADER_FREETYPE "\"../../../libs/freetype/include\""    setenv HEADER_FREETYPE2 "\"../../../libs/freetype/include/freetype2\""    setenv HEADER_GLEW "\"../../../libs/glew/include\""    setenv HEADER_OF "\"../../../libs/openFrameworks/**\""    setenv HEADER_POCO "\"../../../libs/poco/include\""    setenv HEADER_RTAUDIO "\"../../../libs/rtaudio/include\""    setenv HEADER_SEARCH_PATHS "\"/Users/shiffman/Documents/of_preRelease_v007_osx/apps/examples/mpeMoviePlayerMaster/bin//include\" \"../../../libs/openFrameworks/**\" \"../../../libs/poco/include\" \"../../../libs/freetype/include\" \"../../../libs/freetype/include/freetype2\" \"../../../libs/fmodex/include\" \"../../../libs/glew/include\" \"../../../libs/FreeImage/include\" \"../../../libs/tess2/include\" \"../../../libs/cairo/include/cairo\" \"../../../libs/rtaudio/include\""    setenv HEADER_TESS2 "\"../../../libs/tess2/include\""    setenv ICONV /usr/bin/iconv    setenv INFOPLIST_EXPAND_BUILD_SETTINGS YES    setenv INFOPLIST_FILE openFrameworks-Info.plist    setenv INFOPLIST_OUTPUT_FORMAT same-as-input    setenv INFOPLIST_PATH moviePlayerExampleDebug.app/Contents/Info.plist    setenv INFOPLIST_PREPROCESS NO    setenv INFOSTRINGS_PATH moviePlayerExampleDebug.app/Contents/Resources/English.lproj/InfoPlist.strings    setenv INSTALL_DIR /tmp/mpeMoviePlayerMaster.dst/Users/shiffman/Applications    setenv INSTALL_GROUP staff    setenv INSTALL_MODE_FLAG u+w,go-w,a+rX    setenv INSTALL_OWNER shiffman    setenv INSTALL_PATH /Users/shiffman/Applications    setenv INSTALL_ROOT /tmp/mpeMoviePlayerMaster.dst    setenv JAVAC_DEFAULT_FLAGS "-J-Xms64m -J-XX:NewSize=4M -J-Dfile.encoding=UTF8"    setenv JAVA_APP_STUB /System/Library/Frameworks/JavaVM.framework/Resources/MacOS/JavaApplicationStub    setenv JAVA_ARCHIVE_CLASSES YES    setenv JAVA_ARCHIVE_TYPE JAR    setenv JAVA_COMPILER /usr/bin/javac    setenv JAVA_FOLDER_PATH moviePlayerExampleDebug.app/Contents/Resources/Java    setenv JAVA_FRAMEWORK_RESOURCES_DIRS Resources    setenv JAVA_JAR_FLAGS cv    setenv JAVA_SOURCE_SUBDIR .    setenv JAVA_USE_DEPENDENCIES YES    setenv JAVA_ZIP_FLAGS -urg    setenv JIKES_DEFAULT_FLAGS "+E +OLDCSO"    setenv KEEP_PRIVATE_EXTERNS NO    setenv LD_GENERATE_MAP_FILE NO    setenv LD_MAP_FILE_PATH /Users/shiffman/Documents/of_preRelease_v007_osx/apps/examples/mpeMoviePlayerMaster/build/mpeMoviePlayerMaster.build/Debug/moviePlayerExample.build/moviePlayerExampleDebug-LinkMap-normal-i386.txt    setenv LD_OPENMP_FLAGS -fopenmp    setenv LEX /Developer/usr/bin/lex    setenv LIBRARY_FLAG_NOSPACE YES    setenv LIBRARY_FLAG_PREFIX -l    setenv LIBRARY_SEARCH_PATHS "\"/Users/shiffman/Documents/of_preRelease_v007_osx/apps/examples/mpeMoviePlayerMaster/bin/\"                                                              "    setenv LIB_CAIRO1 "\"../../../libs/cairo/lib/osx/cairo-script-interpreter.a\""    setenv LIB_CAIRO2 "\"../../../libs/cairo/lib/osx/cairo.a\""    setenv LIB_CAIRO3 "\"../../../libs/cairo/lib/osx/pixman-1.a\""    setenv LIB_FMODEX "\"../../../libs/fmodex/lib/osx/libfmodex.dylib\""    setenv LIB_FREEIMAGE "\"../../../libs/FreeImage/lib/osx/freeimage.a\""    setenv LIB_FREETYPE "\"../../../libs/freetype/lib/osx/freetype.a\""    setenv LIB_GLEW "\"../../../libs/glew/lib/osx/glew.a\""    setenv LIB_GLUT "\"../../../libs/glut/lib/osx/GLUT.framework/Versions/A/GLUT\""    setenv LIB_POCOFOUNDATION "\"../../../libs/poco/lib/osx/PocoFoundation.a\""    setenv LIB_POCONET "\"../../../libs/poco/lib/osx/PocoNet.a\""    setenv LIB_POCOUTIL "\"../../../libs/poco/lib/osx/PocoUtil.a\""    setenv LIB_POCOXML "\"../../../libs/poco/lib/osx/PocoXML.a\""    setenv LIB_RTAUDIO "\"../../../libs/rtAudio/lib/osx/rtAudio.a\""    setenv LIB_TESS "\"../../../libs/tess2/lib/osx/tess2.a\""    setenv LINKER_DISPLAYS_MANGLED_NAMES NO    setenv LINK_FILE_LIST_normal_i386 /Users/shiffman/Documents/of_preRelease_v007_osx/apps/examples/mpeMoviePlayerMaster/build/mpeMoviePlayerMaster.build/Debug/moviePlayerExample.build/Objects-normal/i386/moviePlayerExampleDebug.LinkFileList    setenv LINK_WITH_STANDARD_LIBRARIES YES    setenv LOCALIZED_RESOURCES_FOLDER_PATH moviePlayerExampleDebug.app/Contents/Resources/English.lproj    setenv LOCAL_ADMIN_APPS_DIR /Applications/Utilities    setenv LOCAL_APPS_DIR /Applications    setenv LOCAL_DEVELOPER_DIR /Library/Developer    setenv LOCAL_LIBRARY_DIR /Library    setenv MACH_O_TYPE mh_execute    setenv MAC_OS_X_VERSION_ACTUAL 1068    setenv MAC_OS_X_VERSION_MAJOR 1060    setenv MAC_OS_X_VERSION_MINOR 0608    setenv NATIVE_ARCH i386    setenv NATIVE_ARCH_32_BIT i386    setenv NATIVE_ARCH_64_BIT x86_64    setenv NATIVE_ARCH_ACTUAL x86_64    setenv NO_COMMON YES    setenv OBJECT_FILE_DIR /Users/shiffman/Documents/of_preRelease_v007_osx/apps/examples/mpeMoviePlayerMaster/build/mpeMoviePlayerMaster.build/Debug/moviePlayerExample.build/Objects    setenv OBJECT_FILE_DIR_normal /Users/shiffman/Documents/of_preRelease_v007_osx/apps/examples/mpeMoviePlayerMaster/build/mpeMoviePlayerMaster.build/Debug/moviePlayerExample.build/Objects-normal    setenv OBJROOT /Users/shiffman/Documents/of_preRelease_v007_osx/apps/examples/mpeMoviePlayerMaster/build    setenv OF_CORE_HEADERS "\"../../../libs/openFrameworks/**\" \"../../../libs/poco/include\" \"../../../libs/freetype/include\" \"../../../libs/freetype/include/freetype2\" \"../../../libs/fmodex/include\" \"../../../libs/glew/include\" \"../../../libs/FreeImage/include\" \"../../../libs/tess2/include\" \"../../../libs/cairo/include/cairo\" \"../../../libs/rtaudio/include\""    setenv OF_CORE_LIBS "\"../../../libs/poco/lib/osx/PocoFoundation.a\" \"../../../libs/poco/lib/osx/PocoNet.a\" \"../../../libs/poco/lib/osx/PocoXML.a\" \"../../../libs/poco/lib/osx/PocoUtil.a\" \"../../../libs/tess2/lib/osx/tess2.a\" \"../../../libs/glew/lib/osx/glew.a\" \"../../../libs/cairo/lib/osx/cairo-script-interpreter.a\" \"../../../libs/cairo/lib/osx/cairo.a\" \"../../../libs/cairo/lib/osx/pixman-1.a\" \"../../../libs/fmodex/lib/osx/libfmodex.dylib\" \"../../../libs/rtAudio/lib/osx/rtAudio.a\""    setenv OF_PATH ../../..    setenv ONLY_ACTIVE_ARCH NO    setenv OPTIMIZATION_LEVEL 0    setenv OS MACOS    setenv OSAC /usr/bin/osacompile    setenv OTHER_CPLUSPLUSFLAGS "-D__MACOSX_CORE__ -lpthread"    setenv OTHER_LDFLAGS "\"../../../libs/poco/lib/osx/PocoFoundation.a\" \"../../../libs/poco/lib/osx/PocoNet.a\" \"../../../libs/poco/lib/osx/PocoXML.a\" \"../../../libs/poco/lib/osx/PocoUtil.a\" \"../../../libs/tess2/lib/osx/tess2.a\" \"../../../libs/glew/lib/osx/glew.a\" \"../../../libs/cairo/lib/osx/cairo-script-interpreter.a\" \"../../../libs/cairo/lib/osx/cairo.a\" \"../../../libs/cairo/lib/osx/pixman-1.a\" \"../../../libs/fmodex/lib/osx/libfmodex.dylib\" \"../../../libs/rtAudio/lib/osx/rtAudio.a\""    setenv PACKAGE_TYPE com.apple.package-type.wrapper.application    setenv PASCAL_STRINGS YES    setenv PATH_PREFIXES_EXCLUDED_FROM_HEADER_DEPENDENCIES "/usr/include /usr/local/include /System/Library/Frameworks /System/Library/PrivateFrameworks /Developer/Headers /Developer/SDKs /Developer/Platforms"    setenv PBDEVELOPMENTPLIST_PATH moviePlayerExampleDebug.app/Contents/pbdevelopment.plist    setenv PFE_FILE_C_DIALECTS c++    setenv PKGINFO_FILE_PATH /Users/shiffman/Documents/of_preRelease_v007_osx/apps/examples/mpeMoviePlayerMaster/build/mpeMoviePlayerMaster.build/Debug/moviePlayerExample.build/PkgInfo    setenv PKGINFO_PATH moviePlayerExampleDebug.app/Contents/PkgInfo    setenv PLATFORM_DEVELOPER_APPLICATIONS_DIR /Developer/Applications    setenv PLATFORM_DEVELOPER_BIN_DIR /Developer/usr/bin    setenv PLATFORM_DEVELOPER_LIBRARY_DIR /Developer/Library    setenv PLATFORM_DEVELOPER_SDK_DIR /Developer/SDKs    setenv PLATFORM_DEVELOPER_TOOLS_DIR /Developer/Tools    setenv PLATFORM_DEVELOPER_USR_DIR /Developer/usr    setenv PLATFORM_NAME macosx    setenv PLIST_FILE_OUTPUT_FORMAT same-as-input    setenv PLUGINS_FOLDER_PATH moviePlayerExampleDebug.app/Contents/PlugIns    setenv PREBINDING NO    setenv PRECOMPS_INCLUDE_HEADERS_FROM_BUILT_PRODUCTS_DIR YES    setenv PRECOMP_DESTINATION_DIR /Users/shiffman/Documents/of_preRelease_v007_osx/apps/examples/mpeMoviePlayerMaster/build/mpeMoviePlayerMaster.build/Debug/moviePlayerExample.build/PrefixHeaders    setenv PRESERVE_DEAD_CODE_INITS_AND_TERMS NO    setenv PRIVATE_HEADERS_FOLDER_PATH moviePlayerExampleDebug.app/Contents/PrivateHeaders    setenv PRODUCT_NAME moviePlayerExampleDebug    setenv PRODUCT_SETTINGS_PATH /Users/shiffman/Documents/of_preRelease_v007_osx/apps/examples/mpeMoviePlayerMaster/openFrameworks-Info.plist    setenv PRODUCT_TYPE com.apple.product-type.application    setenv PROFILING_CODE NO    setenv PROJECT mpeMoviePlayerMaster    setenv PROJECT_DERIVED_FILE_DIR /Users/shiffman/Documents/of_preRelease_v007_osx/apps/examples/mpeMoviePlayerMaster/build/mpeMoviePlayerMaster.build/DerivedSources    setenv PROJECT_DIR /Users/shiffman/Documents/of_preRelease_v007_osx/apps/examples/mpeMoviePlayerMaster    setenv PROJECT_FILE_PATH /Users/shiffman/Documents/of_preRelease_v007_osx/apps/examples/mpeMoviePlayerMaster/mpeMoviePlayerMaster.xcodeproj    setenv PROJECT_NAME mpeMoviePlayerMaster    setenv PROJECT_TEMP_DIR /Users/shiffman/Documents/of_preRelease_v007_osx/apps/examples/mpeMoviePlayerMaster/build/mpeMoviePlayerMaster.build    setenv PUBLIC_HEADERS_FOLDER_PATH moviePlayerExampleDebug.app/Contents/Headers    setenv RECURSIVE_SEARCH_PATHS_FOLLOW_SYMLINKS YES    setenv REMOVE_CVS_FROM_RESOURCES YES    setenv REMOVE_SVN_FROM_RESOURCES YES    setenv REZ_COLLECTOR_DIR /Users/shiffman/Documents/of_preRelease_v007_osx/apps/examples/mpeMoviePlayerMaster/build/mpeMoviePlayerMaster.build/Debug/moviePlayerExample.build/ResourceManagerResources    setenv REZ_OBJECTS_DIR /Users/shiffman/Documents/of_preRelease_v007_osx/apps/examples/mpeMoviePlayerMaster/build/mpeMoviePlayerMaster.build/Debug/moviePlayerExample.build/ResourceManagerResources/Objects    setenv REZ_SEARCH_PATHS "\"/Users/shiffman/Documents/of_preRelease_v007_osx/apps/examples/mpeMoviePlayerMaster/bin/\" "    setenv RUN_CLANG_STATIC_ANALYZER NO    setenv SCAN_ALL_SOURCE_FILES_FOR_INCLUDES NO    setenv SCRIPTS_FOLDER_PATH moviePlayerExampleDebug.app/Contents/Resources/Scripts    setenv SCRIPT_INPUT_FILE_COUNT 0    setenv SCRIPT_OUTPUT_FILE_COUNT 0    setenv SDKROOT     setenv SED /usr/bin/sed    setenv SEPARATE_STRIP NO    setenv SEPARATE_SYMBOL_EDIT NO    setenv SET_DIR_MODE_OWNER_GROUP YES    setenv SET_FILE_MODE_OWNER_GROUP NO    setenv SHARED_DERIVED_FILE_DIR /Users/shiffman/Documents/of_preRelease_v007_osx/apps/examples/mpeMoviePlayerMaster/bin//DerivedSources    setenv SHARED_FRAMEWORKS_FOLDER_PATH moviePlayerExampleDebug.app/Contents/SharedFrameworks    setenv SHARED_PRECOMPS_DIR /var/folders/gb/gbjBwOxUFySkNJABuufvgU+++TU/-Caches-/com.apple.Xcode.504/SharedPrecompiledHeaders    setenv SHARED_SUPPORT_FOLDER_PATH moviePlayerExampleDebug.app/Contents/SharedSupport    setenv SKIP_INSTALL NO    setenv SOURCE_ROOT /Users/shiffman/Documents/of_preRelease_v007_osx/apps/examples/mpeMoviePlayerMaster    setenv SRCROOT /Users/shiffman/Documents/of_preRelease_v007_osx/apps/examples/mpeMoviePlayerMaster    setenv STANDARD_C_PLUS_PLUS_LIBRARY_TYPE dynamic    setenv STRINGS_FILE_OUTPUT_ENCODING UTF-16    setenv STRIP_INSTALLED_PRODUCT YES    setenv STRIP_STYLE all    setenv SYMBOL_REPOSITORY_DIR /Users/shiffman/Documents/of_preRelease_v007_osx/apps/examples/mpeMoviePlayerMaster/build/mpeMoviePlayerMaster.build/Debug/moviePlayerExample.build/SymbolRepositories    setenv SYMROOT /Users/shiffman/Documents/of_preRelease_v007_osx/apps/examples/mpeMoviePlayerMaster/build    setenv SYSTEM_ADMIN_APPS_DIR /Applications/Utilities    setenv SYSTEM_APPS_DIR /Applications    setenv SYSTEM_CORE_SERVICES_DIR /System/Library/CoreServices    setenv SYSTEM_DEMOS_DIR /Applications/Extras    setenv SYSTEM_DEVELOPER_APPS_DIR /Developer/Applications    setenv SYSTEM_DEVELOPER_BIN_DIR /Developer/usr/bin    setenv SYSTEM_DEVELOPER_DEMOS_DIR "/Developer/Applications/Utilities/Built Examples"    setenv SYSTEM_DEVELOPER_DIR /Developer    setenv SYSTEM_DEVELOPER_DOC_DIR "/Developer/ADC Reference Library"    setenv SYSTEM_DEVELOPER_GRAPHICS_TOOLS_DIR "/Developer/Applications/Graphics Tools"    setenv SYSTEM_DEVELOPER_JAVA_TOOLS_DIR "/Developer/Applications/Java Tools"    setenv SYSTEM_DEVELOPER_PERFORMANCE_TOOLS_DIR "/Developer/Applications/Performance Tools"    setenv SYSTEM_DEVELOPER_RELEASENOTES_DIR "/Developer/ADC Reference Library/releasenotes"    setenv SYSTEM_DEVELOPER_TOOLS /Developer/Tools    setenv SYSTEM_DEVELOPER_TOOLS_DOC_DIR "/Developer/ADC Reference Library/documentation/DeveloperTools"    setenv SYSTEM_DEVELOPER_TOOLS_RELEASENOTES_DIR "/Developer/ADC Reference Library/releasenotes/DeveloperTools"    setenv SYSTEM_DEVELOPER_USR_DIR /Developer/usr    setenv SYSTEM_DEVELOPER_UTILITIES_DIR /Developer/Applications/Utilities    setenv SYSTEM_DOCUMENTATION_DIR /Library/Documentation    setenv SYSTEM_LIBRARY_DIR /System/Library    setenv TARGETNAME moviePlayerExample    setenv TARGET_BUILD_DIR /Users/shiffman/Documents/of_preRelease_v007_osx/apps/examples/mpeMoviePlayerMaster/bin/    setenv TARGET_NAME moviePlayerExample    setenv TARGET_TEMP_DIR /Users/shiffman/Documents/of_preRelease_v007_osx/apps/examples/mpeMoviePlayerMaster/build/mpeMoviePlayerMaster.build/Debug/moviePlayerExample.build    setenv TEMP_DIR /Users/shiffman/Documents/of_preRelease_v007_osx/apps/examples/mpeMoviePlayerMaster/build/mpeMoviePlayerMaster.build/Debug/moviePlayerExample.build    setenv TEMP_FILES_DIR /Users/shiffman/Documents/of_preRelease_v007_osx/apps/examples/mpeMoviePlayerMaster/build/mpeMoviePlayerMaster.build/Debug/moviePlayerExample.build    setenv TEMP_FILE_DIR /Users/shiffman/Documents/of_preRelease_v007_osx/apps/examples/mpeMoviePlayerMaster/build/mpeMoviePlayerMaster.build/Debug/moviePlayerExample.build    setenv TEMP_ROOT /Users/shiffman/Documents/of_preRelease_v007_osx/apps/examples/mpeMoviePlayerMaster/build    setenv UID 504    setenv UNLOCALIZED_RESOURCES_FOLDER_PATH moviePlayerExampleDebug.app/Contents/Resources    setenv UNSTRIPPED_PRODUCT NO    setenv USER shiffman    setenv USER_APPS_DIR /Users/shiffman/Applications    setenv USER_LIBRARY_DIR /Users/shiffman/Library    setenv USE_DYNAMIC_NO_PIC YES    setenv USE_HEADERMAP YES    setenv USE_HEADER_SYMLINKS NO    setenv VALIDATE_PRODUCT NO    setenv VALID_ARCHS "i386 ppc ppc64 ppc7400 ppc970 x86_64"    setenv VERBOSE_PBXCP NO    setenv VERSIONPLIST_PATH moviePlayerExampleDebug.app/Contents/version.plist    setenv VERSION_INFO_BUILDER shiffman    setenv VERSION_INFO_FILE moviePlayerExampleDebug_vers.c    setenv VERSION_INFO_STRING "\"@(#)PROGRAM:moviePlayerExampleDebug  PROJECT:mpeMoviePlayerMaster-\""    setenv WRAPPER_EXTENSION app    setenv WRAPPER_NAME moviePlayerExampleDebug.app    setenv WRAPPER_SUFFIX .app    setenv XCODE_APP_SUPPORT_DIR /Developer/Library/Xcode    setenv XCODE_VERSION_ACTUAL 0324    setenv XCODE_VERSION_MAJOR 0300    setenv XCODE_VERSION_MINOR 0320    setenv YACC /Developer/usr/bin/yacc    /bin/sh -c /Users/shiffman/Documents/of_preRelease_v007_osx/apps/examples/mpeMoviePlayerMaster/build/mpeMoviePlayerMaster.build/Debug/moviePlayerExample.build/Script-E4B6FFFD0C3F9AB9008CF71C.sh0#
-
-CProcessInfoPlistFile /Users/shiffman/Documents/of_preRelease_v007_osx/apps/examples/mpeMoviePlayerMaster/bin//moviePlayerExampleDebug.app/Contents/Info.plist openFrameworks-Info.plist
-r0
-
-CProcessPCH++ /var/folders/gb/gbjBwOxUFySkNJABuufvgU+++TU/-Caches-/com.apple.Xcode.504/SharedPrecompiledHeaders/Carbon-eervujktbtkdtggwsjiiuiordnby/Carbon.h.gch /System/Library/Frameworks/Carbon.framework/Headers/Carbon.h normal i386 c++ com.apple.compilers.gcc.4_2
-s338482216.411279
-e338482219.516164
-r1
-xProcessPCH++
-x/var/folders/gb/gbjBwOxUFySkNJABuufvgU+++TU/-Caches-/com.apple.Xcode.504/SharedPrecompiledHeaders/Carbon-eervujktbtkdtggwsjiiuiordnby/Carbon.h.gch
-x/System/Library/Frameworks/Carbon.framework/Headers/Carbon.h
-xnormal
-xi386
-xc++
-xcom.apple.compilers.gcc.4_2
-oi686-apple-darwin10-gcc-4.2.1: -lpthread: linker input file unused because linking not done
-lSLF07#2@71"Precompile /System/Library/Frameworks/Carbon.framework/Headers/Carbon.h338482216#338482219#0(92"i686-apple-darwin10-gcc-4.2.1: -lpthread: linker input file unused because linking not done0(0#0#60"/System/Library/Frameworks/Carbon.framework/Headers/Carbon.h8604832608#2159"    cd /Users/shiffman/Documents/of_preRelease_v007_osx/apps/examples/mpeMoviePlayerMaster    setenv LANG en_US.US-ASCII    /Developer/usr/bin/gcc-4.2 -x c++-header -arch i386 -fmessage-length=0 -pipe -Wno-trigraphs -fpascal-strings -fasm-blocks -Os -mfix-and-continue -ftree-vectorize -msse3 -mssse3 -Wno-deprecated-declarations -Wno-invalid-offsetof -gdwarf-2 -I/Users/shiffman/Documents/of_preRelease_v007_osx/apps/examples/mpeMoviePlayerMaster/build/mpeMoviePlayerMaster.build/Debug/moviePlayerExample.build/moviePlayerExampleDebug.hmap -F/Users/shiffman/Documents/of_preRelease_v007_osx/apps/examples/mpeMoviePlayerMaster/bin -F/Users/shiffman/Documents/of_preRelease_v007_osx/apps/examples/mpeMoviePlayerMaster/../../../libs/glut/lib/osx -I/Users/shiffman/Documents/of_preRelease_v007_osx/apps/examples/mpeMoviePlayerMaster/bin/include -I../../../libs/openFrameworks -I../../../libs/openFrameworks/3d -I../../../libs/openFrameworks/app -I../../../libs/openFrameworks/communication -I../../../libs/openFrameworks/events -I../../../libs/openFrameworks/gl -I../../../libs/openFrameworks/graphics -I../../../libs/openFrameworks/math -I../../../libs/openFrameworks/sound -I../../../libs/openFrameworks/types -I../../../libs/openFrameworks/utils -I../../../libs/openFrameworks/video -I../../../libs/poco/include -I../../../libs/freetype/include -I../../../libs/freetype/include/freetype2 -I../../../libs/fmodex/include -I../../../libs/glew/include -I../../../libs/FreeImage/include -I../../../libs/tess2/include -I../../../libs/cairo/include/cairo -I../../../libs/rtaudio/include -I/Users/shiffman/Documents/of_preRelease_v007_osx/apps/examples/mpeMoviePlayerMaster/build/mpeMoviePlayerMaster.build/Debug/moviePlayerExample.build/DerivedSources/i386 -I/Users/shiffman/Documents/of_preRelease_v007_osx/apps/examples/mpeMoviePlayerMaster/build/mpeMoviePlayerMaster.build/Debug/moviePlayerExample.build/DerivedSources -D__MACOSX_CORE__ -lpthread -c /System/Library/Frameworks/Carbon.framework/Headers/Carbon.h -o /var/folders/gb/gbjBwOxUFySkNJABuufvgU+++TU/-Caches-/com.apple.Xcode.504/SharedPrecompiledHeaders/Carbon-eervujktbtkdtggwsjiiuiordnby/Carbon.h.gch0#
-
-CTouch /Users/shiffman/Documents/of_preRelease_v007_osx/apps/examples/mpeMoviePlayerMaster/bin//moviePlayerExampleDebug.app
-s338482221.993480
-e338482221.996193
-r1
-xTouch
-x/Users/shiffman/Documents/of_preRelease_v007_osx/apps/examples/mpeMoviePlayerMaster/bin//moviePlayerExampleDebug.app
-lSLF07#2@122"Touch /Users/shiffman/Documents/of_preRelease_v007_osx/apps/examples/mpeMoviePlayerMaster/bin//moviePlayerExampleDebug.app338482221#338482221#0(0"0(0#0#0"8613680352#230"    cd /Users/shiffman/Documents/of_preRelease_v007_osx/apps/examples/mpeMoviePlayerMaster    /usr/bin/touch -c /Users/shiffman/Documents/of_preRelease_v007_osx/apps/examples/mpeMoviePlayerMaster/bin//moviePlayerExampleDebug.app0#
-
