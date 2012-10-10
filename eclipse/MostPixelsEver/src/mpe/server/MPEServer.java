@@ -262,7 +262,7 @@ public class MPEServer {
         if (help) {
             // if anything unrecognized is sent to the command line, help is
             // displayed and the server quits
-            System.out.println(" * The \"Most Pixels Ever\" Wallserver.\n" +
+            System.out.println(" * The \"Most Pixels Ever\" server.\n" +
                     " * This server can accept the following parameters from the command line:\n" +
                     " * -screens<number of screens> Total # of expected clients.  Defaults to 2\n" +
                     " * -framerate<framerate> Desired frame rate.  Defaults to 30\n" +
@@ -280,7 +280,7 @@ public class MPEServer {
         }
     }
     private static void out(String s){
-        System.out.println("WallServer: "+ s);
+        System.out.println("MPEServer: "+ s);
     }
 
     public void drop(int i) {

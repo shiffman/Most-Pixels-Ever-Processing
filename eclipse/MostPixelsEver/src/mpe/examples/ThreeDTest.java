@@ -9,11 +9,11 @@ package mpe.examples;
 
 import mpe.client.*;
 import processing.core.*;
-//import processing.opengl.*;
+import processing.opengl.*;
 
 public class ThreeDTest extends PApplet {
     //--------------------------------------
-    final int ID = 0;
+    final int ID = 1;
     
     float theta = 0;
     TCPClient client;
@@ -27,7 +27,7 @@ public class ThreeDTest extends PApplet {
     public void setup() {
         // make a new Client with an INI file
         // sketchPath() is used so that the INI file is local to the sketch
-        client = new TCPClient(sketchPath("ini_threeD/mpe"+ID+".ini"), this);
+        client = new TCPClient(sketchPath("ini/threeD/mpe"+ID+".ini"), this);
         
         // the size is determined by the client's local width and height
         size(client.getLWidth(), client.getLHeight(), P3D);
