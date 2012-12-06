@@ -1,363 +1,0 @@
-Tclient2
-v5
-r1
-cCheck dependencies
-cProcessInfoPlistFile /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/bin/client2/MPETestDebug.app/Contents/Info.plist openFrameworks-Info.plist
-cProcessPCH++ /var/folders/rn/_6pfvhfd4ss9jxn6ygq0vj4r0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/Carbon-cttntloxcqbixmeoimypptrwljkd/Carbon.h.pth /System/Library/Frameworks/Carbon.framework/Headers/Carbon.h normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC build/MPETest.build/Debug/client2.build/Objects-normal/i386/main.o /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/src/main.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
-cCompileC build/MPETest.build/Debug/client2.build/Objects-normal/i386/testApp.o /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/src/testApp.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
-
-N/System/Library/Frameworks/AGL.framework/AGL
-c000000004FDA2F1B000000000001BA10
-t1339698971
-s113168
-
-N/System/Library/Frameworks/Accelerate.framework/Accelerate
-c000000004F4937CE00000000000064D0
-t1330198478
-s25808
-
-N/System/Library/Frameworks/AppKit.framework/AppKit
-c0000000050517FF300000000021F3F70
-t1347518451
-s35602288
-
-N/System/Library/Frameworks/ApplicationServices.framework/ApplicationServices
-c000000004E8FDD0E000000000000B750
-t1318051086
-s46928
-
-N/System/Library/Frameworks/AudioToolbox.framework/AudioToolbox
-c00000000505FCB4600000000003AA4D0
-t1348455238
-s3843280
-
-N/System/Library/Frameworks/Carbon.framework/Carbon
-c000000004E8FDD0F0000000000006530
-t1318051087
-s25904
-
-N/System/Library/Frameworks/Carbon.framework/Headers/Carbon.h
-c000000004DFA8BA400000000000005FE
-t1308265380
-s1534
-
-N/System/Library/Frameworks/Cocoa.framework/Cocoa
-c000000004E8FDD0F0000000000006560
-t1318051087
-s25952
-
-N/System/Library/Frameworks/CoreAudio.framework/CoreAudio
-c00000000505FCB4600000000001195D0
-t1348455238
-s1152464
-
-N/System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
-c000000004F9D0518000000000060FA80
-t1335690520
-s6355584
-
-N/System/Library/Frameworks/CoreServices.framework/CoreServices
-c000000004F493784000000000000B870
-t1330198404
-s47216
-
-N/System/Library/Frameworks/CoreVideo.framework/CoreVideo
-c000000004F9D0514000000000007CED0
-t1335690516
-s511696
-
-N/System/Library/Frameworks/IOKit.framework/IOKit
-c00000000505182B40000000000120F60
-t1347519156
-s1183584
-
-N/System/Library/Frameworks/OpenGL.framework/OpenGL
-c000000005051800B000000000002D360
-t1347518475
-s185184
-
-N/System/Library/Frameworks/QTKit.framework/QTKit
-c000000005051839200000000004B9FB0
-t1347519378
-s4956080
-
-N/System/Library/Frameworks/QuickTime.framework/QuickTime
-c0000000050518302000000000032B7E0
-t1347519234
-s3323872
-
-N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../addons/ofxNetwork/src/ofxTCPClient.cpp
-c00000000507CB0C800000000000016A1
-t1350349000
-s5793
-
-N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../addons/ofxNetwork/src/ofxTCPManager.cpp
-c00000000507CB0C80000000000002F10
-t1350349000
-s12048
-
-N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../addons/ofxNetwork/src/ofxTCPServer.cpp
-c00000000507CB0C80000000000001A06
-t1350349000
-s6662
-
-N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../addons/ofxNetwork/src/ofxUDPManager.cpp
-c00000000507CB0C80000000000002F18
-t1350349000
-s12056
-
-N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../libs/glut/lib/osx/GLUT.framework
-c00000000507CB0E000000000000000CC
-t1350349024
-s204
-
-N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../libs/glut/lib/osx/GLUT.framework/GLUT
-c00000000507CB0E00000000000093570
-t1350349024
-s603504
-
-N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/bin/client2/MPETestDebug.app
-t2
-s0
-
-N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/bin/client2/MPETestDebug.app/Contents/Frameworks/GLUT.framework
-t2
-s0
-
-N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/bin/client2/MPETestDebug.app/Contents/Info.plist
-t2
-s0
-
-N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/bin/client2/MPETestDebug.app/Contents/MacOS/MPETestDebug
-t2
-s0
-
-N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/bin/client2/MPETestDebug.app/Contents/PkgInfo
-t2
-s0
-
-N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/build/MPETest.build/Debug/client2.build/Objects-normal/i386/MPETestDebug.LinkFileList
-c0000000050C01B1400000000000003CD
-t1354767124
-s973
-
-N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/build/MPETest.build/Debug/client2.build/Objects-normal/i386/main.o
-t2
-s0
-
-N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/build/MPETest.build/Debug/client2.build/Objects-normal/i386/ofxTCPClient.o
-t2
-s0
-
-N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/build/MPETest.build/Debug/client2.build/Objects-normal/i386/ofxTCPManager.o
-t2
-s0
-
-N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/build/MPETest.build/Debug/client2.build/Objects-normal/i386/ofxTCPServer.o
-t2
-s0
-
-N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/build/MPETest.build/Debug/client2.build/Objects-normal/i386/ofxUDPManager.o
-t2
-s0
-
-N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/build/MPETest.build/Debug/client2.build/Objects-normal/i386/testApp.o
-t2
-s0
-
-N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/build/MPETest.build/Debug/client2.build/Script-60B8B9A416705172008426A7.sh
-c0000000050C01B140000000000000114
-t1354767124
-s276
-
-N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/src/main.cpp
-c0000000050C015C3000000000000019E
-t1354765763
-s414
-i"ofMain.h"
-i"testApp.h"
-i"ofAppGlutWindow.h"
-
-N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/src/testApp.cpp
-c0000000050C015C3000000000000097E
-t1354765763
-s2430
-
-N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/src/testApp.h
-c0000000050C015C30000000000000283
-t1354765763
-s643
-
-N/Users/ad/OpenFrameworks/of_v0072_osx_release/libs/openFrameworks/app/ofAppGlutWindow.h
-c00000000507CB0E00000000000000701
-t1350349024
-s1793
-
-N/Users/ad/OpenFrameworks/of_v0072_osx_release/libs/openFrameworks/ofMain.h
-c00000000507CB0E00000000000000686
-t1350349024
-s1670
-
-N/Users/ad/OpenFrameworks/of_v0072_osx_release/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a
-c0000000050BFA0D200000000015418C0
-t1354735826
-s22288576
-
-N/var/folders/rn/_6pfvhfd4ss9jxn6ygq0vj4r0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/Carbon-cttntloxcqbixmeoimypptrwljkd/Carbon.h.pth
-t2
-s0
-
-NopenFrameworks-Info.plist
-c00000000507CB0F20000000000000277
-t1350349042
-s631
-
-CBuild AST from /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../addons/ofxNetwork/src/ofxTCPClient.cpp
-r0
-
-CBuild AST from /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../addons/ofxNetwork/src/ofxTCPManager.cpp
-r0
-
-CBuild AST from /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../addons/ofxNetwork/src/ofxTCPServer.cpp
-r0
-
-CBuild AST from /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../addons/ofxNetwork/src/ofxUDPManager.cpp
-r0
-
-CBuild AST from /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/src/main.cpp
-r0
-
-CBuild AST from /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/src/testApp.cpp
-r0
-
-CCheck dependencies
-r0
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependenciesa33fac945270b641^55f9f6945270b641^---0#1#0#--18"Check dependencies36"D45B917D-9B7B-40C5-84FE-7EC59DF58200-
-
-CCompileC build/MPETest.build/Debug/client2.build/Objects-normal/i386/main.o /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/src/main.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
-s376459938.006890
-e376459938.984637
-r0
-xCompileC
-xbuild/MPETest.build/Debug/client2.build/Objects-normal/i386/main.o
-x/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/src/main.cpp
-xnormal
-xi386
-xc++
-xcom.apple.compilers.llvm.clang.1_0.compiler
-oclang: warning: -lpthread: 'linker' input unused when '-c' is present
-oIn file included from /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/src/main.cpp:2:
-osrc/testApp.h:7:10: fatal error: 'mpeClientTCP.h' file not found
-o#include "mpeClientTCP.h"
-o         ^
-o1 error generated.
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection109"Compile /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/src/main.cppf0fd01a25270b641^6210fca25270b641^-318"clang: warning: -lpthread: 'linker' input unused when '-c' is presentIn file included from /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/src/main.cpp:2:src/testApp.h:7:10: fatal error: 'mpeClientTCP.h' file not found#include "mpeClientTCP.h"         ^1 error generated.1(36%IDEClangDiagnosticActivityLogMessage2@31"'mpeClientTCP.h' file not found-376459938#18446744073709551615#0#1(2@126"In file included from /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/src/main.cpp:2:-376459938#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic23%DVTTextDocumentLocation3@117"file://localhost/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/src/main.cpp0000000000000000^1#9#1#9#29#0#21"Clang LLVM 1.0 Notice--2#27"com.apple.dt.IDE.diagnostic3@118"file://localhost/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/src/testApp.h0000000000000000^6#9#6#9#80#0#29"Lexical or Preprocessor Issue--0#0#0#-19%DVTDocumentLocation4@117"file://localhost/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/src/main.cpp0000000000000000^3479"CompileC build/MPETest.build/Debug/client2.build/Objects-normal/i386/main.o src/main.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c++ -arch i386 -fmessage-length=0 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wno-unused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-shorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions -fasm-blocks -Wdeprecated-declarations -Wno-invalid-offsetof -g -mssse3 -Wno-sign-conversion -I/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/build/MPETest.build/Debug/client2.build/MPETestDebug.hmap -I/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/bin/client2/include -I../../../libs/openFrameworks -I../../../libs/openFrameworks/3d -I../../../libs/openFrameworks/app -I../../../libs/openFrameworks/communication -I../../../libs/openFrameworks/events -I../../../libs/openFrameworks/gl -I../../../libs/openFrameworks/graphics -I../../../libs/openFrameworks/math -I../../../libs/openFrameworks/sound -I../../../libs/openFrameworks/types -I../../../libs/openFrameworks/utils -I../../../libs/openFrameworks/video -I../../../libs/poco/include -I../../../libs/freetype/include -I../../../libs/freetype/include/freetype2 -I../../../libs/fmodex/include -I../../../libs/glew/include -I../../../libs/FreeImage/include -I../../../libs/tess2/include -I../../../libs/cairo/include/cairo -I../../../libs/rtAudio/include -I../../../addons/ofxNetwork/libs -I../../../addons/ofxNetwork/src -I../../../addons/ofxThread/libs -I../../../addons/ofxThread/src -Isrc -I/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/build/MPETest.build/Debug/client2.build/DerivedSources/i386 -I/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/build/MPETest.build/Debug/client2.build/DerivedSources -F/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/bin/client2 -F/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../libs/glut/lib/osx -D__MACOSX_CORE__ -lpthread -mtune=native -include /var/folders/rn/_6pfvhfd4ss9jxn6ygq0vj4r0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/Carbon-cttntloxcqbixmeoimypptrwljkd/Carbon.h -MMD -MT dependencies -MF /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/build/MPETest.build/Debug/client2.build/Objects-normal/i386/main.d --serialize-diagnostics /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/build/MPETest.build/Debug/client2.build/Objects-normal/i386/main.dia -c /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/src/main.cpp -o /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/build/MPETest.build/Debug/client2.build/Objects-normal/i386/main.o36"1FFCAE46-DA9B-429D-989F-7E30A06EA091-
-
-CCompileC build/MPETest.build/Debug/client2.build/Objects-normal/i386/ofxTCPClient.o /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../addons/ofxNetwork/src/ofxTCPClient.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
-r0
-
-CCompileC build/MPETest.build/Debug/client2.build/Objects-normal/i386/ofxTCPManager.o /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../addons/ofxNetwork/src/ofxTCPManager.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
-r0
-
-CCompileC build/MPETest.build/Debug/client2.build/Objects-normal/i386/ofxTCPServer.o /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../addons/ofxNetwork/src/ofxTCPServer.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
-r0
-
-CCompileC build/MPETest.build/Debug/client2.build/Objects-normal/i386/ofxUDPManager.o /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../addons/ofxNetwork/src/ofxUDPManager.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
-r0
-
-CCompileC build/MPETest.build/Debug/client2.build/Objects-normal/i386/testApp.o /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/src/testApp.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
-s376459938.008146
-e376459938.984658
-r0
-xCompileC
-xbuild/MPETest.build/Debug/client2.build/Objects-normal/i386/testApp.o
-x/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/src/testApp.cpp
-xnormal
-xi386
-xc++
-xcom.apple.compilers.llvm.clang.1_0.compiler
-oclang: warning: -lpthread: 'linker' input unused when '-c' is present
-oIn file included from /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/src/testApp.cpp:1:
-osrc/testApp.h:7:10: fatal error: 'mpeClientTCP.h' file not found
-o#include "mpeClientTCP.h"
-o         ^
-o1 error generated.
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection112"Compile /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/src/testApp.cppc34902a25270b641^390efca25270b641^-321"clang: warning: -lpthread: 'linker' input unused when '-c' is presentIn file included from /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/src/testApp.cpp:1:src/testApp.h:7:10: fatal error: 'mpeClientTCP.h' file not found#include "mpeClientTCP.h"         ^1 error generated.1(36%IDEClangDiagnosticActivityLogMessage2@31"'mpeClientTCP.h' file not found-376459938#18446744073709551615#0#1(2@129"In file included from /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/src/testApp.cpp:1:-376459938#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic23%DVTTextDocumentLocation3@120"file://localhost/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/src/testApp.cpp0000000000000000^0#9#0#9#9#0#21"Clang LLVM 1.0 Notice--2#27"com.apple.dt.IDE.diagnostic3@118"file://localhost/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/src/testApp.h0000000000000000^6#9#6#9#80#0#29"Lexical or Preprocessor Issue--0#0#0#-19%DVTDocumentLocation4@120"file://localhost/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/src/testApp.cpp0000000000000000^3497"CompileC build/MPETest.build/Debug/client2.build/Objects-normal/i386/testApp.o src/testApp.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c++ -arch i386 -fmessage-length=0 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wno-unused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-shorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions -fasm-blocks -Wdeprecated-declarations -Wno-invalid-offsetof -g -mssse3 -Wno-sign-conversion -I/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/build/MPETest.build/Debug/client2.build/MPETestDebug.hmap -I/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/bin/client2/include -I../../../libs/openFrameworks -I../../../libs/openFrameworks/3d -I../../../libs/openFrameworks/app -I../../../libs/openFrameworks/communication -I../../../libs/openFrameworks/events -I../../../libs/openFrameworks/gl -I../../../libs/openFrameworks/graphics -I../../../libs/openFrameworks/math -I../../../libs/openFrameworks/sound -I../../../libs/openFrameworks/types -I../../../libs/openFrameworks/utils -I../../../libs/openFrameworks/video -I../../../libs/poco/include -I../../../libs/freetype/include -I../../../libs/freetype/include/freetype2 -I../../../libs/fmodex/include -I../../../libs/glew/include -I../../../libs/FreeImage/include -I../../../libs/tess2/include -I../../../libs/cairo/include/cairo -I../../../libs/rtAudio/include -I../../../addons/ofxNetwork/libs -I../../../addons/ofxNetwork/src -I../../../addons/ofxThread/libs -I../../../addons/ofxThread/src -Isrc -I/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/build/MPETest.build/Debug/client2.build/DerivedSources/i386 -I/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/build/MPETest.build/Debug/client2.build/DerivedSources -F/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/bin/client2 -F/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../libs/glut/lib/osx -D__MACOSX_CORE__ -lpthread -mtune=native -include /var/folders/rn/_6pfvhfd4ss9jxn6ygq0vj4r0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/Carbon-cttntloxcqbixmeoimypptrwljkd/Carbon.h -MMD -MT dependencies -MF /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/build/MPETest.build/Debug/client2.build/Objects-normal/i386/testApp.d --serialize-diagnostics /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/build/MPETest.build/Debug/client2.build/Objects-normal/i386/testApp.dia -c /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/src/testApp.cpp -o /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/build/MPETest.build/Debug/client2.build/Objects-normal/i386/testApp.o36"29B5B72F-6915-48BC-AEC0-6D909F5E9F5D-
-
-CLd /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/bin/client2/MPETestDebug.app/Contents/MacOS/MPETestDebug normal i386
-r0
-
-CPBXCp ../../../libs/glut/lib/osx/GLUT.framework bin/client2/MPETestDebug.app/Contents/Frameworks/GLUT.framework
-r0
-
-CPhaseScriptExecution "Run Script" /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/build/MPETest.build/Debug/client2.build/Script-60B8B9A416705172008426A7.sh
-r0
-
-CProcessInfoPlistFile /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/bin/client2/MPETestDebug.app/Contents/Info.plist openFrameworks-Info.plist
-s376459924.970941
-e376459925.004205
-r1
-xProcessInfoPlistFile
-x/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/bin/client2/MPETestDebug.app/Contents/Info.plist
-xopenFrameworks-Info.plist
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection95"ProcessInfoPlistFile bin/client2/MPETestDebug.app/Contents/Info.plist openFrameworks-Info.plist9204f9945270b641^4d1401955270b641^---0#0#0#-19%DVTDocumentLocation2@130"file://localhost/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/openFrameworks-Info.plist0000000000000000^573"ProcessInfoPlistFile bin/client2/MPETestDebug.app/Contents/Info.plist openFrameworks-Info.plist    cd /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest    builtin-infoPlistUtility openFrameworks-Info.plist -genpkginfo /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/bin/client2/MPETestDebug.app/Contents/PkgInfo -expandbuildsettings -platform macosx -o /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/bin/client2/MPETestDebug.app/Contents/Info.plist36"203E4285-E457-42CB-BFC9-801AE7E78938-
-
-CProcessPCH++ /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/build/MPETest/Index/PrecompiledHeaders/Carbon-bhvrspsdxbzpytbbcwwgcfpicrys_ast/Carbon.h.pth /System/Library/Frameworks/Carbon.framework/Headers/Carbon.h normal i386 c++ com.apple.compilers.llvm.clang.1_0.astbuilder
-r0
-
-CProcessPCH++ /var/folders/rn/_6pfvhfd4ss9jxn6ygq0vj4r0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/Carbon-cttntloxcqbixmeoimypptrwljkd/Carbon.h.pth /System/Library/Frameworks/Carbon.framework/Headers/Carbon.h normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
-s376459925.015105
-e376459931.732979
-r1
-xProcessPCH++
-x/var/folders/rn/_6pfvhfd4ss9jxn6ygq0vj4r0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/Carbon-cttntloxcqbixmeoimypptrwljkd/Carbon.h.pth
-x/System/Library/Frameworks/Carbon.framework/Headers/Carbon.h
-xnormal
-xi386
-xc++
-xcom.apple.compilers.llvm.clang.1_0.compiler
-oclang: warning: -lpthread: 'linker' input unused when '-c' is present
-oIn file included from /System/Library/Frameworks/Carbon.framework/Headers/Carbon.h:55:
-oIn file included from /System/Library/Frameworks/Carbon.framework/Frameworks/CommonPanels.framework/Headers/CommonPanels.h:33:
-o/System/Library/Frameworks/Carbon.framework/Frameworks/CommonPanels.framework/Headers/ColorPicker.h:131:3: warning: 'CMProfileHandle' is deprecated [-Wdeprecated-declarations]
-o  CMProfileHandle     profile;
-o  ^
-o/System/Library/Frameworks/Carbon.framework/Frameworks/CommonPanels.framework/Headers/ColorPicker.h:132:3: warning: 'CMColor' is deprecated [-Wdeprecated-declarations]
-o  CMColor             color;
-o  ^
-o/System/Library/Frameworks/Carbon.framework/Frameworks/CommonPanels.framework/Headers/ColorPicker.h:139:3: warning: 'CMProfileRef' is deprecated [-Wdeprecated-declarations]
-o  CMProfileRef        profile;
-o  ^
-o/System/Library/Frameworks/Carbon.framework/Frameworks/CommonPanels.framework/Headers/ColorPicker.h:140:3: warning: 'CMColor' is deprecated [-Wdeprecated-declarations]
-o  CMColor             color;
-o  ^
-o/System/Library/Frameworks/Carbon.framework/Frameworks/CommonPanels.framework/Headers/ColorPicker.h:310:3: warning: 'CMProfileHandle' is deprecated [-Wdeprecated-declarations]
-o  CMProfileHandle     dstProfile;
-o  ^
-o/System/Library/Frameworks/Carbon.framework/Frameworks/CommonPanels.framework/Headers/ColorPicker.h:328:3: warning: 'CMProfileRef' is deprecated [-Wdeprecated-declarations]
-o  CMProfileRef        dstProfile;             /* Currently ignored */
-o  ^
-oIn file included from /System/Library/Frameworks/Carbon.framework/Headers/Carbon.h:55:
-oIn file included from /System/Library/Frameworks/Carbon.framework/Frameworks/CommonPanels.framework/Headers/CommonPanels.h:37:
-o/System/Library/Frameworks/Carbon.framework/Frameworks/CommonPanels.framework/Headers/CMCalibrator.h:54:3: warning: 'CMDisplayIDType' is deprecated [-Wdeprecated-declarations]
-o  CMDisplayIDType     displayID;              /* Contains an hDC on Win32 */
-o  ^
-o/System/Library/Frameworks/Carbon.framework/Frameworks/CommonPanels.framework/Headers/CMCalibrator.h:56:3: warning: 'CMProfileLocation' is deprecated [-Wdeprecated-declarations]
-o  CMProfileLocation * profileLocationPtr;     /* For returning the profile */
-o  ^
-o/System/Library/Frameworks/Carbon.framework/Frameworks/CommonPanels.framework/Headers/CMCalibrator.h:61:55: warning: 'CMDisplayIDType' is deprecated [-Wdeprecated-declarations]
-otypedef CALLBACK_API( Boolean , CanCalibrateProcPtr )(CMDisplayIDType displayID, Str255 errMessage);
-o                                                      ^
-o/System/Library/Frameworks/Carbon.framework/Frameworks/CommonPanels.framework/Headers/CMCalibrator.h:154:3: warning: 'CMDisplayIDType' is deprecated [-Wdeprecated-declarations]
-o  CMDisplayIDType  displayID,
-o  ^
-o/System/Library/Frameworks/Carbon.framework/Frameworks/CommonPanels.framework/Headers/CMCalibrator.h:180:87: warning: 'CMDisplayIDType' is deprecated [-Wdeprecated-declarations]
-o    inline Boolean                                              InvokeCanCalibrateUPP(CMDisplayIDType displayID, Str255 errMessage, CanCalibrateUPP userUPP) { return (*userUPP)(displayID, errMessage); }
-o                                                                                      ^
-o11 warnings generated.
-lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection71"Precompile /System/Library/Frameworks/Carbon.framework/Headers/Carbon.h429304955270b641^0ea4bb9b5270b641^-3334"clang: warning: -lpthread: 'linker' input unused when '-c' is presentIn file included from /System/Library/Frameworks/Carbon.framework/Headers/Carbon.h:55:In file included from /System/Library/Frameworks/Carbon.framework/Frameworks/CommonPanels.framework/Headers/CommonPanels.h:33:/System/Library/Frameworks/Carbon.framework/Frameworks/CommonPanels.framework/Headers/ColorPicker.h:131:3: warning: 'CMProfileHandle' is deprecated [-Wdeprecated-declarations]  CMProfileHandle     profile;  ^/System/Library/Frameworks/Carbon.framework/Frameworks/CommonPanels.framework/Headers/ColorPicker.h:132:3: warning: 'CMColor' is deprecated [-Wdeprecated-declarations]  CMColor             color;  ^/System/Library/Frameworks/Carbon.framework/Frameworks/CommonPanels.framework/Headers/ColorPicker.h:139:3: warning: 'CMProfileRef' is deprecated [-Wdeprecated-declarations]  CMProfileRef        profile;  ^/System/Library/Frameworks/Carbon.framework/Frameworks/CommonPanels.framework/Headers/ColorPicker.h:140:3: warning: 'CMColor' is deprecated [-Wdeprecated-declarations]  CMColor             color;  ^/System/Library/Frameworks/Carbon.framework/Frameworks/CommonPanels.framework/Headers/ColorPicker.h:310:3: warning: 'CMProfileHandle' is deprecated [-Wdeprecated-declarations]  CMProfileHandle     dstProfile;  ^/System/Library/Frameworks/Carbon.framework/Frameworks/CommonPanels.framework/Headers/ColorPicker.h:328:3: warning: 'CMProfileRef' is deprecated [-Wdeprecated-declarations]  CMProfileRef        dstProfile;             /* Currently ignored */  ^In file included from /System/Library/Frameworks/Carbon.framework/Headers/Carbon.h:55:In file included from /System/Library/Frameworks/Carbon.framework/Frameworks/CommonPanels.framework/Headers/CommonPanels.h:37:/System/Library/Frameworks/Carbon.framework/Frameworks/CommonPanels.framework/Headers/CMCalibrator.h:54:3: warning: 'CMDisplayIDType' is deprecated [-Wdeprecated-declarations]  CMDisplayIDType     displayID;              /* Contains an hDC on Win32 */  ^/System/Library/Frameworks/Carbon.framework/Frameworks/CommonPanels.framework/Headers/CMCalibrator.h:56:3: warning: 'CMProfileLocation' is deprecated [-Wdeprecated-declarations]  CMProfileLocation * profileLocationPtr;     /* For returning the profile */  ^/System/Library/Frameworks/Carbon.framework/Frameworks/CommonPanels.framework/Headers/CMCalibrator.h:61:55: warning: 'CMDisplayIDType' is deprecated [-Wdeprecated-declarations]typedef CALLBACK_API( Boolean , CanCalibrateProcPtr )(CMDisplayIDType displayID, Str255 errMessage);                                                      ^/System/Library/Frameworks/Carbon.framework/Frameworks/CommonPanels.framework/Headers/CMCalibrator.h:154:3: warning: 'CMDisplayIDType' is deprecated [-Wdeprecated-declarations]  CMDisplayIDType  displayID,  ^/System/Library/Frameworks/Carbon.framework/Frameworks/CommonPanels.framework/Headers/CMCalibrator.h:180:87: warning: 'CMDisplayIDType' is deprecated [-Wdeprecated-declarations]    inline Boolean                                              InvokeCanCalibrateUPP(CMDisplayIDType displayID, Str255 errMessage, CanCalibrateUPP userUPP) { return (*userUPP)(displayID, errMessage); }                                                                                      ^11 warnings generated.11(36%IDEClangDiagnosticActivityLogMessage2@31"'CMProfileHandle' is deprecated-376459931#18446744073709551615#0#2(2@86"In file included from /System/Library/Frameworks/Carbon.framework/Headers/Carbon.h:55:-376459931#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic23%DVTTextDocumentLocation3@76"file://localhost/System/Library/Frameworks/Carbon.framework/Headers/Carbon.h0000000000000000^54#9#54#9#1035#0#21"Clang LLVM 1.0 Notice--2@126"In file included from /System/Library/Frameworks/Carbon.framework/Frameworks/CommonPanels.framework/Headers/CommonPanels.h:33:-376459931#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@116"file://localhost/System/Library/Frameworks/Carbon.framework/Frameworks/CommonPanels.framework/Headers/CommonPanels.h0000000000000000^32#9#32#9#657#0#21"Clang LLVM 1.0 Notice--1#27"com.apple.dt.IDE.diagnostic3@115"file://localhost/System/Library/Frameworks/Carbon.framework/Frameworks/CommonPanels.framework/Headers/ColorPicker.h0000000000000000^130#2#130#2#3574#0#12"Deprecations--2@23"'CMColor' is deprecated-376459931#18446744073709551615#0#2(2@86"In file included from /System/Library/Frameworks/Carbon.framework/Headers/Carbon.h:55:-376459931#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@76"file://localhost/System/Library/Frameworks/Carbon.framework/Headers/Carbon.h0000000000000000^54#9#54#9#1035#0#21"Clang LLVM 1.0 Notice--2@126"In file included from /System/Library/Frameworks/Carbon.framework/Frameworks/CommonPanels.framework/Headers/CommonPanels.h:33:-376459931#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@116"file://localhost/System/Library/Frameworks/Carbon.framework/Frameworks/CommonPanels.framework/Headers/CommonPanels.h0000000000000000^32#9#32#9#657#0#21"Clang LLVM 1.0 Notice--1#27"com.apple.dt.IDE.diagnostic3@115"file://localhost/System/Library/Frameworks/Carbon.framework/Frameworks/CommonPanels.framework/Headers/ColorPicker.h0000000000000000^131#2#131#2#3605#0#12"Deprecations--2@28"'CMProfileRef' is deprecated-376459931#18446744073709551615#0#2(2@86"In file included from /System/Library/Frameworks/Carbon.framework/Headers/Carbon.h:55:-376459931#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@76"file://localhost/System/Library/Frameworks/Carbon.framework/Headers/Carbon.h0000000000000000^54#9#54#9#1035#0#21"Clang LLVM 1.0 Notice--2@126"In file included from /System/Library/Frameworks/Carbon.framework/Frameworks/CommonPanels.framework/Headers/CommonPanels.h:33:-376459931#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@116"file://localhost/System/Library/Frameworks/Carbon.framework/Frameworks/CommonPanels.framework/Headers/CommonPanels.h0000000000000000^32#9#32#9#657#0#21"Clang LLVM 1.0 Notice--1#27"com.apple.dt.IDE.diagnostic3@115"file://localhost/System/Library/Frameworks/Carbon.framework/Frameworks/CommonPanels.framework/Headers/ColorPicker.h0000000000000000^138#2#138#2#3781#0#12"Deprecations--2@23"'CMColor' is deprecated-376459931#18446744073709551615#0#2(2@86"In file included from /System/Library/Frameworks/Carbon.framework/Headers/Carbon.h:55:-376459931#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@76"file://localhost/System/Library/Frameworks/Carbon.framework/Headers/Carbon.h0000000000000000^54#9#54#9#1035#0#21"Clang LLVM 1.0 Notice--2@126"In file included from /System/Library/Frameworks/Carbon.framework/Frameworks/CommonPanels.framework/Headers/CommonPanels.h:33:-376459931#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@116"file://localhost/System/Library/Frameworks/Carbon.framework/Frameworks/CommonPanels.framework/Headers/CommonPanels.h0000000000000000^32#9#32#9#657#0#21"Clang LLVM 1.0 Notice--1#27"com.apple.dt.IDE.diagnostic3@115"file://localhost/System/Library/Frameworks/Carbon.framework/Frameworks/CommonPanels.framework/Headers/ColorPicker.h0000000000000000^139#2#139#2#3812#0#12"Deprecations--2@31"'CMProfileHandle' is deprecated-376459931#18446744073709551615#0#2(2@86"In file included from /System/Library/Frameworks/Carbon.framework/Headers/Carbon.h:55:-376459931#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@76"file://localhost/System/Library/Frameworks/Carbon.framework/Headers/Carbon.h0000000000000000^54#9#54#9#1035#0#21"Clang LLVM 1.0 Notice--2@126"In file included from /System/Library/Frameworks/Carbon.framework/Frameworks/CommonPanels.framework/Headers/CommonPanels.h:33:-376459931#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@116"file://localhost/System/Library/Frameworks/Carbon.framework/Frameworks/CommonPanels.framework/Headers/CommonPanels.h0000000000000000^32#9#32#9#657#0#21"Clang LLVM 1.0 Notice--1#27"com.apple.dt.IDE.diagnostic3@115"file://localhost/System/Library/Frameworks/Carbon.framework/Frameworks/CommonPanels.framework/Headers/ColorPicker.h0000000000000000^309#2#309#2#10633#0#12"Deprecations--2@28"'CMProfileRef' is deprecated-376459931#18446744073709551615#0#2(2@86"In file included from /System/Library/Frameworks/Carbon.framework/Headers/Carbon.h:55:-376459931#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@76"file://localhost/System/Library/Frameworks/Carbon.framework/Headers/Carbon.h0000000000000000^54#9#54#9#1035#0#21"Clang LLVM 1.0 Notice--2@126"In file included from /System/Library/Frameworks/Carbon.framework/Frameworks/CommonPanels.framework/Headers/CommonPanels.h:33:-376459931#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@116"file://localhost/System/Library/Frameworks/Carbon.framework/Frameworks/CommonPanels.framework/Headers/CommonPanels.h0000000000000000^32#9#32#9#657#0#21"Clang LLVM 1.0 Notice--1#27"com.apple.dt.IDE.diagnostic3@115"file://localhost/System/Library/Frameworks/Carbon.framework/Frameworks/CommonPanels.framework/Headers/ColorPicker.h0000000000000000^327#2#327#2#11174#0#12"Deprecations--2@31"'CMDisplayIDType' is deprecated-376459931#18446744073709551615#0#2(2@86"In file included from /System/Library/Frameworks/Carbon.framework/Headers/Carbon.h:55:-376459931#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@76"file://localhost/System/Library/Frameworks/Carbon.framework/Headers/Carbon.h0000000000000000^54#9#54#9#1035#0#21"Clang LLVM 1.0 Notice--2@126"In file included from /System/Library/Frameworks/Carbon.framework/Frameworks/CommonPanels.framework/Headers/CommonPanels.h:37:-376459931#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@116"file://localhost/System/Library/Frameworks/Carbon.framework/Frameworks/CommonPanels.framework/Headers/CommonPanels.h0000000000000000^36#9#36#9#728#0#21"Clang LLVM 1.0 Notice--1#27"com.apple.dt.IDE.diagnostic3@116"file://localhost/System/Library/Frameworks/Carbon.framework/Frameworks/CommonPanels.framework/Headers/CMCalibrator.h0000000000000000^53#2#53#2#1129#0#12"Deprecations--2@33"'CMProfileLocation' is deprecated-376459931#18446744073709551615#0#2(2@86"In file included from /System/Library/Frameworks/Carbon.framework/Headers/Carbon.h:55:-376459931#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@76"file://localhost/System/Library/Frameworks/Carbon.framework/Headers/Carbon.h0000000000000000^54#9#54#9#1035#0#21"Clang LLVM 1.0 Notice--2@126"In file included from /System/Library/Frameworks/Carbon.framework/Frameworks/CommonPanels.framework/Headers/CommonPanels.h:37:-376459931#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@116"file://localhost/System/Library/Frameworks/Carbon.framework/Frameworks/CommonPanels.framework/Headers/CommonPanels.h0000000000000000^36#9#36#9#728#0#21"Clang LLVM 1.0 Notice--1#27"com.apple.dt.IDE.diagnostic3@116"file://localhost/System/Library/Frameworks/Carbon.framework/Frameworks/CommonPanels.framework/Headers/CMCalibrator.h0000000000000000^55#2#55#2#1297#0#12"Deprecations--2@31"'CMDisplayIDType' is deprecated-376459931#18446744073709551615#0#2(2@86"In file included from /System/Library/Frameworks/Carbon.framework/Headers/Carbon.h:55:-376459931#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@76"file://localhost/System/Library/Frameworks/Carbon.framework/Headers/Carbon.h0000000000000000^54#9#54#9#1035#0#21"Clang LLVM 1.0 Notice--2@126"In file included from /System/Library/Frameworks/Carbon.framework/Frameworks/CommonPanels.framework/Headers/CommonPanels.h:37:-376459931#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@116"file://localhost/System/Library/Frameworks/Carbon.framework/Frameworks/CommonPanels.framework/Headers/CommonPanels.h0000000000000000^36#9#36#9#728#0#21"Clang LLVM 1.0 Notice--1#27"com.apple.dt.IDE.diagnostic3@116"file://localhost/System/Library/Frameworks/Carbon.framework/Frameworks/CommonPanels.framework/Headers/CMCalibrator.h0000000000000000^60#54#60#54#1621#0#12"Deprecations--2@31"'CMDisplayIDType' is deprecated-376459931#18446744073709551615#0#2(2@86"In file included from /System/Library/Frameworks/Carbon.framework/Headers/Carbon.h:55:-376459931#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@76"file://localhost/System/Library/Frameworks/Carbon.framework/Headers/Carbon.h0000000000000000^54#9#54#9#1035#0#21"Clang LLVM 1.0 Notice--2@126"In file included from /System/Library/Frameworks/Carbon.framework/Frameworks/CommonPanels.framework/Headers/CommonPanels.h:37:-376459931#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@116"file://localhost/System/Library/Frameworks/Carbon.framework/Frameworks/CommonPanels.framework/Headers/CommonPanels.h0000000000000000^36#9#36#9#728#0#21"Clang LLVM 1.0 Notice--1#27"com.apple.dt.IDE.diagnostic3@116"file://localhost/System/Library/Frameworks/Carbon.framework/Frameworks/CommonPanels.framework/Headers/CMCalibrator.h0000000000000000^153#2#153#2#4292#0#12"Deprecations--2@31"'CMDisplayIDType' is deprecated-376459931#18446744073709551615#0#2(2@86"In file included from /System/Library/Frameworks/Carbon.framework/Headers/Carbon.h:55:-376459931#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@76"file://localhost/System/Library/Frameworks/Carbon.framework/Headers/Carbon.h0000000000000000^54#9#54#9#1035#0#21"Clang LLVM 1.0 Notice--2@126"In file included from /System/Library/Frameworks/Carbon.framework/Frameworks/CommonPanels.framework/Headers/CommonPanels.h:37:-376459931#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@116"file://localhost/System/Library/Frameworks/Carbon.framework/Frameworks/CommonPanels.framework/Headers/CommonPanels.h0000000000000000^36#9#36#9#728#0#21"Clang LLVM 1.0 Notice--1#27"com.apple.dt.IDE.diagnostic3@116"file://localhost/System/Library/Frameworks/Carbon.framework/Frameworks/CommonPanels.framework/Headers/CMCalibrator.h0000000000000000^179#86#179#86#5687#0#12"Deprecations--0#0#0#-19%DVTDocumentLocation4@76"file://localhost/System/Library/Frameworks/Carbon.framework/Headers/Carbon.h0000000000000000^3382"ProcessPCH++ /var/folders/rn/_6pfvhfd4ss9jxn6ygq0vj4r0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/Carbon-cttntloxcqbixmeoimypptrwljkd/Carbon.h.pth /System/Library/Frameworks/Carbon.framework/Headers/Carbon.h normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c++-header -arch i386 -fmessage-length=0 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wno-unused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-shorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions -fasm-blocks -Wdeprecated-declarations -Wno-invalid-offsetof -g -mssse3 -Wno-sign-conversion -I/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/build/MPETest.build/Debug/client2.build/MPETestDebug.hmap -I/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/bin/client2/include -I../../../libs/openFrameworks -I../../../libs/openFrameworks/3d -I../../../libs/openFrameworks/app -I../../../libs/openFrameworks/communication -I../../../libs/openFrameworks/events -I../../../libs/openFrameworks/gl -I../../../libs/openFrameworks/graphics -I../../../libs/openFrameworks/math -I../../../libs/openFrameworks/sound -I../../../libs/openFrameworks/types -I../../../libs/openFrameworks/utils -I../../../libs/openFrameworks/video -I../../../libs/poco/include -I../../../libs/freetype/include -I../../../libs/freetype/include/freetype2 -I../../../libs/fmodex/include -I../../../libs/glew/include -I../../../libs/FreeImage/include -I../../../libs/tess2/include -I../../../libs/cairo/include/cairo -I../../../libs/rtAudio/include -I../../../addons/ofxNetwork/libs -I../../../addons/ofxNetwork/src -I../../../addons/ofxThread/libs -I../../../addons/ofxThread/src -Isrc -I/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/build/MPETest.build/Debug/client2.build/DerivedSources/i386 -I/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/build/MPETest.build/Debug/client2.build/DerivedSources -F/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/bin/client2 -F/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../libs/glut/lib/osx -D__MACOSX_CORE__ -lpthread -mtune=native --serialize-diagnostics /var/folders/rn/_6pfvhfd4ss9jxn6ygq0vj4r0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/Carbon-cttntloxcqbixmeoimypptrwljkd/Carbon.h.dia -c /System/Library/Frameworks/Carbon.framework/Headers/Carbon.h -o /var/folders/rn/_6pfvhfd4ss9jxn6ygq0vj4r0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/Carbon-cttntloxcqbixmeoimypptrwljkd/Carbon.h.pth -MMD -MT dependencies -MF /var/folders/rn/_6pfvhfd4ss9jxn6ygq0vj4r0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/Carbon-cttntloxcqbixmeoimypptrwljkd/Carbon.h.d36"1906CC11-45E5-4C8E-9301-B8EAD274575F-
-
-CTouch /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/bin/client2/MPETestDebug.app
-r0
-
