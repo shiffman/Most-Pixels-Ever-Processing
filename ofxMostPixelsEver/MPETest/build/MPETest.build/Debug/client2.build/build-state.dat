@@ -1,0 +1,1639 @@
+Tclient2
+v5
+r1
+cCheck dependencies
+cProcessInfoPlistFile /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/bin/client2/MPETestDebug.app/Contents/Info.plist openFrameworks-Info.plist
+cProcessPCH++ /var/folders/rn/_6pfvhfd4ss9jxn6ygq0vj4r0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/Carbon-cttntloxcqbixmeoimypptrwljkd/Carbon.h.pth /System/Library/Frameworks/Carbon.framework/Headers/Carbon.h normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/MPETest.build/Debug/client2.build/Objects-normal/i386/main.o /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/src/main.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/MPETest.build/Debug/client2.build/Objects-normal/i386/testApp.o /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/src/testApp.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/MPETest.build/Debug/client2.build/Objects-normal/i386/ofxTCPServer.o /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../addons/ofxNetwork/src/ofxTCPServer.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/MPETest.build/Debug/client2.build/Objects-normal/i386/ofxTCPClient.o /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../addons/ofxNetwork/src/ofxTCPClient.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/MPETest.build/Debug/client2.build/Objects-normal/i386/ofxUDPManager.o /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../addons/ofxNetwork/src/ofxUDPManager.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/MPETest.build/Debug/client2.build/Objects-normal/i386/ofxTCPManager.o /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../addons/ofxNetwork/src/ofxTCPManager.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/MPETest.build/Debug/client2.build/Objects-normal/i386/tinyxml.o /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../addons/ofxXmlSettings/libs/tinyxml.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/MPETest.build/Debug/client2.build/Objects-normal/i386/tinyxmlerror.o /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../addons/ofxXmlSettings/libs/tinyxmlerror.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/MPETest.build/Debug/client2.build/Objects-normal/i386/tinyxmlparser.o /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../addons/ofxXmlSettings/libs/tinyxmlparser.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/MPETest.build/Debug/client2.build/Objects-normal/i386/mpeClientTCP.o /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../addons/ofxMostPixelsEver/src/mpeClientTCP.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
+cCompileC build/MPETest.build/Debug/client2.build/Objects-normal/i386/ofxXmlSettings.o /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../addons/ofxXmlSettings/src/ofxXmlSettings.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
+cLd /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/bin/client2/MPETestDebug.app/Contents/MacOS/MPETestDebug normal i386
+cPhaseScriptExecution "Run Script" /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/build/MPETest.build/Debug/client2.build/Script-60B8B9A416705172008426A7.sh
+cPBXCp ../../../libs/glut/lib/osx/GLUT.framework bin/client2/MPETestDebug.app/Contents/Frameworks/GLUT.framework
+cTouch /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/bin/client2/MPETestDebug.app
+
+N/System/Library/Frameworks/AGL.framework/AGL
+c000000004FDA2F1B000000000001BA10
+t1339698971
+s113168
+
+N/System/Library/Frameworks/Accelerate.framework/Accelerate
+c000000004F4937CE00000000000064D0
+t1330198478
+s25808
+
+N/System/Library/Frameworks/AppKit.framework/AppKit
+c0000000050517FF300000000021F3F70
+t1347518451
+s35602288
+
+N/System/Library/Frameworks/ApplicationServices.framework/ApplicationServices
+c000000004E8FDD0E000000000000B750
+t1318051086
+s46928
+
+N/System/Library/Frameworks/AudioToolbox.framework/AudioToolbox
+c00000000505FCB4600000000003AA4D0
+t1348455238
+s3843280
+
+N/System/Library/Frameworks/Carbon.framework/Carbon
+c000000004E8FDD0F0000000000006530
+t1318051087
+s25904
+
+N/System/Library/Frameworks/Carbon.framework/Frameworks/CarbonSound.framework/Headers/CarbonSound.h
+c000000004DF6A21B00000000000002A4
+t1308008987
+s676
+
+N/System/Library/Frameworks/Carbon.framework/Frameworks/CarbonSound.framework/Headers/Sound.h
+c000000004DF6A21B000000000001BF49
+t1308008987
+s114505
+
+N/System/Library/Frameworks/Carbon.framework/Frameworks/CommonPanels.framework/Headers/CMCalibrator.h
+c000000004DFA8ABD0000000000001BA4
+t1308265149
+s7076
+
+N/System/Library/Frameworks/Carbon.framework/Frameworks/CommonPanels.framework/Headers/ColorPicker.h
+c000000004DFA8ABD0000000000003FCE
+t1308265149
+s16334
+
+N/System/Library/Frameworks/Carbon.framework/Frameworks/CommonPanels.framework/Headers/CommonPanels.h
+c000000004DFA8ABD0000000000000373
+t1308265149
+s883
+
+N/System/Library/Frameworks/Carbon.framework/Frameworks/CommonPanels.framework/Headers/FontPanel.h
+c000000004DFA8ABD0000000000006560
+t1308265149
+s25952
+
+N/System/Library/Frameworks/Carbon.framework/Frameworks/HIToolbox.framework/Headers/AEInteraction.h
+c000000004DFC1DAB0000000000003960
+t1308368299
+s14688
+
+N/System/Library/Frameworks/Carbon.framework/Frameworks/HIToolbox.framework/Headers/Appearance.h
+c000000004DFC1DAB000000000002C5D9
+t1308368299
+s181721
+
+N/System/Library/Frameworks/Carbon.framework/Frameworks/HIToolbox.framework/Headers/CarbonEvents.h
+c000000004DFC1DA9000000000009A839
+t1308368297
+s632889
+
+N/System/Library/Frameworks/Carbon.framework/Frameworks/HIToolbox.framework/Headers/CarbonEventsCore.h
+c000000004DFC1DAA000000000001AB44
+t1308368298
+s109380
+
+N/System/Library/Frameworks/Carbon.framework/Frameworks/HIToolbox.framework/Headers/ControlDefinitions.h
+c000000004DFC1DAC000000000000437E
+t1308368300
+s17278
+
+N/System/Library/Frameworks/Carbon.framework/Frameworks/HIToolbox.framework/Headers/Controls.h
+c000000004DFC1DAA00000000000292D4
+t1308368298
+s168660
+
+N/System/Library/Frameworks/Carbon.framework/Frameworks/HIToolbox.framework/Headers/Dialogs.h
+c000000004DFC1DAA00000000000106B9
+t1308368298
+s67257
+
+N/System/Library/Frameworks/Carbon.framework/Frameworks/HIToolbox.framework/Headers/Drag.h
+c000000004DFC1DAA0000000000010152
+t1308368298
+s65874
+
+N/System/Library/Frameworks/Carbon.framework/Frameworks/HIToolbox.framework/Headers/Events.h
+c000000004DFC1DAA0000000000007177
+t1308368298
+s29047
+
+N/System/Library/Frameworks/Carbon.framework/Frameworks/HIToolbox.framework/Headers/HIAccessibility.h
+c000000004DFC1DA90000000000008BD4
+t1308368297
+s35796
+
+N/System/Library/Frameworks/Carbon.framework/Frameworks/HIToolbox.framework/Headers/HIArchive.h
+c000000004DFC1DAB0000000000004A1A
+t1308368299
+s18970
+
+N/System/Library/Frameworks/Carbon.framework/Frameworks/HIToolbox.framework/Headers/HIButtonViews.h
+c000000004DFC1DAA0000000000008589
+t1308368298
+s34185
+
+N/System/Library/Frameworks/Carbon.framework/Frameworks/HIToolbox.framework/Headers/HIClockView.h
+c000000004DFC1DAB0000000000001730
+t1308368299
+s5936
+
+N/System/Library/Frameworks/Carbon.framework/Frameworks/HIToolbox.framework/Headers/HICocoaView.h
+c000000004DFC1DA9000000000000146E
+t1308368297
+s5230
+
+N/System/Library/Frameworks/Carbon.framework/Frameworks/HIToolbox.framework/Headers/HIComboBox.h
+c000000004DFC1DAA0000000000003CBC
+t1308368298
+s15548
+
+N/System/Library/Frameworks/Carbon.framework/Frameworks/HIToolbox.framework/Headers/HIContainerViews.h
+c000000004DFC1DAA0000000000007C03
+t1308368298
+s31747
+
+N/System/Library/Frameworks/Carbon.framework/Frameworks/HIToolbox.framework/Headers/HIDataBrowser.h
+c000000004DFC1DAB0000000000028190
+t1308368299
+s164240
+
+N/System/Library/Frameworks/Carbon.framework/Frameworks/HIToolbox.framework/Headers/HIDisclosureViews.h
+c000000004DFC1DAB0000000000002CD3
+t1308368299
+s11475
+
+N/System/Library/Frameworks/Carbon.framework/Frameworks/HIToolbox.framework/Headers/HIGeometry.h
+c000000004DFC1DAA0000000000002A79
+t1308368298
+s10873
+
+N/System/Library/Frameworks/Carbon.framework/Frameworks/HIToolbox.framework/Headers/HIImageViews.h
+c000000004DFC1DAA000000000000546F
+t1308368298
+s21615
+
+N/System/Library/Frameworks/Carbon.framework/Frameworks/HIToolbox.framework/Headers/HILittleArrows.h
+c000000004DFC1DAB0000000000000B8A
+t1308368299
+s2954
+
+N/System/Library/Frameworks/Carbon.framework/Frameworks/HIToolbox.framework/Headers/HIMenuView.h
+c000000004DFC1DAB0000000000001278
+t1308368299
+s4728
+
+N/System/Library/Frameworks/Carbon.framework/Frameworks/HIToolbox.framework/Headers/HIObject.h
+c000000004DFC1DAA000000000000F9B0
+t1308368298
+s63920
+
+N/System/Library/Frameworks/Carbon.framework/Frameworks/HIToolbox.framework/Headers/HIPopupButton.h
+c000000004DFC1DAB000000000000279B
+t1308368299
+s10139
+
+N/System/Library/Frameworks/Carbon.framework/Frameworks/HIToolbox.framework/Headers/HIProgressViews.h
+c000000004DFC1DAA00000000000010AB
+t1308368298
+s4267
+
+N/System/Library/Frameworks/Carbon.framework/Frameworks/HIToolbox.framework/Headers/HIRelevanceBar.h
+c000000004DFC1DAA0000000000000827
+t1308368298
+s2087
+
+N/System/Library/Frameworks/Carbon.framework/Frameworks/HIToolbox.framework/Headers/HIScrollView.h
+c000000004DFC1DAB00000000000058FF
+t1308368299
+s22783
+
+N/System/Library/Frameworks/Carbon.framework/Frameworks/HIToolbox.framework/Headers/HISearchField.h
+c000000004DFC1DAB00000000000039C8
+t1308368299
+s14792
+
+N/System/Library/Frameworks/Carbon.framework/Frameworks/HIToolbox.framework/Headers/HISegmentedView.h
+c000000004DFC1DAB00000000000079F5
+t1308368299
+s31221
+
+N/System/Library/Frameworks/Carbon.framework/Frameworks/HIToolbox.framework/Headers/HISeparator.h
+c000000004DFC1DAA0000000000000904
+t1308368298
+s2308
+
+N/System/Library/Frameworks/Carbon.framework/Frameworks/HIToolbox.framework/Headers/HISlider.h
+c000000004DFC1DAA0000000000002575
+t1308368298
+s9589
+
+N/System/Library/Frameworks/Carbon.framework/Frameworks/HIToolbox.framework/Headers/HITabbedView.h
+c000000004DFC1DA9000000000000278D
+t1308368297
+s10125
+
+N/System/Library/Frameworks/Carbon.framework/Frameworks/HIToolbox.framework/Headers/HITextLengthFilter.h
+c000000004DFC1DAB0000000000000741
+t1308368299
+s1857
+
+N/System/Library/Frameworks/Carbon.framework/Frameworks/HIToolbox.framework/Headers/HITextUtils.h
+c000000004DFC1DA90000000000000F10
+t1308368297
+s3856
+
+N/System/Library/Frameworks/Carbon.framework/Frameworks/HIToolbox.framework/Headers/HITextViews.h
+c000000004DFC1DAA0000000000008062
+t1308368298
+s32866
+
+N/System/Library/Frameworks/Carbon.framework/Frameworks/HIToolbox.framework/Headers/HITheme.h
+c000000004DFC1DAB0000000000022A9D
+t1308368299
+s141981
+
+N/System/Library/Frameworks/Carbon.framework/Frameworks/HIToolbox.framework/Headers/HIToolbar.h
+c000000004DFC1DAA0000000000013465
+t1308368298
+s78949
+
+N/System/Library/Frameworks/Carbon.framework/Frameworks/HIToolbox.framework/Headers/HIToolbox.h
+c000000004DFC1DA900000000000011BA
+t1308368297
+s4538
+
+N/System/Library/Frameworks/Carbon.framework/Frameworks/HIToolbox.framework/Headers/HIToolboxDebugging.h
+c000000004DFC1DAB0000000000002325
+t1308368299
+s8997
+
+N/System/Library/Frameworks/Carbon.framework/Frameworks/HIToolbox.framework/Headers/HIView.h
+c000000004DFC1DAB000000000002670A
+t1308368299
+s157450
+
+N/System/Library/Frameworks/Carbon.framework/Frameworks/HIToolbox.framework/Headers/HIWindowViews.h
+c000000004DFC1DAA000000000000316B
+t1308368298
+s12651
+
+N/System/Library/Frameworks/Carbon.framework/Frameworks/HIToolbox.framework/Headers/IBCarbonRuntime.h
+c000000004DFC1DAC000000000000130F
+t1308368300
+s4879
+
+N/System/Library/Frameworks/Carbon.framework/Frameworks/HIToolbox.framework/Headers/IMKInputSession.h
+c000000004DFC1D730000000000003D72
+t1308368243
+s15730
+
+N/System/Library/Frameworks/Carbon.framework/Frameworks/HIToolbox.framework/Headers/Keyboards.h
+c000000004DFC1DAC0000000000003CE8
+t1308368300
+s15592
+
+N/System/Library/Frameworks/Carbon.framework/Frameworks/HIToolbox.framework/Headers/Lists.h
+c000000004DFC1DAA000000000000AD7A
+t1308368298
+s44410
+
+N/System/Library/Frameworks/Carbon.framework/Frameworks/HIToolbox.framework/Headers/MacApplication.h
+c000000004DFC1DAB0000000000008760
+t1308368299
+s34656
+
+N/System/Library/Frameworks/Carbon.framework/Frameworks/HIToolbox.framework/Headers/MacHelp.h
+c000000004DFC1DAA0000000000008B81
+t1308368298
+s35713
+
+N/System/Library/Frameworks/Carbon.framework/Frameworks/HIToolbox.framework/Headers/MacTextEditor.h
+c000000004DFC1DA9000000000003B400
+t1308368297
+s242688
+
+N/System/Library/Frameworks/Carbon.framework/Frameworks/HIToolbox.framework/Headers/MacWindows.h
+c000000004DFC1DAA0000000000064A3E
+t1308368298
+s412222
+
+N/System/Library/Frameworks/Carbon.framework/Frameworks/HIToolbox.framework/Headers/Menus.h
+c000000004DFC1DAB000000000003DCF5
+t1308368299
+s253173
+
+N/System/Library/Frameworks/Carbon.framework/Frameworks/HIToolbox.framework/Headers/Notification.h
+c000000004DFC1DAA0000000000001090
+t1308368298
+s4240
+
+N/System/Library/Frameworks/Carbon.framework/Frameworks/HIToolbox.framework/Headers/Scrap.h
+c000000004DFC1DAA00000000000059CB
+t1308368298
+s22987
+
+N/System/Library/Frameworks/Carbon.framework/Frameworks/HIToolbox.framework/Headers/TSMTE.h
+c000000004DFC1DAA0000000000002719
+t1308368298
+s10009
+
+N/System/Library/Frameworks/Carbon.framework/Frameworks/HIToolbox.framework/Headers/TextEdit.h
+c000000004DFC1DAA0000000000013159
+t1308368298
+s78169
+
+N/System/Library/Frameworks/Carbon.framework/Frameworks/HIToolbox.framework/Headers/TextInputSources.h
+c000000004DFC1DAA000000000000D274
+t1308368298
+s53876
+
+N/System/Library/Frameworks/Carbon.framework/Frameworks/HIToolbox.framework/Headers/TextServices.h
+c000000004DFC1DA90000000000012913
+t1308368297
+s76051
+
+N/System/Library/Frameworks/Carbon.framework/Frameworks/HIToolbox.framework/Headers/Translation.h
+c000000004DFC1DAC0000000000002BD4
+t1308368300
+s11220
+
+N/System/Library/Frameworks/Carbon.framework/Frameworks/HIToolbox.framework/Headers/TranslationExtensions.h
+c000000004DFC1DAB00000000000024EC
+t1308368299
+s9452
+
+N/System/Library/Frameworks/Carbon.framework/Frameworks/HIToolbox.framework/Headers/TypeSelect.h
+c000000004DFC1DAB0000000000001A6E
+t1308368299
+s6766
+
+N/System/Library/Frameworks/Carbon.framework/Frameworks/HTMLRendering.framework/Headers/HTMLRendering.h
+c000000004DF6A70F000000000000D75C
+t1308010255
+s55132
+
+N/System/Library/Frameworks/Carbon.framework/Frameworks/Help.framework/Headers/AppleHelp.h
+c000000004DF6A5600000000000001A33
+t1308009824
+s6707
+
+N/System/Library/Frameworks/Carbon.framework/Frameworks/Help.framework/Headers/Help.h
+c000000004DF6A5600000000000000232
+t1308009824
+s562
+
+N/System/Library/Frameworks/Carbon.framework/Frameworks/ImageCapture.framework/Headers/ICAApplication.h
+c000000004DF699D70000000000014792
+t1308006871
+s83858
+
+N/System/Library/Frameworks/Carbon.framework/Frameworks/ImageCapture.framework/Headers/ICACamera.h
+c000000004DF699D7000000000000316F
+t1308006871
+s12655
+
+N/System/Library/Frameworks/Carbon.framework/Frameworks/ImageCapture.framework/Headers/ICADevice.h
+c000000004DF699D70000000000001885
+t1308006871
+s6277
+
+N/System/Library/Frameworks/Carbon.framework/Frameworks/ImageCapture.framework/Headers/ImageCapture.h
+c000000004DF699D7000000000000028A
+t1308006871
+s650
+
+N/System/Library/Frameworks/Carbon.framework/Frameworks/Ink.framework/Headers/Ink.h
+c000000004DFA8935000000000000EB6D
+t1308264757
+s60269
+
+N/System/Library/Frameworks/Carbon.framework/Frameworks/NavigationServices.framework/Headers/Navigation.h
+c000000004DF6A2900000000000013FF7
+t1308009104
+s81911
+
+N/System/Library/Frameworks/Carbon.framework/Frameworks/NavigationServices.framework/Headers/NavigationServices.h
+c000000004DF6A290000000000000029C
+t1308009104
+s668
+
+N/System/Library/Frameworks/Carbon.framework/Frameworks/OpenScripting.framework/Headers/ASDebugging.h
+c000000004DFA8AA20000000000002B26
+t1308265122
+s11046
+
+N/System/Library/Frameworks/Carbon.framework/Frameworks/OpenScripting.framework/Headers/ASRegistry.h
+c000000004DFA8AA20000000000002E90
+t1308265122
+s11920
+
+N/System/Library/Frameworks/Carbon.framework/Frameworks/OpenScripting.framework/Headers/AppleScript.h
+c000000004DFA8AA200000000000025C8
+t1308265122
+s9672
+
+N/System/Library/Frameworks/Carbon.framework/Frameworks/OpenScripting.framework/Headers/DigitalHubRegistry.h
+c000000004DFA8AA300000000000006E5
+t1308265123
+s1765
+
+N/System/Library/Frameworks/Carbon.framework/Frameworks/OpenScripting.framework/Headers/FinderRegistry.h
+c000000004DFA8AA300000000000078ED
+t1308265123
+s30957
+
+N/System/Library/Frameworks/Carbon.framework/Frameworks/OpenScripting.framework/Headers/OSA.h
+c000000004DFA8AA300000000000127C3
+t1308265123
+s75715
+
+N/System/Library/Frameworks/Carbon.framework/Frameworks/OpenScripting.framework/Headers/OSAComp.h
+c000000004DFA8AA300000000000008C5
+t1308265123
+s2245
+
+N/System/Library/Frameworks/Carbon.framework/Frameworks/OpenScripting.framework/Headers/OSAGeneric.h
+c000000004DFA8AA30000000000001363
+t1308265123
+s4963
+
+N/System/Library/Frameworks/Carbon.framework/Frameworks/OpenScripting.framework/Headers/OpenScripting.h
+c000000004DFA8AA2000000000000049D
+t1308265122
+s1181
+
+N/System/Library/Frameworks/Carbon.framework/Frameworks/Print.framework/Headers/PMApplication.h
+c000000004DF6A5BF00000000000025D6
+t1308009919
+s9686
+
+N/System/Library/Frameworks/Carbon.framework/Frameworks/Print.framework/Headers/PMApplicationDeprecated.h
+c000000004DF6A5BF000000000000537E
+t1308009919
+s21374
+
+N/System/Library/Frameworks/Carbon.framework/Frameworks/Print.framework/Headers/Print.h
+c000000004DF6A5BF00000000000002B3
+t1308009919
+s691
+
+N/System/Library/Frameworks/Carbon.framework/Frameworks/SecurityHI.framework/Headers/KeychainHI.h
+c000000004E0AE53E000000000000284A
+t1309336894
+s10314
+
+N/System/Library/Frameworks/Carbon.framework/Frameworks/SecurityHI.framework/Headers/SecCertificateSupport.h
+c000000004E0AE53E00000000000018BF
+t1309336894
+s6335
+
+N/System/Library/Frameworks/Carbon.framework/Frameworks/SecurityHI.framework/Headers/SecurityHI.h
+c000000004E0AE53B00000000000002F4
+t1309336891
+s756
+
+N/System/Library/Frameworks/Carbon.framework/Frameworks/SecurityHI.framework/Headers/URLAccess.h
+c000000004E0AE53E000000000000566A
+t1309336894
+s22122
+
+N/System/Library/Frameworks/Carbon.framework/Frameworks/SpeechRecognition.framework/Headers/SpeechRecognition.h
+c000000004DF6A7BE00000000000084D0
+t1308010430
+s34000
+
+N/System/Library/Frameworks/Carbon.framework/Headers/Carbon.h
+c000000004DFA8BA400000000000005FE
+t1308265380
+s1534
+
+N/System/Library/Frameworks/Cocoa.framework/Cocoa
+c000000004E8FDD0F0000000000006560
+t1318051087
+s25952
+
+N/System/Library/Frameworks/CoreAudio.framework/CoreAudio
+c00000000505FCB4600000000001195D0
+t1348455238
+s1152464
+
+N/System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
+c000000004F9D0518000000000060FA80
+t1335690520
+s6355584
+
+N/System/Library/Frameworks/CoreServices.framework/CoreServices
+c000000004F493784000000000000B870
+t1330198404
+s47216
+
+N/System/Library/Frameworks/CoreVideo.framework/CoreVideo
+c000000004F9D0514000000000007CED0
+t1335690516
+s511696
+
+N/System/Library/Frameworks/IOKit.framework/IOKit
+c00000000505182B40000000000120F60
+t1347519156
+s1183584
+
+N/System/Library/Frameworks/OpenGL.framework/OpenGL
+c000000005051800B000000000002D360
+t1347518475
+s185184
+
+N/System/Library/Frameworks/QTKit.framework/QTKit
+c000000005051839200000000004B9FB0
+t1347519378
+s4956080
+
+N/System/Library/Frameworks/QuickTime.framework/QuickTime
+c0000000050518302000000000032B7E0
+t1347519234
+s3323872
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../addons/ofxMostPixelsEver/src/mpeClientTCP.cpp
+c00000000509D62C900000000000030F2
+t1352491721
+s12530
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../addons/ofxMostPixelsEver/src/mpeClientTCP.h
+c00000000509D62CF000000000000119D
+t1352491727
+s4509
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../addons/ofxNetwork/src/ofxNetwork.h
+c00000000507CB0C800000000000000A2
+t1350349000
+s162
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../addons/ofxNetwork/src/ofxNetworkUtils.h
+c00000000507CB0C800000000000014F6
+t1350349000
+s5366
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../addons/ofxNetwork/src/ofxTCPClient.cpp
+c00000000507CB0C800000000000016A1
+t1350349000
+s5793
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../addons/ofxNetwork/src/ofxTCPClient.h
+c00000000507CB0C80000000000000908
+t1350349000
+s2312
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../addons/ofxNetwork/src/ofxTCPManager.cpp
+c00000000507CB0C80000000000002F10
+t1350349000
+s12048
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../addons/ofxNetwork/src/ofxTCPManager.h
+c00000000507CB0C8000000000000168A
+t1350349000
+s5770
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../addons/ofxNetwork/src/ofxTCPServer.cpp
+c00000000507CB0C80000000000001A06
+t1350349000
+s6662
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../addons/ofxNetwork/src/ofxTCPServer.h
+c00000000507CB0C8000000000000099D
+t1350349000
+s2461
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../addons/ofxNetwork/src/ofxUDPManager.cpp
+c00000000507CB0C80000000000002F18
+t1350349000
+s12056
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../addons/ofxNetwork/src/ofxUDPManager.h
+c00000000507CB0C80000000000000FC8
+t1350349000
+s4040
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../addons/ofxXmlSettings/libs/tinyxml.cpp
+c00000000507CB0D80000000000009064
+t1350349016
+s36964
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../addons/ofxXmlSettings/libs/tinyxml.h
+c00000000507CB0D8000000000000FD05
+t1350349016
+s64773
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../addons/ofxXmlSettings/libs/tinyxmlerror.cpp
+c00000000507CB0D80000000000000712
+t1350349016
+s1810
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../addons/ofxXmlSettings/libs/tinyxmlparser.cpp
+c00000000507CB0D80000000000009B7D
+t1350349016
+s39805
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../addons/ofxXmlSettings/src/ofxXmlSettings.cpp
+c00000000507CB0D80000000000004F18
+t1350349016
+s20248
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../addons/ofxXmlSettings/src/ofxXmlSettings.h
+c00000000507CB0D80000000000001AC2
+t1350349016
+s6850
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../libs/cairo/include/cairo/cairo-deprecated.h
+c00000000507CB0E000000000000021FA
+t1350349024
+s8698
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../libs/cairo/include/cairo/cairo-features.h
+c00000000507CB0E0000000000000031D
+t1350349024
+s797
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../libs/cairo/include/cairo/cairo-pdf.h
+c00000000507CB0E00000000000000C24
+t1350349024
+s3108
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../libs/cairo/include/cairo/cairo-svg.h
+c00000000507CB0E00000000000000ADD
+t1350349024
+s2781
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../libs/cairo/include/cairo/cairo-version.h
+c00000000507CB0E00000000000000094
+t1350349024
+s148
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../libs/cairo/include/cairo/cairo.h
+c00000000507CB0E00000000000016BCE
+t1350349024
+s93134
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../libs/fmodex/include/fmod.h
+c00000000507CB0E00000000000028E68
+t1350349024
+s167528
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../libs/fmodex/include/fmod_codec.h
+c00000000507CB0E0000000000000334A
+t1350349024
+s13130
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../libs/fmodex/include/fmod_dsp.h
+c00000000507CB0E0000000000000892F
+t1350349024
+s35119
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../libs/fmodex/include/fmod_errors.h
+c00000000507CB0E00000000000003408
+t1350349024
+s13320
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../libs/fmodex/include/fmod_memoryinfo.h
+c00000000507CB0E00000000000003C95
+t1350349024
+s15509
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../libs/glew/include/GL/glew.h
+c00000000507CB0E000000000000C1916
+t1350349024
+s792854
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../libs/glut/lib/osx/GLUT.framework
+c00000000507CB0E000000000000000CC
+t1350349024
+s204
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../libs/glut/lib/osx/GLUT.framework/GLUT
+c00000000507CB0E00000000000093570
+t1350349024
+s603504
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../libs/openFrameworks/3d/of3dUtils.h
+c00000000507CB0E000000000000001B2
+t1350349024
+s434
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../libs/openFrameworks/3d/ofCamera.h
+c00000000507CB0E000000000000007E7
+t1350349024
+s2023
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../libs/openFrameworks/3d/ofEasyCam.h
+c00000000507CB0E0000000000000084E
+t1350349024
+s2126
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../libs/openFrameworks/3d/ofMesh.h
+c00000000507CB0E000000000000010F0
+t1350349024
+s4336
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../libs/openFrameworks/3d/ofNode.h
+c00000000507CB0E0000000000000142B
+t1350349024
+s5163
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../libs/openFrameworks/app/ofAppBaseWindow.h
+c00000000507CB0E00000000000000590
+t1350349024
+s1424
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../libs/openFrameworks/app/ofAppRunner.h
+c00000000507CB0E0000000000000075D
+t1350349024
+s1885
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../libs/openFrameworks/app/ofBaseApp.h
+c00000000507CB0E000000000000003A4
+t1350349024
+s932
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../libs/openFrameworks/communication/ofArduino.h
+c00000000507CB0E00000000000004239
+t1350349024
+s16953
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../libs/openFrameworks/communication/ofSerial.h
+c00000000507CB0E00000000000000D4C
+t1350349024
+s3404
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../libs/openFrameworks/events/ofEventUtils.h
+c00000000507CB0E00000000000000E80
+t1350349024
+s3712
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../libs/openFrameworks/events/ofEvents.h
+c00000000507CB0E00000000000001CB9
+t1350349024
+s7353
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../libs/openFrameworks/gl/ofFbo.h
+c00000000507CB0E0000000000000104A
+t1350349024
+s4170
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../libs/openFrameworks/gl/ofGLRenderer.h
+c00000000507CB0E000000000000012E2
+t1350349024
+s4834
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../libs/openFrameworks/gl/ofGLUtils.h
+c00000000507CB0E00000000000000D78
+t1350349024
+s3448
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../libs/openFrameworks/gl/ofLight.h
+c00000000507CB0E00000000000000934
+t1350349024
+s2356
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../libs/openFrameworks/gl/ofMaterial.h
+c00000000507CB0E00000000000000555
+t1350349024
+s1365
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../libs/openFrameworks/gl/ofShader.h
+c00000000507CB0E00000000000001039
+t1350349024
+s4153
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../libs/openFrameworks/gl/ofTexture.h
+c00000000507CB0E0000000000000164D
+t1350349024
+s5709
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../libs/openFrameworks/gl/ofVbo.h
+c00000000507CB0E00000000000000B4B
+t1350349024
+s2891
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../libs/openFrameworks/gl/ofVboMesh.h
+c00000000507CB0E0000000000000029E
+t1350349024
+s670
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../libs/openFrameworks/graphics/ofCairoRenderer.h
+c00000000507CB0E00000000000001627
+t1350349024
+s5671
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../libs/openFrameworks/graphics/ofGraphics.h
+c00000000507CB0E00000000000002231
+t1350349024
+s8753
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../libs/openFrameworks/graphics/ofImage.h
+c00000000507CB0E00000000000002116
+t1350349024
+s8470
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../libs/openFrameworks/graphics/ofPath.h
+c00000000507CB0E00000000000001328
+t1350349024
+s4904
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../libs/openFrameworks/graphics/ofPixels.h
+c00000000507CB0E000000000000013D2
+t1350349024
+s5074
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../libs/openFrameworks/graphics/ofPolyline.h
+c00000000507CB0E00000000000001538
+t1350349024
+s5432
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../libs/openFrameworks/graphics/ofRendererCollection.h
+c00000000507CB0E000000000000029A8
+t1350349024
+s10664
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../libs/openFrameworks/graphics/ofTessellator.h
+c00000000507CB0E00000000000000459
+t1350349024
+s1113
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../libs/openFrameworks/graphics/ofTrueTypeFont.h
+c00000000507CB0E00000000000000A3C
+t1350349024
+s2620
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../libs/openFrameworks/math/ofMath.h
+c00000000507CB0E00000000000000B46
+t1350349024
+s2886
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../libs/openFrameworks/math/ofMatrix3x3.h
+c00000000507CB0E00000000000000BB7
+t1350349024
+s2999
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../libs/openFrameworks/math/ofMatrix4x4.h
+c00000000507CB0E00000000000006D64
+t1350349024
+s28004
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../libs/openFrameworks/math/ofQuaternion.h
+c00000000507CB0E000000000000034A0
+t1350349024
+s13472
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../libs/openFrameworks/math/ofVec2f.h
+c00000000507CB0E000000000000043E6
+t1350349024
+s17382
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../libs/openFrameworks/math/ofVec3f.h
+c00000000507CB0E0000000000000654E
+t1350349024
+s25934
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../libs/openFrameworks/math/ofVec4f.h
+c00000000507CB0E0000000000000306F
+t1350349024
+s12399
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../libs/openFrameworks/math/ofVectorMath.h
+c00000000507CB0E00000000000000099
+t1350349024
+s153
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../libs/openFrameworks/sound/ofBaseSoundPlayer.h
+c00000000507CB0E00000000000000406
+t1350349024
+s1030
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../libs/openFrameworks/sound/ofBaseSoundStream.h
+c00000000507CB0E000000000000002D4
+t1350349024
+s724
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../libs/openFrameworks/sound/ofFmodSoundPlayer.h
+c00000000507CB0E000000000000006F4
+t1350349024
+s1780
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../libs/openFrameworks/sound/ofRtAudioSoundStream.h
+c00000000507CB0E0000000000000050F
+t1350349024
+s1295
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../libs/openFrameworks/sound/ofSoundPlayer.h
+c00000000507CB0E00000000000000724
+t1350349024
+s1828
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../libs/openFrameworks/sound/ofSoundStream.h
+c00000000507CB0E000000000000006DB
+t1350349024
+s1755
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../libs/openFrameworks/types/ofBaseTypes.h
+c00000000507CB0E000000000000030F2
+t1350349024
+s12530
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../libs/openFrameworks/types/ofColor.h
+c00000000507CB0E0000000000000159D
+t1350349024
+s5533
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../libs/openFrameworks/types/ofPoint.h
+c00000000507CB0E0000000000000003D
+t1350349024
+s61
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../libs/openFrameworks/types/ofRectangle.h
+c00000000507CB0E00000000000001BEF
+t1350349024
+s7151
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../libs/openFrameworks/types/ofTypes.h
+c00000000507CB0E0000000000000104B
+t1350349024
+s4171
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../libs/openFrameworks/utils/ofConstants.h
+c00000000507CB0E00000000000004003
+t1350349024
+s16387
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../libs/openFrameworks/utils/ofFileUtils.h
+c00000000507CB0E00000000000001EE6
+t1350349024
+s7910
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../libs/openFrameworks/utils/ofLog.h
+c00000000507CB0E000000000000015C0
+t1350349024
+s5568
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../libs/openFrameworks/utils/ofSystemUtils.h
+c00000000507CB0E00000000000000202
+t1350349024
+s514
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../libs/openFrameworks/utils/ofThread.h
+c00000000507CB0E0000000000000141A
+t1350349024
+s5146
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../libs/openFrameworks/utils/ofURLFileLoader.h
+c00000000507CB0E000000000000008C4
+t1350349024
+s2244
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../libs/openFrameworks/utils/ofUtils.h
+c00000000507CB0E00000000000001592
+t1350349024
+s5522
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../libs/openFrameworks/video/ofQTKitGrabber.h
+c00000000507CB0E00000000000000C08
+t1350349024
+s3080
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../libs/openFrameworks/video/ofQTKitPlayer.h
+c00000000507CB0E0000000000000132D
+t1350349024
+s4909
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../libs/openFrameworks/video/ofVideoGrabber.h
+c00000000507CB0E00000000000000B2F
+t1350349024
+s2863
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../libs/openFrameworks/video/ofVideoPlayer.h
+c00000000507CB0E00000000000000B6E
+t1350349024
+s2926
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../libs/poco/include/Poco/AbstractDelegate.h
+c00000000507CB0E00000000000000AF0
+t1350349024
+s2800
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../libs/poco/include/Poco/AbstractEvent.h
+c00000000507CB0E00000000000002EED
+t1350349024
+s12013
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../libs/poco/include/Poco/ActiveMethod.h
+c00000000507CB0E00000000000001C64
+t1350349024
+s7268
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../libs/poco/include/Poco/ActiveResult.h
+c00000000507CB0E00000000000002E66
+t1350349024
+s11878
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../libs/poco/include/Poco/ActiveRunnable.h
+c00000000507CB0E00000000000001785
+t1350349024
+s6021
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../libs/poco/include/Poco/ActiveStarter.h
+c00000000507CB0E00000000000000927
+t1350349024
+s2343
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../libs/poco/include/Poco/AtomicCounter.h
+c00000000507CB0E00000000000002138
+t1350349024
+s8504
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../libs/poco/include/Poco/AutoPtr.h
+c00000000507CB0E00000000000001E0C
+t1350349024
+s7692
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../libs/poco/include/Poco/Bugcheck.h
+c00000000507CB0E000000000000014A9
+t1350349024
+s5289
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../libs/poco/include/Poco/Condition.h
+c00000000507CB0E00000000000001236
+t1350349024
+s4662
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../libs/poco/include/Poco/Config.h
+c00000000507CB0E00000000000000EA4
+t1350349024
+s3748
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../libs/poco/include/Poco/DefaultStrategy.h
+c00000000507CB0E00000000000000D64
+t1350349024
+s3428
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../libs/poco/include/Poco/Delegate.h
+c00000000507CB0E00000000000001B3D
+t1350349024
+s6973
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../libs/poco/include/Poco/Event.h
+c00000000507CB0E00000000000000E58
+t1350349024
+s3672
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../libs/poco/include/Poco/Event_POSIX.h
+c00000000507CB0E00000000000000A91
+t1350349024
+s2705
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../libs/poco/include/Poco/Exception.h
+c00000000507CB0E000000000000028B1
+t1350349024
+s10417
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../libs/poco/include/Poco/Expire.h
+c00000000507CB0E00000000000000D44
+t1350349024
+s3396
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../libs/poco/include/Poco/FIFOEvent.h
+c00000000507CB0E000000000000009FD
+t1350349024
+s2557
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../libs/poco/include/Poco/FIFOStrategy.h
+c00000000507CB0E00000000000000962
+t1350349024
+s2402
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../libs/poco/include/Poco/File.h
+c00000000507CB0E00000000000001FCC
+t1350349024
+s8140
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../libs/poco/include/Poco/File_UNIX.h
+c00000000507CB0E00000000000000BC1
+t1350349024
+s3009
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../libs/poco/include/Poco/Foundation.h
+c00000000507CB0E000000000000010F9
+t1350349024
+s4345
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../libs/poco/include/Poco/FunctionDelegate.h
+c00000000507CB0E000000000000017B0
+t1350349024
+s6064
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../libs/poco/include/Poco/Mutex.h
+c00000000507CB0E00000000000001DD6
+t1350349024
+s7638
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../libs/poco/include/Poco/Mutex_POSIX.h
+c00000000507CB0E00000000000000AC2
+t1350349024
+s2754
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../libs/poco/include/Poco/NotificationStrategy.h
+c00000000507CB0E00000000000000B62
+t1350349024
+s2914
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../libs/poco/include/Poco/Platform.h
+c00000000507CB0E00000000000001CBD
+t1350349024
+s7357
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../libs/poco/include/Poco/Platform_POSIX.h
+c00000000507CB0E00000000000000843
+t1350349024
+s2115
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../libs/poco/include/Poco/RefCountedObject.h
+c00000000507CB0E00000000000000BB1
+t1350349024
+s2993
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../libs/poco/include/Poco/Runnable.h
+c00000000507CB0E00000000000000861
+t1350349024
+s2145
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../libs/poco/include/Poco/ScopedLock.h
+c00000000507CB0E00000000000000CC5
+t1350349024
+s3269
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../libs/poco/include/Poco/ScopedUnlock.h
+c00000000507CB0E0000000000000092B
+t1350349024
+s2347
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../libs/poco/include/Poco/SharedPtr.h
+c00000000507CB0E00000000000002278
+t1350349024
+s8824
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../libs/poco/include/Poco/SignalHandler.h
+c00000000507CB0E00000000000001205
+t1350349024
+s4613
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../libs/poco/include/Poco/SingletonHolder.h
+c00000000507CB0E00000000000000A67
+t1350349024
+s2663
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../libs/poco/include/Poco/Thread.h
+c00000000507CB0E20000000000001E48
+t1350349026
+s7752
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../libs/poco/include/Poco/ThreadPool.h
+c00000000507CB0E20000000000001C8A
+t1350349026
+s7306
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../libs/poco/include/Poco/Thread_POSIX.h
+c00000000507CB0E200000000000014C0
+t1350349026
+s5312
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../libs/poco/include/Poco/Timestamp.h
+c00000000507CB0E20000000000001A41
+t1350349026
+s6721
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../libs/poco/include/Poco/Types.h
+c00000000507CB0E20000000000001ABE
+t1350349026
+s6846
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../libs/tess2/include/tesselator.h
+c00000000507CB0EA0000000000001C63
+t1350349034
+s7267
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/bin/client2/MPETestDebug.app
+t1354767355
+s102
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/bin/client2/MPETestDebug.app/Contents/Frameworks/GLUT.framework
+t1354767355
+s204
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/bin/client2/MPETestDebug.app/Contents/Info.plist
+t1354767125
+s1001
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/bin/client2/MPETestDebug.app/Contents/MacOS/MPETestDebug
+t1354767354
+s5097148
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/bin/client2/MPETestDebug.app/Contents/PkgInfo
+t1354767125
+s8
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/build/MPETest.build/Debug/client2.build/Objects-normal/i386/MPETestDebug.LinkFileList
+c0000000050C01BED00000000000006FF
+t1354767341
+s1791
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/build/MPETest.build/Debug/client2.build/Objects-normal/i386/main.o
+t1354767345
+s150308
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/build/MPETest.build/Debug/client2.build/Objects-normal/i386/mpeClientTCP.o
+t1354767345
+s301844
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/build/MPETest.build/Debug/client2.build/Objects-normal/i386/ofxTCPClient.o
+t1354767345
+s109360
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/build/MPETest.build/Debug/client2.build/Objects-normal/i386/ofxTCPManager.o
+t1354767345
+s117856
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/build/MPETest.build/Debug/client2.build/Objects-normal/i386/ofxTCPServer.o
+t1354767308
+s234044
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/build/MPETest.build/Debug/client2.build/Objects-normal/i386/ofxUDPManager.o
+t1354767308
+s113780
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/build/MPETest.build/Debug/client2.build/Objects-normal/i386/ofxXmlSettings.o
+t1354767347
+s246436
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/build/MPETest.build/Debug/client2.build/Objects-normal/i386/testApp.o
+t1354767345
+s213336
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/build/MPETest.build/Debug/client2.build/Objects-normal/i386/tinyxml.o
+t1354767345
+s216292
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/build/MPETest.build/Debug/client2.build/Objects-normal/i386/tinyxmlerror.o
+t1354767344
+s74156
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/build/MPETest.build/Debug/client2.build/Objects-normal/i386/tinyxmlparser.o
+t1354767344
+s149760
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/build/MPETest.build/Debug/client2.build/Script-60B8B9A416705172008426A7.sh
+c0000000050C01B140000000000000114
+t1354767124
+s276
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/src/Ball.h
+c0000000050C015C300000000000003F4
+t1354765763
+s1012
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/src/main.cpp
+c0000000050C015C3000000000000019E
+t1354765763
+s414
+i"ofMain.h"
+i"testApp.h"
+i"ofAppGlutWindow.h"
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/src/testApp.cpp
+c0000000050C015C3000000000000097E
+t1354765763
+s2430
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/src/testApp.h
+c0000000050C015C30000000000000283
+t1354765763
+s643
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/libs/openFrameworks/app/ofAppGlutWindow.h
+c00000000507CB0E00000000000000701
+t1350349024
+s1793
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/libs/openFrameworks/ofMain.h
+c00000000507CB0E00000000000000686
+t1350349024
+s1670
+
+N/Users/ad/OpenFrameworks/of_v0072_osx_release/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a
+c0000000050BFA0D200000000015418C0
+t1354735826
+s22288576
+
+N/var/folders/rn/_6pfvhfd4ss9jxn6ygq0vj4r0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/Carbon-cttntloxcqbixmeoimypptrwljkd/Carbon.h.pth
+t1354767131
+s12935852
+
+NopenFrameworks-Info.plist
+c00000000507CB0F20000000000000277
+t1350349042
+s631
+
+CBuild AST from /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../addons/ofxMostPixelsEver/src/mpeClientTCP.cpp
+r0
+
+CBuild AST from /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../addons/ofxNetwork/src/ofxTCPClient.cpp
+r0
+
+CBuild AST from /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../addons/ofxNetwork/src/ofxTCPManager.cpp
+r0
+
+CBuild AST from /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../addons/ofxNetwork/src/ofxTCPServer.cpp
+r0
+
+CBuild AST from /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../addons/ofxNetwork/src/ofxUDPManager.cpp
+r0
+
+CBuild AST from /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../addons/ofxXmlSettings/libs/tinyxml.cpp
+r0
+
+CBuild AST from /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../addons/ofxXmlSettings/libs/tinyxmlerror.cpp
+r0
+
+CBuild AST from /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../addons/ofxXmlSettings/libs/tinyxmlparser.cpp
+r0
+
+CBuild AST from /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../addons/ofxXmlSettings/src/ofxXmlSettings.cpp
+r0
+
+CBuild AST from /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/src/main.cpp
+r0
+
+CBuild AST from /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/src/testApp.cpp
+r0
+
+CCheck dependencies
+r0
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection18"Check dependencies200c1c045470b641^5b0c22045470b641^---0#1#0#--18"Check dependencies36"E602EC03-5177-4135-AEBC-F3C3687C2802-
+
+CCompileC build/MPETest.build/Debug/client2.build/Objects-normal/i386/main.o /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/src/main.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
+s376460142.897153
+e376460145.445079
+r1
+xCompileC
+xbuild/MPETest.build/Debug/client2.build/Objects-normal/i386/main.o
+x/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/src/main.cpp
+xnormal
+xi386
+xc++
+xcom.apple.compilers.llvm.clang.1_0.compiler
+oclang: warning: -lpthread: 'linker' input unused when '-c' is present
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection109"Compile /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/src/main.cppebc8e56e5370b641^5f0772715370b641^-70"clang: warning: -lpthread: 'linker' input unused when '-c' is present-0#0#0#-19%DVTDocumentLocation2@117"file://localhost/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/src/main.cpp0000000000000000^3479"CompileC build/MPETest.build/Debug/client2.build/Objects-normal/i386/main.o src/main.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c++ -arch i386 -fmessage-length=0 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wno-unused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-shorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions -fasm-blocks -Wdeprecated-declarations -Wno-invalid-offsetof -g -mssse3 -Wno-sign-conversion -I/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/build/MPETest.build/Debug/client2.build/MPETestDebug.hmap -I/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/bin/client2/include -I../../../libs/openFrameworks -I../../../libs/openFrameworks/3d -I../../../libs/openFrameworks/app -I../../../libs/openFrameworks/communication -I../../../libs/openFrameworks/events -I../../../libs/openFrameworks/gl -I../../../libs/openFrameworks/graphics -I../../../libs/openFrameworks/math -I../../../libs/openFrameworks/sound -I../../../libs/openFrameworks/types -I../../../libs/openFrameworks/utils -I../../../libs/openFrameworks/video -I../../../libs/poco/include -I../../../libs/freetype/include -I../../../libs/freetype/include/freetype2 -I../../../libs/fmodex/include -I../../../libs/glew/include -I../../../libs/FreeImage/include -I../../../libs/tess2/include -I../../../libs/cairo/include/cairo -I../../../libs/rtAudio/include -I../../../addons/ofxNetwork/libs -I../../../addons/ofxNetwork/src -I../../../addons/ofxThread/libs -I../../../addons/ofxThread/src -Isrc -I/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/build/MPETest.build/Debug/client2.build/DerivedSources/i386 -I/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/build/MPETest.build/Debug/client2.build/DerivedSources -F/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/bin/client2 -F/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../libs/glut/lib/osx -D__MACOSX_CORE__ -lpthread -mtune=native -include /var/folders/rn/_6pfvhfd4ss9jxn6ygq0vj4r0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/Carbon-cttntloxcqbixmeoimypptrwljkd/Carbon.h -MMD -MT dependencies -MF /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/build/MPETest.build/Debug/client2.build/Objects-normal/i386/main.d --serialize-diagnostics /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/build/MPETest.build/Debug/client2.build/Objects-normal/i386/main.dia -c /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/src/main.cpp -o /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/build/MPETest.build/Debug/client2.build/Objects-normal/i386/main.o36"E9C541C7-59E1-4443-84D8-F425DE60B2EF-
+
+CCompileC build/MPETest.build/Debug/client2.build/Objects-normal/i386/mpeClientTCP.o /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../addons/ofxMostPixelsEver/src/mpeClientTCP.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
+s376460144.170254
+e376460145.836239
+r1
+xCompileC
+xbuild/MPETest.build/Debug/client2.build/Objects-normal/i386/mpeClientTCP.o
+x/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../addons/ofxMostPixelsEver/src/mpeClientTCP.cpp
+xnormal
+xi386
+xc++
+xcom.apple.compilers.llvm.clang.1_0.compiler
+oclang: warning: -lpthread: 'linker' input unused when '-c' is present
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection151"Compile /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../addons/ofxMostPixelsEver/src/mpeClientTCP.cppfbaf2b705370b641^9013d6715370b641^-70"clang: warning: -lpthread: 'linker' input unused when '-c' is present-0#0#0#-19%DVTDocumentLocation2@159"file://localhost/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../addons/ofxMostPixelsEver/src/mpeClientTCP.cpp0000000000000000^3595"CompileC build/MPETest.build/Debug/client2.build/Objects-normal/i386/mpeClientTCP.o ../../../addons/ofxMostPixelsEver/src/mpeClientTCP.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c++ -arch i386 -fmessage-length=0 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wno-unused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-shorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions -fasm-blocks -Wdeprecated-declarations -Wno-invalid-offsetof -g -mssse3 -Wno-sign-conversion -I/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/build/MPETest.build/Debug/client2.build/MPETestDebug.hmap -I/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/bin/client2/include -I../../../libs/openFrameworks -I../../../libs/openFrameworks/3d -I../../../libs/openFrameworks/app -I../../../libs/openFrameworks/communication -I../../../libs/openFrameworks/events -I../../../libs/openFrameworks/gl -I../../../libs/openFrameworks/graphics -I../../../libs/openFrameworks/math -I../../../libs/openFrameworks/sound -I../../../libs/openFrameworks/types -I../../../libs/openFrameworks/utils -I../../../libs/openFrameworks/video -I../../../libs/poco/include -I../../../libs/freetype/include -I../../../libs/freetype/include/freetype2 -I../../../libs/fmodex/include -I../../../libs/glew/include -I../../../libs/FreeImage/include -I../../../libs/tess2/include -I../../../libs/cairo/include/cairo -I../../../libs/rtAudio/include -I../../../addons/ofxNetwork/libs -I../../../addons/ofxNetwork/src -I../../../addons/ofxThread/libs -I../../../addons/ofxThread/src -Isrc -I/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/build/MPETest.build/Debug/client2.build/DerivedSources/i386 -I/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/build/MPETest.build/Debug/client2.build/DerivedSources -F/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/bin/client2 -F/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../libs/glut/lib/osx -D__MACOSX_CORE__ -lpthread -mtune=native -include /var/folders/rn/_6pfvhfd4ss9jxn6ygq0vj4r0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/Carbon-cttntloxcqbixmeoimypptrwljkd/Carbon.h -MMD -MT dependencies -MF /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/build/MPETest.build/Debug/client2.build/Objects-normal/i386/mpeClientTCP.d --serialize-diagnostics /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/build/MPETest.build/Debug/client2.build/Objects-normal/i386/mpeClientTCP.dia -c /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../addons/ofxMostPixelsEver/src/mpeClientTCP.cpp -o /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/build/MPETest.build/Debug/client2.build/Objects-normal/i386/mpeClientTCP.o36"E029DBAB-C687-46C5-9F02-1A82452B9503-
+
+CCompileC build/MPETest.build/Debug/client2.build/Objects-normal/i386/ofxTCPClient.o /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../addons/ofxNetwork/src/ofxTCPClient.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
+s376460143.890096
+e376460145.146469
+r1
+xCompileC
+xbuild/MPETest.build/Debug/client2.build/Objects-normal/i386/ofxTCPClient.o
+x/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../addons/ofxNetwork/src/ofxTCPClient.cpp
+xnormal
+xi386
+xc++
+xcom.apple.compilers.llvm.clang.1_0.compiler
+oclang: warning: -lpthread: 'linker' input unused when '-c' is present
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection144"Compile /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../addons/ofxNetwork/src/ofxTCPClient.cpp2008e46f5370b641^c77f25715370b641^-70"clang: warning: -lpthread: 'linker' input unused when '-c' is present-0#0#0#-19%DVTDocumentLocation2@152"file://localhost/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../addons/ofxNetwork/src/ofxTCPClient.cpp0000000000000000^3581"CompileC build/MPETest.build/Debug/client2.build/Objects-normal/i386/ofxTCPClient.o ../../../addons/ofxNetwork/src/ofxTCPClient.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c++ -arch i386 -fmessage-length=0 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wno-unused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-shorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions -fasm-blocks -Wdeprecated-declarations -Wno-invalid-offsetof -g -mssse3 -Wno-sign-conversion -I/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/build/MPETest.build/Debug/client2.build/MPETestDebug.hmap -I/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/bin/client2/include -I../../../libs/openFrameworks -I../../../libs/openFrameworks/3d -I../../../libs/openFrameworks/app -I../../../libs/openFrameworks/communication -I../../../libs/openFrameworks/events -I../../../libs/openFrameworks/gl -I../../../libs/openFrameworks/graphics -I../../../libs/openFrameworks/math -I../../../libs/openFrameworks/sound -I../../../libs/openFrameworks/types -I../../../libs/openFrameworks/utils -I../../../libs/openFrameworks/video -I../../../libs/poco/include -I../../../libs/freetype/include -I../../../libs/freetype/include/freetype2 -I../../../libs/fmodex/include -I../../../libs/glew/include -I../../../libs/FreeImage/include -I../../../libs/tess2/include -I../../../libs/cairo/include/cairo -I../../../libs/rtAudio/include -I../../../addons/ofxNetwork/libs -I../../../addons/ofxNetwork/src -I../../../addons/ofxThread/libs -I../../../addons/ofxThread/src -Isrc -I/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/build/MPETest.build/Debug/client2.build/DerivedSources/i386 -I/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/build/MPETest.build/Debug/client2.build/DerivedSources -F/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/bin/client2 -F/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../libs/glut/lib/osx -D__MACOSX_CORE__ -lpthread -mtune=native -include /var/folders/rn/_6pfvhfd4ss9jxn6ygq0vj4r0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/Carbon-cttntloxcqbixmeoimypptrwljkd/Carbon.h -MMD -MT dependencies -MF /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/build/MPETest.build/Debug/client2.build/Objects-normal/i386/ofxTCPClient.d --serialize-diagnostics /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/build/MPETest.build/Debug/client2.build/Objects-normal/i386/ofxTCPClient.dia -c /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../addons/ofxNetwork/src/ofxTCPClient.cpp -o /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/build/MPETest.build/Debug/client2.build/Objects-normal/i386/ofxTCPClient.o36"E1FAE47D-E9A0-4527-9D9C-E4D2A6BE3439-
+
+CCompileC build/MPETest.build/Debug/client2.build/Objects-normal/i386/ofxTCPManager.o /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../addons/ofxNetwork/src/ofxTCPManager.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
+s376460143.892719
+e376460145.147335
+r1
+xCompileC
+xbuild/MPETest.build/Debug/client2.build/Objects-normal/i386/ofxTCPManager.o
+x/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../addons/ofxNetwork/src/ofxTCPManager.cpp
+xnormal
+xi386
+xc++
+xcom.apple.compilers.llvm.clang.1_0.compiler
+oclang: warning: -lpthread: 'linker' input unused when '-c' is present
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection145"Compile /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../addons/ofxNetwork/src/ofxTCPManager.cpp67b5e46f5370b641^88b825715370b641^-70"clang: warning: -lpthread: 'linker' input unused when '-c' is present-0#0#0#-19%DVTDocumentLocation2@153"file://localhost/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../addons/ofxNetwork/src/ofxTCPManager.cpp0000000000000000^3587"CompileC build/MPETest.build/Debug/client2.build/Objects-normal/i386/ofxTCPManager.o ../../../addons/ofxNetwork/src/ofxTCPManager.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c++ -arch i386 -fmessage-length=0 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wno-unused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-shorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions -fasm-blocks -Wdeprecated-declarations -Wno-invalid-offsetof -g -mssse3 -Wno-sign-conversion -I/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/build/MPETest.build/Debug/client2.build/MPETestDebug.hmap -I/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/bin/client2/include -I../../../libs/openFrameworks -I../../../libs/openFrameworks/3d -I../../../libs/openFrameworks/app -I../../../libs/openFrameworks/communication -I../../../libs/openFrameworks/events -I../../../libs/openFrameworks/gl -I../../../libs/openFrameworks/graphics -I../../../libs/openFrameworks/math -I../../../libs/openFrameworks/sound -I../../../libs/openFrameworks/types -I../../../libs/openFrameworks/utils -I../../../libs/openFrameworks/video -I../../../libs/poco/include -I../../../libs/freetype/include -I../../../libs/freetype/include/freetype2 -I../../../libs/fmodex/include -I../../../libs/glew/include -I../../../libs/FreeImage/include -I../../../libs/tess2/include -I../../../libs/cairo/include/cairo -I../../../libs/rtAudio/include -I../../../addons/ofxNetwork/libs -I../../../addons/ofxNetwork/src -I../../../addons/ofxThread/libs -I../../../addons/ofxThread/src -Isrc -I/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/build/MPETest.build/Debug/client2.build/DerivedSources/i386 -I/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/build/MPETest.build/Debug/client2.build/DerivedSources -F/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/bin/client2 -F/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../libs/glut/lib/osx -D__MACOSX_CORE__ -lpthread -mtune=native -include /var/folders/rn/_6pfvhfd4ss9jxn6ygq0vj4r0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/Carbon-cttntloxcqbixmeoimypptrwljkd/Carbon.h -MMD -MT dependencies -MF /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/build/MPETest.build/Debug/client2.build/Objects-normal/i386/ofxTCPManager.d --serialize-diagnostics /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/build/MPETest.build/Debug/client2.build/Objects-normal/i386/ofxTCPManager.dia -c /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../addons/ofxNetwork/src/ofxTCPManager.cpp -o /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/build/MPETest.build/Debug/client2.build/Objects-normal/i386/ofxTCPManager.o36"E1A07779-8007-4354-8054-259746773906-
+
+CCompileC build/MPETest.build/Debug/client2.build/Objects-normal/i386/ofxTCPServer.o /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../addons/ofxNetwork/src/ofxTCPServer.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
+s376460103.218554
+e376460108.915731
+r1
+xCompileC
+xbuild/MPETest.build/Debug/client2.build/Objects-normal/i386/ofxTCPServer.o
+x/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../addons/ofxNetwork/src/ofxTCPServer.cpp
+xnormal
+xi386
+xc++
+xcom.apple.compilers.llvm.clang.1_0.compiler
+oclang: warning: -lpthread: 'linker' input unused when '-c' is present
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection144"Compile /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../addons/ofxNetwork/src/ofxTCPServer.cppc80c38475370b641^d36cea4c5370b641^-70"clang: warning: -lpthread: 'linker' input unused when '-c' is present-0#0#0#-19%DVTDocumentLocation2@152"file://localhost/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../addons/ofxNetwork/src/ofxTCPServer.cpp0000000000000000^3581"CompileC build/MPETest.build/Debug/client2.build/Objects-normal/i386/ofxTCPServer.o ../../../addons/ofxNetwork/src/ofxTCPServer.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c++ -arch i386 -fmessage-length=0 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wno-unused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-shorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions -fasm-blocks -Wdeprecated-declarations -Wno-invalid-offsetof -g -mssse3 -Wno-sign-conversion -I/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/build/MPETest.build/Debug/client2.build/MPETestDebug.hmap -I/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/bin/client2/include -I../../../libs/openFrameworks -I../../../libs/openFrameworks/3d -I../../../libs/openFrameworks/app -I../../../libs/openFrameworks/communication -I../../../libs/openFrameworks/events -I../../../libs/openFrameworks/gl -I../../../libs/openFrameworks/graphics -I../../../libs/openFrameworks/math -I../../../libs/openFrameworks/sound -I../../../libs/openFrameworks/types -I../../../libs/openFrameworks/utils -I../../../libs/openFrameworks/video -I../../../libs/poco/include -I../../../libs/freetype/include -I../../../libs/freetype/include/freetype2 -I../../../libs/fmodex/include -I../../../libs/glew/include -I../../../libs/FreeImage/include -I../../../libs/tess2/include -I../../../libs/cairo/include/cairo -I../../../libs/rtAudio/include -I../../../addons/ofxNetwork/libs -I../../../addons/ofxNetwork/src -I../../../addons/ofxThread/libs -I../../../addons/ofxThread/src -Isrc -I/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/build/MPETest.build/Debug/client2.build/DerivedSources/i386 -I/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/build/MPETest.build/Debug/client2.build/DerivedSources -F/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/bin/client2 -F/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../libs/glut/lib/osx -D__MACOSX_CORE__ -lpthread -mtune=native -include /var/folders/rn/_6pfvhfd4ss9jxn6ygq0vj4r0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/Carbon-cttntloxcqbixmeoimypptrwljkd/Carbon.h -MMD -MT dependencies -MF /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/build/MPETest.build/Debug/client2.build/Objects-normal/i386/ofxTCPServer.d --serialize-diagnostics /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/build/MPETest.build/Debug/client2.build/Objects-normal/i386/ofxTCPServer.dia -c /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../addons/ofxNetwork/src/ofxTCPServer.cpp -o /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/build/MPETest.build/Debug/client2.build/Objects-normal/i386/ofxTCPServer.o36"2E69CAD4-297F-4A56-B6ED-713ABD93E6A6-
+
+CCompileC build/MPETest.build/Debug/client2.build/Objects-normal/i386/ofxUDPManager.o /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../addons/ofxNetwork/src/ofxUDPManager.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
+s376460103.218582
+e376460108.687999
+r1
+xCompileC
+xbuild/MPETest.build/Debug/client2.build/Objects-normal/i386/ofxUDPManager.o
+x/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../addons/ofxNetwork/src/ofxUDPManager.cpp
+xnormal
+xi386
+xc++
+xcom.apple.compilers.llvm.clang.1_0.compiler
+oclang: warning: -lpthread: 'linker' input unused when '-c' is present
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection145"Compile /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../addons/ofxNetwork/src/ofxUDPManager.cpp1b0d38475370b641^be2db04c5370b641^-70"clang: warning: -lpthread: 'linker' input unused when '-c' is present-0#0#0#-19%DVTDocumentLocation2@153"file://localhost/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../addons/ofxNetwork/src/ofxUDPManager.cpp0000000000000000^3587"CompileC build/MPETest.build/Debug/client2.build/Objects-normal/i386/ofxUDPManager.o ../../../addons/ofxNetwork/src/ofxUDPManager.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c++ -arch i386 -fmessage-length=0 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wno-unused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-shorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions -fasm-blocks -Wdeprecated-declarations -Wno-invalid-offsetof -g -mssse3 -Wno-sign-conversion -I/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/build/MPETest.build/Debug/client2.build/MPETestDebug.hmap -I/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/bin/client2/include -I../../../libs/openFrameworks -I../../../libs/openFrameworks/3d -I../../../libs/openFrameworks/app -I../../../libs/openFrameworks/communication -I../../../libs/openFrameworks/events -I../../../libs/openFrameworks/gl -I../../../libs/openFrameworks/graphics -I../../../libs/openFrameworks/math -I../../../libs/openFrameworks/sound -I../../../libs/openFrameworks/types -I../../../libs/openFrameworks/utils -I../../../libs/openFrameworks/video -I../../../libs/poco/include -I../../../libs/freetype/include -I../../../libs/freetype/include/freetype2 -I../../../libs/fmodex/include -I../../../libs/glew/include -I../../../libs/FreeImage/include -I../../../libs/tess2/include -I../../../libs/cairo/include/cairo -I../../../libs/rtAudio/include -I../../../addons/ofxNetwork/libs -I../../../addons/ofxNetwork/src -I../../../addons/ofxThread/libs -I../../../addons/ofxThread/src -Isrc -I/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/build/MPETest.build/Debug/client2.build/DerivedSources/i386 -I/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/build/MPETest.build/Debug/client2.build/DerivedSources -F/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/bin/client2 -F/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../libs/glut/lib/osx -D__MACOSX_CORE__ -lpthread -mtune=native -include /var/folders/rn/_6pfvhfd4ss9jxn6ygq0vj4r0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/Carbon-cttntloxcqbixmeoimypptrwljkd/Carbon.h -MMD -MT dependencies -MF /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/build/MPETest.build/Debug/client2.build/Objects-normal/i386/ofxUDPManager.d --serialize-diagnostics /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/build/MPETest.build/Debug/client2.build/Objects-normal/i386/ofxUDPManager.dia -c /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../addons/ofxNetwork/src/ofxUDPManager.cpp -o /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/build/MPETest.build/Debug/client2.build/Objects-normal/i386/ofxUDPManager.o36"66921E38-1E65-4F31-8EA1-7146541F4467-
+
+CCompileC build/MPETest.build/Debug/client2.build/Objects-normal/i386/ofxXmlSettings.o /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../addons/ofxXmlSettings/src/ofxXmlSettings.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
+s376460145.011227
+e376460147.929538
+r1
+xCompileC
+xbuild/MPETest.build/Debug/client2.build/Objects-normal/i386/ofxXmlSettings.o
+x/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../addons/ofxXmlSettings/src/ofxXmlSettings.cpp
+xnormal
+xi386
+xc++
+xcom.apple.compilers.llvm.clang.1_0.compiler
+oclang: warning: -lpthread: 'linker' input unused when '-c' is present
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection150"Compile /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../addons/ofxXmlSettings/src/ofxXmlSettings.cpp0c0603715370b641^3e960a745370b641^-70"clang: warning: -lpthread: 'linker' input unused when '-c' is present-0#0#0#-19%DVTDocumentLocation2@158"file://localhost/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../addons/ofxXmlSettings/src/ofxXmlSettings.cpp0000000000000000^3601"CompileC build/MPETest.build/Debug/client2.build/Objects-normal/i386/ofxXmlSettings.o ../../../addons/ofxXmlSettings/src/ofxXmlSettings.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c++ -arch i386 -fmessage-length=0 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wno-unused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-shorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions -fasm-blocks -Wdeprecated-declarations -Wno-invalid-offsetof -g -mssse3 -Wno-sign-conversion -I/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/build/MPETest.build/Debug/client2.build/MPETestDebug.hmap -I/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/bin/client2/include -I../../../libs/openFrameworks -I../../../libs/openFrameworks/3d -I../../../libs/openFrameworks/app -I../../../libs/openFrameworks/communication -I../../../libs/openFrameworks/events -I../../../libs/openFrameworks/gl -I../../../libs/openFrameworks/graphics -I../../../libs/openFrameworks/math -I../../../libs/openFrameworks/sound -I../../../libs/openFrameworks/types -I../../../libs/openFrameworks/utils -I../../../libs/openFrameworks/video -I../../../libs/poco/include -I../../../libs/freetype/include -I../../../libs/freetype/include/freetype2 -I../../../libs/fmodex/include -I../../../libs/glew/include -I../../../libs/FreeImage/include -I../../../libs/tess2/include -I../../../libs/cairo/include/cairo -I../../../libs/rtAudio/include -I../../../addons/ofxNetwork/libs -I../../../addons/ofxNetwork/src -I../../../addons/ofxThread/libs -I../../../addons/ofxThread/src -Isrc -I/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/build/MPETest.build/Debug/client2.build/DerivedSources/i386 -I/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/build/MPETest.build/Debug/client2.build/DerivedSources -F/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/bin/client2 -F/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../libs/glut/lib/osx -D__MACOSX_CORE__ -lpthread -mtune=native -include /var/folders/rn/_6pfvhfd4ss9jxn6ygq0vj4r0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/Carbon-cttntloxcqbixmeoimypptrwljkd/Carbon.h -MMD -MT dependencies -MF /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/build/MPETest.build/Debug/client2.build/Objects-normal/i386/ofxXmlSettings.d --serialize-diagnostics /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/build/MPETest.build/Debug/client2.build/Objects-normal/i386/ofxXmlSettings.dia -c /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../addons/ofxXmlSettings/src/ofxXmlSettings.cpp -o /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/build/MPETest.build/Debug/client2.build/Objects-normal/i386/ofxXmlSettings.o36"241DB6AB-F749-4F11-93C1-975A8EFF206F-
+
+CCompileC build/MPETest.build/Debug/client2.build/Objects-normal/i386/testApp.o /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/src/testApp.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
+s376460143.808766
+e376460145.514464
+r1
+xCompileC
+xbuild/MPETest.build/Debug/client2.build/Objects-normal/i386/testApp.o
+x/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/src/testApp.cpp
+xnormal
+xi386
+xc++
+xcom.apple.compilers.llvm.clang.1_0.compiler
+oclang: warning: -lpthread: 'linker' input unused when '-c' is present
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection112"Compile /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/src/testApp.cpp4f40cf6f5370b641^eab383715370b641^-70"clang: warning: -lpthread: 'linker' input unused when '-c' is present-0#0#0#-19%DVTDocumentLocation2@120"file://localhost/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/src/testApp.cpp0000000000000000^3497"CompileC build/MPETest.build/Debug/client2.build/Objects-normal/i386/testApp.o src/testApp.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c++ -arch i386 -fmessage-length=0 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wno-unused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-shorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions -fasm-blocks -Wdeprecated-declarations -Wno-invalid-offsetof -g -mssse3 -Wno-sign-conversion -I/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/build/MPETest.build/Debug/client2.build/MPETestDebug.hmap -I/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/bin/client2/include -I../../../libs/openFrameworks -I../../../libs/openFrameworks/3d -I../../../libs/openFrameworks/app -I../../../libs/openFrameworks/communication -I../../../libs/openFrameworks/events -I../../../libs/openFrameworks/gl -I../../../libs/openFrameworks/graphics -I../../../libs/openFrameworks/math -I../../../libs/openFrameworks/sound -I../../../libs/openFrameworks/types -I../../../libs/openFrameworks/utils -I../../../libs/openFrameworks/video -I../../../libs/poco/include -I../../../libs/freetype/include -I../../../libs/freetype/include/freetype2 -I../../../libs/fmodex/include -I../../../libs/glew/include -I../../../libs/FreeImage/include -I../../../libs/tess2/include -I../../../libs/cairo/include/cairo -I../../../libs/rtAudio/include -I../../../addons/ofxNetwork/libs -I../../../addons/ofxNetwork/src -I../../../addons/ofxThread/libs -I../../../addons/ofxThread/src -Isrc -I/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/build/MPETest.build/Debug/client2.build/DerivedSources/i386 -I/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/build/MPETest.build/Debug/client2.build/DerivedSources -F/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/bin/client2 -F/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../libs/glut/lib/osx -D__MACOSX_CORE__ -lpthread -mtune=native -include /var/folders/rn/_6pfvhfd4ss9jxn6ygq0vj4r0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/Carbon-cttntloxcqbixmeoimypptrwljkd/Carbon.h -MMD -MT dependencies -MF /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/build/MPETest.build/Debug/client2.build/Objects-normal/i386/testApp.d --serialize-diagnostics /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/build/MPETest.build/Debug/client2.build/Objects-normal/i386/testApp.dia -c /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/src/testApp.cpp -o /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/build/MPETest.build/Debug/client2.build/Objects-normal/i386/testApp.o36"2AC7B8A1-2BE3-437D-AF1C-BA14CDCE22E5-
+
+CCompileC build/MPETest.build/Debug/client2.build/Objects-normal/i386/tinyxml.o /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../addons/ofxXmlSettings/libs/tinyxml.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
+s376460144.170847
+e376460145.235362
+r1
+xCompileC
+xbuild/MPETest.build/Debug/client2.build/Objects-normal/i386/tinyxml.o
+x/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../addons/ofxXmlSettings/libs/tinyxml.cpp
+xnormal
+xi386
+xc++
+xcom.apple.compilers.llvm.clang.1_0.compiler
+oclang: warning: -lpthread: 'linker' input unused when '-c' is present
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection144"Compile /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../addons/ofxXmlSettings/libs/tinyxml.cppa6d22b705370b641^3d433c715370b641^-70"clang: warning: -lpthread: 'linker' input unused when '-c' is present-0#0#0#-19%DVTDocumentLocation2@152"file://localhost/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../addons/ofxXmlSettings/libs/tinyxml.cpp0000000000000000^3561"CompileC build/MPETest.build/Debug/client2.build/Objects-normal/i386/tinyxml.o ../../../addons/ofxXmlSettings/libs/tinyxml.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c++ -arch i386 -fmessage-length=0 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wno-unused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-shorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions -fasm-blocks -Wdeprecated-declarations -Wno-invalid-offsetof -g -mssse3 -Wno-sign-conversion -I/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/build/MPETest.build/Debug/client2.build/MPETestDebug.hmap -I/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/bin/client2/include -I../../../libs/openFrameworks -I../../../libs/openFrameworks/3d -I../../../libs/openFrameworks/app -I../../../libs/openFrameworks/communication -I../../../libs/openFrameworks/events -I../../../libs/openFrameworks/gl -I../../../libs/openFrameworks/graphics -I../../../libs/openFrameworks/math -I../../../libs/openFrameworks/sound -I../../../libs/openFrameworks/types -I../../../libs/openFrameworks/utils -I../../../libs/openFrameworks/video -I../../../libs/poco/include -I../../../libs/freetype/include -I../../../libs/freetype/include/freetype2 -I../../../libs/fmodex/include -I../../../libs/glew/include -I../../../libs/FreeImage/include -I../../../libs/tess2/include -I../../../libs/cairo/include/cairo -I../../../libs/rtAudio/include -I../../../addons/ofxNetwork/libs -I../../../addons/ofxNetwork/src -I../../../addons/ofxThread/libs -I../../../addons/ofxThread/src -Isrc -I/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/build/MPETest.build/Debug/client2.build/DerivedSources/i386 -I/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/build/MPETest.build/Debug/client2.build/DerivedSources -F/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/bin/client2 -F/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../libs/glut/lib/osx -D__MACOSX_CORE__ -lpthread -mtune=native -include /var/folders/rn/_6pfvhfd4ss9jxn6ygq0vj4r0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/Carbon-cttntloxcqbixmeoimypptrwljkd/Carbon.h -MMD -MT dependencies -MF /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/build/MPETest.build/Debug/client2.build/Objects-normal/i386/tinyxml.d --serialize-diagnostics /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/build/MPETest.build/Debug/client2.build/Objects-normal/i386/tinyxml.dia -c /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../addons/ofxXmlSettings/libs/tinyxml.cpp -o /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/build/MPETest.build/Debug/client2.build/Objects-normal/i386/tinyxml.o36"F2836C20-89A3-4FC5-98C2-B1C57468234A-
+
+CCompileC build/MPETest.build/Debug/client2.build/Objects-normal/i386/tinyxmlerror.o /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../addons/ofxXmlSettings/libs/tinyxmlerror.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
+s376460144.413294
+e376460144.838100
+r1
+xCompileC
+xbuild/MPETest.build/Debug/client2.build/Objects-normal/i386/tinyxmlerror.o
+x/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../addons/ofxXmlSettings/libs/tinyxmlerror.cpp
+xnormal
+xi386
+xc++
+xcom.apple.compilers.llvm.clang.1_0.compiler
+oclang: warning: -lpthread: 'linker' input unused when '-c' is present
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection149"Compile /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../addons/ofxXmlSettings/libs/tinyxmlerror.cpp2e036a705370b641^548dd6705370b641^-70"clang: warning: -lpthread: 'linker' input unused when '-c' is present-0#0#0#-19%DVTDocumentLocation2@157"file://localhost/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../addons/ofxXmlSettings/libs/tinyxmlerror.cpp0000000000000000^3591"CompileC build/MPETest.build/Debug/client2.build/Objects-normal/i386/tinyxmlerror.o ../../../addons/ofxXmlSettings/libs/tinyxmlerror.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c++ -arch i386 -fmessage-length=0 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wno-unused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-shorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions -fasm-blocks -Wdeprecated-declarations -Wno-invalid-offsetof -g -mssse3 -Wno-sign-conversion -I/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/build/MPETest.build/Debug/client2.build/MPETestDebug.hmap -I/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/bin/client2/include -I../../../libs/openFrameworks -I../../../libs/openFrameworks/3d -I../../../libs/openFrameworks/app -I../../../libs/openFrameworks/communication -I../../../libs/openFrameworks/events -I../../../libs/openFrameworks/gl -I../../../libs/openFrameworks/graphics -I../../../libs/openFrameworks/math -I../../../libs/openFrameworks/sound -I../../../libs/openFrameworks/types -I../../../libs/openFrameworks/utils -I../../../libs/openFrameworks/video -I../../../libs/poco/include -I../../../libs/freetype/include -I../../../libs/freetype/include/freetype2 -I../../../libs/fmodex/include -I../../../libs/glew/include -I../../../libs/FreeImage/include -I../../../libs/tess2/include -I../../../libs/cairo/include/cairo -I../../../libs/rtAudio/include -I../../../addons/ofxNetwork/libs -I../../../addons/ofxNetwork/src -I../../../addons/ofxThread/libs -I../../../addons/ofxThread/src -Isrc -I/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/build/MPETest.build/Debug/client2.build/DerivedSources/i386 -I/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/build/MPETest.build/Debug/client2.build/DerivedSources -F/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/bin/client2 -F/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../libs/glut/lib/osx -D__MACOSX_CORE__ -lpthread -mtune=native -include /var/folders/rn/_6pfvhfd4ss9jxn6ygq0vj4r0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/Carbon-cttntloxcqbixmeoimypptrwljkd/Carbon.h -MMD -MT dependencies -MF /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/build/MPETest.build/Debug/client2.build/Objects-normal/i386/tinyxmlerror.d --serialize-diagnostics /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/build/MPETest.build/Debug/client2.build/Objects-normal/i386/tinyxmlerror.dia -c /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../addons/ofxXmlSettings/libs/tinyxmlerror.cpp -o /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/build/MPETest.build/Debug/client2.build/Objects-normal/i386/tinyxmlerror.o36"332D0803-1CFF-4B4B-B11D-2925FC97DEB2-
+
+CCompileC build/MPETest.build/Debug/client2.build/Objects-normal/i386/tinyxmlparser.o /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../addons/ofxXmlSettings/libs/tinyxmlparser.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
+s376460144.453556
+e376460145.009915
+r1
+xCompileC
+xbuild/MPETest.build/Debug/client2.build/Objects-normal/i386/tinyxmlparser.o
+x/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../addons/ofxXmlSettings/libs/tinyxmlparser.cpp
+xnormal
+xi386
+xc++
+xcom.apple.compilers.llvm.clang.1_0.compiler
+oclang: warning: -lpthread: 'linker' input unused when '-c' is present
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection150"Compile /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../addons/ofxXmlSettings/libs/tinyxmlparser.cppd63774705370b641^319902715370b641^-70"clang: warning: -lpthread: 'linker' input unused when '-c' is present-0#0#0#-19%DVTDocumentLocation2@158"file://localhost/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../addons/ofxXmlSettings/libs/tinyxmlparser.cpp0000000000000000^3597"CompileC build/MPETest.build/Debug/client2.build/Objects-normal/i386/tinyxmlparser.o ../../../addons/ofxXmlSettings/libs/tinyxmlparser.cpp normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c++ -arch i386 -fmessage-length=0 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wno-unused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-shorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions -fasm-blocks -Wdeprecated-declarations -Wno-invalid-offsetof -g -mssse3 -Wno-sign-conversion -I/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/build/MPETest.build/Debug/client2.build/MPETestDebug.hmap -I/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/bin/client2/include -I../../../libs/openFrameworks -I../../../libs/openFrameworks/3d -I../../../libs/openFrameworks/app -I../../../libs/openFrameworks/communication -I../../../libs/openFrameworks/events -I../../../libs/openFrameworks/gl -I../../../libs/openFrameworks/graphics -I../../../libs/openFrameworks/math -I../../../libs/openFrameworks/sound -I../../../libs/openFrameworks/types -I../../../libs/openFrameworks/utils -I../../../libs/openFrameworks/video -I../../../libs/poco/include -I../../../libs/freetype/include -I../../../libs/freetype/include/freetype2 -I../../../libs/fmodex/include -I../../../libs/glew/include -I../../../libs/FreeImage/include -I../../../libs/tess2/include -I../../../libs/cairo/include/cairo -I../../../libs/rtAudio/include -I../../../addons/ofxNetwork/libs -I../../../addons/ofxNetwork/src -I../../../addons/ofxThread/libs -I../../../addons/ofxThread/src -Isrc -I/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/build/MPETest.build/Debug/client2.build/DerivedSources/i386 -I/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/build/MPETest.build/Debug/client2.build/DerivedSources -F/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/bin/client2 -F/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../libs/glut/lib/osx -D__MACOSX_CORE__ -lpthread -mtune=native -include /var/folders/rn/_6pfvhfd4ss9jxn6ygq0vj4r0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/Carbon-cttntloxcqbixmeoimypptrwljkd/Carbon.h -MMD -MT dependencies -MF /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/build/MPETest.build/Debug/client2.build/Objects-normal/i386/tinyxmlparser.d --serialize-diagnostics /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/build/MPETest.build/Debug/client2.build/Objects-normal/i386/tinyxmlparser.dia -c /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../addons/ofxXmlSettings/libs/tinyxmlparser.cpp -o /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/build/MPETest.build/Debug/client2.build/Objects-normal/i386/tinyxmlparser.o36"D451C6F0-1795-46A4-8818-476857B891E4-
+
+CLd /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/bin/client2/MPETestDebug.app/Contents/MacOS/MPETestDebug normal i386
+s376460148.771911
+e376460152.266196
+r1
+xLd
+x/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/bin/client2/MPETestDebug.app/Contents/MacOS/MPETestDebug
+xnormal
+xi386
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection150"Link /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/bin/client2/MPETestDebug.app/Contents/MacOS/MPETestDebug37c7c5745370b641^e12544785370b641^---0#0#0#--2060"Ld bin/client2/MPETestDebug.app/Contents/MacOS/MPETestDebug normal i386    cd /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++ -arch i386 -L/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/bin/client2 -F/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/bin/client2 -F/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../libs/glut/lib/osx -filelist /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/build/MPETest.build/Debug/client2.build/Objects-normal/i386/MPETestDebug.LinkFileList -dead_strip ../../../libs/poco/lib/osx/PocoCrypto.a ../../../libs/poco/lib/osx/PocoData.a ../../../libs/poco/lib/osx/PocoDataODBC.a ../../../libs/poco/lib/osx/PocoDataSQLite.a ../../../libs/poco/lib/osx/PocoFoundation.a ../../../libs/poco/lib/osx/PocoNet.a ../../../libs/poco/lib/osx/PocoNetSSL.a ../../../libs/poco/lib/osx/PocoUtil.a ../../../libs/poco/lib/osx/PocoXML.a ../../../libs/poco/lib/osx/PocoZip.a ../../../libs/tess2/lib/osx/tess2.a ../../../libs/glew/lib/osx/glew.a ../../../libs/cairo/lib/osx/cairo-script-interpreter.a ../../../libs/cairo/lib/osx/cairo.a ../../../libs/cairo/lib/osx/pixman-1.a ../../../libs/fmodex/lib/osx/libfmodex.dylib ../../../libs/rtAudio/lib/osx/rtAudio.a -framework Accelerate -framework QTKit -framework GLUT /Users/ad/OpenFrameworks/of_v0072_osx_release/libs/openFrameworksCompiled/lib/osx/openFrameworksDebug.a -framework AGL -framework ApplicationServices -framework AudioToolbox -framework Carbon -framework CoreAudio -framework CoreFoundation -framework CoreServices -framework OpenGL -framework QuickTime -framework AppKit -framework Cocoa -framework IOKit -framework CoreVideo -o /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/bin/client2/MPETestDebug.app/Contents/MacOS/MPETestDebug36"E7038674-4F54-4E37-AB4B-B383EF3BEB48-
+
+CPBXCp ../../../libs/glut/lib/osx/GLUT.framework bin/client2/MPETestDebug.app/Contents/Frameworks/GLUT.framework
+s376460154.490562
+e376460155.149541
+r1
+xPBXCp
+x../../../libs/glut/lib/osx/GLUT.framework
+xbin/client2/MPETestDebug.app/Contents/Frameworks/GLUT.framework
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection68"Copy bin/client2/MPETestDebug.app/Contents/Frameworks/GLUT.framework6285837a5370b641^be4e267b5370b641^---0#0#0#-19%DVTDocumentLocation2@168"file://localhost/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/bin/client2/MPETestDebug.app/Contents/Frameworks/GLUT.framework000000000080d041^589"PBXCp ../../../libs/glut/lib/osx/GLUT.framework bin/client2/MPETestDebug.app/Contents/Frameworks/GLUT.framework    cd /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest    builtin-copy -exclude .DS_Store -exclude CVS -exclude .svn -exclude .git -exclude .hg -resolve-src-symlinks /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../libs/glut/lib/osx/GLUT.framework /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/bin/client2/MPETestDebug.app/Contents/Frameworks36"9BF0FE96-4269-44FD-8976-3898D87ECC8C-
+
+CPhaseScriptExecution "Run Script" /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/build/MPETest.build/Debug/client2.build/Script-60B8B9A416705172008426A7.sh
+s376460292.190110
+e376460292.308643
+r1
+xPhaseScriptExecution
+xRun Script
+x/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/build/MPETest.build/Debug/client2.build/Script-60B8B9A416705172008426A7.sh
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection36"Run custom shell script 'Run Script'5cca31045470b641^36044f045470b641^---0#0#0#--25963"PhaseScriptExecution "Run Script" build/MPETest.build/Debug/client2.build/Script-60B8B9A416705172008426A7.sh    cd /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest    setenv ACTION build    setenv ALTERNATE_GROUP staff    setenv ALTERNATE_MODE u+w,go-w,a+rX    setenv ALTERNATE_OWNER ad    setenv ALWAYS_SEARCH_USER_PATHS YES    setenv APPLE_INTERNAL_DEVELOPER_DIR /AppleInternal/Developer    setenv APPLE_INTERNAL_DIR /AppleInternal    setenv APPLE_INTERNAL_DOCUMENTATION_DIR /AppleInternal/Documentation    setenv APPLE_INTERNAL_LIBRARY_DIR /AppleInternal/Library    setenv APPLE_INTERNAL_TOOLS /AppleInternal/Developer/Tools    setenv APPLY_RULES_IN_COPY_FILES NO    setenv ARCHS i386    setenv ARCHS_STANDARD_32_64_BIT "x86_64 i386"    setenv ARCHS_STANDARD_32_BIT i386    setenv ARCHS_STANDARD_64_BIT x86_64    setenv AVAILABLE_PLATFORMS "iphonesimulator macosx iphoneos"    setenv BUILD_COMPONENTS "headers build"    setenv BUILD_DIR /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/build    setenv BUILD_ROOT /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/build    setenv BUILD_STYLE     setenv BUILD_VARIANTS normal    setenv BUILT_PRODUCTS_DIR /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/bin/client2    setenv CACHE_ROOT /var/folders/rn/_6pfvhfd4ss9jxn6ygq0vj4r0000gn/C/com.apple.Xcode.501    setenv CCHROOT /var/folders/rn/_6pfvhfd4ss9jxn6ygq0vj4r0000gn/C/com.apple.Xcode.501    setenv CHMOD /bin/chmod    setenv CHOWN /usr/sbin/chown    setenv CLASS_FILE_DIR /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/build/MPETest.build/Debug/client2.build/JavaClasses    setenv CLEAN_PRECOMPS YES    setenv CLONE_HEADERS NO    setenv CODESIGNING_FOLDER_PATH /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/bin/client2/MPETestDebug.app    setenv CODE_SIGNING_ALLOWED YES    setenv COMMAND_MODE legacy    setenv COMPOSITE_SDK_DIRS /var/folders/rn/_6pfvhfd4ss9jxn6ygq0vj4r0000gn/C/com.apple.Xcode.501/CompositeSDKs    setenv CONFIGURATION Debug    setenv CONFIGURATION_BUILD_DIR /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/bin/client2    setenv CONFIGURATION_TEMP_DIR /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/build/MPETest.build/Debug    setenv CONTENTS_FOLDER_PATH MPETestDebug.app/Contents    setenv COPYING_PRESERVES_HFS_DATA NO    setenv COPY_PHASE_STRIP NO    setenv COPY_RESOURCES_FROM_STATIC_FRAMEWORKS YES    setenv CP /bin/cp    setenv CURRENT_ARCH i386    setenv CURRENT_VARIANT normal    setenv DEAD_CODE_STRIPPING YES    setenv DEBUGGING_SYMBOLS YES    setenv DEBUG_INFORMATION_FORMAT dwarf    setenv DEFAULT_COMPILER com.apple.compilers.llvm.clang.1_0    setenv DEPLOYMENT_LOCATION NO    setenv DEPLOYMENT_POSTPROCESSING NO    setenv DERIVED_FILES_DIR /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/build/MPETest.build/Debug/client2.build/DerivedSources    setenv DERIVED_FILE_DIR /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/build/MPETest.build/Debug/client2.build/DerivedSources    setenv DERIVED_SOURCES_DIR /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/build/MPETest.build/Debug/client2.build/DerivedSources    setenv DEVELOPER_APPLICATIONS_DIR /Applications/Xcode.app/Contents/Developer/Applications    setenv DEVELOPER_BIN_DIR /Applications/Xcode.app/Contents/Developer/usr/bin    setenv DEVELOPER_DIR /Applications/Xcode.app/Contents/Developer    setenv DEVELOPER_FRAMEWORKS_DIR /Applications/Xcode.app/Contents/Developer/Library/Frameworks    setenv DEVELOPER_FRAMEWORKS_DIR_QUOTED "\"/Applications/Xcode.app/Contents/Developer/Library/Frameworks\""    setenv DEVELOPER_LIBRARY_DIR /Applications/Xcode.app/Contents/Developer/Library    setenv DEVELOPER_SDK_DIR /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs    setenv DEVELOPER_TOOLS_DIR /Applications/Xcode.app/Contents/Developer/Tools    setenv DEVELOPER_USR_DIR /Applications/Xcode.app/Contents/Developer/usr    setenv DEVELOPMENT_LANGUAGE English    setenv DOCUMENTATION_FOLDER_PATH MPETestDebug.app/Contents/Resources/English.lproj/Documentation    setenv DO_HEADER_SCANNING_IN_JAM NO    setenv DSTROOT /tmp/MPETest.dst    setenv DT_TOOLCHAIN_DIR /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain    setenv DWARF_DSYM_FILE_NAME MPETestDebug.app.dSYM    setenv DWARF_DSYM_FILE_SHOULD_ACCOMPANY_PRODUCT NO    setenv DWARF_DSYM_FOLDER_PATH /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/bin/client2    setenv EMBEDDED_PROFILE_NAME embedded.provisionprofile    setenv ENABLE_HEADER_DEPENDENCIES YES    setenv EXCLUDED_INSTALLSRC_SUBDIRECTORY_PATTERNS ".DS_Store .svn .git .hg CVS"    setenv EXCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES "*.nib *.lproj *.framework *.gch (*) .DS_Store CVS .svn .git .hg *.xcodeproj *.xcode *.pbproj *.pbxproj"    setenv EXECUTABLES_FOLDER_PATH MPETestDebug.app/Contents/Executables    setenv EXECUTABLE_FOLDER_PATH MPETestDebug.app/Contents/MacOS    setenv EXECUTABLE_NAME MPETestDebug    setenv EXECUTABLE_PATH MPETestDebug.app/Contents/MacOS/MPETestDebug    setenv FILE_LIST /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/build/MPETest.build/Debug/client2.build/Objects/LinkFileList    setenv FIXED_FILES_DIR /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/build/MPETest.build/Debug/client2.build/FixedFiles    setenv FRAMEWORKS_FOLDER_PATH MPETestDebug.app/Contents/Frameworks    setenv FRAMEWORK_FLAG_PREFIX -framework    setenv FRAMEWORK_SEARCH_PATHS "\"/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/bin/client2\"  \"/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../libs/glut/lib/osx\""    setenv FRAMEWORK_SEARCH_PATHS_QUOTED_FOR_TARGET_1 "\"/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../libs/glut/lib/osx\""    setenv FRAMEWORK_VERSION A    setenv FULL_PRODUCT_NAME MPETestDebug.app    setenv GCC3_VERSION 3.3    setenv GCC_AUTO_VECTORIZATION YES    setenv GCC_DYNAMIC_NO_PIC NO    setenv GCC_ENABLE_FIX_AND_CONTINUE YES    setenv GCC_ENABLE_SSE3_EXTENSIONS YES    setenv GCC_ENABLE_SUPPLEMENTAL_SSE3_INSTRUCTIONS YES    setenv GCC_GENERATE_DEBUGGING_SYMBOLS YES    setenv GCC_INLINES_ARE_PRIVATE_EXTERN NO    setenv GCC_MODEL_TUNING NONE    setenv GCC_OPTIMIZATION_LEVEL 0    setenv GCC_PFE_FILE_C_DIALECTS "c objective-c c++ objective-c++"    setenv GCC_PRECOMPILE_PREFIX_HEADER YES    setenv GCC_PREFIX_HEADER /System/Library/Frameworks/Carbon.framework/Headers/Carbon.h    setenv GCC_SYMBOLS_PRIVATE_EXTERN NO    setenv GCC_TREAT_WARNINGS_AS_ERRORS NO    setenv GCC_VERSION com.apple.compilers.llvm.clang.1_0    setenv GCC_WARN_ABOUT_DEPRECATED_FUNCTIONS YES    setenv GCC_WARN_ABOUT_INVALID_OFFSETOF_MACRO NO    setenv GCC_WARN_ALLOW_INCOMPLETE_PROTOCOL NO    setenv GCC_WARN_UNINITIALIZED_AUTOS NO    setenv GCC_WARN_UNUSED_VALUE NO    setenv GCC_WARN_UNUSED_VARIABLE NO    setenv GENERATE_MASTER_OBJECT_FILE NO    setenv GENERATE_PKGINFO_FILE YES    setenv GENERATE_PROFILING_CODE NO    setenv GID 20    setenv GROUP staff    setenv HEADERMAP_INCLUDES_FLAT_ENTRIES_FOR_TARGET_BEING_BUILT YES    setenv HEADERMAP_INCLUDES_FRAMEWORK_ENTRIES_FOR_ALL_PRODUCT_TYPES YES    setenv HEADERMAP_INCLUDES_NONPUBLIC_NONPRIVATE_HEADERS YES    setenv HEADERMAP_INCLUDES_PROJECT_HEADERS YES    setenv HEADER_CAIRO "\"../../../libs/cairo/include/cairo\""    setenv HEADER_FMODEX "\"../../../libs/fmodex/include\""    setenv HEADER_FREEIMAGE "\"../../../libs/FreeImage/include\""    setenv HEADER_FREETYPE "\"../../../libs/freetype/include\""    setenv HEADER_FREETYPE2 "\"../../../libs/freetype/include/freetype2\""    setenv HEADER_GLEW "\"../../../libs/glew/include\""    setenv HEADER_OF "\"../../../libs/openFrameworks/**\""    setenv HEADER_POCO "\"../../../libs/poco/include\""    setenv HEADER_RTAUDIO "\"../../../libs/rtAudio/include\""    setenv HEADER_SEARCH_PATHS "\"/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/bin/client2/include\" \"../../../libs/openFrameworks/**\" \"../../../libs/poco/include\" \"../../../libs/freetype/include\" \"../../../libs/freetype/include/freetype2\" \"../../../libs/fmodex/include\" \"../../../libs/glew/include\" \"../../../libs/FreeImage/include\" \"../../../libs/tess2/include\" \"../../../libs/cairo/include/cairo\" \"../../../libs/rtAudio/include\" ../../../addons/ofxNetwork/libs ../../../addons/ofxNetwork/src ../../../addons/ofxThread/libs ../../../addons/ofxThread/src src"    setenv HEADER_TESS2 "\"../../../libs/tess2/include\""    setenv ICONV /usr/bin/iconv    setenv INFOPLIST_EXPAND_BUILD_SETTINGS YES    setenv INFOPLIST_FILE openFrameworks-Info.plist    setenv INFOPLIST_OUTPUT_FORMAT same-as-input    setenv INFOPLIST_PATH MPETestDebug.app/Contents/Info.plist    setenv INFOPLIST_PREPROCESS NO    setenv INFOSTRINGS_PATH MPETestDebug.app/Contents/Resources/English.lproj/InfoPlist.strings    setenv INSTALL_DIR /tmp/MPETest.dst/Users/ad/Applications    setenv INSTALL_GROUP staff    setenv INSTALL_MODE_FLAG u+w,go-w,a+rX    setenv INSTALL_OWNER ad    setenv INSTALL_PATH /Users/ad/Applications    setenv INSTALL_ROOT /tmp/MPETest.dst    setenv JAVAC_DEFAULT_FLAGS "-J-Xms64m -J-XX:NewSize=4M -J-Dfile.encoding=UTF8"    setenv JAVA_APP_STUB /System/Library/Frameworks/JavaVM.framework/Resources/MacOS/JavaApplicationStub    setenv JAVA_ARCHIVE_CLASSES YES    setenv JAVA_ARCHIVE_TYPE JAR    setenv JAVA_COMPILER /usr/bin/javac    setenv JAVA_FOLDER_PATH MPETestDebug.app/Contents/Resources/Java    setenv JAVA_FRAMEWORK_RESOURCES_DIRS Resources    setenv JAVA_JAR_FLAGS cv    setenv JAVA_SOURCE_SUBDIR .    setenv JAVA_USE_DEPENDENCIES YES    setenv JAVA_ZIP_FLAGS -urg    setenv JIKES_DEFAULT_FLAGS "+E +OLDCSO"    setenv KEEP_PRIVATE_EXTERNS NO    setenv LD_GENERATE_MAP_FILE NO    setenv LD_MAP_FILE_PATH /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/build/MPETest.build/Debug/client2.build/MPETestDebug-LinkMap-normal-i386.txt    setenv LD_NO_PIE NO    setenv LEGACY_DEVELOPER_DIR /Applications/Xcode.app/Contents/PlugIns/Xcode3Core.ideplugin/Contents/SharedSupport/Developer    setenv LEX lex    setenv LIBRARY_FLAG_NOSPACE YES    setenv LIBRARY_FLAG_PREFIX -l    setenv LIBRARY_SEARCH_PATHS "\"/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/bin/client2\"                                                              "    setenv LIB_CAIRO1 "\"../../../libs/cairo/lib/osx/cairo-script-interpreter.a\""    setenv LIB_CAIRO2 "\"../../../libs/cairo/lib/osx/cairo.a\""    setenv LIB_CAIRO3 "\"../../../libs/cairo/lib/osx/pixman-1.a\""    setenv LIB_FMODEX "\"../../../libs/fmodex/lib/osx/libfmodex.dylib\""    setenv LIB_FREEIMAGE "\"../../../libs/FreeImage/lib/osx/freeimage.a\""    setenv LIB_FREETYPE "\"../../../libs/freetype/lib/osx/freetype.a\""    setenv LIB_GLEW "\"../../../libs/glew/lib/osx/glew.a\""    setenv LIB_GLUT "\"../../../libs/glut/lib/osx/GLUT.framework/Versions/A/GLUT\""    setenv LIB_POCO_1 "\"../../../libs/poco/lib/osx/PocoCrypto.a\""    setenv LIB_POCO_10 "\"../../../libs/poco/lib/osx/PocoZip.a\""    setenv LIB_POCO_2 "\"../../../libs/poco/lib/osx/PocoData.a\""    setenv LIB_POCO_3 "\"../../../libs/poco/lib/osx/PocoDataODBC.a\""    setenv LIB_POCO_4 "\"../../../libs/poco/lib/osx/PocoDataSQLite.a\""    setenv LIB_POCO_5 "\"../../../libs/poco/lib/osx/PocoFoundation.a\""    setenv LIB_POCO_6 "\"../../../libs/poco/lib/osx/PocoNet.a\""    setenv LIB_POCO_7 "\"../../../libs/poco/lib/osx/PocoNetSSL.a\""    setenv LIB_POCO_8 "\"../../../libs/poco/lib/osx/PocoUtil.a\""    setenv LIB_POCO_9 "\"../../../libs/poco/lib/osx/PocoXML.a\""    setenv LIB_RTAUDIO "\"../../../libs/rtAudio/lib/osx/rtAudio.a\""    setenv LIB_TESS "\"../../../libs/tess2/lib/osx/tess2.a\""    setenv LINKER_DISPLAYS_MANGLED_NAMES NO    setenv LINK_FILE_LIST_normal_i386 /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/build/MPETest.build/Debug/client2.build/Objects-normal/i386/MPETestDebug.LinkFileList    setenv LINK_WITH_STANDARD_LIBRARIES YES    setenv LOCALIZED_RESOURCES_FOLDER_PATH MPETestDebug.app/Contents/Resources/English.lproj    setenv LOCAL_ADMIN_APPS_DIR /Applications/Utilities    setenv LOCAL_APPS_DIR /Applications    setenv LOCAL_DEVELOPER_DIR /Library/Developer    setenv LOCAL_LIBRARY_DIR /Library    setenv MACH_O_TYPE mh_execute    setenv MAC_OS_X_PRODUCT_BUILD_VERSION 11G56    setenv MAC_OS_X_VERSION_ACTUAL 1075    setenv MAC_OS_X_VERSION_MAJOR 1070    setenv MAC_OS_X_VERSION_MINOR 0705    setenv NATIVE_ARCH i386    setenv NATIVE_ARCH_32_BIT i386    setenv NATIVE_ARCH_64_BIT x86_64    setenv NATIVE_ARCH_ACTUAL x86_64    setenv NO_COMMON YES    setenv OBJECT_FILE_DIR /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/build/MPETest.build/Debug/client2.build/Objects    setenv OBJECT_FILE_DIR_normal /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/build/MPETest.build/Debug/client2.build/Objects-normal    setenv OBJROOT /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/build    setenv OF_CORE_HEADERS "\"../../../libs/openFrameworks/**\" \"../../../libs/poco/include\" \"../../../libs/freetype/include\" \"../../../libs/freetype/include/freetype2\" \"../../../libs/fmodex/include\" \"../../../libs/glew/include\" \"../../../libs/FreeImage/include\" \"../../../libs/tess2/include\" \"../../../libs/cairo/include/cairo\" \"../../../libs/rtAudio/include\""    setenv OF_CORE_LIBS "\"../../../libs/poco/lib/osx/PocoCrypto.a\" \"../../../libs/poco/lib/osx/PocoData.a\" \"../../../libs/poco/lib/osx/PocoDataODBC.a\" \"../../../libs/poco/lib/osx/PocoDataSQLite.a\" \"../../../libs/poco/lib/osx/PocoFoundation.a\" \"../../../libs/poco/lib/osx/PocoNet.a\" \"../../../libs/poco/lib/osx/PocoNetSSL.a\" \"../../../libs/poco/lib/osx/PocoUtil.a\" \"../../../libs/poco/lib/osx/PocoXML.a\" \"../../../libs/poco/lib/osx/PocoZip.a\" \"../../../libs/tess2/lib/osx/tess2.a\" \"../../../libs/glew/lib/osx/glew.a\" \"../../../libs/cairo/lib/osx/cairo-script-interpreter.a\" \"../../../libs/cairo/lib/osx/cairo.a\" \"../../../libs/cairo/lib/osx/pixman-1.a\" \"../../../libs/fmodex/lib/osx/libfmodex.dylib\" \"../../../libs/rtAudio/lib/osx/rtAudio.a\""    setenv OF_PATH ../../..    setenv ONLY_ACTIVE_ARCH NO    setenv OPTIMIZATION_LEVEL 0    setenv OS MACOS    setenv OSAC /usr/bin/osacompile    setenv OTHER_CPLUSPLUSFLAGS "-D__MACOSX_CORE__ -lpthread -mtune=native"    setenv OTHER_LDFLAGS "\"../../../libs/poco/lib/osx/PocoCrypto.a\" \"../../../libs/poco/lib/osx/PocoData.a\" \"../../../libs/poco/lib/osx/PocoDataODBC.a\" \"../../../libs/poco/lib/osx/PocoDataSQLite.a\" \"../../../libs/poco/lib/osx/PocoFoundation.a\" \"../../../libs/poco/lib/osx/PocoNet.a\" \"../../../libs/poco/lib/osx/PocoNetSSL.a\" \"../../../libs/poco/lib/osx/PocoUtil.a\" \"../../../libs/poco/lib/osx/PocoXML.a\" \"../../../libs/poco/lib/osx/PocoZip.a\" \"../../../libs/tess2/lib/osx/tess2.a\" \"../../../libs/glew/lib/osx/glew.a\" \"../../../libs/cairo/lib/osx/cairo-script-interpreter.a\" \"../../../libs/cairo/lib/osx/cairo.a\" \"../../../libs/cairo/lib/osx/pixman-1.a\" \"../../../libs/fmodex/lib/osx/libfmodex.dylib\" \"../../../libs/rtAudio/lib/osx/rtAudio.a\""    setenv PACKAGE_TYPE com.apple.package-type.wrapper.application    setenv PASCAL_STRINGS YES    setenv PATH "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin:/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/libexec:/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/usr/local/bin:/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/usr/bin:/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/usr/local/bin:/Applications/Xcode.app/Contents/Developer/usr/bin:/Applications/Xcode.app/Contents/Developer/usr/local/bin:/Applications/Xcode.app/Contents/Developer/Tools:/usr/bin:/bin:/usr/sbin:/sbin"    setenv PATH_PREFIXES_EXCLUDED_FROM_HEADER_DEPENDENCIES "/usr/include /usr/local/include /System/Library/Frameworks /System/Library/PrivateFrameworks /Applications/Xcode.app/Contents/Developer/Headers /Applications/Xcode.app/Contents/Developer/SDKs /Applications/Xcode.app/Contents/Developer/Platforms"    setenv PBDEVELOPMENTPLIST_PATH MPETestDebug.app/Contents/pbdevelopment.plist    setenv PFE_FILE_C_DIALECTS c++    setenv PKGINFO_FILE_PATH /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/build/MPETest.build/Debug/client2.build/PkgInfo    setenv PKGINFO_PATH MPETestDebug.app/Contents/PkgInfo    setenv PLATFORM_DEVELOPER_APPLICATIONS_DIR /Applications/Xcode.app/Contents/Developer/Applications    setenv PLATFORM_DEVELOPER_BIN_DIR /Applications/Xcode.app/Contents/Developer/usr/bin    setenv PLATFORM_DEVELOPER_LIBRARY_DIR /Applications/Xcode.app/Contents/Developer/Library    setenv PLATFORM_DEVELOPER_SDK_DIR /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs    setenv PLATFORM_DEVELOPER_TOOLS_DIR /Applications/Xcode.app/Contents/Developer/Tools    setenv PLATFORM_DEVELOPER_USR_DIR /Applications/Xcode.app/Contents/Developer/usr    setenv PLATFORM_DIR /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform    setenv PLATFORM_NAME macosx    setenv PLATFORM_PREFERRED_ARCH x86_64    setenv PLATFORM_PRODUCT_BUILD_VERSION 4G2008a    setenv PLIST_FILE_OUTPUT_FORMAT same-as-input    setenv PLUGINS_FOLDER_PATH MPETestDebug.app/Contents/PlugIns    setenv PREBINDING NO    setenv PRECOMPS_INCLUDE_HEADERS_FROM_BUILT_PRODUCTS_DIR YES    setenv PRECOMP_DESTINATION_DIR /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/build/MPETest.build/Debug/client2.build/PrefixHeaders    setenv PRESERVE_DEAD_CODE_INITS_AND_TERMS NO    setenv PRIVATE_HEADERS_FOLDER_PATH MPETestDebug.app/Contents/PrivateHeaders    setenv PRODUCT_NAME MPETestDebug    setenv PRODUCT_SETTINGS_PATH /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/openFrameworks-Info.plist    setenv PRODUCT_TYPE com.apple.product-type.application    setenv PROFILING_CODE NO    setenv PROJECT MPETest    setenv PROJECT_DERIVED_FILE_DIR /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/build/MPETest.build/DerivedSources    setenv PROJECT_DIR /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest    setenv PROJECT_FILE_PATH /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/MPETest.xcodeproj    setenv PROJECT_NAME MPETest    setenv PROJECT_TEMP_DIR /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/build/MPETest.build    setenv PUBLIC_HEADERS_FOLDER_PATH MPETestDebug.app/Contents/Headers    setenv RECURSIVE_SEARCH_PATHS_FOLLOW_SYMLINKS YES    setenv REMOVE_CVS_FROM_RESOURCES YES    setenv REMOVE_GIT_FROM_RESOURCES YES    setenv REMOVE_HG_FROM_RESOURCES YES    setenv REMOVE_SVN_FROM_RESOURCES YES    setenv REZ_COLLECTOR_DIR /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/build/MPETest.build/Debug/client2.build/ResourceManagerResources    setenv REZ_OBJECTS_DIR /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/build/MPETest.build/Debug/client2.build/ResourceManagerResources/Objects    setenv REZ_SEARCH_PATHS "\"/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/bin/client2\" "    setenv RUN_CLANG_STATIC_ANALYZER NO    setenv SCAN_ALL_SOURCE_FILES_FOR_INCLUDES NO    setenv SCRIPTS_FOLDER_PATH MPETestDebug.app/Contents/Resources/Scripts    setenv SCRIPT_INPUT_FILE_COUNT 0    setenv SCRIPT_OUTPUT_FILE_COUNT 0    setenv SDKROOT     setenv SDK_PRODUCT_BUILD_VERSION 11G56    setenv SED /usr/bin/sed    setenv SEPARATE_STRIP NO    setenv SEPARATE_SYMBOL_EDIT NO    setenv SET_DIR_MODE_OWNER_GROUP YES    setenv SET_FILE_MODE_OWNER_GROUP NO    setenv SHARED_DERIVED_FILE_DIR /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/bin/client2/DerivedSources    setenv SHARED_FRAMEWORKS_FOLDER_PATH MPETestDebug.app/Contents/SharedFrameworks    setenv SHARED_PRECOMPS_DIR /var/folders/rn/_6pfvhfd4ss9jxn6ygq0vj4r0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders    setenv SHARED_SUPPORT_FOLDER_PATH MPETestDebug.app/Contents/SharedSupport    setenv SKIP_INSTALL NO    setenv SOURCE_ROOT /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest    setenv SRCROOT /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest    setenv STRINGS_FILE_OUTPUT_ENCODING UTF-16    setenv STRIP_INSTALLED_PRODUCT YES    setenv STRIP_STYLE all    setenv SUPPORTED_PLATFORMS macosx    setenv SYMROOT /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/build    setenv SYSTEM_ADMIN_APPS_DIR /Applications/Utilities    setenv SYSTEM_APPS_DIR /Applications    setenv SYSTEM_CORE_SERVICES_DIR /System/Library/CoreServices    setenv SYSTEM_DEMOS_DIR /Applications/Extras    setenv SYSTEM_DEVELOPER_APPS_DIR /Applications/Xcode.app/Contents/Developer/Applications    setenv SYSTEM_DEVELOPER_BIN_DIR /Applications/Xcode.app/Contents/Developer/usr/bin    setenv SYSTEM_DEVELOPER_DEMOS_DIR "/Applications/Xcode.app/Contents/Developer/Applications/Utilities/Built Examples"    setenv SYSTEM_DEVELOPER_DIR /Applications/Xcode.app/Contents/Developer    setenv SYSTEM_DEVELOPER_DOC_DIR "/Applications/Xcode.app/Contents/Developer/ADC Reference Library"    setenv SYSTEM_DEVELOPER_GRAPHICS_TOOLS_DIR "/Applications/Xcode.app/Contents/Developer/Applications/Graphics Tools"    setenv SYSTEM_DEVELOPER_JAVA_TOOLS_DIR "/Applications/Xcode.app/Contents/Developer/Applications/Java Tools"    setenv SYSTEM_DEVELOPER_PERFORMANCE_TOOLS_DIR "/Applications/Xcode.app/Contents/Developer/Applications/Performance Tools"    setenv SYSTEM_DEVELOPER_RELEASENOTES_DIR "/Applications/Xcode.app/Contents/Developer/ADC Reference Library/releasenotes"    setenv SYSTEM_DEVELOPER_TOOLS /Applications/Xcode.app/Contents/Developer/Tools    setenv SYSTEM_DEVELOPER_TOOLS_DOC_DIR "/Applications/Xcode.app/Contents/Developer/ADC Reference Library/documentation/DeveloperTools"    setenv SYSTEM_DEVELOPER_TOOLS_RELEASENOTES_DIR "/Applications/Xcode.app/Contents/Developer/ADC Reference Library/releasenotes/DeveloperTools"    setenv SYSTEM_DEVELOPER_USR_DIR /Applications/Xcode.app/Contents/Developer/usr    setenv SYSTEM_DEVELOPER_UTILITIES_DIR /Applications/Xcode.app/Contents/Developer/Applications/Utilities    setenv SYSTEM_DOCUMENTATION_DIR /Library/Documentation    setenv SYSTEM_LIBRARY_DIR /System/Library    setenv TARGETNAME client2    setenv TARGET_BUILD_DIR /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/bin/client2    setenv TARGET_NAME client2    setenv TARGET_TEMP_DIR /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/build/MPETest.build/Debug/client2.build    setenv TEMP_DIR /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/build/MPETest.build/Debug/client2.build    setenv TEMP_FILES_DIR /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/build/MPETest.build/Debug/client2.build    setenv TEMP_FILE_DIR /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/build/MPETest.build/Debug/client2.build    setenv TEMP_ROOT /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/build    setenv TEST_AFTER_BUILD NO    setenv TOOLCHAINS com.apple.dt.toolchain.XcodeDefault    setenv UID 501    setenv UNLOCALIZED_RESOURCES_FOLDER_PATH MPETestDebug.app/Contents/Resources    setenv UNSTRIPPED_PRODUCT NO    setenv USER ad    setenv USER_APPS_DIR /Users/ad/Applications    setenv USER_LIBRARY_DIR /Users/ad/Library    setenv USE_DYNAMIC_NO_PIC YES    setenv USE_HEADERMAP YES    setenv USE_HEADER_SYMLINKS NO    setenv VALIDATE_PRODUCT NO    setenv VALID_ARCHS "i386 x86_64"    setenv VERBOSE_PBXCP NO    setenv VERSIONPLIST_PATH MPETestDebug.app/Contents/version.plist    setenv VERSION_INFO_BUILDER ad    setenv VERSION_INFO_FILE MPETestDebug_vers.c    setenv VERSION_INFO_STRING "\"@(#)PROGRAM:MPETestDebug  PROJECT:MPETest-\""    setenv WRAPPER_EXTENSION app    setenv WRAPPER_NAME MPETestDebug.app    setenv WRAPPER_SUFFIX .app    setenv XCODE_APP_SUPPORT_DIR /Applications/Xcode.app/Contents/Developer/Library/Xcode    setenv XCODE_PRODUCT_BUILD_VERSION 4G2008a    setenv XCODE_VERSION_ACTUAL 0452    setenv XCODE_VERSION_MAJOR 0400    setenv XCODE_VERSION_MINOR 0450    setenv YACC yacc    /bin/sh -c /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/build/MPETest.build/Debug/client2.build/Script-60B8B9A416705172008426A7.sh36"9B8F1276-2090-45AA-93F5-6EB3750F4667-
+
+CProcessInfoPlistFile /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/bin/client2/MPETestDebug.app/Contents/Info.plist openFrameworks-Info.plist
+s376459924.970941
+e376459925.004205
+r1
+xProcessInfoPlistFile
+x/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/bin/client2/MPETestDebug.app/Contents/Info.plist
+xopenFrameworks-Info.plist
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection95"ProcessInfoPlistFile bin/client2/MPETestDebug.app/Contents/Info.plist openFrameworks-Info.plist9204f9945270b641^4d1401955270b641^---0#0#0#-19%DVTDocumentLocation2@130"file://localhost/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/openFrameworks-Info.plist0000000000000000^573"ProcessInfoPlistFile bin/client2/MPETestDebug.app/Contents/Info.plist openFrameworks-Info.plist    cd /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest    builtin-infoPlistUtility openFrameworks-Info.plist -genpkginfo /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/bin/client2/MPETestDebug.app/Contents/PkgInfo -expandbuildsettings -platform macosx -o /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/bin/client2/MPETestDebug.app/Contents/Info.plist36"203E4285-E457-42CB-BFC9-801AE7E78938-
+
+CProcessPCH++ /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/build/MPETest/Index/PrecompiledHeaders/Carbon-bhvrspsdxbzpytbbcwwgcfpicrys_ast/Carbon.h.pth /System/Library/Frameworks/Carbon.framework/Headers/Carbon.h normal i386 c++ com.apple.compilers.llvm.clang.1_0.astbuilder
+r0
+
+CProcessPCH++ /var/folders/rn/_6pfvhfd4ss9jxn6ygq0vj4r0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/Carbon-cttntloxcqbixmeoimypptrwljkd/Carbon.h.pth /System/Library/Frameworks/Carbon.framework/Headers/Carbon.h normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler
+s376459925.015105
+e376459931.732979
+r1
+xProcessPCH++
+x/var/folders/rn/_6pfvhfd4ss9jxn6ygq0vj4r0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/Carbon-cttntloxcqbixmeoimypptrwljkd/Carbon.h.pth
+x/System/Library/Frameworks/Carbon.framework/Headers/Carbon.h
+xnormal
+xi386
+xc++
+xcom.apple.compilers.llvm.clang.1_0.compiler
+oclang: warning: -lpthread: 'linker' input unused when '-c' is present
+oIn file included from /System/Library/Frameworks/Carbon.framework/Headers/Carbon.h:55:
+oIn file included from /System/Library/Frameworks/Carbon.framework/Frameworks/CommonPanels.framework/Headers/CommonPanels.h:33:
+o/System/Library/Frameworks/Carbon.framework/Frameworks/CommonPanels.framework/Headers/ColorPicker.h:131:3: warning: 'CMProfileHandle' is deprecated [-Wdeprecated-declarations]
+o  CMProfileHandle     profile;
+o  ^
+o/System/Library/Frameworks/Carbon.framework/Frameworks/CommonPanels.framework/Headers/ColorPicker.h:132:3: warning: 'CMColor' is deprecated [-Wdeprecated-declarations]
+o  CMColor             color;
+o  ^
+o/System/Library/Frameworks/Carbon.framework/Frameworks/CommonPanels.framework/Headers/ColorPicker.h:139:3: warning: 'CMProfileRef' is deprecated [-Wdeprecated-declarations]
+o  CMProfileRef        profile;
+o  ^
+o/System/Library/Frameworks/Carbon.framework/Frameworks/CommonPanels.framework/Headers/ColorPicker.h:140:3: warning: 'CMColor' is deprecated [-Wdeprecated-declarations]
+o  CMColor             color;
+o  ^
+o/System/Library/Frameworks/Carbon.framework/Frameworks/CommonPanels.framework/Headers/ColorPicker.h:310:3: warning: 'CMProfileHandle' is deprecated [-Wdeprecated-declarations]
+o  CMProfileHandle     dstProfile;
+o  ^
+o/System/Library/Frameworks/Carbon.framework/Frameworks/CommonPanels.framework/Headers/ColorPicker.h:328:3: warning: 'CMProfileRef' is deprecated [-Wdeprecated-declarations]
+o  CMProfileRef        dstProfile;             /* Currently ignored */
+o  ^
+oIn file included from /System/Library/Frameworks/Carbon.framework/Headers/Carbon.h:55:
+oIn file included from /System/Library/Frameworks/Carbon.framework/Frameworks/CommonPanels.framework/Headers/CommonPanels.h:37:
+o/System/Library/Frameworks/Carbon.framework/Frameworks/CommonPanels.framework/Headers/CMCalibrator.h:54:3: warning: 'CMDisplayIDType' is deprecated [-Wdeprecated-declarations]
+o  CMDisplayIDType     displayID;              /* Contains an hDC on Win32 */
+o  ^
+o/System/Library/Frameworks/Carbon.framework/Frameworks/CommonPanels.framework/Headers/CMCalibrator.h:56:3: warning: 'CMProfileLocation' is deprecated [-Wdeprecated-declarations]
+o  CMProfileLocation * profileLocationPtr;     /* For returning the profile */
+o  ^
+o/System/Library/Frameworks/Carbon.framework/Frameworks/CommonPanels.framework/Headers/CMCalibrator.h:61:55: warning: 'CMDisplayIDType' is deprecated [-Wdeprecated-declarations]
+otypedef CALLBACK_API( Boolean , CanCalibrateProcPtr )(CMDisplayIDType displayID, Str255 errMessage);
+o                                                      ^
+o/System/Library/Frameworks/Carbon.framework/Frameworks/CommonPanels.framework/Headers/CMCalibrator.h:154:3: warning: 'CMDisplayIDType' is deprecated [-Wdeprecated-declarations]
+o  CMDisplayIDType  displayID,
+o  ^
+o/System/Library/Frameworks/Carbon.framework/Frameworks/CommonPanels.framework/Headers/CMCalibrator.h:180:87: warning: 'CMDisplayIDType' is deprecated [-Wdeprecated-declarations]
+o    inline Boolean                                              InvokeCanCalibrateUPP(CMDisplayIDType displayID, Str255 errMessage, CanCalibrateUPP userUPP) { return (*userUPP)(displayID, errMessage); }
+o                                                                                      ^
+o11 warnings generated.
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection71"Precompile /System/Library/Frameworks/Carbon.framework/Headers/Carbon.h429304955270b641^0ea4bb9b5270b641^-3334"clang: warning: -lpthread: 'linker' input unused when '-c' is presentIn file included from /System/Library/Frameworks/Carbon.framework/Headers/Carbon.h:55:In file included from /System/Library/Frameworks/Carbon.framework/Frameworks/CommonPanels.framework/Headers/CommonPanels.h:33:/System/Library/Frameworks/Carbon.framework/Frameworks/CommonPanels.framework/Headers/ColorPicker.h:131:3: warning: 'CMProfileHandle' is deprecated [-Wdeprecated-declarations]  CMProfileHandle     profile;  ^/System/Library/Frameworks/Carbon.framework/Frameworks/CommonPanels.framework/Headers/ColorPicker.h:132:3: warning: 'CMColor' is deprecated [-Wdeprecated-declarations]  CMColor             color;  ^/System/Library/Frameworks/Carbon.framework/Frameworks/CommonPanels.framework/Headers/ColorPicker.h:139:3: warning: 'CMProfileRef' is deprecated [-Wdeprecated-declarations]  CMProfileRef        profile;  ^/System/Library/Frameworks/Carbon.framework/Frameworks/CommonPanels.framework/Headers/ColorPicker.h:140:3: warning: 'CMColor' is deprecated [-Wdeprecated-declarations]  CMColor             color;  ^/System/Library/Frameworks/Carbon.framework/Frameworks/CommonPanels.framework/Headers/ColorPicker.h:310:3: warning: 'CMProfileHandle' is deprecated [-Wdeprecated-declarations]  CMProfileHandle     dstProfile;  ^/System/Library/Frameworks/Carbon.framework/Frameworks/CommonPanels.framework/Headers/ColorPicker.h:328:3: warning: 'CMProfileRef' is deprecated [-Wdeprecated-declarations]  CMProfileRef        dstProfile;             /* Currently ignored */  ^In file included from /System/Library/Frameworks/Carbon.framework/Headers/Carbon.h:55:In file included from /System/Library/Frameworks/Carbon.framework/Frameworks/CommonPanels.framework/Headers/CommonPanels.h:37:/System/Library/Frameworks/Carbon.framework/Frameworks/CommonPanels.framework/Headers/CMCalibrator.h:54:3: warning: 'CMDisplayIDType' is deprecated [-Wdeprecated-declarations]  CMDisplayIDType     displayID;              /* Contains an hDC on Win32 */  ^/System/Library/Frameworks/Carbon.framework/Frameworks/CommonPanels.framework/Headers/CMCalibrator.h:56:3: warning: 'CMProfileLocation' is deprecated [-Wdeprecated-declarations]  CMProfileLocation * profileLocationPtr;     /* For returning the profile */  ^/System/Library/Frameworks/Carbon.framework/Frameworks/CommonPanels.framework/Headers/CMCalibrator.h:61:55: warning: 'CMDisplayIDType' is deprecated [-Wdeprecated-declarations]typedef CALLBACK_API( Boolean , CanCalibrateProcPtr )(CMDisplayIDType displayID, Str255 errMessage);                                                      ^/System/Library/Frameworks/Carbon.framework/Frameworks/CommonPanels.framework/Headers/CMCalibrator.h:154:3: warning: 'CMDisplayIDType' is deprecated [-Wdeprecated-declarations]  CMDisplayIDType  displayID,  ^/System/Library/Frameworks/Carbon.framework/Frameworks/CommonPanels.framework/Headers/CMCalibrator.h:180:87: warning: 'CMDisplayIDType' is deprecated [-Wdeprecated-declarations]    inline Boolean                                              InvokeCanCalibrateUPP(CMDisplayIDType displayID, Str255 errMessage, CanCalibrateUPP userUPP) { return (*userUPP)(displayID, errMessage); }                                                                                      ^11 warnings generated.11(36%IDEClangDiagnosticActivityLogMessage2@31"'CMProfileHandle' is deprecated-376459931#18446744073709551615#0#2(2@86"In file included from /System/Library/Frameworks/Carbon.framework/Headers/Carbon.h:55:-376459931#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic23%DVTTextDocumentLocation3@76"file://localhost/System/Library/Frameworks/Carbon.framework/Headers/Carbon.h0000000000000000^54#9#54#9#1035#0#21"Clang LLVM 1.0 Notice--2@126"In file included from /System/Library/Frameworks/Carbon.framework/Frameworks/CommonPanels.framework/Headers/CommonPanels.h:33:-376459931#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@116"file://localhost/System/Library/Frameworks/Carbon.framework/Frameworks/CommonPanels.framework/Headers/CommonPanels.h0000000000000000^32#9#32#9#657#0#21"Clang LLVM 1.0 Notice--1#27"com.apple.dt.IDE.diagnostic3@115"file://localhost/System/Library/Frameworks/Carbon.framework/Frameworks/CommonPanels.framework/Headers/ColorPicker.h0000000000000000^130#2#130#2#3574#0#12"Deprecations--2@23"'CMColor' is deprecated-376459931#18446744073709551615#0#2(2@86"In file included from /System/Library/Frameworks/Carbon.framework/Headers/Carbon.h:55:-376459931#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@76"file://localhost/System/Library/Frameworks/Carbon.framework/Headers/Carbon.h0000000000000000^54#9#54#9#1035#0#21"Clang LLVM 1.0 Notice--2@126"In file included from /System/Library/Frameworks/Carbon.framework/Frameworks/CommonPanels.framework/Headers/CommonPanels.h:33:-376459931#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@116"file://localhost/System/Library/Frameworks/Carbon.framework/Frameworks/CommonPanels.framework/Headers/CommonPanels.h0000000000000000^32#9#32#9#657#0#21"Clang LLVM 1.0 Notice--1#27"com.apple.dt.IDE.diagnostic3@115"file://localhost/System/Library/Frameworks/Carbon.framework/Frameworks/CommonPanels.framework/Headers/ColorPicker.h0000000000000000^131#2#131#2#3605#0#12"Deprecations--2@28"'CMProfileRef' is deprecated-376459931#18446744073709551615#0#2(2@86"In file included from /System/Library/Frameworks/Carbon.framework/Headers/Carbon.h:55:-376459931#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@76"file://localhost/System/Library/Frameworks/Carbon.framework/Headers/Carbon.h0000000000000000^54#9#54#9#1035#0#21"Clang LLVM 1.0 Notice--2@126"In file included from /System/Library/Frameworks/Carbon.framework/Frameworks/CommonPanels.framework/Headers/CommonPanels.h:33:-376459931#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@116"file://localhost/System/Library/Frameworks/Carbon.framework/Frameworks/CommonPanels.framework/Headers/CommonPanels.h0000000000000000^32#9#32#9#657#0#21"Clang LLVM 1.0 Notice--1#27"com.apple.dt.IDE.diagnostic3@115"file://localhost/System/Library/Frameworks/Carbon.framework/Frameworks/CommonPanels.framework/Headers/ColorPicker.h0000000000000000^138#2#138#2#3781#0#12"Deprecations--2@23"'CMColor' is deprecated-376459931#18446744073709551615#0#2(2@86"In file included from /System/Library/Frameworks/Carbon.framework/Headers/Carbon.h:55:-376459931#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@76"file://localhost/System/Library/Frameworks/Carbon.framework/Headers/Carbon.h0000000000000000^54#9#54#9#1035#0#21"Clang LLVM 1.0 Notice--2@126"In file included from /System/Library/Frameworks/Carbon.framework/Frameworks/CommonPanels.framework/Headers/CommonPanels.h:33:-376459931#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@116"file://localhost/System/Library/Frameworks/Carbon.framework/Frameworks/CommonPanels.framework/Headers/CommonPanels.h0000000000000000^32#9#32#9#657#0#21"Clang LLVM 1.0 Notice--1#27"com.apple.dt.IDE.diagnostic3@115"file://localhost/System/Library/Frameworks/Carbon.framework/Frameworks/CommonPanels.framework/Headers/ColorPicker.h0000000000000000^139#2#139#2#3812#0#12"Deprecations--2@31"'CMProfileHandle' is deprecated-376459931#18446744073709551615#0#2(2@86"In file included from /System/Library/Frameworks/Carbon.framework/Headers/Carbon.h:55:-376459931#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@76"file://localhost/System/Library/Frameworks/Carbon.framework/Headers/Carbon.h0000000000000000^54#9#54#9#1035#0#21"Clang LLVM 1.0 Notice--2@126"In file included from /System/Library/Frameworks/Carbon.framework/Frameworks/CommonPanels.framework/Headers/CommonPanels.h:33:-376459931#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@116"file://localhost/System/Library/Frameworks/Carbon.framework/Frameworks/CommonPanels.framework/Headers/CommonPanels.h0000000000000000^32#9#32#9#657#0#21"Clang LLVM 1.0 Notice--1#27"com.apple.dt.IDE.diagnostic3@115"file://localhost/System/Library/Frameworks/Carbon.framework/Frameworks/CommonPanels.framework/Headers/ColorPicker.h0000000000000000^309#2#309#2#10633#0#12"Deprecations--2@28"'CMProfileRef' is deprecated-376459931#18446744073709551615#0#2(2@86"In file included from /System/Library/Frameworks/Carbon.framework/Headers/Carbon.h:55:-376459931#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@76"file://localhost/System/Library/Frameworks/Carbon.framework/Headers/Carbon.h0000000000000000^54#9#54#9#1035#0#21"Clang LLVM 1.0 Notice--2@126"In file included from /System/Library/Frameworks/Carbon.framework/Frameworks/CommonPanels.framework/Headers/CommonPanels.h:33:-376459931#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@116"file://localhost/System/Library/Frameworks/Carbon.framework/Frameworks/CommonPanels.framework/Headers/CommonPanels.h0000000000000000^32#9#32#9#657#0#21"Clang LLVM 1.0 Notice--1#27"com.apple.dt.IDE.diagnostic3@115"file://localhost/System/Library/Frameworks/Carbon.framework/Frameworks/CommonPanels.framework/Headers/ColorPicker.h0000000000000000^327#2#327#2#11174#0#12"Deprecations--2@31"'CMDisplayIDType' is deprecated-376459931#18446744073709551615#0#2(2@86"In file included from /System/Library/Frameworks/Carbon.framework/Headers/Carbon.h:55:-376459931#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@76"file://localhost/System/Library/Frameworks/Carbon.framework/Headers/Carbon.h0000000000000000^54#9#54#9#1035#0#21"Clang LLVM 1.0 Notice--2@126"In file included from /System/Library/Frameworks/Carbon.framework/Frameworks/CommonPanels.framework/Headers/CommonPanels.h:37:-376459931#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@116"file://localhost/System/Library/Frameworks/Carbon.framework/Frameworks/CommonPanels.framework/Headers/CommonPanels.h0000000000000000^36#9#36#9#728#0#21"Clang LLVM 1.0 Notice--1#27"com.apple.dt.IDE.diagnostic3@116"file://localhost/System/Library/Frameworks/Carbon.framework/Frameworks/CommonPanels.framework/Headers/CMCalibrator.h0000000000000000^53#2#53#2#1129#0#12"Deprecations--2@33"'CMProfileLocation' is deprecated-376459931#18446744073709551615#0#2(2@86"In file included from /System/Library/Frameworks/Carbon.framework/Headers/Carbon.h:55:-376459931#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@76"file://localhost/System/Library/Frameworks/Carbon.framework/Headers/Carbon.h0000000000000000^54#9#54#9#1035#0#21"Clang LLVM 1.0 Notice--2@126"In file included from /System/Library/Frameworks/Carbon.framework/Frameworks/CommonPanels.framework/Headers/CommonPanels.h:37:-376459931#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@116"file://localhost/System/Library/Frameworks/Carbon.framework/Frameworks/CommonPanels.framework/Headers/CommonPanels.h0000000000000000^36#9#36#9#728#0#21"Clang LLVM 1.0 Notice--1#27"com.apple.dt.IDE.diagnostic3@116"file://localhost/System/Library/Frameworks/Carbon.framework/Frameworks/CommonPanels.framework/Headers/CMCalibrator.h0000000000000000^55#2#55#2#1297#0#12"Deprecations--2@31"'CMDisplayIDType' is deprecated-376459931#18446744073709551615#0#2(2@86"In file included from /System/Library/Frameworks/Carbon.framework/Headers/Carbon.h:55:-376459931#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@76"file://localhost/System/Library/Frameworks/Carbon.framework/Headers/Carbon.h0000000000000000^54#9#54#9#1035#0#21"Clang LLVM 1.0 Notice--2@126"In file included from /System/Library/Frameworks/Carbon.framework/Frameworks/CommonPanels.framework/Headers/CommonPanels.h:37:-376459931#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@116"file://localhost/System/Library/Frameworks/Carbon.framework/Frameworks/CommonPanels.framework/Headers/CommonPanels.h0000000000000000^36#9#36#9#728#0#21"Clang LLVM 1.0 Notice--1#27"com.apple.dt.IDE.diagnostic3@116"file://localhost/System/Library/Frameworks/Carbon.framework/Frameworks/CommonPanels.framework/Headers/CMCalibrator.h0000000000000000^60#54#60#54#1621#0#12"Deprecations--2@31"'CMDisplayIDType' is deprecated-376459931#18446744073709551615#0#2(2@86"In file included from /System/Library/Frameworks/Carbon.framework/Headers/Carbon.h:55:-376459931#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@76"file://localhost/System/Library/Frameworks/Carbon.framework/Headers/Carbon.h0000000000000000^54#9#54#9#1035#0#21"Clang LLVM 1.0 Notice--2@126"In file included from /System/Library/Frameworks/Carbon.framework/Frameworks/CommonPanels.framework/Headers/CommonPanels.h:37:-376459931#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@116"file://localhost/System/Library/Frameworks/Carbon.framework/Frameworks/CommonPanels.framework/Headers/CommonPanels.h0000000000000000^36#9#36#9#728#0#21"Clang LLVM 1.0 Notice--1#27"com.apple.dt.IDE.diagnostic3@116"file://localhost/System/Library/Frameworks/Carbon.framework/Frameworks/CommonPanels.framework/Headers/CMCalibrator.h0000000000000000^153#2#153#2#4292#0#12"Deprecations--2@31"'CMDisplayIDType' is deprecated-376459931#18446744073709551615#0#2(2@86"In file included from /System/Library/Frameworks/Carbon.framework/Headers/Carbon.h:55:-376459931#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@76"file://localhost/System/Library/Frameworks/Carbon.framework/Headers/Carbon.h0000000000000000^54#9#54#9#1035#0#21"Clang LLVM 1.0 Notice--2@126"In file included from /System/Library/Frameworks/Carbon.framework/Frameworks/CommonPanels.framework/Headers/CommonPanels.h:37:-376459931#18446744073709551615#0#-0#27"com.apple.dt.IDE.diagnostic3@116"file://localhost/System/Library/Frameworks/Carbon.framework/Frameworks/CommonPanels.framework/Headers/CommonPanels.h0000000000000000^36#9#36#9#728#0#21"Clang LLVM 1.0 Notice--1#27"com.apple.dt.IDE.diagnostic3@116"file://localhost/System/Library/Frameworks/Carbon.framework/Frameworks/CommonPanels.framework/Headers/CMCalibrator.h0000000000000000^179#86#179#86#5687#0#12"Deprecations--0#0#0#-19%DVTDocumentLocation4@76"file://localhost/System/Library/Frameworks/Carbon.framework/Headers/Carbon.h0000000000000000^3382"ProcessPCH++ /var/folders/rn/_6pfvhfd4ss9jxn6ygq0vj4r0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/Carbon-cttntloxcqbixmeoimypptrwljkd/Carbon.h.pth /System/Library/Frameworks/Carbon.framework/Headers/Carbon.h normal i386 c++ com.apple.compilers.llvm.clang.1_0.compiler    cd /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest    setenv LANG en_US.US-ASCII    /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang -x c++-header -arch i386 -fmessage-length=0 -Wno-trigraphs -fpascal-strings -O0 -Wno-missing-field-initializers -Wno-missing-prototypes -Wno-return-type -Wno-non-virtual-dtor -Wno-overloaded-virtual -Wno-exit-time-destructors -Wformat -Wno-missing-braces -Wparentheses -Wswitch -Wno-unused-function -Wno-unused-label -Wno-unused-parameter -Wno-unused-variable -Wno-unused-value -Wno-empty-body -Wno-uninitialized -Wno-unknown-pragmas -Wno-shadow -Wno-four-char-constants -Wno-conversion -Wno-shorten-64-to-32 -Wno-newline-eof -Wno-c++11-extensions -fasm-blocks -Wdeprecated-declarations -Wno-invalid-offsetof -g -mssse3 -Wno-sign-conversion -I/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/build/MPETest.build/Debug/client2.build/MPETestDebug.hmap -I/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/bin/client2/include -I../../../libs/openFrameworks -I../../../libs/openFrameworks/3d -I../../../libs/openFrameworks/app -I../../../libs/openFrameworks/communication -I../../../libs/openFrameworks/events -I../../../libs/openFrameworks/gl -I../../../libs/openFrameworks/graphics -I../../../libs/openFrameworks/math -I../../../libs/openFrameworks/sound -I../../../libs/openFrameworks/types -I../../../libs/openFrameworks/utils -I../../../libs/openFrameworks/video -I../../../libs/poco/include -I../../../libs/freetype/include -I../../../libs/freetype/include/freetype2 -I../../../libs/fmodex/include -I../../../libs/glew/include -I../../../libs/FreeImage/include -I../../../libs/tess2/include -I../../../libs/cairo/include/cairo -I../../../libs/rtAudio/include -I../../../addons/ofxNetwork/libs -I../../../addons/ofxNetwork/src -I../../../addons/ofxThread/libs -I../../../addons/ofxThread/src -Isrc -I/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/build/MPETest.build/Debug/client2.build/DerivedSources/i386 -I/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/build/MPETest.build/Debug/client2.build/DerivedSources -F/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/bin/client2 -F/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/../../../libs/glut/lib/osx -D__MACOSX_CORE__ -lpthread -mtune=native --serialize-diagnostics /var/folders/rn/_6pfvhfd4ss9jxn6ygq0vj4r0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/Carbon-cttntloxcqbixmeoimypptrwljkd/Carbon.h.dia -c /System/Library/Frameworks/Carbon.framework/Headers/Carbon.h -o /var/folders/rn/_6pfvhfd4ss9jxn6ygq0vj4r0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/Carbon-cttntloxcqbixmeoimypptrwljkd/Carbon.h.pth -MMD -MT dependencies -MF /var/folders/rn/_6pfvhfd4ss9jxn6ygq0vj4r0000gn/C/com.apple.Xcode.501/SharedPrecompiledHeaders/Carbon-cttntloxcqbixmeoimypptrwljkd/Carbon.h.d36"1906CC11-45E5-4C8E-9301-B8EAD274575F-
+
+CTouch /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/bin/client2/MPETestDebug.app
+s376460155.158181
+e376460155.315338
+r1
+xTouch
+x/Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/bin/client2/MPETestDebug.app
+lSLF05#21%IDEActivityLogSection1@2#32"com.apple.dt.IDE.BuildLogSection123"Touch /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/bin/client2/MPETestDebug.appe888287b5370b641^66bd507b5370b641^---0#0#0#--271"Touch bin/client2/MPETestDebug.app    cd /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest    /usr/bin/touch -c /Users/ad/OpenFrameworks/of_v0072_osx_release/Most-Pixels-Ever/ofxMostPixelsEver/MPETest/bin/client2/MPETestDebug.app36"41A4E632-74E9-4668-942A-74CCE7E7E72C-
+
