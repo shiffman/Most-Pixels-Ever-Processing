@@ -5,7 +5,7 @@
 		<port>9002</port>
 	</server>
 	<local_dimensions>
-		<width>400</width>
+		<width>600</width>
 		<height>400</height>
 	</local_dimensions>
 	<local_location>
@@ -13,10 +13,10 @@
 		<y>0</y>
 	</local_location>
 	<master_dimensions>
-		<width>800</width>
+		<width>600</width>
 		<height>400</height>
 	</master_dimensions>
 	<go_fullscreen>false</go_fullscreen>
-	<offset_window>true</offset_window>
+	<offset_window>false</offset_window>
 	<debug>0</debug>
 </settings>
