@@ -57,7 +57,12 @@ class mpeClientTCP : public ofThread {
         void  broadcast(string _msg);
     
         bool  messageAvailable() { return bMessageAvailable; }
-        vector<string> getDataMessage() { return dataMessage; }
+        vector<string> getDataMessage() { 
+            lock();
+            vector<string> returnMessage = dataMessage;
+            unlock();
+            return returnMessage; 
+        }
         bool  intsAvailable() { return bIntsAvailable; }
         vector<int> getInts() { return ints; }
         bool  bytesAvailable() { return bBytesAvailable; }
