@@ -17,7 +17,7 @@ public class QuoteDisplay extends PApplet {
 	//--------------------------------------
     static final int MARGIN = 10;
 
-    final int ID = 1;
+    final int ID = 0;
     
     //--------------------------------------
     TCPClient client;
@@ -30,7 +30,7 @@ public class QuoteDisplay extends PApplet {
 	//--------------------------------------
 	public void setup() {
 		// set up the client
-	    client = new TCPClient(sketchPath("ini_quotes/mpeSc" + ID + ".ini"), this);
+        client = new TCPClient("mpe"+ID+".xml", this);
 		size(client.getLWidth(), client.getLHeight());
 		randomSeed(3030);
 		
