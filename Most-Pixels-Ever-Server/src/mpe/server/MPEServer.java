@@ -44,7 +44,7 @@ public class MPEServer {
         MPEPrefs.setScreens(_screens);
         MPEPrefs.setFramerate(_framerate);
         port = _port;
-        out("framerate = " + MPEPrefs.FRAMERATE + ",  screens = " + MPEPrefs.SCREENS + ", debug = " + MPEPrefs.VERBOSE);
+        out("framerate = " + MPEPrefs.FRAMERATE + ",  screens = " + MPEPrefs.SCREENS + ", verbose = " + MPEPrefs.VERBOSE);
         
         connected = new boolean[MPEPrefs.SCREENS];  // default to all false
         ready = new boolean[MPEPrefs.SCREENS];      // default to all false
