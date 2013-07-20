@@ -9,7 +9,6 @@
 package mpe.client;
 
 import java.io.BufferedReader;
-//import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -18,11 +17,9 @@ import java.io.OutputStream;
 import java.lang.reflect.Method;
 import java.net.Socket;
 
-
 import processing.core.PApplet;
 import processing.core.PConstants;
 import processing.data.XML;
-//import processing.core.PGraphics3D;
 import processing.opengl.PGraphics3D;
 
 public class TCPClient extends Thread {
@@ -35,7 +32,6 @@ public class TCPClient extends Thread {
 	int serverPort = 9002;
 	Socket socket;
 	InputStream is;
-	//DataInputStream dis;
 	BufferedReader brin;
 	DataOutputStream dos;
 	OutputStream os;
@@ -47,9 +43,7 @@ public class TCPClient extends Thread {
 	/** The id is used for communication with the server, to let it know which 
 	 *  client is speaking and how to order the screens. */
 	int id = 0;
-	/** The total number of screens. */
-	int numScreens;
-
+	
 	/** The master width. */
 	protected int mWidth = -1;
 	/** The master height. */
@@ -83,11 +77,7 @@ public class TCPClient extends Thread {
 	public boolean allConnected = false;
 
 	protected boolean messageAvailable;      // Is a message available?
-	protected boolean intsAvailable;         // Is an int array available?
-	protected boolean bytesAvailable;        // Is a byte array avaialble?
 	protected String[] dataMessage;          // data that has come in
-	protected int[] ints;                    // ints that have come in
-	protected byte[] bytes;                  // bytes that have come in
 
 	// 3D variables
 	protected boolean enable3D = false;
@@ -188,12 +178,12 @@ public class TCPClient extends Thread {
 	 */
 	private void loadSettings(String filename) {
 		XML xml = p5parent.loadXML(filename);
-		
+
 		// parse INI file
 		setServer(xml.getChild("server/ip").getContent());
 		setPort(xml.getChild("server/port").getIntContent());
 		setID(xml.getChild("id").getIntContent());
-		
+
 		// Implement name
 
 		int w = xml.getChild("local_dimensions/width").getIntContent();
@@ -499,7 +489,6 @@ public class TCPClient extends Thread {
 		try {
 			socket = new Socket(hostName, serverPort);
 			is = socket.getInputStream();
-			//dis = new DataInputStream(is);
 			brin = new BufferedReader(new InputStreamReader(is));
 			os = socket.getOutputStream();
 			dos = new DataOutputStream(os);
@@ -517,7 +506,7 @@ public class TCPClient extends Thread {
 		if (VERBOSE) out("Running!");
 
 		// let the server know that this client is ready to start.
-		send("S" + id);
+		send("S|" + id);
 
 		try {
 			while (running) {
@@ -551,28 +540,28 @@ public class TCPClient extends Thread {
 	 * @param _serverInput the server message
 	 */
 	// TODO UNSYNCHRONIZE!
-	private void read(String _serverInput) {
-		if (VERBOSE) out("Receiving: " + _serverInput);
+	private void read(String msg) {
+		if (VERBOSE) out("Receiving: " + msg);
 
 		// a "G" startbyte will trigger a frameEvent.
-		// if it's a B, we also have to get a byteArray
-		// if it's an I, we also have to get an intArray
-		char c = _serverInput.charAt(0);
-		if (c == 'G' || c == 'B' || c == 'I') {
+		char c = msg.charAt(0);
+		if (c == 'G') {
 			if (!allConnected) {
 				if (VERBOSE) out("all connected!");
 				allConnected = true;
 			}
-			// split into frame message and data message
-			String[] info = _serverInput.split(":");
-			String[] frameMessage = info[0].split(",");
-			int fc = Integer.parseInt(frameMessage[1]);
+			
+			String[] tokens = msg.split("|");
+			
+			int fc = Integer.parseInt(tokens[1]);
 
-			if (info.length > 1) {
+			if (tokens.length > 2) {
 				// there is a message here with the frameEvent 
-				String[] dataInfo = new String[info.length-1];
-				for (int k = 1; k < info.length; k++){
-					dataInfo[k-1] = info[k];
+				String[] dataInfo = new String[tokens.length-2];
+				for (int k = 0; k < dataInfo.length; k++){
+					String[] msgtokens = tokens[k+2].split(",");
+					// TO DO: update this to offer ID # to user
+					dataInfo[k] = msgtokens[1];
 				}
 				dataMessage = null;  // clear
 				dataMessage = dataInfo;
@@ -581,45 +570,10 @@ public class TCPClient extends Thread {
 				messageAvailable = false;
 			}
 
-			// assume no arrays are available
-			intsAvailable = false;
-			bytesAvailable = false;
-			/*if (c == 'B') {
-                int len;
-                try {
-                    len = dis.readInt();
-                    bytes = new byte[len];
-                    if (DEBUG) out("Receiving bytes: " + len);
-                    dis.read(bytes,0,len);
-                    bytesAvailable = true;
-                    waitToSend = false;
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            } else if (c == 'I') {
-                int len;
-                try {
-                    len = dis.readInt();
-                    if (DEBUG) out("Receiving ints: " + len);
-                    ints = new int[len];
-                    for (int i = 0; i < ints.length; i++) {
-                        ints[i] = dis.readInt();
-                    }
-                    intsAvailable = true;
-                    waitToSend = false;
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }*/
 
-			//System.out.println(fc + " " + frameCount + " " + rendering);
-
-			if (fc == frameCount) {// && !rendering) {
-				//if (fc == frameCount && !rendering) {
-				//if (DEBUG) out("Matching " + fc);
+			if (fc == frameCount) {
 				rendering = true;
 				frameCount++;
-
 				// calculate new framerate
 				float ms = System.currentTimeMillis() - lastMs;
 				fps = 1000.f / ms;
@@ -674,90 +628,10 @@ public class TCPClient extends Thread {
 	 */
 	public void broadcast(String _msg) {
 		// prepend the message with a "T"
-		_msg = "T"+ _msg;
+		_msg = "T|"+ _msg;
 		send(_msg);
 	}
 
-	/**
-	 * broadcasts a byte array to all screens
-	 * Large arrays could cause performance issues
-	 * depending on network speed
-	 * @param data the array to broadcast
-	 */
-	/*public void broadcastByteArray(byte[] data) {
-        broadcastByteArray(data,data.length);
-    }*/
-
-	/**
-	 * broadcasts a byte array to all screens
-	 * Large arrays could cause performance issues
-	 * depending on network speed
-	 * @param data
-	 * @param len how many elements of the array should be broadcasted, should not be larger than the array size 
-	 */  
-	/*public void broadcastByteArray(byte[] data, int len) {
-        // We won't send an int array more than
-        // once during any given "frame"
-        if (!waitToSend) {
-            waitToSend = true;
-            broadcastingData = true;
-            String msg = "B";
-            send(msg);
-            if (DEBUG) System.out.println("Sending: " + data.length + " bytes.");
-            try {
-                dos.writeInt(len);
-                dos.write(data, 0, len);
-                dos.flush();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            broadcastingData = false;
-            // If we finished while this was happening, we didn't say we were done
-            // So we need to now
-            if (sayDoneAgain) {
-                done();
-                sayDoneAgain = false;
-            }
-        } else {
-            if (DEBUG) System.out.println("Gotta wait dude, haven't received the ints back yet.");
-        }
-
-    }*/
-
-	/**
-	 * broadcasts an array of ints to all screens
-	 * Large arrays can cause performance problems
-	 * @param data the array to broadcast
-	 */      
-	/*public synchronized void broadcastIntArray(int[] data) {
-        // We won't send an int array more than
-        // once during any given "frame"
-        if (!waitToSend) {
-            waitToSend = true;
-            broadcastingData = true;
-            String msg = "I";
-            send(msg);
-            if (DEBUG) System.out.println("Sending: " + data.length + " bytes.");
-            try {
-                dos.writeInt(data.length);
-                for (int i = 0; i < data.length; i++) {
-                    dos.writeInt(data[i]);
-                }
-                dos.flush();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            broadcastingData = false;
-            // If we finished while this was happening, we didn't say we were done
-            // So we need to now
-            if (sayDoneAgain) {
-                done();  // HACK TO SAY WE'RE DONE AGAIN!!!
-                sayDoneAgain = false;
-            }
-        } else {
-            if (DEBUG) System.out.println("Gotta wait dude, haven't received the ints back yet.");
-        }
-    }*/
 
 	/**
 	 * Returns true of false based on whether a String message is available from
@@ -784,60 +658,12 @@ public class TCPClient extends Thread {
 	}
 
 	/**
-	 * Returns true of false based on whether integer data is available from the
-	 *  server.
-	 * This should be used inside "frameEvent()" since messages are tied to 
-	 * specific frames.
-	 *
-	 * @return true if an array of integers is available
-	 */    
-	public boolean intsAvailable() {
-		return intsAvailable;
-	}
-
-	/**
-	 * Returns an array of integers from the server.
-	 * This should be used inside "frameEvent()" since messages are tied to 
-	 * specific frames. It also should only be called after checking that 
-	 * {@link #intsAvailable()} returns true.
-	 * 
-	 * @return an array of ints from the server
-	 */  
-	public int[] getInts() {
-		return ints;
-	}
-
-	/**
-	 * Returns true of false based on whether byte data is available from the
-	 *  server.
-	 * This should be used inside "frameEvent()" since messages are tied to 
-	 * specific frames.
-	 *
-	 * @return true if an array of bytes is available
-	 */    
-	public boolean bytesAvailable() {
-		return bytesAvailable;
-	}
-
-	/**
-	 * Returns an array of bytes from the server.
-	 * This should be used inside "frameEvent()" since messages are tied to 
-	 * specific frames. It also should only be called after checking that 
-	 * {@link #bytesAvailable()} returns true.
-	 * 
-	 * @return an array of bytes from the server
-	 */   
-	public byte[] getBytes() {
-		return bytes;
-	}   
-
-	/**
 	 * Sends a "Done" command to the server. This must be called at the end of 
 	 * the draw loop.
 	 */
 	public void done() {
 		rendering = false;
-		String msg = "D," + id + "," + frameCount;
+		String msg = "D|" + id + "|" + frameCount;
 		send(msg);
 	}
 
