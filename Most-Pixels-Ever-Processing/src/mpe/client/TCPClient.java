@@ -148,7 +148,9 @@ public class TCPClient extends Thread {
 					frameEventMethod = null;
 				}
 			}
-			done();
+			if (!asynchronous) {
+				done();
+			}
 		}
 	}
 
@@ -171,7 +173,7 @@ public class TCPClient extends Thread {
 			String r = xml.getChild("asynchreceive").getContent();
 			asynchreceive = Boolean.parseBoolean(r);
 		}
-		
+
 		String v = xml.getChild("verbose").getContent();
 		if (v.equals(true)) VERBOSE = true;
 		else VERBOSE = false;
