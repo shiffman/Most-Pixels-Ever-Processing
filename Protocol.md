@@ -15,7 +15,7 @@
 ## Server
 
 | Message           | Example                 |  Description           |
-| ----------------- |:-----------------------:|  :--------------------:| 
+| ----------------- | ----------------------- |  --------------------  | 
 | G,#               | G,231                   |  Go and draw frame 231 | 
 | G,#|String|String | G,231|message0|message1 |  Go and draw frame 231 with these messages | 
 | R,0               | R,0                     |  Reset to frame 0 |
