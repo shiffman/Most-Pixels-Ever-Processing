@@ -35,7 +35,7 @@ Check out the tutorials on the wiki!
 | Message           | Example                 |  Description           |
 | ----------------- | ----------------------- |  --------------------  | 
 | G,#               | G,231                   |  Go and draw frame 231 | 
-| G,#|String|String | G,231|rain,82|snow,42   |  Go and draw frame 231 with these messages | 
+| G,#\|String|String | G,231|rain,82|snow,42   |  Go and draw frame 231 with these messages | 
 | R                 | R                       |  Reset to frame 0 |
 | P                 | P                       |  Toggle pause state |
 
