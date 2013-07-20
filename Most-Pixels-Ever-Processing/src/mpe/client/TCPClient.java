@@ -126,7 +126,7 @@ public class TCPClient extends Thread {
 		}
 
 		if (autoMode) {
-			p5parent.registerDraw(this);
+			p5parent.registerMethod("draw", this);
 		}
 
 	}
