@@ -23,11 +23,11 @@ Check out the tutorials on the wiki!
 
 | Message           | Example                 |  Description           |
 | ----------------- | ----------------------- |  --------------------  | 
-| S&#124;#               | S&#124;0                     |  Synchronous Client connecting, ID # | 
-| A&#124;#&#124;boolean       | A&#124;0&#124;true                |  ASychronous Client connecting, ID #, messages back yes or no? |
+| S&#124;#               | S&#124;0                     |  Synchronous Client connecting &#124; ID # | 
+| A&#124;#&#124;boolean       | A&#124;0&#124;true                |  ASychronous Client connecting &#124; ID # &#124; messages back yes or no? |
 | D&#124;#               | D&#124;231                   |  Client done rendering |
-| T&#124;String          | T&#124;rain&#124;82               |  Data message sent to all client |
-| T&#124;String&#124;#,#      | T&#124;rain&#124;82&#124;0,1           |  Data message, which clients to send to |
+| T&#124;String          | T&#124;rain,82               |  Data message sent to all client |
+| T&#124;String&#124;#,#      | T&#124;rain,82&#124;0,1           |  Data message &#124; which clients to send to |
 | P                 | P                       |  Toggle pause state |
 
 ## Server
@@ -35,7 +35,7 @@ Check out the tutorials on the wiki!
 | Message           | Example                 |  Description           |
 | ----------------- | ----------------------- |  --------------------  | 
 | G&#124;#               | G&#124;231                   |  Go and draw frame 231 | 
-| G,#&#124;#,String&#124;#,String | G,231&#124;rain,0,82&#124;3,snow,42   |  Go and draw frame 231 with these messages, messages are preceded by client ID that sent them | 
+| G&#124;#&#124;#,String&#124;#,String | G&#124;231&#124;rain,0,82&#124;3,snow,42   |  Go and draw frame 231 with these messages, messages are preceded by client ID that sent them | 
 | R                 | R                       |  Reset to frame 0 |
 | P                 | P                       |  Toggle pause state |
 
