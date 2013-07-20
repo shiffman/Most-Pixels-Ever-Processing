@@ -1,0 +1,9 @@
+<settings>
+	<id>555</id>
+	<name>an asynch client</name>  <!-- optional -->
+	<server>
+		<ip>localhost</ip>
+		<port>9002</port> 
+	</server>
+	<verbose>true</verbose>
+</settings>
