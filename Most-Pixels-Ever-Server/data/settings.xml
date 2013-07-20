@@ -1,0 +1,7 @@
+<settings>
+	<port>9002</port>
+	<numclients>2</numclients>
+	<framerate>25</framerate>
+	<waitForAll>true</waitForAll>
+	<verbose>false</verbose>
+</settings>
