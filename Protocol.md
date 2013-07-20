@@ -9,7 +9,7 @@
 | S,#               | S,0                     |  Synchronous Client connecting, ID # | 
 | A,#,boolean       | A,0,true                |  ASychronous Client connecting, ID #, messages back yes or no? |
 | D,#               | D,231                   |  Client done rendering |
-| T,String          | T,rain,82               |  Data message sent to all client |
+| T,String          | T,rain,82               |  Data message sent to all clients |
 | T,String|#,#      | T,rain,82|0,1           |  Data message, which clients to send to |
 
 ## Server
