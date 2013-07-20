@@ -15,6 +15,8 @@ import java.net.Socket;
 
 public class Connection extends Thread {
 	Socket socket;
+	
+	boolean ready = false;
 
 	InputStream in;
 	OutputStream os;
@@ -31,6 +33,7 @@ public class Connection extends Thread {
 
 	boolean running = true;
 	MPEServer parent;
+	
 
 	Connection(Socket socket_, MPEServer p) {
 		//barrier = new CyclicBarrier(2);
@@ -60,19 +63,17 @@ public class Connection extends Thread {
 		// For Starting Up
 		case 'S':
 			if (MPEPrefs.VERBOSE) System.out.println(msg);
-
-			int start = 1;
 			clientID = Integer.parseInt(tokens[1]);
+			
+			parent.addConnection(this);
+			
 			System.out.println("Connecting Client " + clientID);
-			parent.connected[clientID] = true;
-			boolean all = true;
-			for (int i = 0; i < parent.connected.length; i++){  //if any are false then wait
-				if (parent.connected[i] == false) {
-					all = false;
-					break;
-				}
-			}
-			parent.allConnected = all;
+			int total = parent.totalConnections();
+			
+			System.out.println("Total connected: " + total);
+			System.out.println("Total required: " + MPEPrefs.NUMREQUIREDCLIENTS);
+			
+			parent.allConnected = (total == MPEPrefs.NUMREQUIREDCLIENTS);
 			if (parent.allConnected) parent.triggerFrame();
 			break;
 			//is it receiving a "done"?

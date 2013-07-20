@@ -8,7 +8,7 @@ package mpe.server;
 
 public class MPEPrefs {
 
-	public static int SCREENS = 2;
+	public static int NUMREQUIREDCLIENTS = 1;
 	public static int FRAMERATE = 30;
     
     public static boolean VERBOSE = false;
@@ -19,7 +19,7 @@ public class MPEPrefs {
 		if (fr > -1) FRAMERATE = fr;
         
 	}
-	public static void setScreens(int sc){
-		if (sc > -1) SCREENS = sc;
+	public static void setRequiredClients(int sc){
+		if (sc > -1) NUMREQUIREDCLIENTS = sc;
 	}
 }

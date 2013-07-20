@@ -14,14 +14,16 @@ import java.net.InetAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class MPEServer {
 
-	private ArrayList<Connection> connections = new ArrayList<Connection>();
+	private HashMap<Integer,Connection> connectionlookup = new HashMap<Integer,Connection>();
+	private ArrayList<Connection> synchconnections = new ArrayList<Connection>();
+	private ArrayList<Connection> asynchconnections = new ArrayList<Connection>();
+
 	private int port;
 	private boolean running = false;
-	public boolean[] connected;  // When the clients connect, they switch their slot to true
-	public boolean[] ready;      // When the clients are ready for next frame, they switch their slot to true
 	public boolean allConnected = false;  // When true, we are off and running
 	int frameCount = 0;
 	private long before;
@@ -29,25 +31,21 @@ public class MPEServer {
 	// Server will add a message to the frameEvent
 	public boolean newMessage = false;
 	public String message = "";
+	
+	int numRequiredClients = 0;
 
-	// Server can send a byte array!
-	public boolean newBytes = false;
-	public byte[] bytes = null;
-
-	// Server can send an int array!
-	public boolean newInts = false;
-	public int[] ints = null;
 
 	public boolean dataload = false;
 
 	public MPEServer(int _screens, int _framerate, int _port) {
-		MPEPrefs.setScreens(_screens);
+		MPEPrefs.setRequiredClients(_screens);
 		MPEPrefs.setFramerate(_framerate);
 		port = _port;
-		out("framerate = " + MPEPrefs.FRAMERATE + ",  screens = " + MPEPrefs.SCREENS + ", verbose = " + MPEPrefs.VERBOSE);
-
-		connected = new boolean[MPEPrefs.SCREENS];  // default to all false
-		ready = new boolean[MPEPrefs.SCREENS];      // default to all false
+		out("framerate = " + MPEPrefs.FRAMERATE + ",  screens = " + MPEPrefs.NUMREQUIREDCLIENTS + ", verbose = " + MPEPrefs.VERBOSE);
+	}
+	
+	public int totalConnections() {
+		return synchconnections.size();
 	}
 
 	public void run() {
@@ -66,8 +64,6 @@ public class MPEServer {
 				// Make  and start connection object
 				Connection conn = new Connection(socket,this);
 				conn.start();
-				// Add to list of connections
-				connections.add(conn); 
 			}
 		} catch (IOException e) {
 			System.out.println("Zoinks!" + e);
@@ -99,14 +95,10 @@ public class MPEServer {
 				e.printStackTrace();
 			}
 		}
-		// Reset everything to false
-		for (int i = 0; i < ready.length; i++) {
-			ready[i] = false;
-		}        
 
-		frameCount++;
 
-		String send = "G|"+(frameCount-1);
+
+		String send = "G|"+frameCount;
 
 		// Adding a data message to the frameEvent
 		// substring removes the ":" at the end.
@@ -125,34 +117,18 @@ public class MPEServer {
 
 	public synchronized void sendAll(String msg){
 		//System.out.println("Sending " + msg + " to clients: " + connections.size());
-		for (int i = 0; i < connections.size(); i++){
-			Connection conn = connections.get(i);
+		for (int i = 0; i < synchconnections.size(); i++){
+			Connection conn = synchconnections.get(i);
 			conn.send(msg);
 		}
 	}
 
-	public synchronized void sendAllBytes(){
-		//System.out.println("Sending " + msg + " to clients: " + connections.size());
-		for (int i = 0; i < connections.size(); i++){
-			Connection conn = connections.get(i);
-			conn.sendBytes(bytes);
-		}
-	}
-
-	public synchronized void sendAllInts(){
-		//System.out.println("Sending " + msg + " to clients: " + connections.size());
-		for (int i = 0; i < connections.size(); i++){
-			Connection conn = connections.get(i);
-			conn.sendInts(ints);
-		}
-	}
-
 	public void killConnection(Connection conn){
-		connections.remove(conn);
+		synchconnections.remove(conn);
 	}
 
 	boolean allDisconected(){
-		if (connections.size() < 1){
+		if (synchconnections.size() < 1){
 			return true;
 		} else return false;
 	}
@@ -234,22 +210,34 @@ public class MPEServer {
 	}
 
 	public void drop(int i) {
-		connected[i] = false;
-		ready[i] = false;
+		Connection c = connectionlookup.get(i);
+		connectionlookup.remove(i);
+		synchconnections.remove(c);
+		// TODO: asynch connections remove also?
 	}
 
 	// synchronize??
 	public synchronized void setReady(int clientID) { 
-		ready[clientID] = true;
-		if (isReady()) triggerFrame();
+		Connection c = connectionlookup.get(clientID);
+		c.ready = true;
+		if (isReady()) {
+			frameCount++;
+			triggerFrame();
+		}
 	}
 
 	// synchronize?
 	public synchronized boolean isReady() {
 		boolean allReady = true;
-		for (int i = 0; i < ready.length; i++){  //if any are false then wait
-			if (ready[i] == false) allReady = false;
+		for (Connection c : synchconnections) {
+			if (!c.ready) allReady = false;
 		}
 		return allReady;
+	}
+
+	public void addConnection(Connection c) {
+		// TODO Account for asynch connections
+		synchconnections.add(c);
+		connectionlookup.put(c.clientID,c);
 	}
 }
