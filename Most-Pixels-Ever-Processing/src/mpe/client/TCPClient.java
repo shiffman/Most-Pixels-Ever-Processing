@@ -121,7 +121,7 @@ public class TCPClient extends Thread {
 		autoMode = _autoMode;
 		cameraZ = (p5parent.height/2.0f) / PApplet.tan(PConstants.PI * fieldOfView/360.0f);
 
-		loadIniFile(_fileString);
+		loadSettings(_fileString);
 		connect(hostName, serverPort, id);
 
 		// look for a method called "frameEvent" in the parent PApplet, with one
@@ -161,7 +161,7 @@ public class TCPClient extends Thread {
 	}
 
 	/**
-	 * Builds a Client using an INI file and a parent MpeDataListener.
+	 * Builds a Client using an XML file and a parent MpeDataListener.
 	 * 
 	 * The parent MpeDataListener must have a method called 
 	 * "frameEvent(UDPClient c)", which handles syncing up the frame rate on the
@@ -177,35 +177,35 @@ public class TCPClient extends Thread {
 	 */
 	public TCPClient(String _fileString, MpeDataListener _p) {
 		parent = _p;
-		loadIniFile(_fileString);
+		loadSettings(_fileString);
 		connect(hostName, serverPort, id);
 	}
 
 	/**
-	 * Loads the settings from the Client INI file.
+	 * Loads the settings from the Client XML file.
 	 * 
-	 * @param _fileString the path to the INI file 
+	 * @param filename the path to the XML file 
 	 */
-	private void loadIniFile(String filename) {
+	private void loadSettings(String filename) {
 		XML xml = p5parent.loadXML(filename);
-
+		
 		// parse INI file
-		setServer(xml.getChild("settings/server/ip").getContent());
-		setPort(xml.getChild("settings/server/port").getIntContent());
-		setID(xml.getChild("settings/id").getIntContent());
-
+		setServer(xml.getChild("server/ip").getContent());
+		setPort(xml.getChild("server/port").getIntContent());
+		setID(xml.getChild("id").getIntContent());
+		
 		// Implement name
 
-		int w = xml.getChild("settings/local_dimensions/width").getIntContent();
-		int h = xml.getChild("settings/local_dimensions/height").getIntContent();
+		int w = xml.getChild("local_dimensions/width").getIntContent();
+		int h = xml.getChild("local_dimensions/height").getIntContent();
 		setLocalDimensions(w,h);
 
-		int x = xml.getChild("settings/local_location/x").getIntContent();
-		int y = xml.getChild("settings/local_location/y").getIntContent();
+		int x = xml.getChild("local_location/x").getIntContent();
+		int y = xml.getChild("local_location/y").getIntContent();
 		setOffsets(x,y);
 
-		int mw = xml.getChild("settings/master_dimensions/width").getIntContent();
-		int mh = xml.getChild("settings/master_dimensions/height").getIntContent();
+		int mw = xml.getChild("master_dimensions/width").getIntContent();
+		int mh = xml.getChild("master_dimensions/height").getIntContent();
 		setLocalDimensions(w,h);
 
 		setMasterDimensions(mw,mh);
@@ -215,7 +215,7 @@ public class TCPClient extends Thread {
 				+ ", local dimensions = " + lWidth + ", " + lHeight
 				+ ", location = " + xOffset + ", " + yOffset);
 
-		String s = xml.getChild("settings/verbose").getContent();
+		String s = xml.getChild("verbose").getContent();
 		if (s.equals(true)) VERBOSE = true;
 		else VERBOSE = false;
 

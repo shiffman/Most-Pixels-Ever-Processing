@@ -26,7 +26,7 @@ public class AutoBalls extends PApplet {
     public void setup() {
         // make a new Client using an INI file
         // sketchPath() is used so that the INI file is local to the sketch
-        client = new TCPClient(sketchPath("ini/mpeSc"+ID+".ini"), this);
+        client = new TCPClient("mpe"+ID+".xml", this);
         
         // the size is determined by the client's local width and height
         size(client.getLWidth(), client.getLHeight());
