@@ -551,7 +551,7 @@ public class TCPClient extends Thread {
 				allConnected = true;
 			}
 			
-			String[] tokens = msg.split("|");
+			String[] tokens = msg.split("\\|");
 			
 			int fc = Integer.parseInt(tokens[1]);
 
@@ -559,9 +559,10 @@ public class TCPClient extends Thread {
 				// there is a message here with the frameEvent 
 				String[] dataInfo = new String[tokens.length-2];
 				for (int k = 0; k < dataInfo.length; k++){
-					String[] msgtokens = tokens[k+2].split(",");
-					// TO DO: update this to offer ID # to user
-					dataInfo[k] = msgtokens[1];
+					// Grabbing the message as everything after first comma
+					// TODO offer ID
+					int comma = tokens[k+2].indexOf(",");
+					dataInfo[k] = tokens[k+2].substring(comma+1,tokens[k+2].length());
 				}
 				dataMessage = null;  // clear
 				dataMessage = dataInfo;

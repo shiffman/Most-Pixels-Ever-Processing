@@ -54,13 +54,12 @@ public class Connection extends Thread {
 		char startsWith =  ' ';
 		if (msg.length() > 0) startsWith = msg.charAt(0);
 
-		String[] tokens = msg.split("|");
-
+		String[] tokens = msg.split("\\|");
+		
 		switch(startsWith){
 		// For Starting Up
 		case 'S':
 			if (MPEPrefs.VERBOSE) System.out.println(msg);
-
 
 			int start = 1;
 			clientID = Integer.parseInt(tokens[1]);
