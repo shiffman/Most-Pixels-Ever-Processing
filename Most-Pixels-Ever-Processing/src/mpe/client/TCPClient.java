@@ -160,18 +160,23 @@ public class TCPClient extends Thread {
 	 * @param filename the path to the XML file 
 	 */
 	private void loadSettings(String filename) {
+		// parse XML file
 		XML xml = p5parent.loadXML(filename);
-
-		// parse INI file
 		setServer(xml.getChild("server/ip").getContent());
 		setPort(xml.getChild("server/port").getIntContent());
 		setID(xml.getChild("id").getIntContent());
 
-		String a = xml.getChild("asynchronous").getContent();
-		asynchronous = Boolean.parseBoolean(a);
-		if (asynchronous) {
-			String r = xml.getChild("asynchreceive").getContent();
-			asynchreceive = Boolean.parseBoolean(r);
+		XML asynch = xml.getChild("asynchronous");
+		if (asynch != null) {
+			String a = asynch.getContent();
+			asynchronous = Boolean.parseBoolean(a);
+			if (asynchronous) {
+				XML receive = xml.getChild("asynchreceive");
+				if (receive != null) {
+					String r = receive.getContent();
+					asynchreceive = Boolean.parseBoolean(r);
+				}
+			}
 		}
 
 		String v = xml.getChild("verbose").getContent();
@@ -193,7 +198,6 @@ public class TCPClient extends Thread {
 			setLocalDimensions(w,h);
 
 			setMasterDimensions(mw,mh);
-
 
 			out("Settings: server = " + hostName + ":" + serverPort + ",  id = " + id
 					+ ", local dimensions = " + lWidth + ", " + lHeight
