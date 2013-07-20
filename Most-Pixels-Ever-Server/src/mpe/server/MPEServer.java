@@ -40,19 +40,11 @@ public class MPEServer {
     
     public boolean dataload = false;
 
-    // Back door connection stuff
-    ListenerConnection backDoorConnection = null;
-    private static boolean listener = false;
-    private int listenPort;
-    private boolean backDoorConnected = false;
-    BackDoor backdoor;
-    
-    public MPEServer(int _screens, int _framerate, int _port, int _listenPort) {
+    public MPEServer(int _screens, int _framerate, int _port) {
         MPEPrefs.setScreens(_screens);
         MPEPrefs.setFramerate(_framerate);
         port = _port;
-        listenPort = _listenPort;
-        out("framerate = " + MPEPrefs.FRAMERATE + ",  screens = " + MPEPrefs.SCREENS + ", debug = " + MPEPrefs.DEBUG);
+        out("framerate = " + MPEPrefs.FRAMERATE + ",  screens = " + MPEPrefs.SCREENS + ", debug = " + MPEPrefs.VERBOSE);
         
         connected = new boolean[MPEPrefs.SCREENS];  // default to all false
         ready = new boolean[MPEPrefs.SCREENS];      // default to all false
@@ -60,7 +52,6 @@ public class MPEServer {
     
     public void run() {
         running = true;
-        if (listener) startListener();
         before = System.currentTimeMillis(); // Getting the current time
         ServerSocket frontDoor;
         try {
@@ -85,20 +76,6 @@ public class MPEServer {
     
     // Synchronize?!!!
     public synchronized void triggerFrame() {
-        if (frameCount % 10 == 0) {
-            //System.out.println("Framecount: " + frameCount);
-        }
-        
-        // We can't go on if the server is still loading data from a client
-        /*while (dataload) {
-            System.out.println("Data loading!");
-            try {
-                Thread.sleep(5);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-        }*/
-
         int desired = (int) ((1.0f / (float) MPEPrefs.FRAMERATE) * 1000.0f);
         long now = System.currentTimeMillis();
         int diff = (int) (now - before);
@@ -239,20 +216,8 @@ public class MPEServer {
                     help = true;
                 }
             }
-            else if (args[i].contains("-listener")){
-                listener = true;
-            }
-            else if (args[i].contains("-listenPort")) {
-                args[i] = args[i].substring(11);
-                try{
-                    listenPort = Integer.parseInt(args[i]);
-                } catch (Exception e) {
-                    out("ERROR: I can't parse the listening port number " + args[i] + "\n" + e);
-                    help = true;
-                }
-            }
-            else if (args[i].contains("-debug")) {
-                MPEPrefs.DEBUG = true;
+            else if (args[i].contains("-verbose")) {
+                MPEPrefs.VERBOSE = true;
             }
             else {
                 help = true;
@@ -267,15 +232,12 @@ public class MPEServer {
                     " * -screens<number of screens> Total # of expected clients.  Defaults to 2\n" +
                     " * -framerate<framerate> Desired frame rate.  Defaults to 30\n" +
                     " * -port<port number> Defines the port.  Defaults to 9002\n" +
-                    " * -listener Turns on an optional port listener so that other apps can send data to the screens.\n" +
-                    " * -listenPort<port number>  Defines listening port.  Defaults to 9003.\n" +
-                    " * -debug Turns debugging messages on.\n" +
-                    " * -ini<INI file path.>  Path to initialization file.  Defaults to \"mpeServer.ini\".\n" +
-                    "    Please note the use of an INI file with the server is now deprecated.");
+                    " * -verbose Turns debugging messages on.\n" +
+                    " * -xml<path to file with XML settings>  Path to initialization file.  Defaults to \"settings.xml\".\n");
             System.exit(1);
         }
         else {
-            MPEServer ws = new MPEServer(screens, framerate, port, listenPort);
+            MPEServer ws = new MPEServer(screens, framerate, port);
             ws.run();
         }
     }
@@ -301,51 +263,5 @@ public class MPEServer {
             if (ready[i] == false) allReady = false;
         }
         return allReady;
-    }
-
-//********************** BACKDOOR LISTENER METHODS **********************************
-    private void startListener(){
-       backdoor = new BackDoor(this);
-       Thread t= new Thread(backdoor);
-       t.start();
-    }
-    public void killListenerConnection(){
-    	backDoorConnected = false;
-    }
-    
-    class BackDoor implements Runnable{
-    	MPEServer parent;
-    	BackDoor(MPEServer _parent){
-    		parent = _parent;
-    	}
-    	
-		public void run() {
-			 ServerSocket backDoor;
-			 ListenerConnection backDoorConnection;
-		    	try {
-		            backDoor= new ServerSocket(listenPort);
-		            System.out.println("Starting backdoor Listener: " + InetAddress.getLocalHost() + "  " + backDoor.getLocalPort());
-		            while (running) {
-		                if (!backDoorConnected){
-		                	System.out.println("Waiting for backdoor connection");
-		                Socket socket = backDoor.accept();  // BLOCKING!
-		                System.out.println("backdoor port "+socket.getRemoteSocketAddress() + " connected.");
-		                // Make  and start connection object
-		                backDoorConnection = new ListenerConnection(socket,parent);
-		                backDoorConnection.start();
-		                backDoorConnected= true;
-		                } else {
-							Thread.sleep(500);
-		                }
-		            }
-		        } catch (IOException e) {
-		            System.out.println("Zoinks, Backdoor Style!" + e);
-		        } catch (InterruptedException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-			
-		}
-    	
     }
 }
