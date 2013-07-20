@@ -40,7 +40,6 @@ public class TCPClient extends Thread {
 	OutputStream os;
 
 	PApplet p5parent;
-	MpeDataListener parent;
 	Method frameEventMethod;
 
 	/** The id is used for communication with the server, to let it know which 
@@ -151,27 +150,6 @@ public class TCPClient extends Thread {
 			}
 			done();
 		}
-	}
-
-	/**
-	 * Builds a Client using an XML file and a parent MpeDataListener.
-	 * 
-	 * The parent MpeDataListener must have a method called 
-	 * "frameEvent(UDPClient c)", which handles syncing up the frame rate on the
-	 * multiple screens.  A typical implementation may look like this:
-	 *
-	 * public void frameEvent(Client c){
-	 *   if (!started) started = true;
-	 *   // Do your computation and paint to the screen here
-	 * }
-	 *
-	 * @param _fileString the path to the INI file 
-	 * @param _p the parent MpeDataListener
-	 */
-	public TCPClient(String _fileString, MpeDataListener _p) {
-		parent = _p;
-		loadSettings(_fileString);
-		connect(hostName, serverPort, id);
 	}
 
 	/**
@@ -589,24 +567,6 @@ public class TCPClient extends Thread {
 				float ms = System.currentTimeMillis() - lastMs;
 				fps = 1000.f / ms;
 				lastMs = System.currentTimeMillis();
-
-				if (useProcessing) {
-					if (!autoMode) {
-						try {
-							// call the method with this object as the argument!
-							frameEventMethod.invoke(p5parent, new Object[] { this });
-
-						} catch (Exception e) {
-							err("Could not invoke the \"frameEvent()\" method for some reason.");
-							e.printStackTrace();
-							frameEventMethod = null;
-						} 
-					}
-
-				} else {
-					parent.frameEvent(this);
-				}
-
 			} else {
 				if (VERBOSE) print("Extra message, frameCount: " + frameCount 
 						+ " received from server: " + fc);
@@ -633,7 +593,7 @@ public class TCPClient extends Thread {
 
 	/**
 	 * Format a broadcast message and send it.
-	 * Do not use a colon ':' in your message!!!
+	 * Do not use a colon '|' in your message!!!
 	 * 
 	 * @param _msg the message to broadcast
 	 */
