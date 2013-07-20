@@ -27,6 +27,9 @@ public class TCPClient extends Thread {
 	 * Set with debug=1; in your INI file. */
 	public static boolean VERBOSE = false;
 
+	boolean asynchronous = false;
+	boolean asynchreceive = false;
+
 	// TCP stuff
 	String hostName;
 	int serverPort = 9002;
@@ -43,7 +46,7 @@ public class TCPClient extends Thread {
 	/** The id is used for communication with the server, to let it know which 
 	 *  client is speaking and how to order the screens. */
 	int id = 0;
-	
+
 	/** The master width. */
 	protected int mWidth = -1;
 	/** The master height. */
@@ -184,31 +187,38 @@ public class TCPClient extends Thread {
 		setPort(xml.getChild("server/port").getIntContent());
 		setID(xml.getChild("id").getIntContent());
 
-		// Implement name
-
-		int w = xml.getChild("local_dimensions/width").getIntContent();
-		int h = xml.getChild("local_dimensions/height").getIntContent();
-		setLocalDimensions(w,h);
-
-		int x = xml.getChild("local_location/x").getIntContent();
-		int y = xml.getChild("local_location/y").getIntContent();
-		setOffsets(x,y);
-
-		int mw = xml.getChild("master_dimensions/width").getIntContent();
-		int mh = xml.getChild("master_dimensions/height").getIntContent();
-		setLocalDimensions(w,h);
-
-		setMasterDimensions(mw,mh);
-
-
-		out("Settings: server = " + hostName + ":" + serverPort + ",  id = " + id
-				+ ", local dimensions = " + lWidth + ", " + lHeight
-				+ ", location = " + xOffset + ", " + yOffset);
-
-		String s = xml.getChild("verbose").getContent();
-		if (s.equals(true)) VERBOSE = true;
+		String a = xml.getChild("asynchronous").getContent();
+		asynchronous = Boolean.parseBoolean(a);
+		if (asynchronous) {
+			String r = xml.getChild("asynchreceive").getContent();
+			asynchreceive = Boolean.parseBoolean(r);
+		}
+		
+		String v = xml.getChild("verbose").getContent();
+		if (v.equals(true)) VERBOSE = true;
 		else VERBOSE = false;
 
+		// Implement name
+		if (!asynchronous) {
+			int w = xml.getChild("local_dimensions/width").getIntContent();
+			int h = xml.getChild("local_dimensions/height").getIntContent();
+			setLocalDimensions(w,h);
+
+			int x = xml.getChild("local_location/x").getIntContent();
+			int y = xml.getChild("local_location/y").getIntContent();
+			setOffsets(x,y);
+
+			int mw = xml.getChild("master_dimensions/width").getIntContent();
+			int mh = xml.getChild("master_dimensions/height").getIntContent();
+			setLocalDimensions(w,h);
+
+			setMasterDimensions(mw,mh);
+
+
+			out("Settings: server = " + hostName + ":" + serverPort + ",  id = " + id
+					+ ", local dimensions = " + lWidth + ", " + lHeight
+					+ ", location = " + xOffset + ", " + yOffset);
+		}
 	}
 
 
@@ -550,9 +560,9 @@ public class TCPClient extends Thread {
 				if (VERBOSE) out("all connected!");
 				allConnected = true;
 			}
-			
+
 			String[] tokens = msg.split("\\|");
-			
+
 			int fc = Integer.parseInt(tokens[1]);
 
 			if (tokens.length > 2) {

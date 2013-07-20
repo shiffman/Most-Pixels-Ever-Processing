@@ -5,5 +5,7 @@
 		<ip>localhost</ip>
 		<port>9002</port> 
 	</server>
+	<asynchronous>true</asynchronous>
+	<asynchreceive>false</asynchreceive>
 	<verbose>true</verbose>
 </settings>
