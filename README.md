@@ -24,8 +24,8 @@ Check out the tutorials on the wiki!
 | Message           | Example                 |  Description           |
 | ----------------- | ----------------------- |  --------------------  | 
 | S&#124;#               | S&#124;0                     |  Synchronous Client connecting &#124; ID # | 
-| A&#124;#&#124;boolean       | A&#124;0&#124;true                |  ASychronous Client connecting &#124; ID # &#124; messages back yes or no? |
-| D&#124;#               | D&#124;231                   |  Client done rendering |
+| A&#124;#&#124;boolean  | A&#124;0&#124;true           |  ASychronous Client connecting &#124; ID # &#124; messages back yes or no? |
+| D&#124;#&#124;#        | D&#124;0&#124;231            |  Client done rendering, ID, frame number |
 | T&#124;String          | T&#124;rain,82               |  Data message sent to all client |
 | T&#124;String&#124;#,#      | T&#124;rain,82&#124;0,1           |  Data message &#124; which clients to send to |
 | P                 | P                       |  Toggle pause state |
