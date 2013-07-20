@@ -1,0 +1,23 @@
+<settings>
+	<id>0</id>
+	<name>renderer0</name>  <!-- optional -->
+	<server>
+		<ip>localhost</ip>
+		<port>9002</port> 
+	</server>
+	<local_dimensions>
+		<width>320</width>
+		<height>480</height>
+	</local_dimensions>
+	<local_location>
+		<x>0</x>
+		<y>0</y>
+	</local_location>
+	<master_dimensions>
+		<width>640</width>
+		<height>480</height>
+	</master_dimensions>
+	<offset_window>false</offset_window>
+	<verbose>true</verbose>
+	<simulation fps="30">true</simulation>
+</settings>
