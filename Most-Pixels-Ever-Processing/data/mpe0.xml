@@ -18,6 +18,6 @@
 		<height>480</height>
 	</master_dimensions>
 	<offset_window>false</offset_window>
-	<verbose>true</verbose>
+	<verbose>false</verbose>
 	<simulation fps="30">true</simulation>
 </settings>

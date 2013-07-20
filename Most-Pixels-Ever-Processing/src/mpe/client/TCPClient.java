@@ -568,7 +568,6 @@ public class TCPClient extends Thread {
 
 			if (fc == frameCount) {
 				rendering = true;
-				frameCount++;
 				// calculate new framerate
 				float ms = System.currentTimeMillis() - lastMs;
 				fps = 1000.f / ms;
@@ -642,6 +641,7 @@ public class TCPClient extends Thread {
 		rendering = false;
 		String msg = "D|" + id + "|" + frameCount;
 		send(msg);
+		frameCount++;
 	}
 
 	/**
