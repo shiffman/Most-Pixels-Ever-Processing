@@ -836,14 +836,9 @@ public class TCPClient extends Thread {
 	 * the draw loop.
 	 */
 	public void done() {
-		//if (broadcastingData) {
-		//    sayDoneAgain = true;
-		//} else {
-
 		rendering = false;
 		String msg = "D," + id + "," + frameCount;
 		send(msg);
-		//}
 	}
 
 	/**
