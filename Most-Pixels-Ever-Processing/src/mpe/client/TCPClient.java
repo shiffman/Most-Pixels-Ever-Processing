@@ -14,6 +14,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
+import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.net.Socket;
 
@@ -43,6 +44,7 @@ public class TCPClient extends Thread {
 
 	PApplet p5parent;
 	Method frameEventMethod;
+	Method resetEventMethod;
 
 	/** The id is used for communication with the server, to let it know which 
 	 *  client is speaking and how to order the screens. */
@@ -68,7 +70,7 @@ public class TCPClient extends Thread {
 	int   frameCount = 0;
 	float fps = 0.f;
 	long  lastMs = 0;
-	
+
 	boolean reset = false;
 
 	// Are we broadcasting?
@@ -142,12 +144,16 @@ public class TCPClient extends Thread {
 		}
 		if (running && rendering) {
 			placeScreen();
-			
+
 			if (reset) {
-				resetMethod.invoke(p5parent, new Object[] { this });
-			}
-			
-			if (frameEventMethod != null) {
+				try {
+					resetEventMethod.invoke(p5parent, new Object[] { this });
+				} catch (Exception e) {
+					err("Could not invoke the \"resetEvent()\" method for some reason.");
+					e.printStackTrace();
+					resetEventMethod = null;
+				}
+			} else if (frameEventMethod != null) {
 				try {
 					// call the method with this object as the argument!
 					frameEventMethod.invoke(p5parent, new Object[] { this });
@@ -554,9 +560,9 @@ public class TCPClient extends Thread {
 		// a "G" startbyte will trigger a frameEvent.
 		char c = msg.charAt(0);
 		if (c == 'G' || c == 'R') {
-			
+
 			if (c == 'R') reset = true;
-			
+
 			String[] tokens = msg.split("\\|");
 			int fc = Integer.parseInt(tokens[1]);
 			if (tokens.length > 2) {
@@ -578,7 +584,7 @@ public class TCPClient extends Thread {
 			if (reset) {
 				frameCount = 0;
 			}
-			
+
 			if (fc == frameCount) {
 				rendering = true;
 				// calculate new framerate
@@ -652,6 +658,7 @@ public class TCPClient extends Thread {
 	 */
 	public void done() {
 		rendering = false;
+		reset = false;
 		String msg = "D|" + id + "|" + frameCount;
 		send(msg);
 		frameCount++;
