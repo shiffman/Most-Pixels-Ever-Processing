@@ -30,6 +30,8 @@ public class TCPClient extends Thread {
 	boolean asynchronous = false;
 	boolean asynchreceive = false;
 
+	boolean offsetWindow = false;
+
 	// TCP stuff
 	String hostName;
 	int serverPort = 9002;
@@ -135,6 +137,9 @@ public class TCPClient extends Thread {
 	 * Called automatically by PApplet.draw() when using auto mode.
 	 */
 	public void draw() {
+		if (offsetWindow) {
+			p5parent.frame.setLocation(id*lWidth,0);
+		}
 		if (running && rendering) {
 			placeScreen();
 			if (frameEventMethod != null) {
@@ -196,6 +201,11 @@ public class TCPClient extends Thread {
 			int mw = xml.getChild("master_dimensions/width").getIntContent();
 			int mh = xml.getChild("master_dimensions/height").getIntContent();
 			setLocalDimensions(w,h);
+
+			XML offset = xml.getChild("offset_window");
+			if (offset != null) {
+				offsetWindow = Boolean.parseBoolean(offset.getContent());
+			}
 
 			setMasterDimensions(mw,mh);
 
