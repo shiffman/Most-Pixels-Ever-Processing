@@ -128,6 +128,13 @@ public class TCPClient extends Thread {
 		} catch (Exception e) {
 			System.out.println("You are missing the frameEvent() method. " + e);
 		}
+		
+		try {
+			resetEventMethod = p5parent.getClass().getMethod("resetEvent",
+					new Class[] { TCPClient.class });
+		} catch (Exception e) {
+			System.out.println("You are missing the resetEvent() method. " + e);
+		}
 
 		if (autoMode) {
 			p5parent.registerMethod("draw", this);
