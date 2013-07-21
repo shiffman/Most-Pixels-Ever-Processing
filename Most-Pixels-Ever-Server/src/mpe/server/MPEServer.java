@@ -87,6 +87,30 @@ public class MPEServer {
 			System.out.println("Zoinks!" + e);
 		}
 	}
+	
+	public synchronized void triggerReset() {
+		int desired = (int) ((1.0f / (float) frameRate) * 1000.0f);
+		long now = System.currentTimeMillis();
+		int diff = (int) (now - before);
+		if (diff < desired) {
+			// Where do we max out a framerate?  Here?
+			try {
+				long sleepTime = desired-diff;
+				if (sleepTime >= 0){
+					Thread.sleep(sleepTime);
+				}
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		// Clear any data and reset frameCount
+		resetFrameCount();
+		String send = "R|"+frameCount;
+		sendAll(send);
+		before = System.currentTimeMillis();
+		
+	}
 
 	// Synchronize?!!!
 	public synchronized void triggerFrame() {
@@ -113,17 +137,12 @@ public class MPEServer {
 				e.printStackTrace();
 			}
 		}
-
-
-
 		String send = "G|"+frameCount;
-
 		// Adding a data message to the frameEvent
 		// substring removes the ":" at the end.
 		if (newMessage) send += "|" + message.substring(0, message.length()-1);
 		newMessage = false;
 		message = "";
-
 		sendAll(send);
 		before = System.currentTimeMillis();
 	}
