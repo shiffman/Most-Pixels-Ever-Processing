@@ -14,7 +14,7 @@ public class AutoBalls extends PApplet {
     //--------------------------------------
     final int ID = 0;
 
-    ArrayList balls;
+    ArrayList<Ball> balls;
     TCPClient client;
 
     //--------------------------------------
@@ -31,19 +31,21 @@ public class AutoBalls extends PApplet {
         // the size is determined by the client's local width and height
         size(client.getLWidth(), client.getLHeight());
         
-        // the random seed must be identical for all clients
-        randomSeed(1);
-        
-        smooth();
-        background(255);
-        
-        // add a "randomly" placed ball
-        balls = new ArrayList();
-        Ball ball = new Ball(random(client.getMWidth()), random(client.getMHeight()));
-        balls.add(ball);
+        resetEvent(client);
         
         // IMPORTANT, YOU MUST START THE CLIENT!
         client.start();
+    }
+    
+    public void resetEvent(TCPClient c) {
+        // the random seed must be identical for all clients
+        randomSeed(1);
+        
+        // add a "randomly" placed ball
+        balls = new ArrayList<Ball>();
+        Ball ball = new Ball(random(client.getMWidth()), random(client.getMHeight()));
+        balls.add(ball);
+	
     }
     
     //--------------------------------------
@@ -59,10 +61,9 @@ public class AutoBalls extends PApplet {
         background(255);
         
         // move and draw all the balls
-        for (int i = 0; i < balls.size(); i++) {
-            Ball ball = (Ball)balls.get(i);
-            ball.calc();
-            ball.draw();
+        for (Ball b : balls) {
+            b.calc();
+            b.draw();
         }
         
         // read any incoming messages
