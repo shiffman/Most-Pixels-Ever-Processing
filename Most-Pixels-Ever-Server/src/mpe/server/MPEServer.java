@@ -59,7 +59,7 @@ public class MPEServer {
 		setFramerate(_framerate);
 		port = _port;
 		verbose = v;
-		out("framerate = " + frameRate + ",  screens = " + numRequiredClients + ", verbose = " + verbose);
+		out("framerate = " + frameRate + ",  screens = " + numRequiredClients + ",waitForAll = " + waitForAll + ", verbose = " + verbose);
 	}
 
 	public int totalConnections() {

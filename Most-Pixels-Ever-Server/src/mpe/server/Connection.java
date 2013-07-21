@@ -70,9 +70,6 @@ public class Connection extends Thread {
 			System.out.println("Connecting Client " + clientID);
 			int total = parent.totalConnections();
 
-			System.out.println("Total connected: " + total);
-			System.out.println("Total required: " + parent.numRequiredClients);
-
 			if (parent.waitForAll) {
 				parent.allConnected = (total == parent.numRequiredClients);
 				if (parent.allConnected) parent.triggerFrame(false);
