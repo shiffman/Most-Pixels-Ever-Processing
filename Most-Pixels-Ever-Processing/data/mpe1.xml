@@ -1,6 +1,6 @@
 <settings>
-	<id>0</id>
-	<name>renderer0</name>  <!-- optional -->
+	<id>1</id>
+	<name>renderer1</name>  <!-- optional -->
 	<server>
 		<ip>localhost</ip>
 		<port>9002</port> 
@@ -17,7 +17,7 @@
 		<width>640</width>
 		<height>480</height>
 	</master_dimensions>
-	<offset_window>false</offset_window>
+	<offset_window>true</offset_window>
 	<verbose>false</verbose>
 	<simulation fps="30">true</simulation>
 </settings>

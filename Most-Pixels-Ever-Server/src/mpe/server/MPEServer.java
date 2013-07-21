@@ -112,6 +112,7 @@ public class MPEServer {
 			// set frameCount to 0 and clear any data
 			resetFrameCount();
 			String send = "R|"+frameCount;
+			sendAll(send);
 		} else {
 			String send = "G|"+frameCount;
 			// Adding a data message to the frameEvent
