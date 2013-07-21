@@ -195,9 +195,8 @@ public class TCPClient extends Thread {
 		}
 
 		String v = xml.getChild("verbose").getContent();
-		if (v.equals(true)) VERBOSE = true;
-		else VERBOSE = false;
-
+		VERBOSE = Boolean.parseBoolean(v);
+		
 		// Implement name
 		if (!asynchronous) {
 			int w = xml.getChild("local_dimensions/width").getIntContent();
@@ -517,6 +516,7 @@ public class TCPClient extends Thread {
 	 * This method should only be called internally by Thread.start().
 	 */
 	public void run() {
+		
 		if (VERBOSE) out("Running!");
 
 		// let the server know that this client is ready to start.
