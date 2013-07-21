@@ -23,8 +23,6 @@ public class MPEServer {
 	private ArrayList<Connection> asynchconnections = new ArrayList<Connection>();
 
 	private int port;
-	private boolean running = false;
-	public boolean allConnected = false;  // When true, we are off and running
 	int frameCount = 0;
 	private long before;
 
@@ -32,16 +30,36 @@ public class MPEServer {
 	public boolean newMessage = false;
 	public String message = "";
 	
-	int numRequiredClients = 0;
-
 
 	public boolean dataload = false;
+	
+	public int numRequiredClients = 1;
+	public int frameRate = 30;
+    
+    public boolean verbose = false;
+    
+    public boolean waitForAll = false;
+	private boolean running = false;
+	public boolean allConnected = false;  // When true, we are off and running
 
-	public MPEServer(int _screens, int _framerate, int _port) {
-		MPEPrefs.setRequiredClients(_screens);
-		MPEPrefs.setFramerate(_framerate);
+
+	public void setFramerate(int fr){
+		if (fr > -1) frameRate = fr;
+        
+	}
+	public void setRequiredClients(int sc){
+		if (sc > -1) {
+			numRequiredClients = sc;
+			waitForAll = true;
+		} 
+	}
+	
+	public MPEServer(int _screens, int _framerate, int _port, boolean v) {
+		setRequiredClients(_screens);
+		setFramerate(_framerate);
 		port = _port;
-		out("framerate = " + MPEPrefs.FRAMERATE + ",  screens = " + MPEPrefs.NUMREQUIREDCLIENTS + ", verbose = " + MPEPrefs.VERBOSE);
+		verbose = v;
+		out("framerate = " + frameRate + ",  screens = " + numRequiredClients + ", verbose = " + verbose);
 	}
 	
 	public int totalConnections() {
@@ -72,7 +90,7 @@ public class MPEServer {
 
 	// Synchronize?!!!
 	public synchronized void triggerFrame() {
-		int desired = (int) ((1.0f / (float) MPEPrefs.FRAMERATE) * 1000.0f);
+		int desired = (int) ((1.0f / (float) frameRate) * 1000.0f);
 		long now = System.currentTimeMillis();
 		int diff = (int) (now - before);
 		if (diff < desired) {
@@ -144,13 +162,14 @@ public class MPEServer {
 
 	public static void main(String[] args) {
 		// set default values
-		int screens = 2;
+		int screens = -1;
 		int framerate = 30;
 		int port = 9002;
 		int listenPort = 9003;
 
 		boolean help = false;
-
+		boolean verbose = false;
+				
 		// see if info is given on the command line
 		for (int i = 0; i < args.length; i++) {
 			if (args[i].contains("-screens")) {
@@ -181,7 +200,7 @@ public class MPEServer {
 				}
 			}
 			else if (args[i].contains("-verbose")) {
-				MPEPrefs.VERBOSE = true;
+				verbose = true;
 			}
 			else {
 				help = true;
@@ -201,7 +220,7 @@ public class MPEServer {
 			System.exit(1);
 		}
 		else {
-			MPEServer ws = new MPEServer(screens, framerate, port);
+			MPEServer ws = new MPEServer(screens, framerate, port, verbose);
 			ws.run();
 		}
 	}

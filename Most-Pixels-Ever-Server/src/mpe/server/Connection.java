@@ -15,7 +15,7 @@ import java.net.Socket;
 
 public class Connection extends Thread {
 	Socket socket;
-	
+
 	boolean ready = false;
 
 	InputStream in;
@@ -33,7 +33,7 @@ public class Connection extends Thread {
 
 	boolean running = true;
 	MPEServer parent;
-	
+
 
 	Connection(Socket socket_, MPEServer p) {
 		//barrier = new CyclicBarrier(2);
@@ -58,38 +58,43 @@ public class Connection extends Thread {
 		if (msg.length() > 0) startsWith = msg.charAt(0);
 
 		String[] tokens = msg.split("\\|");
-		
+
 		switch(startsWith){
 		// For Starting Up
 		case 'S':
-			if (MPEPrefs.VERBOSE) System.out.println(msg);
+			if (parent.verbose) System.out.println(msg);
 			clientID = Integer.parseInt(tokens[1]);
-			
+
 			parent.addConnection(this);
-			
+
 			System.out.println("Connecting Client " + clientID);
 			int total = parent.totalConnections();
-			
+
 			System.out.println("Total connected: " + total);
-			System.out.println("Total required: " + MPEPrefs.NUMREQUIREDCLIENTS);
-			
-			parent.allConnected = (total == MPEPrefs.NUMREQUIREDCLIENTS);
-			if (parent.allConnected) parent.triggerFrame();
+			System.out.println("Total required: " + parent.numRequiredClients);
+
+			if (parent.waitForAll) {
+				parent.allConnected = (total == parent.numRequiredClients);
+				if (parent.allConnected) parent.triggerFrame();
+			} else {
+				parent.triggerFrame();
+			}
+
 			break;
 			//is it receiving a "done"?
 		case 'D':   
-			if (parent.allConnected) {
+			if (!parent.waitForAll || parent.allConnected) {
 				// Networking protocol could be optimized to deal with bytes instead of chars in a String?
 				clientID = Integer.parseInt(tokens[1]);
 				int fc = Integer.parseInt(tokens[2]);
-				if (MPEPrefs.VERBOSE) System.out.println("Receive: " + clientID + ": " + fc + "  match: " + parent.frameCount);
+				if (parent.verbose) System.out.println("Receive: " + clientID + ": " + fc + "  match: " + parent.frameCount);
 				if (fc == parent.frameCount) {
 					parent.setReady(clientID);
 				}
 			}
 			break;
 		case 'T':   
-			if (MPEPrefs.VERBOSE) print ("adding message to next frameEvent: " + msg);
+			if (parent.verbose) print ("adding message to next frameEvent: " + msg);
 			parent.newMessage = true;
 			parent.message += clientID + "," + tokens[1] + "|";
 			break;
@@ -132,7 +137,7 @@ public class Connection extends Thread {
 
 	// Trying out no synchronize
 	public void send(String msg) {
-		if (MPEPrefs.VERBOSE) System.out.println("Sending: " + this + ": " + msg);
+		if (parent.verbose) System.out.println("Sending: " + this + ": " + msg);
 		try {
 			msg+="\n";
 			dos.write(msg.getBytes());
@@ -144,7 +149,7 @@ public class Connection extends Thread {
 
 	// Trying out no synchronize
 	public void sendBytes(byte[] b) {
-		if (MPEPrefs.VERBOSE) System.out.println("Sending " + b.length + " bytes");
+		if (parent.verbose) System.out.println("Sending " + b.length + " bytes");
 		try {
 			dos.writeInt(b.length);
 			dos.write(b,0,b.length);
@@ -156,7 +161,7 @@ public class Connection extends Thread {
 
 	// Trying out no synchronize
 	public void sendInts(int[] ints) {
-		if (MPEPrefs.VERBOSE) System.out.println("Sending " + ints.length + " ints");
+		if (parent.verbose) System.out.println("Sending " + ints.length + " ints");
 		try {
 			dos.writeInt(ints.length);
 			for (int i = 0; i < ints.length; i++) {
