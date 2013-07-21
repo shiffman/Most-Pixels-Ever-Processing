@@ -62,7 +62,6 @@ public class TCPClient extends Thread {
 	int yOffset = 0;
 
 	boolean running = false;
-	boolean useProcessing = false;
 	boolean rendering = false;
 	boolean autoMode = false;
 
@@ -78,7 +77,7 @@ public class TCPClient extends Thread {
 
 	/** True if all the other clients are connected. */
 	// FIXME Maybe this doesn't need to be public.
-	public boolean allConnected = false;
+	// public boolean allConnected = false;
 
 	protected boolean messageAvailable;      // Is a message available?
 	protected String[] dataMessage;          // data that has come in
@@ -106,7 +105,6 @@ public class TCPClient extends Thread {
 	}
 
 	public TCPClient(String _fileString, PApplet _p, boolean _autoMode) {
-		useProcessing = true;
 		p5parent = _p;
 
 		// Autodetecting if we should use 3D or not
@@ -550,13 +548,8 @@ public class TCPClient extends Thread {
 		// a "G" startbyte will trigger a frameEvent.
 		char c = msg.charAt(0);
 		if (c == 'G') {
-			if (!allConnected) {
-				if (VERBOSE) out("all connected!");
-				allConnected = true;
-			}
 
 			String[] tokens = msg.split("\\|");
-
 			int fc = Integer.parseInt(tokens[1]);
 
 			if (tokens.length > 2) {

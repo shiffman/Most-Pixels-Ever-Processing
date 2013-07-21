@@ -12,7 +12,7 @@ import processing.core.*;
 
 public class AutoBalls extends PApplet {
     //--------------------------------------
-    final int ID = 1;
+    final int ID = 0;
 
     ArrayList balls;
     TCPClient client;
