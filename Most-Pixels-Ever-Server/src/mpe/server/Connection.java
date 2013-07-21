@@ -75,9 +75,9 @@ public class Connection extends Thread {
 
 			if (parent.waitForAll) {
 				parent.allConnected = (total == parent.numRequiredClients);
-				if (parent.allConnected) parent.triggerFrame();
+				if (parent.allConnected) parent.triggerFrame(false);
 			} else {
-				parent.triggerReset();
+				parent.triggerFrame(true);
 			}
 
 			break;

@@ -29,23 +29,23 @@ public class MPEServer {
 	// Server will add a message to the frameEvent
 	public boolean newMessage = false;
 	public String message = "";
-	
+
 
 	public boolean dataload = false;
-	
+
 	public int numRequiredClients = 1;
 	public int frameRate = 30;
-    
-    public boolean verbose = false;
-    
-    public boolean waitForAll = false;
+
+	public boolean verbose = false;
+
+	public boolean waitForAll = false;
 	private boolean running = false;
 	public boolean allConnected = false;  // When true, we are off and running
 
 
 	public void setFramerate(int fr){
 		if (fr > -1) frameRate = fr;
-        
+
 	}
 	public void setRequiredClients(int sc){
 		if (sc > -1) {
@@ -53,7 +53,7 @@ public class MPEServer {
 			waitForAll = true;
 		} 
 	}
-	
+
 	public MPEServer(int _screens, int _framerate, int _port, boolean v) {
 		setRequiredClients(_screens);
 		setFramerate(_framerate);
@@ -61,7 +61,7 @@ public class MPEServer {
 		verbose = v;
 		out("framerate = " + frameRate + ",  screens = " + numRequiredClients + ", verbose = " + verbose);
 	}
-	
+
 	public int totalConnections() {
 		return synchconnections.size();
 	}
@@ -87,33 +87,11 @@ public class MPEServer {
 			System.out.println("Zoinks!" + e);
 		}
 	}
-	
-	public synchronized void triggerReset() {
-		int desired = (int) ((1.0f / (float) frameRate) * 1000.0f);
-		long now = System.currentTimeMillis();
-		int diff = (int) (now - before);
-		if (diff < desired) {
-			// Where do we max out a framerate?  Here?
-			try {
-				long sleepTime = desired-diff;
-				if (sleepTime >= 0){
-					Thread.sleep(sleepTime);
-				}
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-		}
-		// Clear any data and reset frameCount
-		resetFrameCount();
-		String send = "R|"+frameCount;
-		sendAll(send);
-		before = System.currentTimeMillis();
-		
-	}
+
+
 
 	// Synchronize?!!!
-	public synchronized void triggerFrame() {
+	public synchronized void triggerFrame(boolean reset) {
 		int desired = (int) ((1.0f / (float) frameRate) * 1000.0f);
 		long now = System.currentTimeMillis();
 		int diff = (int) (now - before);
@@ -128,22 +106,21 @@ public class MPEServer {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
+		} 
+
+		if (reset) {
+			// set frameCount to 0 and clear any data
+			resetFrameCount();
+			String send = "R|"+frameCount;
 		} else {
-			try {
-				long sleepTime = 2;
-				Thread.sleep(sleepTime);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+			String send = "G|"+frameCount;
+			// Adding a data message to the frameEvent
+			// substring removes the ":" at the end.
+			if (newMessage) send += "|" + message.substring(0, message.length()-1);
+			newMessage = false;
+			message = "";
+			sendAll(send);
 		}
-		String send = "G|"+frameCount;
-		// Adding a data message to the frameEvent
-		// substring removes the ":" at the end.
-		if (newMessage) send += "|" + message.substring(0, message.length()-1);
-		newMessage = false;
-		message = "";
-		sendAll(send);
 		before = System.currentTimeMillis();
 	}
 
@@ -188,7 +165,7 @@ public class MPEServer {
 
 		boolean help = false;
 		boolean verbose = false;
-				
+
 		// see if info is given on the command line
 		for (int i = 0; i < args.length; i++) {
 			if (args[i].contains("-screens")) {
@@ -260,7 +237,7 @@ public class MPEServer {
 		c.ready = true;
 		if (isReady()) {
 			frameCount++;
-			triggerFrame();
+			triggerFrame(false);
 		}
 	}
 
