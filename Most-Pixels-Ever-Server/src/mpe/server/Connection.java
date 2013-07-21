@@ -14,29 +14,23 @@ import java.io.OutputStream;
 import java.net.Socket;
 
 public class Connection extends Thread {
-	Socket socket;
 
+	Socket socket;
 	boolean ready = false;
 
 	InputStream in;
 	OutputStream os;
-	//DataInputStream dis;
 	BufferedReader brin;
 	DataOutputStream dos;
 
-	//CyclicBarrier barrier;
-
 	int clientID = -1;
 	String uniqueName;
-
 	String msg = "";
-
 	boolean running = true;
 	MPEServer parent;
 
 
 	Connection(Socket socket_, MPEServer p) {
-		//barrier = new CyclicBarrier(2);
 		socket = socket_;
 		parent = p;
 		uniqueName = "Conn" + socket.getRemoteSocketAddress();
@@ -62,7 +56,9 @@ public class Connection extends Thread {
 		switch(startsWith){
 		// For Starting Up
 		case 'S':
-			if (parent.verbose) System.out.println(msg);
+			if (parent.verbose) {
+				System.out.println("Raw message: " + msg);
+			}
 			clientID = Integer.parseInt(tokens[1]);
 
 			parent.addConnection(this);
@@ -81,17 +77,20 @@ public class Connection extends Thread {
 			//is it receiving a "done"?
 		case 'D':   
 			if (!parent.waitForAll || parent.allConnected) {
-				// Networking protocol could be optimized to deal with bytes instead of chars in a String?
 				clientID = Integer.parseInt(tokens[1]);
 				int fc = Integer.parseInt(tokens[2]);
-				if (parent.verbose) System.out.println("Receive: " + clientID + ": " + fc + "  match: " + parent.frameCount);
+				if (parent.verbose) {
+					System.out.println("Client: " + clientID + " says done with: " + fc + "  server count: " + parent.frameCount);
+				}
 				if (fc == parent.frameCount) {
 					parent.setReady(clientID);
 				}
 			}
 			break;
 		case 'T':   
-			if (parent.verbose) print ("adding message to next frameEvent: " + msg);
+			if (parent.verbose) {
+				System.out.println("Adding message to next frameEvent: " + msg);
+			}
 			parent.newMessage = true;
 			parent.message += clientID + "," + tokens[1] + "|";
 			break;
@@ -119,11 +118,6 @@ public class Connection extends Thread {
 
 	}
 
-	private void print(String string) {
-		System.out.println("Connection: "+string);
-
-	}
-
 	public void killMe(){
 		System.out.println("Removing Connection " + clientID);
 		parent.killConnection(this);
@@ -134,7 +128,6 @@ public class Connection extends Thread {
 
 	// Trying out no synchronize
 	public void send(String msg) {
-		if (parent.verbose) System.out.println("Sending: " + this + ": " + msg);
 		try {
 			msg+="\n";
 			dos.write(msg.getBytes());
@@ -143,33 +136,5 @@ public class Connection extends Thread {
 			e.printStackTrace();
 		}
 	}
-
-	// Trying out no synchronize
-	public void sendBytes(byte[] b) {
-		if (parent.verbose) System.out.println("Sending " + b.length + " bytes");
-		try {
-			dos.writeInt(b.length);
-			dos.write(b,0,b.length);
-			dos.flush();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-	}
-
-	// Trying out no synchronize
-	public void sendInts(int[] ints) {
-		if (parent.verbose) System.out.println("Sending " + ints.length + " ints");
-		try {
-			dos.writeInt(ints.length);
-			for (int i = 0; i < ints.length; i++) {
-				dos.writeInt(ints[i]);
-			}
-			dos.flush();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-	}
-
-
 }
 

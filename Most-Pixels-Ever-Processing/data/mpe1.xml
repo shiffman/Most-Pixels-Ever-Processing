@@ -10,7 +10,7 @@
 		<height>480</height>
 	</local_dimensions>
 	<local_location>
-		<x>0</x>
+		<x>320</x>
 		<y>0</y>
 	</local_location>
 	<master_dimensions>
@@ -18,6 +18,6 @@
 		<height>480</height>
 	</master_dimensions>
 	<offset_window>true</offset_window>
-	<verbose>false</verbose>
+	<verbose>true</verbose>
 	<simulation fps="30">true</simulation>
 </settings>

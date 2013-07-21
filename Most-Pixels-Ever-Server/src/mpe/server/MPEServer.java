@@ -122,6 +122,10 @@ public class MPEServer {
 			message = "";
 			sendAll(send);
 		}
+		
+		// After frame is triggered all connections should be set to "unready"
+		
+		
 		before = System.currentTimeMillis();
 	}
 
@@ -131,7 +135,10 @@ public class MPEServer {
 	}
 
 	public synchronized void sendAll(String msg){
-		//System.out.println("Sending " + msg + " to clients: " + connections.size());
+		if (verbose) {
+			System.out.println("Sending to " + synchconnections.size() + " clients: " + msg);
+		}
+
 		for (int i = 0; i < synchconnections.size(); i++){
 			Connection conn = synchconnections.get(i);
 			conn.send(msg);

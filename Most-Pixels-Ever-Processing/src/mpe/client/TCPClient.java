@@ -14,7 +14,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
-import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.net.Socket;
 
@@ -539,14 +538,6 @@ public class TCPClient extends Thread {
 				} else {
 					read(msg);
 				}
-
-				// FIXME Do we need this sleep or are we just slowing ourselves 
-				// down for no reason??
-				try {
-					Thread.sleep(5);
-				} catch (InterruptedException e) {
-					e.printStackTrace();
-				}
 			}
 			is.close();
 
@@ -560,8 +551,8 @@ public class TCPClient extends Thread {
 	 * 
 	 * @param _serverInput the server message
 	 */
-	// TODO UNSYNCHRONIZE!
-	private void read(String msg) {
+	// Synchronized b/c the reset method could come anytime strange?
+	private synchronized void read(String msg) {
 		if (VERBOSE) out("Receiving: " + msg);
 
 		// a "G" startbyte will trigger a frameEvent.
