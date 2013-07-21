@@ -68,6 +68,8 @@ public class TCPClient extends Thread {
 	int   frameCount = 0;
 	float fps = 0.f;
 	long  lastMs = 0;
+	
+	boolean reset = false;
 
 	// Are we broadcasting?
 	// boolean broadcastingData = false;
@@ -140,11 +142,15 @@ public class TCPClient extends Thread {
 		}
 		if (running && rendering) {
 			placeScreen();
+			
+			if (reset) {
+				resetMethod.invoke(p5parent, new Object[] { this });
+			}
+			
 			if (frameEventMethod != null) {
 				try {
 					// call the method with this object as the argument!
 					frameEventMethod.invoke(p5parent, new Object[] { this });
-
 				} catch (Exception e) {
 					err("Could not invoke the \"frameEvent()\" method for some reason.");
 					e.printStackTrace();
@@ -547,11 +553,12 @@ public class TCPClient extends Thread {
 
 		// a "G" startbyte will trigger a frameEvent.
 		char c = msg.charAt(0);
-		if (c == 'G') {
-
+		if (c == 'G' || c == 'R') {
+			
+			if (c == 'R') reset = true;
+			
 			String[] tokens = msg.split("\\|");
 			int fc = Integer.parseInt(tokens[1]);
-
 			if (tokens.length > 2) {
 				// there is a message here with the frameEvent 
 				String[] dataInfo = new String[tokens.length-2];
@@ -568,7 +575,10 @@ public class TCPClient extends Thread {
 				messageAvailable = false;
 			}
 
-
+			if (reset) {
+				frameCount = 0;
+			}
+			
 			if (fc == frameCount) {
 				rendering = true;
 				// calculate new framerate
