@@ -119,24 +119,31 @@ public class TCPClient extends Thread {
 		loadSettings(_fileString);
 		connect(hostName, serverPort, id);
 
-		// look for a method called "frameEvent" in the parent PApplet, with one
-		// argument of type Client
-		try {
-			frameEventMethod = p5parent.getClass().getMethod("frameEvent",
-					new Class[] { TCPClient.class });
-		} catch (Exception e) {
-			System.out.println("You are missing the frameEvent() method. " + e);
-		}
-		
-		try {
-			resetEventMethod = p5parent.getClass().getMethod("resetEvent",
-					new Class[] { TCPClient.class });
-		} catch (Exception e) {
-			System.out.println("You are missing the resetEvent() method. " + e);
-		}
 
-		if (autoMode) {
-			p5parent.registerMethod("draw", this);
+		if (!asynchronous) {
+
+			// look for a method called "frameEvent" in the parent PApplet, with one
+			// argument of type Client
+			try {
+				frameEventMethod = p5parent.getClass().getMethod("frameEvent",
+						new Class[] { TCPClient.class });
+			} catch (Exception e) {
+				System.out.println("You are missing the frameEvent() method. " + e);
+			}
+
+			try {
+				resetEventMethod = p5parent.getClass().getMethod("resetEvent",
+						new Class[] { TCPClient.class });
+			} catch (Exception e) {
+				System.out.println("You are missing the resetEvent() method. " + e);
+			}
+
+			if (autoMode) {
+				p5parent.registerMethod("draw", this);
+			}
+		} else {
+			// TODO implement dataEvent() method for asynch client?
+
 		}
 
 	}
@@ -151,26 +158,28 @@ public class TCPClient extends Thread {
 		if (running && rendering) {
 			placeScreen();
 
-			if (reset) {
-				try {
-					resetEventMethod.invoke(p5parent, new Object[] { this });
-				} catch (Exception e) {
-					err("Could not invoke the \"resetEvent()\" method for some reason.");
-					e.printStackTrace();
-					resetEventMethod = null;
-				}
-			} else if (frameEventMethod != null) {
-				try {
-					// call the method with this object as the argument!
-					frameEventMethod.invoke(p5parent, new Object[] { this });
-				} catch (Exception e) {
-					err("Could not invoke the \"frameEvent()\" method for some reason.");
-					e.printStackTrace();
-					frameEventMethod = null;
-				}
-			}
 			if (!asynchronous) {
+				if (reset) {
+					try {
+						resetEventMethod.invoke(p5parent, new Object[] { this });
+					} catch (Exception e) {
+						err("Could not invoke the \"resetEvent()\" method for some reason.");
+						e.printStackTrace();
+						resetEventMethod = null;
+					}
+				} else if (frameEventMethod != null) {
+					try {
+						// call the method with this object as the argument!
+						frameEventMethod.invoke(p5parent, new Object[] { this });
+					} catch (Exception e) {
+						err("Could not invoke the \"frameEvent()\" method for some reason.");
+						e.printStackTrace();
+						frameEventMethod = null;
+					}
+				}
 				done();
+			} else {
+				// TODO: deal with asynch connection receiving data
 			}
 		}
 	}
@@ -202,7 +211,7 @@ public class TCPClient extends Thread {
 
 		String v = xml.getChild("verbose").getContent();
 		VERBOSE = Boolean.parseBoolean(v);
-		
+
 		// Implement name
 		if (!asynchronous) {
 			int w = xml.getChild("local_dimensions/width").getIntContent();
@@ -522,11 +531,15 @@ public class TCPClient extends Thread {
 	 * This method should only be called internally by Thread.start().
 	 */
 	public void run() {
-		
+
 		if (VERBOSE) out("Running!");
 
 		// let the server know that this client is ready to start.
-		send("S|" + id);
+		if (asynchronous) {
+			send("A|" + id);
+		} else {
+			send("S|" + id);
+		}
 
 		try {
 			while (running) {

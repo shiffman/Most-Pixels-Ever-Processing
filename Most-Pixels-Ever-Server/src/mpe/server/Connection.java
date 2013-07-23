@@ -55,15 +55,25 @@ public class Connection extends Thread {
 
 		switch(startsWith){
 		// For Starting Up
+		
+		case 'A':
+			if (parent.verbose) {
+				System.out.println("Raw receive: " + msg);
+			}
+			clientID = Integer.parseInt(tokens[1]);
+			// TODO: Track synch connections in list
+			System.out.println("Connecting asynch client " + clientID);
+
+			break;
 		case 'S':
 			if (parent.verbose) {
-				System.out.println("Raw message: " + msg);
+				System.out.println("Raw receive: " + msg);
 			}
 			clientID = Integer.parseInt(tokens[1]);
 
 			parent.addConnection(this);
 
-			System.out.println("Connecting Client " + clientID);
+			System.out.println("Connecting synch client " + clientID);
 			int total = parent.totalConnections();
 			
 			// We should only wait the *first* time if we are told to wait for everyone 
@@ -93,7 +103,7 @@ public class Connection extends Thread {
 			break;
 		case 'T':   
 			if (parent.verbose) {
-				System.out.println("Adding message to next frameEvent: " + msg);
+				System.out.println("Adding message to next frameEvent: " + clientID + "," + tokens[1]);
 			}
 			parent.newMessage = true;
 			parent.message += clientID + "," + tokens[1] + "|";
