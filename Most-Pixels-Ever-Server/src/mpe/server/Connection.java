@@ -65,10 +65,14 @@ public class Connection extends Thread {
 
 			System.out.println("Connecting Client " + clientID);
 			int total = parent.totalConnections();
-
-			if (parent.waitForAll) {
+			
+			// We should only wait the *first* time if we are told to wait for everyone 
+			// otherwise we can just reset if someone has disconnected and reconnected
+			if (parent.waitForAll && !parent.allConnected) {
 				parent.allConnected = (total == parent.numRequiredClients);
-				if (parent.allConnected) parent.triggerFrame(false);
+				if (parent.allConnected) {
+					parent.triggerFrame(false);
+				}
 			} else {
 				parent.triggerFrame(true);
 			}
