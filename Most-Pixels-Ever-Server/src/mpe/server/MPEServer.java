@@ -124,7 +124,9 @@ public class MPEServer {
 		}
 		
 		// After frame is triggered all connections should be set to "unready"
-		
+		for (Connection c : synchconnections) {
+			c.ready = false;
+		}
 		
 		before = System.currentTimeMillis();
 	}
@@ -145,8 +147,12 @@ public class MPEServer {
 		}
 	}
 
-	public void killConnection(Connection conn){
-		synchconnections.remove(conn);
+	public void killConnection(int i){
+		Connection c = connectionlookup.get(i);
+		connectionlookup.remove(i);
+		synchconnections.remove(c);
+		
+		// TODO: asynch connections remove also?
 	}
 
 	boolean allDisconected(){
@@ -232,12 +238,6 @@ public class MPEServer {
 		System.out.println("MPEServer: "+ s);
 	}
 
-	public void drop(int i) {
-		Connection c = connectionlookup.get(i);
-		connectionlookup.remove(i);
-		synchconnections.remove(c);
-		// TODO: asynch connections remove also?
-	}
 
 	// synchronize??
 	public synchronized void setReady(int clientID) { 
@@ -253,7 +253,9 @@ public class MPEServer {
 	public synchronized boolean isReady() {
 		boolean allReady = true;
 		for (Connection c : synchconnections) {
-			if (!c.ready) allReady = false;
+			if (!c.ready) {
+				allReady = false;
+			}
 		}
 		return allReady;
 	}

@@ -12,7 +12,7 @@ import processing.core.*;
 
 public class AutoBalls extends PApplet {
     //--------------------------------------
-    final int ID = 1;
+    final int ID = 0;
 
     ArrayList<Ball> balls;
     TCPClient client;
@@ -93,7 +93,7 @@ public class AutoBalls extends PApplet {
         float y = 0;     // center y position
         float xDir = 1;  // x velocity
         float yDir = 1;  // y velocity
-        float d = 10;    // diameter
+        float d = 48;    // diameter
         
         //--------------------------------------
         public Ball(float _x, float _y) {

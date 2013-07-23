@@ -120,10 +120,19 @@ public class Connection extends Thread {
 
 	public void killMe(){
 		System.out.println("Removing Connection " + clientID);
-		parent.killConnection(this);
-		parent.drop(clientID);
+		parent.killConnection(clientID);
+		
+		if (parent.allDisconected()) {
+			parent.resetFrameCount();
+		} else {
+			// Need to check if everyone is all set now that someone has disconnected
+			// TODO: encapsulate below into method, same as in setReady();
+			if (parent.isReady()) {
+				parent.frameCount++;
+				parent.triggerFrame(false);
+			}
+		}
 		running = false;
-		if (parent.allDisconected()) parent.resetFrameCount();
 	}
 
 	// Trying out no synchronize
