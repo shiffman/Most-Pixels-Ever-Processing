@@ -27,7 +27,11 @@ public class Connection extends Thread {
 	String uniqueName;
 	String msg = "";
 	boolean running = true;
+
 	MPEServer parent;
+
+	boolean isAsynch = false;
+	boolean asynchReceive = false;
 
 
 	Connection(Socket socket_, MPEServer p) {
@@ -55,15 +59,31 @@ public class Connection extends Thread {
 
 		switch(startsWith){
 		// For Starting Up
-		
+
 		case 'A':
 			if (parent.verbose) {
 				System.out.println("Raw receive: " + msg);
 			}
 			clientID = Integer.parseInt(tokens[1]);
-			// TODO: Track synch connections in list
-			System.out.println("Connecting asynch client " + clientID);
 
+			System.out.println("Connecting asynch client " + clientID);
+			
+			// We are asynchronous
+			isAsynch = true;
+
+			// Let's see if we want to get messages
+			if (tokens.length > 2) {
+				try {
+					asynchReceive = Boolean.parseBoolean(tokens[2]);
+				} catch (Exception e) {
+					System.out.println("Malformed boolean for synch receive");
+				}
+			}
+			
+			// I don't think we need to bother keep a reference to this object
+			// unless it needs to receive messages, ah but let's do it anyway
+			parent.addConnection(this);
+			
 			break;
 		case 'S':
 			if (parent.verbose) {
@@ -75,7 +95,7 @@ public class Connection extends Thread {
 
 			System.out.println("Connecting synch client " + clientID);
 			int total = parent.totalConnections();
-			
+
 			// We should only wait the *first* time if we are told to wait for everyone 
 			// otherwise we can just reset if someone has disconnected and reconnected
 			if (parent.waitForAll && !parent.allConnected) {
@@ -135,7 +155,7 @@ public class Connection extends Thread {
 	public void killMe(){
 		System.out.println("Removing Connection " + clientID);
 		parent.killConnection(clientID);
-		
+
 		if (parent.allDisconected()) {
 			parent.resetFrameCount();
 		} else {

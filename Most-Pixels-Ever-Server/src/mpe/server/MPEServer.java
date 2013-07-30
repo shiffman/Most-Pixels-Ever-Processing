@@ -122,12 +122,12 @@ public class MPEServer {
 			message = "";
 			sendAll(send);
 		}
-		
+
 		// After frame is triggered all connections should be set to "unready"
 		for (Connection c : synchconnections) {
 			c.ready = false;
 		}
-		
+
 		before = System.currentTimeMillis();
 	}
 
@@ -137,13 +137,25 @@ public class MPEServer {
 	}
 
 	public synchronized void sendAll(String msg){
+		int howmany = 0;
+		for (Connection conn : asynchconnections) {
+			if (conn.asynchReceive) {
+				howmany++;
+			}
+		}
+		
 		if (verbose) {
-			System.out.println("Sending to " + synchconnections.size() + " clients: " + msg);
+			System.out.println("Sending to " + synchconnections.size() + " sync clients, " + howmany + " async clients: " + msg);
 		}
 
-		for (int i = 0; i < synchconnections.size(); i++){
-			Connection conn = synchconnections.get(i);
+		for (Connection conn : synchconnections) {
 			conn.send(msg);
+		}
+
+		for (Connection conn : asynchconnections) {
+			if (conn.asynchReceive) {
+				conn.send(msg);
+			}
 		}
 	}
 
@@ -151,7 +163,7 @@ public class MPEServer {
 		Connection c = connectionlookup.get(i);
 		connectionlookup.remove(i);
 		synchconnections.remove(c);
-		
+
 		// TODO: asynch connections remove also?
 	}
 
@@ -262,7 +274,12 @@ public class MPEServer {
 
 	public void addConnection(Connection c) {
 		// TODO Account for asynch connections
-		synchconnections.add(c);
-		connectionlookup.put(c.clientID,c);
+		if (c.isAsynch) {
+			asynchconnections.add(c);
+			connectionlookup.put(c.clientID,c);
+		} else {
+			synchconnections.add(c);
+			connectionlookup.put(c.clientID,c);
+		}
 	}
 }
