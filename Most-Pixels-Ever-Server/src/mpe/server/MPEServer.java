@@ -30,7 +30,6 @@ public class MPEServer {
 	public boolean newMessage = false;
 	public String message = "";
 
-
 	public boolean dataload = false;
 
 	public int numRequiredClients = 1;
@@ -187,7 +186,7 @@ public class MPEServer {
 		int screens = -1;
 		int framerate = 30;
 		int port = 9002;
-
+		
 		boolean help = false;
 		boolean verbose = false;
 
