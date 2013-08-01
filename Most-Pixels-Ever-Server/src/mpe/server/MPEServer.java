@@ -187,7 +187,6 @@ public class MPEServer {
 		int screens = -1;
 		int framerate = 30;
 		int port = 9002;
-		int listenPort = 9003;
 
 		boolean help = false;
 		boolean verbose = false;
