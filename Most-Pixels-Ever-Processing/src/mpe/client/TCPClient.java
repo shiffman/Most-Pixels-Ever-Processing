@@ -29,7 +29,7 @@ public class TCPClient extends Thread {
 
 	boolean asynchronous = false;
 	boolean asynchreceive = false;
-
+	
 	boolean offsetWindow = false;
 
 	// TCP stuff
@@ -44,6 +44,7 @@ public class TCPClient extends Thread {
 	PApplet p5parent;
 	Method frameEventMethod;
 	Method resetEventMethod;
+	Method dataEventMethod;
 
 	/** The id is used for communication with the server, to let it know which 
 	 *  client is speaking and how to order the screens. */
@@ -72,18 +73,9 @@ public class TCPClient extends Thread {
 
 	boolean reset = false;
 
-	// Are we broadcasting?
-	// boolean broadcastingData = false;
-	// Do we need to wait to broadcast b/c we have alreaddy done so this frame?
-	// boolean waitToSend = false;
-	// protected boolean sayDoneAgain = false;  // Do we need to say we're done after a lot of data has been sent
-
-	/** True if all the other clients are connected. */
-	// FIXME Maybe this doesn't need to be public.
-	// public boolean allConnected = false;
-
 	protected boolean messageAvailable;      // Is a message available?
 	protected String[] dataMessage;          // data that has come in
+	protected String rawMessage;			 // This is the full raw frame message
 
 	// 3D variables
 	protected boolean enable3D = false;
@@ -143,7 +135,15 @@ public class TCPClient extends Thread {
 			}
 		} else {
 			// TODO implement dataEvent() method for asynch client?
-
+			if (asynchreceive) {
+				try {
+					dataEventMethod = p5parent.getClass().getMethod("dataEvent",
+							new Class[] { TCPClient.class });
+				} catch (Exception e) {
+					System.out.println("You are missing the dataEvent() method. " + e);
+				}
+			}
+			
 		}
 
 	}
@@ -178,8 +178,6 @@ public class TCPClient extends Thread {
 					}
 				}
 				done();
-			} else {
-				// TODO: deal with asynch connection receiving data
 			}
 		}
 	}
@@ -536,7 +534,7 @@ public class TCPClient extends Thread {
 
 		// let the server know that this client is ready to start.
 		if (asynchronous) {
-			send("A|" + id);
+			send("A|" + id + "|" + asynchreceive);
 		} else {
 			send("S|" + id);
 		}
@@ -567,6 +565,8 @@ public class TCPClient extends Thread {
 	// Synchronized b/c the reset method could come anytime strange?
 	private synchronized void read(String msg) {
 		if (VERBOSE) out("Receiving: " + msg);
+		
+		rawMessage = msg;
 
 		// a "G" startbyte will trigger a frameEvent.
 		char c = msg.charAt(0);
@@ -602,9 +602,21 @@ public class TCPClient extends Thread {
 				float ms = System.currentTimeMillis() - lastMs;
 				fps = 1000.f / ms;
 				lastMs = System.currentTimeMillis();
-			} else {
+			} else if (!asynchronous) {
 				if (VERBOSE) print("Extra message, frameCount: " + frameCount 
 						+ " received from server: " + fc);
+			}
+		}
+		
+		// If we're asynchronous and should receive trigger dataEvent now?
+		if (asynchronous && asynchreceive) {
+			try {
+				// call the method with this object as the argument!
+				dataEventMethod.invoke(p5parent, new Object[] { this });
+			} catch (Exception e) {
+				err("Could not invoke the \"dataEvent()\" method for some reason.");
+				e.printStackTrace();
+				frameEventMethod = null;
 			}
 		}
 	}
@@ -662,6 +674,10 @@ public class TCPClient extends Thread {
 	public String[] getDataMessage() {
 		return dataMessage;
 	}
+	
+	public String getRawMessage() {
+		return rawMessage;
+	}
 
 	/**
 	 * Sends a "Done" command to the server. This must be called at the end of 
@@ -682,6 +698,14 @@ public class TCPClient extends Thread {
 		out("Quitting.");
 		running = false;  // Setting running to false ends the loop in run()
 		interrupt();      // In case the thread is waiting. . .
+	}
+
+	public boolean isAsynchronous() {
+		return asynchronous;
+	}
+	
+	public boolean isReceiver() {
+		return (!asynchronous || asynchreceive);
 	}
 
 }

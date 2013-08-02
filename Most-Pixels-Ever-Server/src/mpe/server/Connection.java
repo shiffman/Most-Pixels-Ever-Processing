@@ -66,7 +66,6 @@ public class Connection extends Thread {
 			}
 			clientID = Integer.parseInt(tokens[1]);
 
-			System.out.println("Connecting asynch client " + clientID);
 			
 			// We are asynchronous
 			isAsynch = true;
@@ -79,6 +78,9 @@ public class Connection extends Thread {
 					System.out.println("Malformed boolean for synch receive");
 				}
 			}
+			
+			System.out.println("Connecting asynch client " + clientID + " receiver: " + asynchReceive);
+
 			
 			// I don't think we need to bother keep a reference to this object
 			// unless it needs to receive messages, ah but let's do it anyway

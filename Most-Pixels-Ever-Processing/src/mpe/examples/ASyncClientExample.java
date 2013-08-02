@@ -21,12 +21,27 @@ public class ASyncClientExample extends PApplet {
         
         // IMPORTANT, YOU MUST START THE CLIENT!
         client.start();
+        
+        //println(client.isAsynchronous());
+        //println(client.isReceiver());
     }
+    
     
     public void draw() {
     	
     }
-
+    
+    // If you turn on receiving messages you can get them this way
+    /*public void dataEvent(TCPClient c) {
+    	println("Raw message: " + c.getRawMessage());
+    	if (c.messageAvailable()) {
+    		String[] msgs = c.getDataMessage();
+    		for (int i = 0; i < msgs.length; i++) {
+    			println("Parsed message: " + msgs[i]);
+    		}
+    	}
+    	
+    }*/
 
 
     //--------------------------------------
