@@ -11,8 +11,6 @@
 			<attribute name="org.eclipse.jdt.launching.CLASSPATH_ATTR_LIBRARY_PATH_ENTRY" value="MPEMessagingExamples/lib/video"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="lib/simpleML.jar"/>
-	<classpathentry kind="lib" path="mpe.jar"/>
 	<classpathentry kind="lib" path="lib/minim/library/jl1.0.jar"/>
 	<classpathentry kind="lib" path="lib/minim/library/jsminim.jar"/>
 	<classpathentry kind="lib" path="lib/minim/library/minim-spi.jar"/>
@@ -21,5 +19,8 @@
 	<classpathentry kind="lib" path="lib/minim/library/tritonus_aos.jar"/>
 	<classpathentry kind="lib" path="lib/minim/library/tritonus_share.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/Most-Pixels-Ever-Processing"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/processing-core"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/processing-video"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

@@ -15,7 +15,7 @@ import processing.core.PApplet;
 
 public class HelloWorld extends PApplet {
 
-	final int ID = 1;
+	final int ID = 0;
 	float x;
 	TCPClient client;
 
@@ -28,7 +28,7 @@ public class HelloWorld extends PApplet {
 	public void setup() {
 		// make a new Client using an INI file
 		// sketchPath() is used so that the INI file is local to the sketch
-		client = new TCPClient(sketchPath("mpefiles/mpe"+ID+".ini"), this);
+		client = new TCPClient("mpe"+ID+".xml", this);
 
 		// the size is determined by the client's local width and height
 		size(client.getLWidth(), client.getLHeight());
@@ -47,7 +47,6 @@ public class HelloWorld extends PApplet {
 	// Keep the motor running... draw() needs to be added in auto mode, even if
 	// it is empty to keep things rolling.
 	public void draw() {
-		frame.setLocation(client.getID()*client.getLWidth(),0);
 	}
 
 	//--------------------------------------
