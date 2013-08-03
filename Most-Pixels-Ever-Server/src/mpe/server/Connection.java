@@ -88,6 +88,13 @@ public class Connection extends Thread {
 
 			break;
 		case 'S':
+			
+			// Making the decision that if the server is paused and there is a new connection
+			// It starts again
+			/*if (parent.paused) {
+				parent.paused = false;
+			}*/
+			
 			if (parent.verbose) {
 				System.out.println("Raw receive: " + msg);
 			}
