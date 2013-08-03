@@ -753,6 +753,12 @@ public class TCPClient extends Thread {
 		send(msg);
 		frameCount++;
 	}
+	
+	public void togglePause() {
+		// Let's send id along with P just in case
+		String msg = "P|" + id;
+		send(msg);
+	}
 
 	/**
 	 * Stops the client thread.  You don't really need to do this ever.

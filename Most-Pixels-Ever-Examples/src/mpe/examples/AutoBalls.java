@@ -84,8 +84,8 @@ public class AutoBalls extends PApplet {
 			balls.add(new Ball(x, y));
 		}*/
 	}
-	
-	
+
+
 
 	//--------------------------------------
 	// Adds a Ball to the stage at the position of the mouse click.
@@ -94,6 +94,12 @@ public class AutoBalls extends PApplet {
 		int x = mouseX + client.getXoffset();
 		int y = mouseY + client.getYoffset();
 		client.broadcast(x + "," + y);
+	}
+
+	public void keyPressed() {
+		if (key == 'p') {
+			client.togglePause();
+		}
 	}
 
 	//--------------------------------------

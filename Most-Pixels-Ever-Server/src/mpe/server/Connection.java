@@ -134,6 +134,14 @@ public class Connection extends Thread {
 
 		case 'P':
 			parent.paused = !parent.paused;
+			if (parent.verbose) {
+				if (parent.paused){ 
+					System.out.println("Client " + clientID + " has asked to pause.");
+				} else {
+					System.out.println("Client " + clientID + " has asked to unpause.");
+
+				}
+			}
 			// If we are unpausing and everyone is ready go ahead onto next frame
 			// This should probably be refactored and combined more nicely with what happens in setReady()
 			if (!parent.paused && parent.isReady()) {
