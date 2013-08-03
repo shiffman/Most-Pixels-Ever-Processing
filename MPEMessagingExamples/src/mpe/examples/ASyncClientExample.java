@@ -17,7 +17,7 @@ public class ASyncClientExample extends PApplet {
     public void setup() {
         size(320,240);
         // make a new Client using an INI file
-        client = new TCPClient("asynch.xml", this);
+        client = new TCPClient(this, "asynch.xml");
         
         // IMPORTANT, YOU MUST START THE CLIENT!
         client.start();

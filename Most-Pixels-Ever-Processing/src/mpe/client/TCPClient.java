@@ -97,11 +97,11 @@ public class TCPClient extends Thread {
 	 *  }
 	 *
 	 */
-	public TCPClient(String _fileString, PApplet _p) {
-		this(_fileString, _p, true);
+	public TCPClient(PApplet _p, String _fileString) {
+		this(_p, _fileString, true);
 	}
 
-	public TCPClient(String _fileString, PApplet _p, boolean _autoMode) {
+	public TCPClient(PApplet _p, String _fileString, boolean _autoMode) {
 		p5parent = _p;
 
 		// Autodetecting if we should use 3D or not

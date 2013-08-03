@@ -40,7 +40,7 @@ public class Headlines extends PApplet {
 	public void setup() {
 		// make a new Client using an INI file
 		// sketchPath() is used so that the INI file is local to the sketch
-		client = new TCPClient(sketchPath("mpefiles/mpe"+ID+".ini"), this);
+		client = new TCPClient(this, sketchPath("mpefiles/mpe"+ID+".ini"));
 
 		// the size is determined by the client's local width and height
 		size(client.getLWidth(), client.getLHeight());

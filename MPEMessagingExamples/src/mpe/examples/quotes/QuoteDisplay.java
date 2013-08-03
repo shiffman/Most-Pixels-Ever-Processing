@@ -30,7 +30,7 @@ public class QuoteDisplay extends PApplet {
 	//--------------------------------------
 	public void setup() {
 		// set up the client
-        client = new TCPClient("mpe"+ID+".xml", this);
+        client = new TCPClient(this, "mpe"+ID+".xml");
 		size(client.getLWidth(), client.getLHeight());
 		randomSeed(3030);
 		

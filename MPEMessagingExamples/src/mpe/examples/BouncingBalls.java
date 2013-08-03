@@ -26,7 +26,7 @@ public class BouncingBalls extends PApplet {
     public void setup() {
         // Make a new Client with an INI file.  
         // sketchPath() is used so that the INI file is local to the sketch
-        client = new TCPClient(sketchPath("mpeSc"+ID+".ini"), this, false);
+        client = new TCPClient(this, sketchPath("mpeSc"+ID+".ini"), false);
         
         // The size is determined by the client's local width and height
         size(client.getLWidth(), client.getLHeight());
