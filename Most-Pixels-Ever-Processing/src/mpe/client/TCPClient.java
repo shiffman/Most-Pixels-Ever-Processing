@@ -566,14 +566,14 @@ public class TCPClient extends Thread {
 				connected = false;
 				System.out.println("Cannot connect to server, retrying in " + waittime + " second");
 			}
-			
+
 			try {
 				Thread.sleep(waittime*1000);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
 		}
-		
+
 		if (VERBOSE) out("Connected to server!");
 
 		// let the server know that this client is ready to start.
@@ -687,10 +687,14 @@ public class TCPClient extends Thread {
 	 * 
 	 * @param _msg the message to broadcast
 	 */
-	public void broadcast(String _msg) {
+	public void broadcast(String msg) {
+		if (msg.contains("|")) {
+			msg.replaceAll("|", "_");
+			System.out.println("MPE messages cannot contain a '|' character. '|' has been replaced with '_' in your message.");
+		}
 		// prepend the message with a "T"
-		_msg = "T|"+ _msg;
-		send(_msg);
+		msg = "T|"+ msg;
+		send(msg);
 	}
 
 
