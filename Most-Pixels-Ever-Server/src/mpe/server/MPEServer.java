@@ -40,6 +40,8 @@ public class MPEServer {
 	public boolean waitForAll = false;
 	private boolean running = false;
 	public boolean allConnected = false;  // When true, we are off and running
+	
+	public boolean paused;
 
 
 	public void setFramerate(int fr){
@@ -253,7 +255,7 @@ public class MPEServer {
 	public synchronized void setReady(int clientID) { 
 		Connection c = connectionlookup.get(clientID);
 		c.ready = true;
-		if (isReady()) {
+		if (!paused && isReady()) {
 			frameCount++;
 			triggerFrame(false);
 		}

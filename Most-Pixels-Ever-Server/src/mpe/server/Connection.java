@@ -66,7 +66,7 @@ public class Connection extends Thread {
 			}
 			clientID = Integer.parseInt(tokens[1]);
 
-			
+
 			// We are asynchronous
 			isAsynch = true;
 
@@ -78,14 +78,14 @@ public class Connection extends Thread {
 					System.out.println("Malformed boolean for synch receive");
 				}
 			}
-			
+
 			System.out.println("Connecting asynch client " + clientID + " receiver: " + asynchReceive);
 
-			
+
 			// I don't think we need to bother keep a reference to this object
 			// unless it needs to receive messages, ah but let's do it anyway
 			parent.addConnection(this);
-			
+
 			break;
 		case 'S':
 			if (parent.verbose) {
@@ -131,6 +131,16 @@ public class Connection extends Thread {
 			parent.message += clientID + "," + tokens[1] + "|";
 			break;
 
+
+		case 'P':
+			parent.paused = !parent.paused;
+			// If we are unpausing and everyone is ready go ahead onto next frame
+			// This should probably be refactored and combined more nicely with what happens in setReady()
+			if (!parent.paused && parent.isReady()) {
+				parent.frameCount++;
+				parent.triggerFrame(false);
+			}
+			break;
 		}
 	}
 
