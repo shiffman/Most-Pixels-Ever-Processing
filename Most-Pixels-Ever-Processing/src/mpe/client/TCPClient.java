@@ -16,6 +16,7 @@ import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.lang.reflect.Method;
 import java.net.Socket;
+import java.net.UnknownHostException;
 
 import processing.core.PApplet;
 import processing.core.PConstants;
@@ -23,9 +24,13 @@ import processing.data.XML;
 import processing.opengl.PGraphics3D;
 
 public class TCPClient extends Thread {
-	/** If DEBUG is true, the client will print lots of messages about what it is doing.
-	 * Set with debug=1; in your INI file. */
+
+	/** If VERBOSE is true, the client will print lots of messages about what it is doing.
+	 * Set with debug=true; in your XML file. */
 	public static boolean VERBOSE = false;
+
+	boolean connected = false;
+	int waittime = 1; // in seconds
 
 	boolean asynchronous = false;
 	boolean asynchreceive = false;
@@ -111,7 +116,7 @@ public class TCPClient extends Thread {
 		cameraZ = (p5parent.height/2.0f) / PApplet.tan(PConstants.PI * fieldOfView/360.0f);
 
 		loadSettings(_fileString);
-		connect(hostName, serverPort, id);
+		setServer(hostName, serverPort, id);
 
 
 		if (!asynchronous) {
@@ -176,7 +181,7 @@ public class TCPClient extends Thread {
 					}
 				} else if (frameEventMethod != null) {
 					try {
-						
+
 						// First see if dataEvent should be trigged
 						if (dataEventEnabled && messageAvailable()) {
 							try {
@@ -264,7 +269,7 @@ public class TCPClient extends Thread {
 	 * @param _serverPort the server port
 	 * @param _id the client id
 	 */
-	private void connect(String _hostName, int _serverPort, int _id) {
+	private void setServer(String _hostName, int _serverPort, int _id) {
 		// set the server address and port
 		setServer(_hostName);
 		setPort(_serverPort);
@@ -526,20 +531,20 @@ public class TCPClient extends Thread {
 		System.err.println("Client: " + _str);
 	}
 
+	private void connect() throws UnknownHostException, IOException {
+		socket = new Socket(hostName, serverPort);
+		is = socket.getInputStream();
+		brin = new BufferedReader(new InputStreamReader(is));
+		os = socket.getOutputStream();
+		dos = new DataOutputStream(os);
+	}
+
 	/**
 	 * This method must be called when the client PApplet starts up. It will 
 	 * tell the server it is ready.
 	 */
 	public void start() {
-		try {
-			socket = new Socket(hostName, serverPort);
-			is = socket.getInputStream();
-			brin = new BufferedReader(new InputStreamReader(is));
-			os = socket.getOutputStream();
-			dos = new DataOutputStream(os);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+
 		running = true;
 		super.start();
 	}
@@ -549,7 +554,27 @@ public class TCPClient extends Thread {
 	 */
 	public void run() {
 
-		if (VERBOSE) out("Running!");
+		if (VERBOSE) out("Starting!");
+
+		// Try until server responds
+		while (!connected) {
+			try {
+				connect();
+				connected = true;
+			} catch (IOException e) {
+				//e.printStackTrace();
+				connected = false;
+				System.out.println("Cannot connect to server, retrying in " + waittime + " second");
+			}
+			
+			try {
+				Thread.sleep(waittime*1000);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		}
+		
+		if (VERBOSE) out("Connected to server!");
 
 		// let the server know that this client is ready to start.
 		if (asynchronous) {
