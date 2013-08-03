@@ -29,7 +29,7 @@ public class TCPClient extends Thread {
 
 	boolean asynchronous = false;
 	boolean asynchreceive = false;
-	
+
 	boolean offsetWindow = false;
 
 	// TCP stuff
@@ -45,6 +45,8 @@ public class TCPClient extends Thread {
 	Method frameEventMethod;
 	Method resetEventMethod;
 	Method dataEventMethod;
+
+	boolean dataEventEnabled = false;
 
 	/** The id is used for communication with the server, to let it know which 
 	 *  client is speaking and how to order the screens. */
@@ -117,18 +119,24 @@ public class TCPClient extends Thread {
 			// look for a method called "frameEvent" in the parent PApplet, with one
 			// argument of type Client
 			try {
-				frameEventMethod = p5parent.getClass().getMethod("frameEvent",
-						new Class[] { TCPClient.class });
+				frameEventMethod = p5parent.getClass().getMethod("frameEvent",new Class[] { TCPClient.class });
 			} catch (Exception e) {
 				System.out.println("You are missing the frameEvent() method. " + e);
 			}
 
 			try {
-				resetEventMethod = p5parent.getClass().getMethod("resetEvent",
-						new Class[] { TCPClient.class });
+				resetEventMethod = p5parent.getClass().getMethod("resetEvent",new Class[] { TCPClient.class });
 			} catch (Exception e) {
 				System.out.println("You are missing the resetEvent() method. " + e);
 			}
+
+			try {
+				dataEventMethod = p5parent.getClass().getMethod("dataEvent",new Class[] { TCPClient.class });
+				dataEventEnabled = true;
+			} catch (Exception e) {
+				dataEventEnabled = false;
+			}
+
 
 			if (autoMode) {
 				p5parent.registerMethod("draw", this);
@@ -137,13 +145,12 @@ public class TCPClient extends Thread {
 			// TODO implement dataEvent() method for asynch client?
 			if (asynchreceive) {
 				try {
-					dataEventMethod = p5parent.getClass().getMethod("dataEvent",
-							new Class[] { TCPClient.class });
+					dataEventMethod = p5parent.getClass().getMethod("dataEvent", new Class[] { TCPClient.class });
 				} catch (Exception e) {
 					System.out.println("You are missing the dataEvent() method. " + e);
 				}
 			}
-			
+
 		}
 
 	}
@@ -169,7 +176,19 @@ public class TCPClient extends Thread {
 					}
 				} else if (frameEventMethod != null) {
 					try {
-						// call the method with this object as the argument!
+						
+						// First see if dataEvent should be trigged
+						if (dataEventEnabled) {
+							try {
+								// call the method with this object as the argument!
+								dataEventMethod.invoke(p5parent, new Object[] { this });
+							} catch (Exception e) {
+								err("Could not invoke the \"dataEvent()\" method for some reason.");
+								dataEventEnabled = false;
+								e.printStackTrace();
+							}
+						}
+						// Then trigger the frame event
 						frameEventMethod.invoke(p5parent, new Object[] { this });
 					} catch (Exception e) {
 						err("Could not invoke the \"frameEvent()\" method for some reason.");
@@ -565,7 +584,7 @@ public class TCPClient extends Thread {
 	// Synchronized b/c the reset method could come anytime strange?
 	private synchronized void read(String msg) {
 		if (VERBOSE) out("Receiving: " + msg);
-		
+
 		rawMessage = msg;
 
 		// a "G" startbyte will trigger a frameEvent.
@@ -607,7 +626,7 @@ public class TCPClient extends Thread {
 						+ " received from server: " + fc);
 			}
 		}
-		
+
 		// If we're asynchronous and should receive trigger dataEvent now?
 		if (asynchronous && asynchreceive) {
 			try {
@@ -616,7 +635,6 @@ public class TCPClient extends Thread {
 			} catch (Exception e) {
 				err("Could not invoke the \"dataEvent()\" method for some reason.");
 				e.printStackTrace();
-				frameEventMethod = null;
 			}
 		}
 	}
@@ -674,7 +692,7 @@ public class TCPClient extends Thread {
 	public String[] getDataMessage() {
 		return dataMessage;
 	}
-	
+
 	public String getRawMessage() {
 		return rawMessage;
 	}
@@ -703,7 +721,7 @@ public class TCPClient extends Thread {
 	public boolean isAsynchronous() {
 		return asynchronous;
 	}
-	
+
 	public boolean isReceiver() {
 		return (!asynchronous || asynchreceive);
 	}
