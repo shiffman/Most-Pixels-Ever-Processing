@@ -56,6 +56,8 @@ public class TCPClient extends Thread {
 	/** The id is used for communication with the server, to let it know which 
 	 *  client is speaking and how to order the screens. */
 	int id = 0;
+	
+	String name = "noname";
 
 	/** The master width. */
 	protected int mWidth = -1;
@@ -217,6 +219,12 @@ public class TCPClient extends Thread {
 		setPort(xml.getChild("server/port").getIntContent());
 		setID(xml.getChild("id").getIntContent());
 
+		XML name = xml.getChild("name");
+		if (name != null) {
+			setClientName(name.getContent());
+		}
+		
+		
 		XML asynch = xml.getChild("asynchronous");
 		if (asynch != null) {
 			String a = asynch.getContent();
@@ -229,6 +237,8 @@ public class TCPClient extends Thread {
 				}
 			}
 		}
+		
+		
 
 		String v = xml.getChild("verbose").getContent();
 		VERBOSE = Boolean.parseBoolean(v);
@@ -395,6 +405,14 @@ public class TCPClient extends Thread {
 
 	/** @return the client framerate */  
 	public float getFPS() { return fps; }
+	
+	public String getClientName() {
+		return name;
+	}
+	
+	public void setClientName(String n) {
+		name = n;
+	}
 
 	/** @return whether or not the client is rendering */  
 	public boolean isRendering() { return rendering; }
