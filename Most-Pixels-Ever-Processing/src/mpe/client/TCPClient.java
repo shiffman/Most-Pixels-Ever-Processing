@@ -178,7 +178,7 @@ public class TCPClient extends Thread {
 					try {
 						
 						// First see if dataEvent should be trigged
-						if (dataEventEnabled) {
+						if (dataEventEnabled && messageAvailable()) {
 							try {
 								// call the method with this object as the argument!
 								dataEventMethod.invoke(p5parent, new Object[] { this });
