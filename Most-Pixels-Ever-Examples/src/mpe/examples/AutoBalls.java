@@ -84,6 +84,8 @@ public class AutoBalls extends PApplet {
 			balls.add(new Ball(x, y));
 		}*/
 	}
+	
+	
 
 	//--------------------------------------
 	// Adds a Ball to the stage at the position of the mouse click.

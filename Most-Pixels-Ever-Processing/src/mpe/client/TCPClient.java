@@ -147,7 +147,6 @@ public class TCPClient extends Thread {
 				p5parent.registerMethod("draw", this);
 			}
 		} else {
-			// TODO implement dataEvent() method for asynch client?
 			if (asynchreceive) {
 				try {
 					dataEventMethod = p5parent.getClass().getMethod("dataEvent", new Class[] { TCPClient.class });
@@ -189,7 +188,7 @@ public class TCPClient extends Thread {
 								dataEventMethod.invoke(p5parent, new Object[] { this });
 							} catch (Exception e) {
 								err("Could not invoke the \"dataEvent()\" method for some reason.");
-								dataEventEnabled = false;
+								// dataEventEnabled = false; // disable? not right now
 								e.printStackTrace();
 							}
 						}
@@ -669,7 +668,6 @@ public class TCPClient extends Thread {
 	 * 
 	 * @param _msg the message to send
 	 */
-	// TODO UNSYNCHRONIZE!
 	private void send(String _msg) {
 		if (VERBOSE) out("Sending: " + _msg);
 		_msg += "\n";
