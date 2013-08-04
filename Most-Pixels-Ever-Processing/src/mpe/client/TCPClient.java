@@ -14,7 +14,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
-import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.net.Socket;
 import java.net.UnknownHostException;
@@ -100,12 +99,8 @@ public class TCPClient extends Thread {
 	 * The parent PApplet must have a method called "frameEvent(Client c)".
 	 *
 	 * The frameEvent handles syncing up the frame rate on the
-	 * multiple screens.  A typical implementation may look like this:
+	 * multiple screens and should be implemented like draw().
 	 *
-	 *  public void frameEvent(Client c){
-	 *  if (!started) started = true;
-	 *    redraw();
-	 *  }
 	 *
 	 */
 	public TCPClient(PApplet _p, String _fileString) {
@@ -181,10 +176,11 @@ public class TCPClient extends Thread {
 			// Just keep moving
 			try {
 				frameEventMethod.invoke(p5parent, new Object[] { this });
+				frameCount++;
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
-		// Otherwise typical MPE stuff
+			// Otherwise typical MPE stuff
 		} else if (running && rendering) {
 			placeScreen();
 
@@ -272,7 +268,8 @@ public class TCPClient extends Thread {
 			XML simxml = xml.getChild("simulation");
 			if (simxml != null) {
 				simulation = Boolean.parseBoolean(simxml.getContent());
-				simFPS = simxml.getInt("FPS");
+				simFPS = simxml.getInt("fps");
+				if (simFPS < 1) simFPS = 30;
 			}
 
 			setMasterDimensions(mw,mh);
@@ -584,7 +581,13 @@ public class TCPClient extends Thread {
 	 */
 	public void run() {
 
-		if (VERBOSE) out("Starting!");
+		if (VERBOSE) {
+			if (simulation) {
+				out("Running in simulation mode (no server connection, will not receive data)!");
+			} else {
+				out("Starting!");
+			}
+		}
 
 		// Don't bother to connect to server if you are in simulation mode
 		if (!simulation) {
@@ -615,23 +618,27 @@ public class TCPClient extends Thread {
 				send("S|" + id);
 			}
 
-		}
 
-		try {
-			while (running) {
-				// read packet
-				String msg = brin.readLine();
-				if (msg == null) {
-					//running = false;
-					break;
-				} else {
-					read(msg);
+
+			try {
+				while (running) {
+					// read packet
+					String msg = brin.readLine();
+					if (msg == null) {
+						//running = false;
+						break;
+					} else {
+						read(msg);
+					}
 				}
+				is.close();
+			} catch (IOException e) {
+				e.printStackTrace();
 			}
-			is.close();
-
-		} catch (IOException e) {
-			e.printStackTrace();
+		} else {
+			while (running) {
+				//System.out.println("GOGOGO");
+			}
 		}
 	}
 

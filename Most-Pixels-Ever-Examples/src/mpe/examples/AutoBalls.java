@@ -12,7 +12,7 @@ import processing.core.*;
 
 public class AutoBalls extends PApplet {
 	//--------------------------------------
-	final int ID = 1;
+	final int ID = 0;
 
 	ArrayList<Ball> balls;
 	TCPClient client;
@@ -27,10 +27,9 @@ public class AutoBalls extends PApplet {
 		// make a new Client using an INI file
 		// sketchPath() is used so that the INI file is local to the sketch
 		client = new TCPClient(this, "mpe"+ID+".xml");
-
+		
 		// the size is determined by the client's local width and height
 		size(client.getLWidth(), client.getLHeight());
-
 		resetEvent(client);
 
 		// IMPORTANT, YOU MUST START THE CLIENT!
@@ -43,15 +42,16 @@ public class AutoBalls extends PApplet {
 
 		// add a "randomly" placed ball
 		balls = new ArrayList<Ball>();
-		Ball ball = new Ball(random(client.getMWidth()), random(client.getMHeight()));
-		balls.add(ball);
+		balls.add(new Ball(100,50));
+		balls.add(new Ball(500,50));
 
 	}
 
 	//--------------------------------------
 	// Keep the motor running... draw() needs to be added in auto mode, even if
 	// it is empty to keep things rolling.
-	public void draw() {}
+	public void draw() {
+	}
 
 
 	public void dataEvent(TCPClient c) {
