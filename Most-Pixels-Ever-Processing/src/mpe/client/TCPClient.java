@@ -14,6 +14,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
+import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.net.Socket;
 import java.net.UnknownHostException;
@@ -56,7 +57,7 @@ public class TCPClient extends Thread {
 	/** The id is used for communication with the server, to let it know which 
 	 *  client is speaking and how to order the screens. */
 	int id = 0;
-	
+
 	String name = "noname";
 
 	/** The master width. */
@@ -75,6 +76,9 @@ public class TCPClient extends Thread {
 	boolean running = false;
 	boolean rendering = false;
 	boolean autoMode = false;
+
+	boolean simulation = false;
+	float simFPS = 30.0f;
 
 	int   frameCount = 0;
 	float fps = 0.f;
@@ -118,6 +122,7 @@ public class TCPClient extends Thread {
 		cameraZ = (p5parent.height/2.0f) / PApplet.tan(PConstants.PI * fieldOfView/360.0f);
 
 		loadSettings(_fileString);
+
 		setServer(hostName, serverPort, id);
 
 
@@ -168,7 +173,19 @@ public class TCPClient extends Thread {
 		if (offsetWindow) {
 			p5parent.frame.setLocation(id*lWidth,0);
 		}
-		if (running && rendering) {
+
+		// Simulation mode just trigger frameEvent
+		if (simulation) {
+			placeScreen();
+			p5parent.frameRate(simFPS);
+			// Just keep moving
+			try {
+				frameEventMethod.invoke(p5parent, new Object[] { this });
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		// Otherwise typical MPE stuff
+		} else if (running && rendering) {
 			placeScreen();
 
 			if (!asynchronous) {
@@ -182,24 +199,14 @@ public class TCPClient extends Thread {
 					}
 				} else if (frameEventMethod != null) {
 					try {
-
 						// First see if dataEvent should be trigged
 						if (dataEventEnabled && messageAvailable()) {
-							try {
-								// call the method with this object as the argument!
-								dataEventMethod.invoke(p5parent, new Object[] { this });
-							} catch (Exception e) {
-								err("Could not invoke the \"dataEvent()\" method for some reason.");
-								// dataEventEnabled = false; // disable? not right now
-								e.printStackTrace();
-							}
+							dataEventMethod.invoke(p5parent, new Object[] { this });
 						}
 						// Then trigger the frame event
 						frameEventMethod.invoke(p5parent, new Object[] { this });
 					} catch (Exception e) {
-						err("Could not invoke the \"frameEvent()\" method for some reason.");
 						e.printStackTrace();
-						frameEventMethod = null;
 					}
 				}
 				done();
@@ -223,8 +230,8 @@ public class TCPClient extends Thread {
 		if (name != null) {
 			setClientName(name.getContent());
 		}
-		
-		
+
+
 		XML asynch = xml.getChild("asynchronous");
 		if (asynch != null) {
 			String a = asynch.getContent();
@@ -237,8 +244,8 @@ public class TCPClient extends Thread {
 				}
 			}
 		}
-		
-		
+
+
 
 		String v = xml.getChild("verbose").getContent();
 		VERBOSE = Boolean.parseBoolean(v);
@@ -260,6 +267,12 @@ public class TCPClient extends Thread {
 			XML offset = xml.getChild("offset_window");
 			if (offset != null) {
 				offsetWindow = Boolean.parseBoolean(offset.getContent());
+			}
+
+			XML simxml = xml.getChild("simulation");
+			if (simxml != null) {
+				simulation = Boolean.parseBoolean(simxml.getContent());
+				simFPS = simxml.getInt("FPS");
 			}
 
 			setMasterDimensions(mw,mh);
@@ -405,11 +418,11 @@ public class TCPClient extends Thread {
 
 	/** @return the client framerate */  
 	public float getFPS() { return fps; }
-	
+
 	public String getClientName() {
 		return name;
 	}
-	
+
 	public void setClientName(String n) {
 		name = n;
 	}
@@ -573,37 +586,41 @@ public class TCPClient extends Thread {
 
 		if (VERBOSE) out("Starting!");
 
-		// Try until server responds
-		while (!connected) {
-			try {
-				connect();
-				connected = true;
-			} catch (IOException e) {
-				//e.printStackTrace();
-				connected = false;
-				System.out.println("Cannot connect to server, retrying in " + waittime + " second");
+		// Don't bother to connect to server if you are in simulation mode
+		if (!simulation) {
+			// Try until server responds
+			while (!connected) {
+				try {
+					connect();
+					connected = true;
+				} catch (IOException e) {
+					//e.printStackTrace();
+					connected = false;
+					System.out.println("Cannot connect to server, retrying in " + waittime + " second");
+				}
+
+				try {
+					Thread.sleep(waittime*1000);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
 			}
 
-			try {
-				Thread.sleep(waittime*1000);
-			} catch (InterruptedException e) {
-				e.printStackTrace();
+			if (VERBOSE) out("Connected to server!");
+
+			// let the server know that this client is ready to start.
+			if (asynchronous) {
+				send("A|" + id + "|" + asynchreceive);
+			} else {
+				send("S|" + id);
 			}
-		}
 
-		if (VERBOSE) out("Connected to server!");
-
-		// let the server know that this client is ready to start.
-		if (asynchronous) {
-			send("A|" + id + "|" + asynchreceive);
-		} else {
-			send("S|" + id);
 		}
 
 		try {
 			while (running) {
 				// read packet
-				String msg = brin.readLine();//dis.readUTF();
+				String msg = brin.readLine();
 				if (msg == null) {
 					//running = false;
 					break;
@@ -664,8 +681,7 @@ public class TCPClient extends Thread {
 				fps = 1000.f / ms;
 				lastMs = System.currentTimeMillis();
 			} else if (!asynchronous) {
-				if (VERBOSE) print("Extra message, frameCount: " + frameCount 
-						+ " received from server: " + fc);
+				if (VERBOSE) print("Extra message, frameCount: " + frameCount + " received from server: " + fc);
 			}
 		}
 
@@ -687,13 +703,17 @@ public class TCPClient extends Thread {
 	 * @param _msg the message to send
 	 */
 	private void send(String _msg) {
-		if (VERBOSE) out("Sending: " + _msg);
-		_msg += "\n";
-		try {
-			dos.write(_msg.getBytes());
-			dos.flush();
-		} catch (IOException e) {
-			e.printStackTrace();
+
+		// Don't actually send if you are in simulation mode!
+		if (!simulation) {
+			if (VERBOSE) out("Sending: " + _msg);
+			_msg += "\n";
+			try {
+				dos.write(_msg.getBytes());
+				dos.flush();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
 		}
 	}
 
@@ -753,7 +773,7 @@ public class TCPClient extends Thread {
 		send(msg);
 		frameCount++;
 	}
-	
+
 	public void togglePause() {
 		// Let's send id along with P just in case
 		String msg = "P|" + id;
