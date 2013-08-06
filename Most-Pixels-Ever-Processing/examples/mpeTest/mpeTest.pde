@@ -4,27 +4,33 @@ ArrayList<Ball> balls;
 TCPClient client;
 
 void setup() {
-  // make a new Client using an INI file
-  // sketchPath() is used so that the INI file is local to the sketch
-  client = new TCPClient("mpe.xml", this);
+  // make a new Client using an XML file
+  client = new TCPClient(this, "mpe.xml");
 
   // the size is determined by the client's local width and height
   size(client.getLWidth(), client.getLHeight());
 
-  resetEvent(client);
+  // the random seed must be identical for all clients
+  randomSeed(1);
+  balls = new ArrayList<Ball>();
+  for (int i = 0; i < 5; i++) {
+    Ball ball = new Ball(random(client.getMWidth()), random(client.getMHeight()));
+    balls.add(ball);
+  }
 
-  // IMPORTANT, YOU MUST START THE CLIENT!
+  // Starting the client
   client.start();
 }
 
-public void resetEvent(TCPClient c) {
+// Reset it called when the sketch needs to start over
+void resetEvent(TCPClient c) {
   // the random seed must be identical for all clients
   randomSeed(1);
-
-  // add a "randomly" placed ball
   balls = new ArrayList<Ball>();
-  Ball ball = new Ball(random(client.getMWidth()), random(client.getMHeight()));
-  balls.add(ball);
+  for (int i = 0; i < 5; i++) {
+    Ball ball = new Ball(random(client.getMWidth()), random(client.getMHeight()));
+    balls.add(ball);
+  }
 }
 
 //--------------------------------------
