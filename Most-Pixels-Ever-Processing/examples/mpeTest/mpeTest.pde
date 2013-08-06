@@ -64,7 +64,7 @@ void frameEvent(TCPClient c) {
 
 //--------------------------------------
 // Adds a Ball to the stage at the position of the mouse click.
-public void mousePressed() {
+void mousePressed() {
   // never include a ":" when broadcasting your message
   int x = mouseX + client.getXoffset();
   int y = mouseY + client.getYoffset();
