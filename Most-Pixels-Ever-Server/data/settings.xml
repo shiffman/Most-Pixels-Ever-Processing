@@ -1,7 +1,6 @@
 <settings>
 	<port>9002</port>
-	<numclients>2</numclients>
+	<screens>2</screens>
 	<framerate>25</framerate>
-	<waitForAll>true</waitForAll>
 	<verbose>false</verbose>
 </settings>
