@@ -25,14 +25,15 @@ public class MPEServer {
 	private HashMap<Integer,Connection> connectionlookup = new HashMap<Integer,Connection>();
 	private ArrayList<Connection> synchconnections = new ArrayList<Connection>();
 	private ArrayList<Connection> asynchconnections = new ArrayList<Connection>();
+  private HashMap<Integer,ArrayList<String>> messages = new HashMap<Integer,ArrayList<String>>();
 
 	private int port;
 	int frameCount = 0;
 	private long before;
 
 	// Server will add a message to the frameEvent
-	public boolean newMessage = false;
-	public String message = "";
+	// public boolean newMessage = false;
+	// public String message = "";
 
 	public boolean dataload = false;
 
@@ -94,6 +95,36 @@ public class MPEServer {
 			System.out.println("Zoinks!" + e);
 		}
 	}
+  
+  public synchronized void addMessage(String message, Integer fromClientId, ArrayList<Integer> toClientIDs)
+  {    
+    String formattedMessage = fromClientId + "," + message;
+    for (Integer cID : toClientIDs)
+    {
+      ArrayList<String> clientMessages = messages.get(cID);
+      if (clientMessages == null)
+      {
+        clientMessages = new ArrayList<String>();
+        messages.put(cID, clientMessages);
+      }
+      clientMessages.add(formattedMessage);
+    }
+  }
+  
+  public ArrayList<Integer> receivingClientIDs()
+  {
+    ArrayList<Integer> clientIDs = new ArrayList<Integer>();
+    // Add all client IDs to the message
+		for (Connection conn : synchconnections) {
+      clientIDs.add(conn.clientID);
+		}
+		for (Connection conn : asynchconnections) {
+			if (conn.asynchReceive) {
+        clientIDs.add(conn.clientID);
+			}
+		}            
+    return clientIDs;
+  }
 
 	// Synchronize?!!!
 	public synchronized void triggerFrame(boolean reset) {
@@ -122,10 +153,37 @@ public class MPEServer {
 			String send = "G|"+frameCount;
 			// Adding a data message to the frameEvent
 			// substring removes the ":" at the end.
-			if (newMessage) send += "|" + message.substring(0, message.length()-1);
+      if (messages.size() > 0)
+      {
+        ArrayList<Integer> rcvClientIDs = receivingClientIDs();
+        for (Integer clientID : rcvClientIDs) {          
+          String clientSend = send;
+          ArrayList<String> messageBodies = messages.get(clientID);
+          if (messageBodies != null) {
+            for (String message : messageBodies) {
+              clientSend += "|" + message;
+            }              
+          }
+          Connection c = connectionlookup.get(clientID);
+          // Make sure the client should receive messages
+          if (c != null){
+            c.send(clientSend);
+          }
+        }
+        messages.clear();
+      }
+      else
+      {
+        sendAll(send);
+      }
+      /*
+			if (newMessage && message.length() > 0) {
+        send += "|" + message.substring(0, message.length()-1);
+      }
 			newMessage = false;
 			message = "";
 			sendAll(send);
+      */
 		}
 
 		// After frame is triggered all connections should be set to "unready"
@@ -152,16 +210,14 @@ public class MPEServer {
 		if (verbose) {
 			System.out.println("Sending to " + synchconnections.size() + " sync clients, " + howmany + " async clients: " + msg);
 		}
-
-		for (Connection conn : synchconnections) {
-			conn.send(msg);
-		}
-
-		for (Connection conn : asynchconnections) {
-			if (conn.asynchReceive) {
-				conn.send(msg);
-			}
-		}
+    
+    ArrayList<Integer> rcvClientIDs = receivingClientIDs();
+    for (Integer clientID : rcvClientIDs) {
+      Connection c = connectionlookup.get(clientID);
+      if (c != null){        
+        c.send(msg);
+      }
+    }    
 	}
 
 	public void killConnection(int i){
@@ -177,11 +233,15 @@ public class MPEServer {
 			return true;
 		} else return false;
 	}
+  
 	void resetFrameCount(){
 		frameCount = 0;
-		newMessage = false;
-		message = "";
-		print ("resetting frame count.");
+		//newMessage = false;
+		//message = "";
+    messages.clear();
+		if (verbose) {
+			System.out.println("resetting frame count.");
+    }
 	}
   
 	public void killServer() {
@@ -356,13 +416,11 @@ public class MPEServer {
 	}
 
 	public void addConnection(Connection c) {
-		// TODO Account for asynch connections
 		if (c.isAsynch) {
 			asynchconnections.add(c);
-			connectionlookup.put(c.clientID,c);
 		} else {
 			synchconnections.add(c);
-			connectionlookup.put(c.clientID,c);
 		}
+		connectionlookup.put(c.clientID,c);    
 	}
 }

@@ -12,6 +12,8 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.net.Socket;
+import java.util.ArrayList;
+import java.util.Arrays; 
 
 public class Connection extends Thread {
 
@@ -58,104 +60,128 @@ public class Connection extends Thread {
 		String[] tokens = msg.split("\\|");
 
 		switch(startsWith){
-		// For Starting Up
 
-		case 'A':
-			if (parent.verbose) {
-				System.out.println("Raw receive: " + msg);
-			}
-			clientID = Integer.parseInt(tokens[1]);
-
-
-			// We are asynchronous
-			isAsynch = true;
-
-			// Let's see if we want to get messages
-			if (tokens.length > 2) {
-				try {
-					asynchReceive = Boolean.parseBoolean(tokens[2]);
-				} catch (Exception e) {
-					System.out.println("Malformed boolean for synch receive");
-				}
-			}
-
-			System.out.println("Connecting asynch client " + clientID + " receiver: " + asynchReceive);
+      // Async Client Joined
+  		case 'A':
+  			if (parent.verbose) {
+  				System.out.println("Raw receive: " + msg);
+  			}
+  			clientID = Integer.parseInt(tokens[1]);
 
 
-			// I don't think we need to bother keep a reference to this object
-			// unless it needs to receive messages, ah but let's do it anyway
-			parent.addConnection(this);
+  			// We are asynchronous
+  			isAsynch = true;
 
-			break;
-		case 'S':
+  			// Let's see if we want to get messages
+  			if (tokens.length > 3) {
+  				try {
+  					asynchReceive = Boolean.parseBoolean(tokens[3]);
+  				} catch (Exception e) {
+  					System.out.println("Malformed boolean for synch receive");
+  				}
+  			}
+
+  			System.out.println("Connecting asynch client " + clientID + " receiver: " + asynchReceive);
+
+  			// I don't think we need to bother keep a reference to this object
+  			// unless it needs to receive messages, ah but let's do it anyway
+  			parent.addConnection(this);
+
+  			break;
+        
+      // Sync client joined 
+  		case 'S':
 			
-			// Making the decision that if the server is paused and there is a new connection
-			// It starts again
-			/*if (parent.paused) {
-				parent.paused = false;
-			}*/
+  			// Making the decision that if the server is paused and there is a new connection
+  			// It starts again
+  			/*if (parent.paused) {
+  				parent.paused = false;
+  			}*/
 			
-			if (parent.verbose) {
-				System.out.println("Raw receive: " + msg);
-			}
-			clientID = Integer.parseInt(tokens[1]);
+  			if (parent.verbose) {
+  				System.out.println("Raw receive: " + msg);
+  			}
+  			clientID = Integer.parseInt(tokens[1]);
 
-			parent.addConnection(this);
+  			parent.addConnection(this);
 
-			System.out.println("Connecting synch client " + clientID);
-			int total = parent.totalConnections();
+  			System.out.println("Connecting synch client " + clientID);
+  			int total = parent.totalConnections();
 
-			// We should only wait the *first* time if we are told to wait for everyone 
-			// otherwise we can just reset if someone has disconnected and reconnected
-			if (parent.waitForAll && !parent.allConnected) {
-				parent.allConnected = (total == parent.numRequiredClients);
-				if (parent.allConnected) {
-					parent.triggerFrame(false);
-				}
-			} else {
-				parent.triggerFrame(true);
-			}
+  			// We should only wait the *first* time if we are told to wait for everyone 
+  			// otherwise we can just reset if someone has disconnected and reconnected
+  			if (parent.waitForAll && !parent.allConnected) {
+  				parent.allConnected = (total == parent.numRequiredClients);
+  				if (parent.allConnected) {
+  					parent.triggerFrame(false);
+  				}
+  			} else {
+  				parent.triggerFrame(true);
+  			}
 
-			break;
-			//is it receiving a "done"?
-		case 'D':   
-			if (!parent.waitForAll || parent.allConnected) {
-				clientID = Integer.parseInt(tokens[1]);
-				int fc = Integer.parseInt(tokens[2]);
-				if (parent.verbose) {
-					System.out.println("Client: " + clientID + " says done with: " + fc + "  server count: " + parent.frameCount);
-				}
-				if (fc == parent.frameCount) {
-					parent.setReady(clientID);
-				}
-			}
-			break;
-		case 'T':   
-			if (parent.verbose) {
-				System.out.println("Adding message to next frameEvent: " + clientID + "," + tokens[1]);
-			}
-			parent.newMessage = true;
-			parent.message += clientID + "," + tokens[1] + "|";
-			break;
+  			break;
+        
+      // Done rendering 
+  		case 'D':   
+  			if (!parent.waitForAll || parent.allConnected) {
+  				clientID = Integer.parseInt(tokens[1]);
+  				int fc = Integer.parseInt(tokens[2]);
+  				if (parent.verbose) {
+  					System.out.println("Client: " + clientID + " says done with: " + fc + "  server count: " + parent.frameCount);
+  				}
+  				if (fc == parent.frameCount) {
+  					parent.setReady(clientID);
+  				}
+  			}
+  			break;
+        
+      // DaTa message was received  
+  		case 'T':   
+  			if (parent.verbose) {
+  				System.out.println("Adding message to next frameEvent: " + clientID + "," + tokens[1]);
+  			}
+        String message = tokens[1];
+        ArrayList<Integer> toClientIDs = new ArrayList<Integer>();
+        if (tokens.length > 2) {
+          // Add the ints
+          String clientIDs = tokens[2];
+          if (clientIDs.length() > 0) {
+            ArrayList<String> ids = new ArrayList<String>(Arrays.asList(clientIDs.split(",")));
+            for(String id : ids) {
+              toClientIDs.add(Integer.parseInt(id));
+            }
+          }
+        } else {
+          toClientIDs = parent.receivingClientIDs();
+        }      
+        parent.addMessage(message, clientID, toClientIDs);
+  			break;
 
+      // Pause
+  		case 'P':
+  			parent.paused = !parent.paused;
+  			if (parent.verbose) {
+  				if (parent.paused){ 
+  					System.out.println("Client " + clientID + " has asked to pause.");
+  				} else {
+  					System.out.println("Client " + clientID + " has asked to unpause.");
 
-		case 'P':
-			parent.paused = !parent.paused;
-			if (parent.verbose) {
-				if (parent.paused){ 
-					System.out.println("Client " + clientID + " has asked to pause.");
-				} else {
-					System.out.println("Client " + clientID + " has asked to unpause.");
-
-				}
-			}
-			// If we are unpausing and everyone is ready go ahead onto next frame
-			// This should probably be refactored and combined more nicely with what happens in setReady()
-			if (!parent.paused && parent.isReady()) {
-				parent.frameCount++;
-				parent.triggerFrame(false);
-			}
-			break;
+  				}
+  			}
+  			// If we are unpausing and everyone is ready go ahead onto next frame
+  			// This should probably be refactored and combined more nicely with what happens in setReady()
+  			if (!parent.paused && parent.isReady()) {
+  				parent.frameCount++;
+  				parent.triggerFrame(false);
+  			}
+  			break;
+      
+      // Reset
+      case 'R': 
+        parent.paused = false;
+        parent.triggerFrame(true);
+        break;
+      
 		}
 	}
 
@@ -182,7 +208,6 @@ public class Connection extends Thread {
 	public void killMe(){
 		System.out.println("Removing Connection " + clientID);
 		parent.killConnection(clientID);
-
 		if (parent.allDisconected()) {
 			parent.resetFrameCount();
 		} else {
@@ -202,6 +227,9 @@ public class Connection extends Thread {
 			msg+="\n";
 			dos.write(msg.getBytes());
 			dos.flush();
+    } catch (java.net.SocketException e) {
+      // If we've got a broken pipe, remove the connection
+      parent.killConnection(clientID);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
