@@ -1,8 +1,5 @@
 /**
  * The "Most Pixels Ever" Wallserver.
- * This server can accept two values from the command line:
- * -port<port number> Defines the port.  Defaults to 9002
- * -ini<Init file path>  File path to mpeServer.ini.  Defaults to directory of server.
  * @author Shiffman and Kairalla
  *
  */
@@ -15,20 +12,28 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.ArrayList;
 import java.util.HashMap;
+import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.DocumentBuilder;
+import org.w3c.dom.Document;
+import org.w3c.dom.NodeList;
+import org.w3c.dom.Node;
+import org.w3c.dom.Element;
+import java.io.File;
 
 public class MPEServer {
 
 	private HashMap<Integer,Connection> connectionlookup = new HashMap<Integer,Connection>();
 	private ArrayList<Connection> synchconnections = new ArrayList<Connection>();
 	private ArrayList<Connection> asynchconnections = new ArrayList<Connection>();
+  private HashMap<Integer,ArrayList<String>> messages = new HashMap<Integer,ArrayList<String>>();
 
 	private int port;
 	int frameCount = 0;
 	private long before;
 
 	// Server will add a message to the frameEvent
-	public boolean newMessage = false;
-	public String message = "";
+	// public boolean newMessage = false;
+	// public String message = "";
 
 	public boolean dataload = false;
 
@@ -42,8 +47,10 @@ public class MPEServer {
 	public boolean allConnected = false;  // When true, we are off and running
 	
 	public boolean paused;
-
-
+  
+  // TODO: What's the correct relative path for the default file?
+  public static final String defaultSettingsFile = "../data/settings.xml";
+  
 	public void setFramerate(int fr){
 		if (fr > -1) frameRate = fr;
 
@@ -60,7 +67,7 @@ public class MPEServer {
 		setFramerate(_framerate);
 		port = _port;
 		verbose = v;
-		out("framerate = " + frameRate + ",  screens = " + numRequiredClients + ",waitForAll = " + waitForAll + ", verbose = " + verbose);
+		out("framerate = " + frameRate + ", screens = " + numRequiredClients + ", waitForAll = " + waitForAll + ", verbose = " + verbose);
 	}
 
 	public int totalConnections() {
@@ -88,8 +95,36 @@ public class MPEServer {
 			System.out.println("Zoinks!" + e);
 		}
 	}
-
-
+  
+  public synchronized void addMessage(String message, Integer fromClientId, ArrayList<Integer> toClientIDs)
+  {    
+    String formattedMessage = fromClientId + "," + message;
+    for (Integer cID : toClientIDs)
+    {
+      ArrayList<String> clientMessages = messages.get(cID);
+      if (clientMessages == null)
+      {
+        clientMessages = new ArrayList<String>();
+        messages.put(cID, clientMessages);
+      }
+      clientMessages.add(formattedMessage);
+    }
+  }
+  
+  public ArrayList<Integer> receivingClientIDs()
+  {
+    ArrayList<Integer> clientIDs = new ArrayList<Integer>();
+    // Add all client IDs to the message
+		for (Connection conn : synchconnections) {
+      clientIDs.add(conn.clientID);
+		}
+		for (Connection conn : asynchconnections) {
+			if (conn.asynchReceive) {
+        clientIDs.add(conn.clientID);
+			}
+		}            
+    return clientIDs;
+  }
 
 	// Synchronize?!!!
 	public synchronized void triggerFrame(boolean reset) {
@@ -118,10 +153,37 @@ public class MPEServer {
 			String send = "G|"+frameCount;
 			// Adding a data message to the frameEvent
 			// substring removes the ":" at the end.
-			if (newMessage) send += "|" + message.substring(0, message.length()-1);
+      if (messages.size() > 0)
+      {
+        ArrayList<Integer> rcvClientIDs = receivingClientIDs();
+        for (Integer clientID : rcvClientIDs) {          
+          String clientSend = send;
+          ArrayList<String> messageBodies = messages.get(clientID);
+          if (messageBodies != null) {
+            for (String message : messageBodies) {
+              clientSend += "|" + message;
+            }              
+          }
+          Connection c = connectionlookup.get(clientID);
+          // Make sure the client should receive messages
+          if (c != null){
+            c.send(clientSend);
+          }
+        }
+        messages.clear();
+      }
+      else
+      {
+        sendAll(send);
+      }
+      /*
+			if (newMessage && message.length() > 0) {
+        send += "|" + message.substring(0, message.length()-1);
+      }
 			newMessage = false;
 			message = "";
 			sendAll(send);
+      */
 		}
 
 		// After frame is triggered all connections should be set to "unready"
@@ -148,16 +210,14 @@ public class MPEServer {
 		if (verbose) {
 			System.out.println("Sending to " + synchconnections.size() + " sync clients, " + howmany + " async clients: " + msg);
 		}
-
-		for (Connection conn : synchconnections) {
-			conn.send(msg);
-		}
-
-		for (Connection conn : asynchconnections) {
-			if (conn.asynchReceive) {
-				conn.send(msg);
-			}
-		}
+    
+    ArrayList<Integer> rcvClientIDs = receivingClientIDs();
+    for (Integer clientID : rcvClientIDs) {
+      Connection c = connectionlookup.get(clientID);
+      if (c != null){        
+        c.send(msg);
+      }
+    }    
 	}
 
 	public void killConnection(int i){
@@ -173,83 +233,166 @@ public class MPEServer {
 			return true;
 		} else return false;
 	}
+  
 	void resetFrameCount(){
 		frameCount = 0;
-		newMessage = false;
-		message = "";
-		print ("resetting frame count.");
+		//newMessage = false;
+		//message = "";
+    messages.clear();
+		if (verbose) {
+			System.out.println("resetting frame count.");
+    }
 	}
+  
 	public void killServer() {
 		running = false;
 	}
 
 	public static void main(String[] args) {
-		// set default values
-		int screens = -1;
-		int framerate = 30;
-		int port = 9002;
-		
-		boolean help = false;
-		boolean verbose = false;
 
-		// see if info is given on the command line
+		boolean help = false;
+    
+    /*
+      Collecting Server Params:
+      1) Add default values to serverParams.
+      2) Collect command line arguments.
+      3) Check if there's an XML path in the CL args.
+      4) Check if there's a default settings.xml file.
+      5) If 3 or 4 is true, parse the file and overwrite the default values.
+      6) Parse the command line arguments to clobber any existing values.
+    */
+
+    HashMap<String,Integer> serverParams = new HashMap<String,Integer>();
+    HashMap<String,String> runArgs = new HashMap<String,String>();
+    
+    // Default values
+    serverParams.put("screens", -1);
+    serverParams.put("framerate", 30);
+    serverParams.put("port", 9002);
+    serverParams.put("verbose", 0);
+
+    // Collect command line args
 		for (int i = 0; i < args.length; i++) {
 			if (args[i].contains("-screens")) {
-				args[i] = args[i].substring(8);
-				try{
-					screens = Integer.parseInt(args[i]);
-				} catch (Exception e) {
-					out("ERROR: I can't parse the # of screens " + args[i] + "\n" + e);
-					help = true;
-				}
+        runArgs.put("screens", args[i].substring(8));
 			} 
 			else if (args[i].contains("-framerate")) {
-				args[i] = args[i].substring(10);
-				try{
-					framerate = Integer.parseInt(args[i]);
-				} catch (Exception e) {
-					out("ERROR: I can't parse the frame rate " + args[i] + "\n" + e);
-					help = true;
-				}
+        runArgs.put("framerate", args[i].substring(10));
 			} 
 			else if (args[i].contains("-port")) {
-				args[i] = args[i].substring(5);
-				try {
-					port = Integer.parseInt(args[i]);
-				} catch (Exception e) {
-					out("ERROR: I can't parse the port number " + args[i] + "\n" + e);
-					help = true;
-				}
+        runArgs.put("port", args[i].substring(5));
 			}
 			else if (args[i].contains("-verbose")) {
-				verbose = true;
+        runArgs.put("verbose", "1");
+			}
+			else if (args[i].contains("-xml")) {
+        String settingsFile = args[i].substring(4);
+        // Remove double quotes from the filename
+        settingsFile = settingsFile.replaceAll("^\"|\"$", "");
+        runArgs.put("xml", settingsFile);
 			}
 			else {
 				help = true;
 			}
-		}
+    }
+    
+    // Settings.xml
+    // If there's an XML file (passed in or default), parse it.
+    File settingsFile = null;
+    String filename = defaultSettingsFile;
+    if (runArgs.get("xml") != null) {
+      filename = runArgs.get("xml");
+    }
+    settingsFile = new File(filename);
+    if (settingsFile.exists()) {
+      out("Reading settings from "+filename);
+      if (!parseXMLFile(settingsFile, serverParams)) {
+        help = true;
+      }
+    } else {
+      out("Cannot find XML Settings file. Using defaults.");
+    }
+    
+    // Override any of the default or xml files with the command line args
+    for (String key : runArgs.keySet()) {
+      if (key != "xml") {
+        try {
+          serverParams.put(key, Integer.parseInt(runArgs.get(key)));
+        } catch (Exception e) {
+      			out("ERROR: I can't parse " + key + ": " + runArgs.get(key) + "\n" + e);
+      			help = true;          
+        }
+      }
+    }
 
 		if (help) {
 			// if anything unrecognized is sent to the command line, help is
 			// displayed and the server quits
 			System.out.println(" * The \"Most Pixels Ever\" server.\n" +
 					" * This server can accept the following parameters from the command line:\n" +
-					" * -screens<number of screens> Total # of expected clients.  Defaults to 2\n" +
+					" * -screens<number of screens> Total # of expected clients. If no value is provided, the server will reset when each sync client joins.\n" +
 					" * -framerate<framerate> Desired frame rate.  Defaults to 30\n" +
 					" * -port<port number> Defines the port.  Defaults to 9002\n" +
 					" * -verbose Turns debugging messages on.\n" +
-					" * -xml<path to file with XML settings>  Path to initialization file.  Defaults to \"settings.xml\".\n");
+					" * -xml<path to file with XML settings>  Path to initialization file.  Defaults to \""+defaultSettingsFile+"\".\n");
 			System.exit(1);
 		}
-		else {
-			MPEServer ws = new MPEServer(screens, framerate, port, verbose);
-			ws.run();
-		}
+        
+		MPEServer ws = new MPEServer(serverParams.get("screens"), serverParams.get("framerate"), 
+                                 serverParams.get("port"), serverParams.get("verbose") == 1);
+		ws.run();
 	}
-	private static void out(String s){
+  
+	private static void out(String s) {
 		System.out.println("MPEServer: "+ s);
 	}
 
+  public static boolean parseXMLFile(File settingsFile, HashMap<String,Integer> serverParams) {    
+    try {
+	    DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
+			DocumentBuilder db = dbf.newDocumentBuilder();
+			Document doc = db.parse(settingsFile);
+  
+      NodeList settingsNodes = doc.getElementsByTagName("settings");
+      if (settingsNodes.getLength() == 0) {
+        throw new Exception("Could not find <settings> node XML file");
+      }
+    
+      NodeList nodeList = settingsNodes.item(0).getChildNodes();   
+    
+      for (int count = 0; count < nodeList.getLength(); count++) 
+      {
+        Node element = nodeList.item(count);
+        String nodeName = element.getNodeName().toLowerCase();          
+        String value = null;
+        
+        if (element.getChildNodes().getLength() > 0) {
+          value = element.getFirstChild().getNodeValue();
+        }
+
+        if (nodeName.equals("port") || nodeName.equals("screens") || 
+            nodeName.equals("framerate") || nodeName.equals("verbose")) {                     
+          // Convert any booleans to ints
+          if (value.toLowerCase().equals("true")) {
+            value = "1";
+          } else if (value.toLowerCase().equals("false")) {
+            value = "0";
+          }
+          
+  				try {
+            serverParams.put(nodeName, Integer.parseInt(value));
+  				} catch (Exception e) {
+  					out("PARSE ERROR: I can't parse " + nodeName + ": " + value + "\n" + e);
+            return false;
+  				}
+        }                    
+      } 
+    } catch(Exception e) {
+      out("ERROR: Cannot parse XML file.\n"+ e );
+      return false;
+    } 
+    return true;
+  }
 
 	// synchronize??
 	public synchronized void setReady(int clientID) { 
@@ -273,13 +416,11 @@ public class MPEServer {
 	}
 
 	public void addConnection(Connection c) {
-		// TODO Account for asynch connections
 		if (c.isAsynch) {
 			asynchconnections.add(c);
-			connectionlookup.put(c.clientID,c);
 		} else {
 			synchconnections.add(c);
-			connectionlookup.put(c.clientID,c);
 		}
+		connectionlookup.put(c.clientID,c);    
 	}
 }
