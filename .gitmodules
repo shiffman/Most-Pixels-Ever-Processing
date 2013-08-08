@@ -1,0 +1,3 @@
+[submodule "Most-Pixels-Ever-Server/mpe-python-server"]
+	path = Most-Pixels-Ever-Server/mpe-python-server
+	url = git@github.com:wdlindmeier/mpe-python-server.git
