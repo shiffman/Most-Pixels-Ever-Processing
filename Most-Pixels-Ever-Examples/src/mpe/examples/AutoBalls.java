@@ -24,8 +24,7 @@ public class AutoBalls extends PApplet {
 
 	//--------------------------------------
 	public void setup() {
-		// make a new Client using an INI file
-		// sketchPath() is used so that the INI file is local to the sketch
+		// make a new Client using an XML file
 		client = new TCPClient(this, "mpe"+ID+".xml");
 		
 		// the size is determined by the client's local width and height
@@ -36,6 +35,8 @@ public class AutoBalls extends PApplet {
 		client.start();
 	}
 
+	//--------------------------------------
+	// Start over
 	public void resetEvent(TCPClient c) {
 		// the random seed must be identical for all clients
 		randomSeed(1);
@@ -54,6 +55,8 @@ public class AutoBalls extends PApplet {
 	}
 
 
+	//--------------------------------------
+	// Separate data event
 	public void dataEvent(TCPClient c) {
 		String[] msg = c.getDataMessage();
 		String[] xy = msg[0].split(",");
