@@ -15,20 +15,23 @@ import processing.core.*;
 public class Messenger extends PApplet {
 
 	//--------------------------------------
-	AsyncClient client;
+	TCPClient client;
 	PFont font;
+	
 
 	boolean message = false;
 
 	//--------------------------------------
 	public void setup() {
 		// set up the client
-		client = new AsyncClient("localhost",9003);
+		client = new TCPClient(this, "asynch.xml");
 		size(350, 200);
 
 		smooth();
 		frameRate(30);
 		font = createFont("Arial", 12);
+		
+		client.start();
 	}
 
 	//--------------------------------------
@@ -44,16 +47,24 @@ public class Messenger extends PApplet {
 		textAlign(CENTER, CENTER);
 		text("Click the mouse to launch a ball",width/2,height/2);
 	}
+	
+	// If you turn on receiving messages you can get them this way
+    public void dataEvent(TCPClient c) {
+    	println("Raw message: " + c.getRawMessage());
+    	if (c.messageAvailable()) {
+    		String[] msgs = c.getDataMessage();
+    		for (int i = 0; i < msgs.length; i++) {
+    			println("Parsed message: " + msgs[i]);
+    		}
+    	}
+    	
+    }
 
 	//--------------------------------------
 	public void mousePressed() {
 		message = true;
 		client.broadcast("C");
 	}
-
-
-
-
 
 
 

@@ -1,4 +1,3 @@
-
 /**
  * Big Screens Week 4 
  * Reads sound level from microphone and broadcasts sound events to all clients
@@ -8,36 +7,29 @@
 package fourthclient;
 
 import java.util.ArrayList;
-
 import mpe.client.TCPClient;
-
 import processing.core.PApplet;
 
 public class Throwing extends PApplet {
 
-	final int ID = 1;
-	
+	final int ID = 0;
+
 	TCPClient client;
 
-	ArrayList balls;
+	ArrayList<Ball> balls;
 
-	//--------------------------------------
+	// --------------------------------------
 	static public void main(String args[]) {
-		PApplet.main(new String[] { "fourthclient.Throwing"});
-	}	
+		PApplet.main(new String[] { "fourthclient.Throwing" });
+	}
 
-
-	//--------------------------------------
+	// --------------------------------------
 	public void setup() {
-		// make a new Client using an INI file
-		// sketchPath() is used so that the INI file is local to the sketch
-		client = new TCPClient(this, sketchPath("mpefiles/mpe"+ID+".ini"));
+		// make a new Client using an XML file
+		client = new TCPClient(this, "mpe" + ID + ".xml");
 
 		// the size is determined by the client's local width and height
 		size(client.getLWidth(), client.getLHeight());
-		
-		balls = new ArrayList();
-		randomSeed(1);
 
 		smooth();
 		background(255);
@@ -46,14 +38,33 @@ public class Throwing extends PApplet {
 		client.start();
 	}
 
-	//--------------------------------------
+	// --------------------------------------
+	// Start over
+	public void resetEvent(TCPClient c) {
+		// the random seed must be identical for all clients
+		randomSeed(1);
+		balls = new ArrayList<Ball>();
+	}
+
+	// --------------------------------------
 	// Keep the motor running... draw() needs to be added in auto mode, even if
 	// it is empty to keep things rolling.
 	public void draw() {
-		frame.setLocation(client.getID()*client.getLWidth(),0);
+		frame.setLocation(client.getID() * client.getLWidth(), 0);
 	}
 
-	//--------------------------------------
+	// --------------------------------------
+	// Separate data event
+	public void dataEvent(TCPClient c) {
+		String[] msg = c.getDataMessage();
+		// If the message C comes in, then make a new Ball object
+		// and add to ArrayList
+		if (msg[0].equals("C")) {
+			balls.add(new Ball(this, client, 0, height / 2));
+		}
+	}
+
+	// --------------------------------------
 	// Triggered by the client whenever a new frame should be rendered.
 	// All synchronized drawing should be done here when in auto mode.
 	public void frameEvent(TCPClient c) {
@@ -63,7 +74,7 @@ public class Throwing extends PApplet {
 			// If the message C comes in, then make a new Ball object
 			// and add to ArrayList
 			if (msg[0].equals("C")) {
-				balls.add(new Ball(this,client,0,height/2));
+				balls.add(new Ball(this, client, 0, height / 2));
 			}
 		}
 
@@ -76,13 +87,4 @@ public class Throwing extends PApplet {
 
 	}
 
-
 }
-
-
-
-
-
-
-
-
