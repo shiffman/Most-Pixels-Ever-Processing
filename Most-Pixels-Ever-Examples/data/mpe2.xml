@@ -1,6 +1,6 @@
 <settings>
-	<id>0</id>
-	<name>renderer0</name>  <!-- optional -->
+	<id>2</id>
+	<name>renderer2</name>  <!-- optional -->
 	<server>
 		<ip>localhost</ip>
 		<port>9002</port> 
@@ -10,7 +10,7 @@
 		<height>240</height>
 	</local_dimensions>
 	<local_location>
-		<x>0</x>
+		<x>640</x>
 		<y>0</y>
 	</local_location>
 	<master_dimensions>

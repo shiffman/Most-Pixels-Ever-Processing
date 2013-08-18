@@ -10,81 +10,107 @@ import java.util.ArrayList;
 import mpe.client.TCPClient;
 
 import processing.core.PApplet;
-import simpleML.*; 
+import processing.data.XML;
+import processing.video.Capture;
+import video.Jiggler;
 
 public class Headlines extends PApplet {
 
 	// MPE Client Stuff
-	final int ID = 1;
+	final int ID = 0;
 	TCPClient client;
 
-	// simpleML request object
-	XMLRequest xmlRequest; 
+	// XML stuff
+	XMLRequest yahoo;
+	final String url = "http://rss.news.yahoo.com/rss/topstories";
+
 	// ArrayList of Headline objects
-	ArrayList headlines;
+	ArrayList<Headline> headlines;
 
 	// We will store the headlines we retrieve in a String
 	String[] yahoos;
 	// The counter will go through the headlines one at a time
 	// -1 means no headlines yet
-	int counter = -1;
+	int counter;
 
-	boolean started = false;
+	boolean started;
 
-	//--------------------------------------
+	// --------------------------------------
 	static public void main(String args[]) {
-		PApplet.main(new String[] { "feeds.Headlines"});
-	}	
+		PApplet.main(new String[] { "feeds.Headlines" });
+	}
 
-	//--------------------------------------
+	// --------------------------------------
 	public void setup() {
-		// make a new Client using an INI file
-		// sketchPath() is used so that the INI file is local to the sketch
-		client = new TCPClient(this, sketchPath("mpefiles/mpe"+ID+".ini"));
+		// make a new Client using an XML file
+		client = new TCPClient(this, "../data/mpe" + ID + ".xml");
 
 		// the size is determined by the client's local width and height
 		size(client.getLWidth(), client.getLHeight());
+		resetEvent(client);
+		client.start();
+	}
 
+	// --------------------------------------
+	// Start over
+	public void resetEvent(TCPClient c) {
 		// the random seed must be identical for all clients
 		randomSeed(1);
 
-		headlines = new ArrayList();
+		headlines = new ArrayList<Headline>();
+		counter = -1;
+		started = false;
 
-		// Creating and starting the request 
-		// Only if we are client 0!!! (one thing we could do is have different clients read from different feeds)
+		// Creating and starting the request
+		// Only if we are client 0!!! (one thing we could do is have different
+		// clients read from different feeds)
+		PApplet.println("ID: " + client.getID());
 		if (client.getID() == 0) {
-			xmlRequest = new XMLRequest(this,"http://rss.news.yahoo.com/rss/topstories"); 
-			xmlRequest.makeRequest(); 
+			yahoo = new XMLRequest(this, 5000, url);
+			yahoo.start();
 		}
-		client.start();
-	} 
+	}
 
-	//--------------------------------------
+	// --------------------------------------
 	// Keep the motor running... draw() needs to be added in auto mode, even if
 	// it is empty to keep things rolling.
 	public void draw() {
-		frame.setLocation(client.getID()*client.getLWidth(),0);
+		frame.setLocation(client.getID() * client.getLWidth(), 0);
+	}
+	
+	//--------------------------------------
+	// Separate data event
+	public void dataEvent(TCPClient c) {
+		String[] msg = c.getDataMessage();
+		
+		// For every message a new object is made
+		for (int i = 0; i < msg.length; i++) {
+			Headline headline = new Headline(this, client, msg[i],
+					random(client.getMWidth()), client.getMHeight());
+			headlines.add(headline);
+		}
 	}
 
-	//--------------------------------------
+	// --------------------------------------
 	// Triggered by the client whenever a new frame should be rendered.
 	// All synchronized drawing should be done here when in auto mode.
 	public void frameEvent(TCPClient c) {
 
-		if (c.messageAvailable()) {
+		/*if (c.messageAvailable()) {
 			String[] msg = c.getDataMessage();
 			// For every message a new object is made
 			for (int i = 0; i < msg.length; i++) {
-				Headline headline = new Headline(this,client,msg[i], random(client.getMWidth()),client.getMHeight());
+				Headline headline = new Headline(this, client, msg[i],
+						random(client.getMWidth()), client.getMHeight());
 				headlines.add(headline);
 			}
-		}
+		}*/
 
 		background(255);
 
 		// Deal with all of the headline objects
 		// We iterate backwards b/c we are deleting
-		for (int i = headlines.size()-1; i >= 0; i--) {
+		for (int i = headlines.size() - 1; i >= 0; i--) {
 			Headline headline = (Headline) headlines.get(i);
 			headline.move();
 			headline.draw();
@@ -97,26 +123,40 @@ public class Headlines extends PApplet {
 		// Here is the funny business
 		// If we are client #0, and there are headlines available
 		// We broadcast a new one every 30 frames
-		// (We don't have to do it this way, we could just send them all at once, just an arbitrary method!)
-		if (client.getID() == 0 && counter > -1 && client.getFrameCount() % 30 == 0) {
-			String headline = yahoos[counter];
-			headline = headline.replaceAll(":", " ");  // Make sure there are no semi-colons!!
-			client.broadcast(headline);  // send out the String
-			counter++;  // Go to the next one
-			// If we're at the end, reset
-			if (counter == yahoos.length) {
-				counter = -1;
-				xmlRequest.makeRequest();  // and make the request again!
+		// (We don't have to do it this way, we could just send them all at
+		// once, just an arbitrary method!)
+		if (client.getID() == 0) {
+			if (counter >= 0 && client.getFrameCount() % 30 == 0) {
+
+				String headline = yahoos[counter];
+				headline = headline.replaceAll(":", " "); // Make sure there are
+															// no
+															// semi-colons!!
+				client.broadcast(headline); // send out the String
+				counter++; // Go to the next one
+				// If we're at the end, reset
+				if (counter == yahoos.length) {
+					counter = -1;
+				}
+			}
+
+			// Get more data when counter is reset to -1
+			if (counter < 0 && yahoo.getAvailability()) {
+				parse(yahoo.getXML());
 			}
 		}
+
 	}
 
-
-	//	 When the request is complete 
-	public void netEvent(XMLRequest ml) { 
-		// Retrieving an array of all XML elements inside "<title*>" tags 
-		yahoos = ml.getElementArray("title"); 
+	// When the request is complete
+	public void parse(XML xml) {
+		// Retrieving an array of all XML elements inside "<title*>" tags
+		XML[] titles = xml.getChildren("channel/item/title");
+		yahoos = new String[titles.length];
+		for (int i = 0; i < yahoos.length; i++) {
+			yahoos[i] = titles[i].getContent();
+		}
 		// Counter restarts at 0
 		counter = 0;
-	} 
+	}
 }

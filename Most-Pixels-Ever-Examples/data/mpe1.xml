@@ -7,15 +7,15 @@
 	</server>
 	<local_dimensions>
 		<width>320</width>
-		<height>480</height>
+		<height>240</height>
 	</local_dimensions>
 	<local_location>
 		<x>320</x>
 		<y>0</y>
 	</local_location>
 	<master_dimensions>
-		<width>640</width>
-		<height>480</height>
+		<width>960</width>
+		<height>240</height>
 	</master_dimensions>
 	<offset_window>true</offset_window>
 	<verbose>true</verbose>
