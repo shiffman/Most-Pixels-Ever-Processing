@@ -7,7 +7,6 @@ package mpe.examples;
 
 import java.util.ArrayList;
 import mpe.client.*;
-import mpe.examples.BouncingBalls.Ball;
 import processing.core.*;
 
 public class AutoBalls extends PApplet {
@@ -25,7 +24,7 @@ public class AutoBalls extends PApplet {
 	//--------------------------------------
 	public void setup() {
 		// make a new Client using an XML file
-		client = new TCPClient(this, "mpe"+ID+".xml");
+		client = new TCPClient(this, "mpe" + ID + ".xml");
 		
 		// the size is determined by the client's local width and height
 		size(client.getLWidth(), client.getLHeight());

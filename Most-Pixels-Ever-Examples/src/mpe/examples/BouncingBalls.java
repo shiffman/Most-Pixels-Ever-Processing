@@ -12,9 +12,9 @@ import processing.core.*;
 
 public class BouncingBalls extends PApplet {
     //--------------------------------------
-    final int ID = 1;
+    final int ID = 0;
 
-    ArrayList balls;
+    ArrayList<Ball>balls;
     TCPClient client;
     
     //--------------------------------------
@@ -24,29 +24,35 @@ public class BouncingBalls extends PApplet {
     
     //--------------------------------------
     public void setup() {
-        // Make a new Client with an INI file.  
-        // sketchPath() is used so that the INI file is local to the sketch
-        client = new TCPClient(this, sketchPath("mpeSc"+ID+".ini"), false);
+        // Make a new Client with an XML file.  
+        client = new TCPClient(this, "mpe" + ID + ".xml", false);
         
         // The size is determined by the client's local width and height
         size(client.getLWidth(), client.getLHeight());
-        
-        // the random seed must be identical for all clients
-        randomSeed(1);
-        
+                
         smooth();
-        background(100);
         noStroke();
         
-        // add a "randomly" placed ball
-        balls = new ArrayList();
-        Ball ball = new Ball(random(client.getMWidth()), random(client.getMHeight()));
-        balls.add(ball);
+        resetEvent(client);
         
         // IMPORTANT, YOU MUST START THE CLIENT!
         client.start();
     }
-    
+
+    //--------------------------------------
+    //Start over
+    public void resetEvent(TCPClient c) {
+    	
+        // the random seed must be identical for all clients
+        randomSeed(1);
+        background(100);
+
+        // add a "randomly" placed ball
+        balls = new ArrayList<Ball>();
+        Ball ball = new Ball(random(client.getMWidth()), random(client.getMHeight()));
+        balls.add(ball);
+    }
+
     //--------------------------------------
     public void draw() {
         if (client.isRendering()) {
@@ -70,16 +76,26 @@ public class BouncingBalls extends PApplet {
     }
     
     //--------------------------------------
+    // Separate data event
+    public void dataEvent(TCPClient c) {
+		String[] msg = c.getDataMessage();
+		String[] xy = msg[0].split(",");
+		float x = Integer.parseInt(xy[0]);
+		float y = Integer.parseInt(xy[1]);
+		balls.add(new Ball(x, y));
+    }
+    
+    //--------------------------------------
     // Triggered by the client whenever a new frame should be rendered.
     public void frameEvent(TCPClient c) {
-        // read any incoming messages
-        if (c.messageAvailable()) {
+        // You can read incoming messages here as well
+        /*if (c.messageAvailable()) {
             String[] msg = c.getDataMessage();
             String[] xy = msg[0].split(",");
             float x = Integer.parseInt(xy[0]);
             float y = Integer.parseInt(xy[1]);
             balls.add(new Ball(x, y));
-        }
+        }*/
     }
     
     //--------------------------------------
