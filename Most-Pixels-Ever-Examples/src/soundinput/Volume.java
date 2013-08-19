@@ -16,7 +16,7 @@ public class Volume extends PApplet {
 
 	final int ID = 0;
 	TCPClient client;
-	float volume = 0;
+	float volume;
 
 	Minim minim;
 	AudioInput in;
@@ -29,9 +29,8 @@ public class Volume extends PApplet {
 
 	//--------------------------------------
 	public void setup() {
-		// make a new Client using an INI file
-		// sketchPath() is used so that the INI file is local to the sketch
-		client = new TCPClient(this, sketchPath("mpefiles/mpe"+ID+".ini"));
+		// make a new Client using an XML file
+		client = new TCPClient(this, "mpe" + ID + ".xml");
 
 		// the size is determined by the client's local width and height
 		size(client.getLWidth(), client.getLHeight());
@@ -44,9 +43,17 @@ public class Volume extends PApplet {
 		smooth();
 		background(255);
 
+		resetEvent(client);
+		
 		// IMPORTANT, YOU MUST START THE CLIENT!
 		client.start();
 	}
+	
+	// --------------------------------------
+		// Start over
+		public void resetEvent(TCPClient c) {
+			volume = 0;			
+		}
 
 	//--------------------------------------
 	// Keep the motor running... draw() needs to be added in auto mode, even if

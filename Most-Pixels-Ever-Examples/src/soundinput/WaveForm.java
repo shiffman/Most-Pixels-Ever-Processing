@@ -6,6 +6,8 @@
 
 package soundinput;
 
+import java.util.ArrayList;
+
 import ddf.minim.AudioInput;
 import ddf.minim.Minim;
 import mpe.client.TCPClient;
@@ -14,7 +16,7 @@ import processing.core.PApplet;
 
 public class WaveForm extends PApplet {
 
-	final int ID = 1;
+	final int ID = 0;
 
 	// A client object
 	TCPClient client;
@@ -32,9 +34,8 @@ public class WaveForm extends PApplet {
 
 	//--------------------------------------
 	public void setup() {
-		// make a new Client using an INI file
-		// sketchPath() is used so that the INI file is local to the sketch
-		client = new TCPClient(this, sketchPath("mpefiles/mpe"+ID+".ini"));
+		// make a new Client using an XML file
+		client = new TCPClient(this, "mpe" + ID + ".xml");
 
 		// the size is determined by the client's local width and height
 		size(client.getLWidth(), client.getLHeight());
@@ -45,10 +46,18 @@ public class WaveForm extends PApplet {
 		}
 
 		smooth();
+		resetEvent(client);
 
 		// IMPORTANT, YOU MUST START THE CLIENT!
 		client.start();
 	}
+	
+	//--------------------------------------
+		// Start over
+		public void resetEvent(TCPClient c) {
+			//Nothing to do here!
+
+		}
 
 	//--------------------------------------
 	// Keep the motor running... draw() needs to be added in auto mode, even if
@@ -58,20 +67,32 @@ public class WaveForm extends PApplet {
 	}
 
 	//--------------------------------------
+	// Separate data event
+	public void dataEvent(TCPClient c) {
+		String[] msg = c.getDataMessage();
+		String[] vals = msg[0].split(",");
+		wave = new float[vals.length];
+		for (int i = 0; i < wave.length; i++) {
+			wave[i] = Float.parseFloat(vals[i]);
+		}
+	}
+	
+	//--------------------------------------
 	// Triggered by the client whenever a new frame should be rendered.
 	// All synchronized drawing should be done here when in auto mode.
 	public void frameEvent(TCPClient c) {
 		background(255);
 
-		// If we get bytes in, put them in our global variable
-		if (c.messageAvailable()) {
+		// You can get data here as well
+		/*if (c.messageAvailable()) {
 			String[] msg = c.getDataMessage();
 			String[] vals = msg[0].split(",");
 			wave = new float[vals.length];
 			for (int i = 0; i < wave.length; i++) {
 				wave[i] = Float.parseFloat(vals[i]);
 			}
-		}
+		}*/
+		
 		rectMode(CENTER);
 		stroke(0);
 
