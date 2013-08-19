@@ -16,7 +16,7 @@ public class ASyncClientExample extends PApplet {
     //--------------------------------------
     public void setup() {
         size(320,240);
-        // make a new Client using an INI file
+        // make a new Client using an XML file
         client = new TCPClient(this, "asynch.xml");
         
         // IMPORTANT, YOU MUST START THE CLIENT!
@@ -32,7 +32,7 @@ public class ASyncClientExample extends PApplet {
     }
     
     // If you turn on receiving messages you can get them this way
-    /*public void dataEvent(TCPClient c) {
+    public void dataEvent(TCPClient c) {
     	println("Raw message: " + c.getRawMessage());
     	if (c.messageAvailable()) {
     		String[] msgs = c.getDataMessage();
@@ -41,7 +41,7 @@ public class ASyncClientExample extends PApplet {
     		}
     	}
     	
-    }*/
+    }
 
 
     //--------------------------------------
