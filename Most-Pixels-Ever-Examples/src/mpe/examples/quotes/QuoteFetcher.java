@@ -22,13 +22,13 @@ public class QuoteFetcher extends PApplet {
     static final String HOMER_URL = "http://www.smacie.com/randomizer/simpsons/homer.html";
 
     //--------------------------------------
-    AsyncClient client;
+    TCPClient client;
     PFont font;
 
     //--------------------------------------
     public void setup() {
         // set up the client
-        client = new AsyncClient("localhost",9003);
+        client = new TCPClient(this, "asynch.xml");
         size(350, 200);
 
         // init the drawing functions
@@ -39,7 +39,21 @@ public class QuoteFetcher extends PApplet {
         font = createFont(fonts[(int)random(0, fonts.length)], 12);
         textFont(font, 18);
         textAlign(CENTER, CENTER);
+        
+        client.start();
     }
+    
+	//--------------------------------------
+	// Optional, separate data event
+	public void dataEvent(TCPClient c) {
+    	println("Raw message: " + c.getRawMessage());
+    	if (c.messageAvailable()) {
+    		String[] msgs = c.getDataMessage();
+    		for (int i = 0; i < msgs.length; i++) {
+    			println("Parsed message: " + msgs[i]);
+    		}
+    	}
+	}
 
     //--------------------------------------
     public void draw() {
