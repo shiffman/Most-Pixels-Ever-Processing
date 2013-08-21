@@ -43,7 +43,7 @@ public class Headlines extends PApplet {
 	// --------------------------------------
 	public void setup() {
 		// make a new Client using an XML file
-		client = new TCPClient(this, "../data/mpe" + ID + ".xml");
+		client = new TCPClient(this, "mpe" + ID + ".xml");
 
 		// the size is determined by the client's local width and height
 		size(client.getLWidth(), client.getLHeight());
