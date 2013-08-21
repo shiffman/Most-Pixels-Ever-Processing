@@ -50,7 +50,6 @@ public class Throwing extends PApplet {
 	// Keep the motor running... draw() needs to be added in auto mode, even if
 	// it is empty to keep things rolling.
 	public void draw() {
-		frame.setLocation(client.getID() * client.getLWidth(), 0);
 	}
 
 	// --------------------------------------

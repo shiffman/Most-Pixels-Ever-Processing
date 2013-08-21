@@ -31,7 +31,9 @@ public class ASyncClientExample extends PApplet {
     	
     }
     
-    // If you turn on receiving messages you can get them this way
+    //--------------------------------------
+    // asynchreceive must be set to true in
+    // asynch.xml to receive data here
     public void dataEvent(TCPClient c) {
     	println("Raw message: " + c.getRawMessage());
     	if (c.messageAvailable()) {
