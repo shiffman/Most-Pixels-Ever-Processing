@@ -13,7 +13,7 @@ import processing.video.*;
 
 public class ColorTracking extends PApplet {
 
-	final int ID = 1;
+	final int ID = 0;
 
 	//	Variable for capture device 
 	Capture video; 
@@ -39,35 +39,49 @@ public class ColorTracking extends PApplet {
 
 	//--------------------------------------
 	public void setup() {
-		// make a new Client using an INI file
-		// sketchPath() is used so that the INI file is local to the sketch
-		client = new TCPClient(this, sketchPath("mpefiles/mpe"+ID+".ini"));
+		// make a new Client using an XML file
+		client = new TCPClient(this, "mpe" + ID + ".xml");
 
 		// the size is determined by the client's local width and height
 		size(client.getLWidth(), client.getLHeight());
-
-		// the random seed must be identical for all clients
-		randomSeed(1);
-
-		trackColor = color(255,0,0); // Start off tracking for red 
-
-		// Only if I am client 0
-		if (client.getID() == 0) {
-			// Using the default capture device 
-			video = new Capture(this, width, height, 15); 
-		}
-
 		smooth();
 
+		resetEvent(client);
 		// IMPORTANT, YOU MUST START THE CLIENT!
 		client.start();
 	}
+	
+	//--------------------------------------
+		// Start over
+		public void resetEvent(TCPClient c) {
+			// the random seed must be identical for all clients
+			randomSeed(1);
+			
+			trackColor = color(255,0,0); // Start off tracking for red 
+
+			// Only if I am client 0
+			if (client.getID() == 0) {
+				// Using the default capture device 
+				video = new Capture(this, width, height, 15); 
+				video.start();
+			}
+
+		}
+
 
 	//--------------------------------------
 	// Keep the motor running... draw() needs to be added in auto mode, even if
 	// it is empty to keep things rolling.
 	public void draw() {
-		frame.setLocation(client.getID()*client.getLWidth(),0);
+	}
+	
+	//--------------------------------------
+		// Separate data event
+		public void dataEvent(TCPClient c) {
+			String[] msg = c.getDataMessage();
+			String[] xy = msg[0].split(",");
+			x = Integer.parseInt(xy[0]);
+			y = Integer.parseInt(xy[1]);
 	}
 
 	//--------------------------------------
@@ -77,12 +91,12 @@ public class ColorTracking extends PApplet {
 		background(255);
 
 		// Get the message and convert it to xy coordinate
-		if (c.messageAvailable()) {
+		/*if (c.messageAvailable()) {
 			String[] msg = c.getDataMessage();
 			String[] xy = msg[0].split(",");
 			x = Integer.parseInt(xy[0]);
 			y = Integer.parseInt(xy[1]);
-		}
+		}*/
 
 		// Call video analysis function if I am client 0
 		if (client.getID() == 0) {
