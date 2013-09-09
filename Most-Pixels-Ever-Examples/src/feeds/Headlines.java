@@ -11,8 +11,6 @@ import mpe.client.TCPClient;
 
 import processing.core.PApplet;
 import processing.data.XML;
-import processing.video.Capture;
-import video.Jiggler;
 
 public class Headlines extends PApplet {
 
