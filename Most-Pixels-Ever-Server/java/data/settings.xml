@@ -1,6 +1,5 @@
 <settings>
 	<port>9002</port>
-	<screens>2</screens>
-	<framerate>25</framerate>
-	<verbose>false</verbose>
+	<framerate>30</framerate>
+	<verbose>true</verbose>
 </settings>
