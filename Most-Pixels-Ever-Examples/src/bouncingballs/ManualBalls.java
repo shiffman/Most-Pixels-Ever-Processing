@@ -12,7 +12,7 @@ import processing.core.*;
 
 public class ManualBalls extends PApplet {
     //--------------------------------------
-    final int ID = 0;
+    final int ID = 1;
 
     ArrayList<Ball>balls;
     TCPClient client;
@@ -42,7 +42,6 @@ public class ManualBalls extends PApplet {
     //--------------------------------------
     //Start over
     public void resetEvent(TCPClient c) {
-    	
         // the random seed must be identical for all clients
         randomSeed(1);
         background(100);
@@ -60,8 +59,17 @@ public class ManualBalls extends PApplet {
             //  larger display (this is done with translate, so use push/pop if 
             //  you want to overlay any info on all screens)
             client.placeScreen();
+            
+            if (client.messageAvailable()) {
+                String[] msg = client.getDataMessage();
+                String[] xy = msg[0].split(",");
+                float x = Integer.parseInt(xy[0]);
+                float y = Integer.parseInt(xy[1]);
+                balls.add(new Ball(x, y));
+            }
+            
             // clear the screen
-            background(100);
+            background(255);
 
             // move and draw all the balls
             for (int i = 0; i < balls.size(); i++) {
@@ -73,29 +81,6 @@ public class ManualBalls extends PApplet {
             // alert the server that you've finished drawing a frame
             client.done();
         }
-    }
-    
-    //--------------------------------------
-    // Separate data event
-    public void dataEvent(TCPClient c) {
-		String[] msg = c.getDataMessage();
-		String[] xy = msg[0].split(",");
-		float x = Integer.parseInt(xy[0]);
-		float y = Integer.parseInt(xy[1]);
-		balls.add(new Ball(x, y));
-    }
-    
-    //--------------------------------------
-    // Triggered by the client whenever a new frame should be rendered.
-    public void frameEvent(TCPClient c) {
-        // You can read incoming messages here as well
-        /*if (c.messageAvailable()) {
-            String[] msg = c.getDataMessage();
-            String[] xy = msg[0].split(",");
-            float x = Integer.parseInt(xy[0]);
-            float y = Integer.parseInt(xy[1]);
-            balls.add(new Ball(x, y));
-        }*/
     }
     
     //--------------------------------------

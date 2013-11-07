@@ -127,8 +127,13 @@ public class TCPClient extends Thread {
 			// argument of type Client
 			try {
 				frameEventMethod = p5parent.getClass().getMethod("frameEvent",new Class[] { TCPClient.class });
+				if (!autoMode) {
+					System.out.println("frameEvent() will not be used in manual mode. ");
+				}
 			} catch (Exception e) {
-				System.out.println("You are missing the frameEvent() method. " + e);
+				if (autoMode) {
+					System.out.println("You are missing the frameEvent() method. " + e);
+				}
 			}
 
 			try {
@@ -139,15 +144,21 @@ public class TCPClient extends Thread {
 
 			try {
 				dataEventMethod = p5parent.getClass().getMethod("dataEvent",new Class[] { TCPClient.class });
-				dataEventEnabled = true;
+				if (!autoMode) {
+					System.out.println("dataEvent() will not be used in manual mode. ");
+					dataEventEnabled = false;
+				} else {
+					dataEventEnabled = true;
+				}
 			} catch (Exception e) {
 				dataEventEnabled = false;
 			}
 
 
-			if (autoMode) {
+			// Now we are always registering draw(), we still need to deal with reset() in manual mode
+			//if (autoMode) {
 				p5parent.registerMethod("draw", this);
-			}
+			//}
 		} else {
 			if (asynchreceive) {
 				try {
@@ -182,7 +193,11 @@ public class TCPClient extends Thread {
 			}
 			// Otherwise typical MPE stuff
 		} else if (running && rendering) {
-			placeScreen();
+			
+			// Only place screen in auto mode
+			if (autoMode) {
+				placeScreen();
+			}
 
 			if (!asynchronous) {
 				if (reset) {
@@ -205,7 +220,11 @@ public class TCPClient extends Thread {
 						e.printStackTrace();
 					}
 				}
-				done();
+				
+				// Say done in auto mode only
+				if (autoMode) {
+					done();
+				}
 			}
 		}
 	}
