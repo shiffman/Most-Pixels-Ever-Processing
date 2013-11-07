@@ -18,7 +18,7 @@ public class BouncingBalls extends PApplet {
 
 	//--------------------------------------
 	static public void main(String args[]) {
-		PApplet.main(new String[] { "bouncing.BouncingBalls" });
+		PApplet.main(new String[] { "bouncingballs.BouncingBalls" });
 	}
 
 	//--------------------------------------
