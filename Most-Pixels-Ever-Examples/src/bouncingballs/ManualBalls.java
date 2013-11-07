@@ -4,7 +4,7 @@
  * @author Shiffman and Kairalla
  */
 
-package mpe.examples;
+package bouncingballs;
 
 import java.util.ArrayList;
 import mpe.client.*;
@@ -19,7 +19,7 @@ public class ManualBalls extends PApplet {
     
     //--------------------------------------
     static public void main(String args[]) {
-        PApplet.main(new String[] { "mpe.examples.ManualBalls" });
+        PApplet.main(new String[] { "bouncingballs.ManualBalls" });
     }
     
     //--------------------------------------

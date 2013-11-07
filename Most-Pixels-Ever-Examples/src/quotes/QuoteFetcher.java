@@ -7,7 +7,7 @@
  * @author Elie Zananiri
  */
 
-package mpe.examples.quotes;
+package quotes;
 
 import mpe.client.*;
 import processing.core.*;

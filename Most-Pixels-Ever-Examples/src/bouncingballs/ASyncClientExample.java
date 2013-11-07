@@ -1,4 +1,4 @@
-package mpe.examples;
+package bouncingballs;
 
 import mpe.client.*;
 import processing.core.*;
@@ -10,7 +10,7 @@ public class ASyncClientExample extends PApplet {
 
     //--------------------------------------
     static public void main(String args[]) {
-        PApplet.main(new String[] { "mpe.examples.ASyncClientExample" });
+        PApplet.main(new String[] { "bouncingballs.ASyncClientExample" });
     }
 
     //--------------------------------------
