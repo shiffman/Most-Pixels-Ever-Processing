@@ -210,6 +210,8 @@ public class Connection extends Thread {
 		parent.killConnection(clientID);
 		if (parent.allDisconected()) {
 			parent.resetFrameCount();
+			// I think this should cause the server to wait again
+			parent.allConnected = false;
 		} else {
 			// Need to check if everyone is all set now that someone has disconnected
 			// TODO: encapsulate below into method, same as in setReady();
