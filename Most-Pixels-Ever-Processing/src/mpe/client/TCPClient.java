@@ -24,6 +24,8 @@ import processing.data.XML;
 import processing.opengl.PGraphics3D;
 
 public class TCPClient extends Thread {
+	
+	public static final String version = "2.0.2";
 
 	/** If VERBOSE is true, the client will print lots of messages about what it is doing.
 	 * Set with debug=true; in your XML file. */
@@ -110,6 +112,8 @@ public class TCPClient extends Thread {
 	public TCPClient(PApplet _p, String _fileString, boolean _autoMode) {
 		p5parent = _p;
 
+		PApplet.println("MPE CLIENT VERSION " + version);
+		
 		// Autodetecting if we should use 3D or not
 		enable3D = p5parent.g instanceof PGraphics3D;
 

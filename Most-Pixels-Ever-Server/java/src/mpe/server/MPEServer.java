@@ -21,6 +21,8 @@ import org.w3c.dom.Element;
 import java.io.File;
 
 public class MPEServer {
+	
+	public static final String version = "2.0.2";
 
 	private HashMap<Integer,Connection> connectionlookup = new HashMap<Integer,Connection>();
 	private ArrayList<Connection> synchconnections = new ArrayList<Connection>();
@@ -251,6 +253,8 @@ public class MPEServer {
 	public static void main(String[] args) {
 
 		boolean help = false;
+		
+		System.out.println("MPE SERVER VERSION: " + version);
 
 		/*
       Collecting Server Params:
@@ -302,15 +306,15 @@ public class MPEServer {
 		String filename = defaultSettingsFile;
 		if (runArgs.get("xml") != null) {
 			filename = runArgs.get("xml");
-		}
-		settingsFile = new File(filename);
-		if (settingsFile.exists()) {
-			out("Reading settings from "+filename);
-			if (!parseXMLFile(settingsFile, serverParams)) {
-				help = true;
+			settingsFile = new File(filename);
+			if (settingsFile.exists()) {
+				out("Reading settings from "+filename);
+				if (!parseXMLFile(settingsFile, serverParams)) {
+					help = true;
+				}
+			} else {
+				out("Cannot find XML Settings file. Using defaults.");
 			}
-		} else {
-			out("Cannot find XML Settings file. Using defaults.");
 		}
 
 		// Override any of the default or xml files with the command line args
