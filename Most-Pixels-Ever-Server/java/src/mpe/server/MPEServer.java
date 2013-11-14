@@ -21,7 +21,7 @@ import org.w3c.dom.Element;
 import java.io.File;
 
 public class MPEServer {
-	
+
 	public static final String version = "2.0.2";
 
 	private HashMap<Integer,Connection> connectionlookup = new HashMap<Integer,Connection>();
@@ -50,8 +50,7 @@ public class MPEServer {
 
 	public boolean paused;
 
-	// TODO: What's the correct relative path for the default file?
-	public static final String defaultSettingsFile = "../data/settings.xml";
+	public static final String defaultSettingsFile = "settings.xml";
 
 	public void setFramerate(int fr){
 		if (fr > -1) frameRate = fr;
@@ -253,7 +252,7 @@ public class MPEServer {
 	public static void main(String[] args) {
 
 		boolean help = false;
-		
+
 		System.out.println("MPE SERVER VERSION: " + version);
 
 		/*
@@ -290,10 +289,18 @@ public class MPEServer {
 				runArgs.put("verbose", "1");
 			}
 			else if (args[i].contains("-xml")) {
-				String settingsFile = args[i].substring(4);
-				// Remove double quotes from the filename
-				settingsFile = settingsFile.replaceAll("^\"|\"$", "");
-				runArgs.put("xml", settingsFile);
+				try {
+					String settingsFile = args[i+1];
+					if (settingsFile.charAt(0) == '-') {
+						System.out.println("No filename specified, using " + defaultSettingsFile);
+						runArgs.put("xml", defaultSettingsFile);
+					}  else {
+						runArgs.put("xml", settingsFile);
+					}
+				} catch (Exception e) {
+					System.out.println("No filename specified, using " + defaultSettingsFile);
+					runArgs.put("xml", defaultSettingsFile);
+				}
 			}
 			else {
 				help = true;
@@ -338,7 +345,7 @@ public class MPEServer {
 					" * -framerate<framerate> Desired frame rate.  Defaults to 30\n" +
 					" * -port<port number> Defines the port.  Defaults to 9002\n" +
 					" * -verbose Turns debugging messages on.\n" +
-					" * -xml<path to file with XML settings>  Path to initialization file.  Defaults to \""+defaultSettingsFile+"\".\n");
+					" * -xml <path to file with XML settings>  Path to initialization file.  Defaults to \""+defaultSettingsFile+"\".\n");
 			System.exit(1);
 		}
 
