@@ -25,7 +25,7 @@ import processing.opengl.PGraphics3D;
 
 public class TCPClient extends Thread {
 	
-	public static final String version = "2.0.2";
+	public static final String version = "2.0.3";
 
 	/** If VERBOSE is true, the client will print lots of messages about what it is doing.
 	 * Set with debug=true; in your XML file. */

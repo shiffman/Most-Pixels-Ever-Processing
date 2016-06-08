@@ -3,12 +3,15 @@ import mpe.client.*;
 ArrayList<Ball> balls;
 TCPClient client;
 
-void setup() {
+void settings() {
   // make a new Client using an XML file
   client = new TCPClient(this, "mpe.xml");
 
   // the size is determined by the client's local width and height
   size(client.getLWidth(), client.getLHeight());
+}
+
+void setup() {
 
   // the random seed must be identical for all clients
   randomSeed(1);
@@ -70,4 +73,3 @@ void mousePressed() {
   int y = mouseY + client.getYoffset();
   client.broadcast(x + "," + y);
 }
-

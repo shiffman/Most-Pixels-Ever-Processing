@@ -22,7 +22,7 @@ import java.io.File;
 
 public class MPEServer {
 
-	public static final String version = "2.0.2";
+	public static final String version = "2.0.3";
 
 	private HashMap<Integer,Connection> connectionlookup = new HashMap<Integer,Connection>();
 	private ArrayList<Connection> synchconnections = new ArrayList<Connection>();

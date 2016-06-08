@@ -3,7 +3,7 @@
 	<name>renderer0</name>  <!-- optional -->
 	<server>
 		<ip>localhost</ip>
-		<port>9002</port> 
+		<port>9002</port>
 	</server>
 	<local_dimensions>
 		<width>320</width>
@@ -18,6 +18,6 @@
 		<height>480</height>
 	</master_dimensions>
 	<offset_window>true</offset_window>
-	<verbose>true</verbose>
+	<verbose>false</verbose>
 	<simulation fps="30">false</simulation>
 </settings>
